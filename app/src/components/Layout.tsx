@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import { I, M } from './Icons'
 import { useStore } from '../store'
-import { currentUser, logout } from '../auth'
+import { useSession } from '../auth'
 import { LangFlag, useI18n } from '../i18n'
 import type { Lang } from '../i18n'
 
@@ -37,9 +37,11 @@ function railOn(to: string, path: string) {
 export function Layout() {
   const { theme, toggleTheme, data } = useStore()
   const { t, lang, setLang } = useI18n()
-  const user = currentUser()
+  const { state, signOut } = useSession()
+  const user = state.status === 'authenticated' ? state.session.user : null
   const userName = user?.name || 'Usuário'
   const userEmail = user?.email || ''
+  const [signingOut, setSigningOut] = useState(false)
   const [q, setQ] = useState('')
   const [showSearch, setShowSearch] = useState(false)
   const [menu, setMenu] = useState(false)
@@ -175,7 +177,20 @@ export function Layout() {
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/></svg>
                 <span>{copied ? 'Link copiado!' : 'Copiar link da página'}</span>
               </button>
-              <button type="button" role="menuitem" onClick={() => { logout(); nav('/login') }}>
+              <button
+                type="button"
+                role="menuitem"
+                disabled={signingOut}
+                onClick={() => {
+                  if (signingOut) return
+                  setSigningOut(true)
+                  // Falha do logout mantém a sessão e não navega (contrato §3.7):
+                  // o menu fica aberto para tentar de novo — sem sucesso simulado.
+                  signOut()
+                    .then(() => nav('/login'))
+                    .catch(() => setSigningOut(false))
+                }}
+              >
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10.09 15.59 11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5a2 2 0 0 0-2 2v4h2V5h14v14H5v-4H3v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/></svg>
                 <span>Sair</span>
               </button>

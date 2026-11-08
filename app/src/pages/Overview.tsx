@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { I, M } from '../components/Icons'
-import { currentUser } from '../auth'
+import { useSession } from '../auth'
 
 const quotas = [
   { title: 'Contas', value: '0/1', to: '/whats/accounts' },
@@ -11,7 +11,8 @@ const quotas = [
 
 export default function Overview() {
   const [open, setOpen] = useState(false)
-  const user = currentUser()
+  const { state } = useSession()
+  const user = state.status === 'authenticated' ? state.session.user : null
   const displayName = user?.name || 'Usuário'
   return (
     <div className="ov">

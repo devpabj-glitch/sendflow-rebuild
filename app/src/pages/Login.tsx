@@ -1,6 +1,31 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { login } from '../auth'
+import { useSession } from '../auth'
+import { ApiError } from '../lib/api'
+
+// Mapa de erro por código do servidor (contrato §3.5 + decisão do coordenador §0.5) — pt-BR, tom atual.
+function loginErrorMessage(err: unknown): string {
+  if (err instanceof ApiError) {
+    switch (err.code) {
+      case 'AUTH_INVALID_CREDENTIALS':
+        return 'E-mail ou senha inválidos.'
+      case 'AUTH_RATE_LIMITED':
+        return err.retryAfter != null
+          ? `Muitas tentativas. Aguarde ${err.retryAfter} segundos e tente novamente.`
+          : 'Muitas tentativas. Aguarde alguns minutos e tente novamente.'
+      case 'AUTH_EMAIL_TAKEN':
+        return 'Este e-mail já está cadastrado.'
+      case 'VALIDATION_ERROR':
+        return err.message || 'Campos inválidos.'
+      case 'NETWORK_ERROR':
+      case 'TIMEOUT':
+        return 'Não foi possível conectar ao servidor. Verifique sua conexão e tente novamente.'
+      default:
+        return 'Erro no servidor. Tente novamente em instantes.'
+    }
+  }
+  return 'Erro no servidor. Tente novamente em instantes.'
+}
 
 export function AuthBrandPanel() {
   return (
@@ -46,6 +71,7 @@ export function AuthCookieBanner() {
 
 export default function Login() {
   const nav = useNavigate()
+  const { signIn } = useSession()
   const [email, setEmail] = useState('')
   const [pass, setPass] = useState('')
   const [error, setError] = useState('')
@@ -60,10 +86,14 @@ export default function Login() {
     e.preventDefault()
     setError('')
     setBusy(true)
-    const r = await login(email, pass)
-    setBusy(false)
-    if (r.ok) nav('/whats/overview')
-    else setError('E-mail ou senha inválidos.')
+    try {
+      await signIn(email, pass)
+      nav('/whats/overview')
+    } catch (err) {
+      setError(loginErrorMessage(err))
+    } finally {
+      setBusy(false)
+    }
   }
   return (
     <div className="sf-auth2-page">
