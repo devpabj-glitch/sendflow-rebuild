@@ -24,7 +24,7 @@ npm run preview # servir o build de produção (http://localhost:4173)
 | Rota | Módulo |
 |---|---|
 | `/` | Landing |
-| `/login`, `/forgot-password` | Autenticação — usuário: `br@gmail.com` / senha: `730287` |
+| `/login`, `/forgot-password` | Autenticação |
 | `/termo-de-uso`, `/politica-de-privacidade` | Páginas legais |
 | `/whats/overview` | Visão geral com KPIs |
 | `/whats/accounts` | Contas (Todas/Conectadas/Desconectadas/Sem sessão) |
@@ -42,10 +42,10 @@ npm run preview # servir o build de produção (http://localhost:4173)
 
 ## Autenticação
 
-- Login real: **`br@gmail.com` / `730287`** (senha armazenada como SHA-256 em `localStorage`, chave `orbit.users`)
-- Rotas `/whats/*` protegidas — sem sessão ativa, redirecionam para `/login`
-- Logout no menu do usuário (canto superior direito)
-- `src/auth.ts` expõe `registerUser()` para cadastrar mais usuários (há função pronta; UI de cadastro pode ser adicionada depois)
+- Registro e login são feitos no servidor — a sessão viaja em cookie httpOnly definido pela API (`src/lib/api.ts`).
+- "Esqueci a senha" ainda indisponível nesta fatia.
+- Contrato da API: ver `api/README.md` na raiz do repositório.
+- Em dev, o Vite faz proxy de `/api` para o servidor.
 
 ## Verificação
 

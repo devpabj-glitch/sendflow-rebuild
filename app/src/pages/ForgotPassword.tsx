@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { AuthBrandPanel, AuthCookieBanner } from './Login'
 
+// Sem endpoint de recuperação nesta fatia (A1 §1.2): a tela declara indisponibilidade —
+// não finge envio de e-mail e não dispara nenhuma requisição (contrato §3.6, PM regra 3).
 export default function ForgotPassword() {
-  const [sent, setSent] = useState(false)
   useEffect(() => {
     const prev = document.body.className
     document.body.className = 'sf-auth2-body'
@@ -16,15 +17,10 @@ export default function ForgotPassword() {
       <main className="sf-auth2-main">
         <div className="sf-auth2-col">
           <h2>Esqueceu a senha?</h2>
-          {sent ? (
-            <p className="sf-auth2-sent">Se o e-mail existir, enviaremos instruções para redefinir sua senha.</p>
-          ) : (
-            <form onSubmit={e => { e.preventDefault(); setSent(true) }} className="sf-auth2-form">
-              <input name="email" type="text" required placeholder="Digite seu endereço de email *" />
-              <button type="submit" className="sf-auth2-primary">Enviar link</button>
-              <Link to="/login" className="sf-auth2-forgot">Voltar para login</Link>
-            </form>
-          )}
+          <p className="sf-auth2-sent">A redefinição de senha por e-mail ainda não está disponível nesta versão. Fale com o administrador da sua organização.</p>
+          <div className="sf-auth2-form">
+            <Link to="/login" className="sf-auth2-forgot">Voltar para login</Link>
+          </div>
         </div>
       </main>
       <footer className="sf-auth2-footer">© Orbit. All rights reserved.</footer>

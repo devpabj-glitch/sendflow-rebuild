@@ -1,7 +1,7 @@
 ﻿import React from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { Layout } from './components/Layout'
-import { currentUser } from './auth'
+import { useSession } from './auth'
 import Overview from './pages/Overview'
 import Accounts from './pages/Accounts'
 import AccountsCampaigns from './pages/AccountsCampaigns'
@@ -23,8 +23,27 @@ import Subscriptions from './pages/Subscriptions'
 import Landing from './pages/Landing'
 import Placeholder from './pages/Placeholder'
 
+// Autenticação afirmada pelo servidor (bootstrap GET /api/v1/auth/me) — não por chave local.
+// Estados honestos (PM regra 3): carregando ≠ erro ≠ desautenticado; texto neutro centrado,
+// sem criar identidade visual (contrato §3.4/§5).
 function RequireAuth({ children }: { children: React.ReactElement }) {
-  if (!currentUser()) return <Navigate to="/login" replace />
+  const { state, retryBootstrap } = useSession()
+  if (state.status === 'loading') {
+    return (
+      <div role="status" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <p style={{ margin: 0 }}>Carregando…</p>
+      </div>
+    )
+  }
+  if (state.status === 'error') {
+    return (
+      <div role="alert" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 12, textAlign: 'center', padding: 24 }}>
+        <p style={{ margin: 0 }}>Não foi possível confirmar sua sessão. Verifique sua conexão.</p>
+        <button type="button" onClick={retryBootstrap}>Tentar novamente</button>
+      </div>
+    )
+  }
+  if (state.status === 'unauthenticated') return <Navigate to="/login" replace />
   return children
 }
 

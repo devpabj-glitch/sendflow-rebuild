@@ -1,5 +1,5 @@
 import React from 'react'
-import { currentUser } from '../auth'
+import { useSession } from '../auth'
 
 function YellowBtn({ icon, children, onClick }: { icon?: React.ReactNode; children: React.ReactNode; onClick?: () => void }) {
   return (
@@ -16,7 +16,8 @@ const ic = {
 }
 
 export default function Profile() {
-  const user = currentUser()
+  const { state } = useSession()
+  const user = state.status === 'authenticated' ? state.session.user : null
   return (
     <div className="pf">
       <section className="pf-card pf-head">
