@@ -1,0 +1,145 @@
+{
+  "url": "https://sendflow.pro/whats/accounts",
+  "title": "SendFlow",
+  "headings": [],
+  "navLinks": [
+    {
+      "text": "Contas",
+      "href": "https://sendflow.pro/whats/accounts",
+      "tag": "a"
+    }
+  ],
+  "allLinksCount": 17,
+  "linksSample": [
+    {
+      "text": "",
+      "href": "https://sendflow.pro/whats/overview"
+    },
+    {
+      "text": "home Início",
+      "href": "https://sendflow.pro/whats/overview"
+    },
+    {
+      "text": "offline_bolt Ações",
+      "href": "https://sendflow.pro/whats/actions"
+    },
+    {
+      "text": "account_tree Automações",
+      "href": "https://sendflow.pro/whats/automations"
+    },
+    {
+      "text": "folder Projetos",
+      "href": "https://sendflow.pro/whats/projects"
+    },
+    {
+      "text": "groups Leads",
+      "href": "https://sendflow.pro/whats/leads"
+    },
+    {
+      "text": "cell_tower Broadcast",
+      "href": "https://sendflow.pro/whats/broadcasts"
+    },
+    {
+      "text": "podcasts Broadcast Legado",
+      "href": "https://sendflow.pro/whats/leads-groups"
+    },
+    {
+      "text": "link Deep link",
+      "href": "https://sendflow.pro/whats/deeplinks"
+    },
+    {
+      "text": "history Histórico",
+      "href": "https://sendflow.pro/whats/history"
+    },
+    {
+      "text": "people Equipe",
+      "href": "https://sendflow.pro/whats/attendants"
+    },
+    {
+      "text": "school Treinamentos",
+      "href": "https://sendflow.pro/whats/contents"
+    },
+    {
+      "text": "Contas",
+      "href": "https://sendflow.pro/whats/accounts"
+    },
+    {
+      "text": "hub Contas e Campanhas",
+      "href": "https://sendflow.pro/whats/accounts-campaigns"
+    },
+    {
+      "text": "trending_up Fazer upgrade de plano",
+      "href": "https://suporte.sendflow.com.br/widget?website_token=guy9Zt6vRQ8f3McBgSLxgeBp#/"
+    },
+    {
+      "text": "Política de Privacidade",
+      "href": "https://sendflow.pro/privacy.html"
+    },
+    {
+      "text": "gerencie seus dados",
+      "href": "https://sendflow.pro/account/privacy"
+    }
+  ],
+  "forms": [],
+  "looseFields": [
+    {
+      "tag": "input",
+      "type": "",
+      "name": "",
+      "placeholder": "",
+      "label": ""
+    },
+    {
+      "tag": "input",
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "label": ""
+    },
+    {
+      "tag": "input",
+      "type": "",
+      "name": "",
+      "placeholder": "",
+      "label": ""
+    }
+  ],
+  "tables": [],
+  "tabs": [
+    "Todas",
+    "Conectadas",
+    "Desconectadas",
+    "Sem sessão"
+  ],
+  "badges": [
+    "Legado",
+    "notifications"
+  ],
+  "buttons": [
+    "Buscar",
+    "dashboard Visão geral expand_more",
+    "tune Personalização expand_more",
+    "hub Integrações expand_more",
+    "security Segurança expand_more",
+    "Buscar + k",
+    "brightness_7",
+    "notifications",
+    "Tello T",
+    "add Conta",
+    "Todas",
+    "Conectadas",
+    "Desconectadas",
+    "Sem sessão",
+    "first page",
+    "previous page",
+    "next page",
+    "Atalhos",
+    "tune",
+    "APENAS NECESSÁRIOS",
+    "ACEITAR TODOS"
+  ],
+  "emptyStates": [
+    "Nenhum registro encontrado"
+  ],
+  "bodyTextPreview": "home Início dashboard Visão geral expand_more offline_bolt Ações account_tree Automações folder Projetos groups Leads cell_tower Broadcast podcasts Broadcast Legado tune Personalização expand_more hub Integrações expand_more link Deep link security Segurança expand_more history Histórico people Equipe school Treinamentos Contas Buscar + k brightness_7 notifications Tello T Contas hub Contas e Campanhas trending_up Fazer upgrade de plano add Conta Todas Conectadas Desconectadas Sem sessão Ordenação Data de criação Ordenação Buscar ​ search Buscar Linhas por página 12 0-0 de 0 Nenhum registro en"
+}

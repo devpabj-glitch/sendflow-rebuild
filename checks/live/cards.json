@@ -1,0 +1,1141 @@
+{
+  "hits": {
+    "Mapa Contas": [
+      {
+        "tag": "p",
+        "cls": "MuiTypography-root MuiTypography-body1 text-16 font-medium css-1kulrrd",
+        "box": [
+          463,
+          272,
+          226,
+          24
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "16px",
+        "fw": "500",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "flex flex-col gap-4",
+        "box": [
+          463,
+          272,
+          226,
+          48
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "flex items-start gap-12",
+        "box": [
+          427,
+          272,
+          262,
+          48
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "flex flex-col gap-12 p-16 sm:flex-row sm:items-center sm:justify-between MuiBox-root css-mnmwfp",
+        "box": [
+          410,
+          255,
+          1152,
+          82
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "8px",
+        "pad": "16px",
+        "bw": "1px",
+        "bc": "rgba(0, 0, 0, 0)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "mb-24",
+        "box": [
+          410,
+          255,
+          1152,
+          82
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "MuiContainer-root MuiContainer-maxWidthLg css-1qsxih2",
+        "box": [
+          386,
+          255,
+          1200,
+          746
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px 24px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "shadow": ""
+      }
+    ],
+    "Todas as associações": [
+      {
+        "tag": "p",
+        "cls": "MuiTypography-root MuiTypography-body1 text-13 text-grey-600 css-1kulrrd",
+        "box": [
+          463,
+          300,
+          226,
+          20
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(117, 117, 117)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgb(117, 117, 117)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "flex flex-col gap-4",
+        "box": [
+          463,
+          272,
+          226,
+          48
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "flex items-start gap-12",
+        "box": [
+          427,
+          272,
+          262,
+          48
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "flex flex-col gap-12 p-16 sm:flex-row sm:items-center sm:justify-between MuiBox-root css-mnmwfp",
+        "box": [
+          410,
+          255,
+          1152,
+          82
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "8px",
+        "pad": "16px",
+        "bw": "1px",
+        "bc": "rgba(0, 0, 0, 0)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "mb-24",
+        "box": [
+          410,
+          255,
+          1152,
+          82
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "MuiContainer-root MuiContainer-maxWidthLg css-1qsxih2",
+        "box": [
+          386,
+          255,
+          1200,
+          746
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px 24px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "shadow": ""
+      }
+    ],
+    "Ver dashboard": [
+      {
+        "tag": "a",
+        "cls": "MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiBut",
+        "box": [
+          1400,
+          278,
+          145,
+          36
+        ],
+        "bg": "rgb(255, 222, 7)",
+        "color": "rgb(0, 0, 0)",
+        "fs": "13.714px",
+        "fw": "500",
+        "br": "8px",
+        "pad": "6px 16px",
+        "bw": "0px",
+        "bc": "rgb(0, 0, 0)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "flex flex-col gap-12 p-16 sm:flex-row sm:items-center sm:justify-between MuiBox-root css-mnmwfp",
+        "box": [
+          410,
+          255,
+          1152,
+          82
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "8px",
+        "pad": "16px",
+        "bw": "1px",
+        "bc": "rgba(0, 0, 0, 0)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "mb-24",
+        "box": [
+          410,
+          255,
+          1152,
+          82
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "MuiContainer-root MuiContainer-maxWidthLg css-1qsxih2",
+        "box": [
+          386,
+          255,
+          1200,
+          746
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px 24px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "flex flex-1 flex-col gap-16 pb-128 pt-16 md:gap-32 md:pt-32 MuiBox-root css-xj9vgh",
+        "box": [
+          64,
+          64,
+          1844,
+          1065
+        ],
+        "bg": "rgb(21, 21, 21)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "32px 0px 128px",
+        "bw": "1px",
+        "bc": "rgba(255, 255, 255, 0.12)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "flex flex-1 flex-col",
+        "box": [
+          64,
+          64,
+          1844,
+          1065
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "shadow": ""
+      }
+    ],
+    "Nenhum registro": [
+      {
+        "tag": "p",
+        "cls": "MuiTypography-root MuiTypography-body1 flex h-full w-full flex-col justify-center text-center text-lg css-191w54f",
+        "box": [
+          427,
+          422,
+          339,
+          562
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(229, 231, 235)",
+        "fs": "18px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgb(229, 231, 235)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "custom-resizer flex h-full min-h-640 resize-y flex-col flex flex-col gap-10 p-16 MuiBox-root css-mnmwfp",
+        "box": [
+          410,
+          361,
+          373,
+          640
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "8px",
+        "pad": "16px",
+        "bw": "1px",
+        "bc": "rgba(0, 0, 0, 0)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "grid grid-flow-row grid-cols-1 gap-16 sm:grid-cols-2 md:grid-cols-3",
+        "box": [
+          410,
+          361,
+          1152,
+          640
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "flex flex-col gap-24",
+        "box": [
+          410,
+          361,
+          1152,
+          640
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "MuiContainer-root MuiContainer-maxWidthLg css-1qsxih2",
+        "box": [
+          386,
+          255,
+          1200,
+          746
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px 24px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "flex flex-1 flex-col gap-16 pb-128 pt-16 md:gap-32 md:pt-32 MuiBox-root css-xj9vgh",
+        "box": [
+          64,
+          64,
+          1844,
+          1065
+        ],
+        "bg": "rgb(21, 21, 21)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "32px 0px 128px",
+        "bw": "1px",
+        "bc": "rgba(255, 255, 255, 0.12)",
+        "shadow": ""
+      }
+    ],
+    "Contas": [
+      {
+        "tag": "span",
+        "cls": "MuiTypography-root MuiTypography-body1 MuiListItemText-primary text-13 font-medium fuse-list-item-text-primary truncate css-qzgsr6",
+        "box": [
+          72,
+          210,
+          134,
+          20
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgba(255, 255, 255, 0.7)",
+        "fs": "13px",
+        "fw": "500",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgba(255, 255, 255, 0.7)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "MuiListItemText-root fuse-list-item-text css-1tsvksn",
+        "box": [
+          72,
+          210,
+          134,
+          20
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgba(255, 255, 255, 0.7)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgba(255, 255, 255, 0.7)",
+        "shadow": ""
+      },
+      {
+        "tag": "a",
+        "cls": "MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters fuse-list-item css-d8nb",
+        "box": [
+          12,
+          200,
+          206,
+          40
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgba(255, 255, 255, 0.7)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "6px",
+        "pad": "8px 12px 8px 28px",
+        "bw": "0px",
+        "bc": "rgba(255, 255, 255, 0.7)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "",
+        "box": [
+          12,
+          160,
+          206,
+          160
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "MuiCollapse-wrapperInner MuiCollapse-vertical css-8atqhb",
+        "box": [
+          12,
+          160,
+          206,
+          160
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "MuiCollapse-wrapper MuiCollapse-vertical css-hboir5",
+        "box": [
+          12,
+          160,
+          206,
+          160
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "shadow": ""
+      }
+    ],
+    "Campanhas": [
+      {
+        "tag": "span",
+        "cls": "MuiTypography-root MuiTypography-body1 MuiListItemText-primary text-13 font-medium fuse-list-item-text-primary truncate css-qzgsr6",
+        "box": [
+          72,
+          170,
+          134,
+          20
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgba(255, 255, 255, 0.7)",
+        "fs": "13px",
+        "fw": "500",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgba(255, 255, 255, 0.7)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "MuiListItemText-root fuse-list-item-text css-1tsvksn",
+        "box": [
+          72,
+          170,
+          134,
+          20
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgba(255, 255, 255, 0.7)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgba(255, 255, 255, 0.7)",
+        "shadow": ""
+      },
+      {
+        "tag": "a",
+        "cls": "MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters fuse-list-item css-d8nb",
+        "box": [
+          12,
+          160,
+          206,
+          40
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgba(255, 255, 255, 0.7)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "6px",
+        "pad": "8px 12px 8px 28px",
+        "bw": "0px",
+        "bc": "rgba(255, 255, 255, 0.7)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "",
+        "box": [
+          12,
+          160,
+          206,
+          160
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "MuiCollapse-wrapperInner MuiCollapse-vertical css-8atqhb",
+        "box": [
+          12,
+          160,
+          206,
+          160
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "MuiCollapse-wrapper MuiCollapse-vertical css-hboir5",
+        "box": [
+          12,
+          160,
+          206,
+          160
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "shadow": ""
+      }
+    ],
+    "Webhooks": [
+      {
+        "tag": "span",
+        "cls": "MuiTypography-root MuiTypography-body1 MuiListItemText-primary text-13 font-medium fuse-list-item-text-primary truncate css-qzgsr6",
+        "box": [
+          72,
+          530,
+          134,
+          20
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgba(255, 255, 255, 0.7)",
+        "fs": "13px",
+        "fw": "500",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgba(255, 255, 255, 0.7)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "MuiListItemText-root fuse-list-item-text css-1tsvksn",
+        "box": [
+          72,
+          530,
+          134,
+          20
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgba(255, 255, 255, 0.7)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgba(255, 255, 255, 0.7)",
+        "shadow": ""
+      },
+      {
+        "tag": "a",
+        "cls": "MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters fuse-list-item css-d8nb",
+        "box": [
+          12,
+          520,
+          206,
+          40
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgba(255, 255, 255, 0.7)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "6px",
+        "pad": "8px 12px 8px 28px",
+        "bw": "0px",
+        "bc": "rgba(255, 255, 255, 0.7)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "",
+        "box": [
+          12,
+          480,
+          206,
+          200
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "MuiCollapse-wrapperInner MuiCollapse-vertical css-8atqhb",
+        "box": [
+          12,
+          480,
+          206,
+          200
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "MuiCollapse-wrapper MuiCollapse-vertical css-hboir5",
+        "box": [
+          12,
+          480,
+          206,
+          200
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "shadow": ""
+      }
+    ],
+    "CONFIGURAÇÕES": null,
+    "Visão geral": [
+      {
+        "tag": "span",
+        "cls": "MuiTypography-root MuiTypography-body1 MuiListItemText-primary text-13 font-medium truncate css-qzgsr6",
+        "box": [
+          56,
+          130,
+          134,
+          20
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgba(255, 255, 255, 0.7)",
+        "fs": "13px",
+        "fw": "500",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgba(255, 255, 255, 0.7)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "MuiListItemText-root fuse-list-item-text css-1tsvksn",
+        "box": [
+          56,
+          130,
+          134,
+          20
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgba(255, 255, 255, 0.7)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgba(255, 255, 255, 0.7)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters fuse-list-item css-17yd",
+        "box": [
+          12,
+          120,
+          206,
+          40
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgba(255, 255, 255, 0.7)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "6px",
+        "pad": "8px 12px",
+        "bw": "0px",
+        "bc": "rgba(255, 255, 255, 0.7)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "p-0",
+        "box": [
+          12,
+          120,
+          206,
+          40
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "shadow": ""
+      },
+      {
+        "tag": "ul",
+        "cls": "MuiList-root MuiList-padding navigation mt-8 whitespace-nowrap px-12 FuseNavVerticalLayout1-navigation active-undefined-list navigation css-",
+        "box": [
+          0,
+          72,
+          230,
+          616
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "8px 12px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "ps",
+        "box": [
+          0,
+          64,
+          230,
+          624
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "shadow": ""
+      }
+    ],
+    "Buscar": [
+      {
+        "tag": "div",
+        "cls": "MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedInherit MuiButton-sizeSmall MuiButton-outlinedSizeSmall MuiButton-col",
+        "box": [
+          1507,
+          16,
+          148,
+          32
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(158, 158, 158)",
+        "fs": "13.714px",
+        "fw": "500",
+        "br": "8px",
+        "pad": "3px 9px",
+        "bw": "1px",
+        "bc": "rgb(158, 158, 158)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "mx-auto flex min-h-48 w-full items-center gap-8 border-b px-8 sm:min-h-64 md:px-24 MuiBox-root css-16a46nv",
+        "box": [
+          64,
+          0,
+          1856,
+          64
+        ],
+        "bg": "rgb(21, 21, 21)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px 24px",
+        "bw": "0px",
+        "bc": "rgba(255, 255, 255, 0.12)",
+        "shadow": ""
+      },
+      {
+        "tag": "main",
+        "cls": "relative z-10 flex h-screen flex-1 flex-col overflow-y-auto",
+        "box": [
+          64,
+          0,
+          1856,
+          991
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "flex h-screen w-screen overflow-hidden",
+        "box": [
+          0,
+          0,
+          1920,
+          991
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "flex w-full",
+        "box": [
+          0,
+          0,
+          1920,
+          991
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "shadow": ""
+      },
+      {
+        "tag": "div",
+        "cls": "",
+        "box": [
+          0,
+          0,
+          1920,
+          991
+        ],
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fs": "13px",
+        "fw": "400",
+        "br": "0px",
+        "pad": "0px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "shadow": ""
+      }
+    ]
+  },
+  "toolbar": null,
+  "logos": [
+    {
+      "tag": "IMG",
+      "alt": "logo",
+      "src": "/assets/imgs/logo.png",
+      "box": [
+        4,
+        18,
+        55,
+        28
+      ]
+    },
+    {
+      "tag": "svg",
+      "alt": "",
+      "src": "",
+      "box": [
+        149,
+        22,
+        19,
+        19
+      ]
+    },
+    {
+      "tag": "svg",
+      "alt": "",
+      "src": "",
+      "box": [
+        190,
+        23,
+        17,
+        17
+      ]
+    },
+    {
+      "tag": "svg",
+      "alt": "",
+      "src": "",
+      "box": [
+        1515,
+        23,
+        18,
+        18
+      ]
+    },
+    {
+      "tag": "svg",
+      "alt": "",
+      "src": "",
+      "box": [
+        1594,
+        23,
+        18,
+        18
+      ]
+    },
+    {
+      "tag": "IMG",
+      "alt": "Português",
+      "src": "/assets/flags/pt-BR.png",
+      "box": [
+        1719,
+        22,
+        20,
+        20
+      ]
+    },
+    {
+      "tag": "svg",
+      "alt": "",
+      "src": "",
+      "box": [
+        1861,
+        856,
+        22,
+        22
+      ]
+    },
+    {
+      "tag": "svg",
+      "alt": "",
+      "src": "",
+      "box": [
+        1856,
+        927,
+        24,
+        24
+      ]
+    }
+  ],
+  "bg": "rgba(0, 0, 0, 0)"
+}

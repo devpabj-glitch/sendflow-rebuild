@@ -1,0 +1,134 @@
+{
+  "url": "https://sendflow.pro/whats/automations",
+  "title": "SendFlow",
+  "headings": [],
+  "navLinks": [
+    {
+      "text": "Automações",
+      "href": "https://sendflow.pro/whats/automations",
+      "tag": "a"
+    }
+  ],
+  "allLinksCount": 15,
+  "linksSample": [
+    {
+      "text": "",
+      "href": "https://sendflow.pro/whats/overview"
+    },
+    {
+      "text": "home Início",
+      "href": "https://sendflow.pro/whats/overview"
+    },
+    {
+      "text": "offline_bolt Ações",
+      "href": "https://sendflow.pro/whats/actions"
+    },
+    {
+      "text": "account_tree Automações",
+      "href": "https://sendflow.pro/whats/automations"
+    },
+    {
+      "text": "folder Projetos",
+      "href": "https://sendflow.pro/whats/projects"
+    },
+    {
+      "text": "groups Leads",
+      "href": "https://sendflow.pro/whats/leads"
+    },
+    {
+      "text": "cell_tower Broadcast",
+      "href": "https://sendflow.pro/whats/broadcasts"
+    },
+    {
+      "text": "podcasts Broadcast Legado",
+      "href": "https://sendflow.pro/whats/leads-groups"
+    },
+    {
+      "text": "link Deep link",
+      "href": "https://sendflow.pro/whats/deeplinks"
+    },
+    {
+      "text": "history Histórico",
+      "href": "https://sendflow.pro/whats/history"
+    },
+    {
+      "text": "people Equipe",
+      "href": "https://sendflow.pro/whats/attendants"
+    },
+    {
+      "text": "school Treinamentos",
+      "href": "https://sendflow.pro/whats/contents"
+    },
+    {
+      "text": "Automações",
+      "href": "https://sendflow.pro/whats/automations"
+    },
+    {
+      "text": "Política de Privacidade",
+      "href": "https://sendflow.pro/privacy.html"
+    },
+    {
+      "text": "gerencie seus dados",
+      "href": "https://sendflow.pro/account/privacy"
+    }
+  ],
+  "forms": [],
+  "looseFields": [
+    {
+      "tag": "input",
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "label": ""
+    },
+    {
+      "tag": "input",
+      "type": "text",
+      "name": "",
+      "placeholder": "Todos",
+      "label": ""
+    },
+    {
+      "tag": "input",
+      "type": "",
+      "name": "",
+      "placeholder": "",
+      "label": ""
+    }
+  ],
+  "tables": [],
+  "tabs": [],
+  "badges": [
+    "Legado",
+    "notifications"
+  ],
+  "buttons": [
+    "Buscar",
+    "dashboard Visão geral expand_more",
+    "tune Personalização expand_more",
+    "hub Integrações expand_more",
+    "security Segurança expand_more",
+    "Buscar + k",
+    "brightness_7",
+    "notifications",
+    "Tello T",
+    "PASTA",
+    "add ADICIONAR",
+    "upload IMPORTAR JSON",
+    "Open",
+    "ATIVADO",
+    "DESATIVADO",
+    "TODOS",
+    "first page",
+    "previous page",
+    "next page",
+    "Atalhos",
+    "tune",
+    "APENAS NECESSÁRIOS",
+    "ACEITAR TODOS"
+  ],
+  "emptyStates": [
+    "Nenhum registro encontrado"
+  ],
+  "bodyTextPreview": "home Início dashboard Visão geral expand_more offline_bolt Ações account_tree Automações folder Projetos groups Leads cell_tower Broadcast podcasts Broadcast Legado tune Personalização expand_more hub Integrações expand_more link Deep link security Segurança expand_more history Histórico people Equipe school Treinamentos Automações Buscar + k brightness_7 notifications Tello T Automações PASTA add ADICIONAR upload IMPORTAR JSON Buscar ​ search Buscar Gatilho Gatilho ATIVADO DESATIVADO TODOS Linhas por página 12 0-0 de 0 Nenhum registro encontrado cookie Sua privacidade importa Usamos cookies e"
+}

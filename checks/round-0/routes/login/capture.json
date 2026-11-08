@@ -1,0 +1,852 @@
+{
+  "a11y": {
+    "images_without_alt": 0,
+    "landmarks": {
+      "main": 1
+    },
+    "lang": "pt-BR",
+    "unnamed_controls": 0,
+    "unnamed_examples": []
+  },
+  "assets": {
+    "background_images": [],
+    "fonts": [
+      "https://fonts.googleapis.com/css2"
+    ],
+    "images": [
+      {
+        "alt": "SendFlow",
+        "h": 1081,
+        "src": "https://sendflow.com.br/assets/logo-sendflow-CFfyEAex.svg",
+        "w": 1683
+      }
+    ],
+    "inline_scripts": 0,
+    "requests": [
+      {
+        "bytes": 0,
+        "type": "link",
+        "url": "https://fonts.googleapis.com/css2"
+      },
+      {
+        "bytes": 29549,
+        "type": "link",
+        "url": "http://127.0.0.1:53171/assets/index-8zKK5jeG.css"
+      },
+      {
+        "bytes": 272692,
+        "type": "script",
+        "url": "http://127.0.0.1:53171/assets/index-DS6QDfZ3.js"
+      },
+      {
+        "bytes": 0,
+        "type": "img",
+        "url": "https://sendflow.com.br/assets/logo-sendflow-CFfyEAex.svg"
+      },
+      {
+        "bytes": 303,
+        "type": "other",
+        "url": "http://127.0.0.1:53171/favicon.ico"
+      }
+    ],
+    "scripts": [
+      "http://127.0.0.1:53171/assets/index-DS6QDfZ3.js"
+    ],
+    "stylesheets": [
+      "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap",
+      "http://127.0.0.1:53171/assets/index-8zKK5jeG.css"
+    ]
+  },
+  "breakpoints": [
+    {
+      "count": 1,
+      "px": 390,
+      "query": "max-width 390px"
+    },
+    {
+      "count": 1,
+      "px": 600,
+      "query": "max-width 600px"
+    },
+    {
+      "count": 1,
+      "px": 640,
+      "query": "max-width 640px"
+    },
+    {
+      "count": 1,
+      "px": 767,
+      "query": "max-width 767px"
+    },
+    {
+      "count": 2,
+      "px": 900,
+      "query": "max-width 900px"
+    },
+    {
+      "count": 1,
+      "px": 1023,
+      "query": "max-width 1023px"
+    },
+    {
+      "count": 1,
+      "px": 1100,
+      "query": "max-width 1100px"
+    },
+    {
+      "count": 1,
+      "px": 1180,
+      "query": "max-width 1180px"
+    }
+  ],
+  "design": {
+    "backgrounds": [
+      {
+        "count": 3,
+        "value": "#ffffff"
+      },
+      {
+        "count": 2,
+        "value": "#151515"
+      },
+      {
+        "count": 1,
+        "value": "#ffde07"
+      },
+      {
+        "count": 1,
+        "value": "#1976d2"
+      }
+    ],
+    "css_variables": {
+      "--bg": "#0b1220",
+      "--bg-elev": "#121c2f",
+      "--bg-muted": "#17233b",
+      "--border": "#24324d",
+      "--danger": "#f87171",
+      "--danger-soft": "rgba(248,113,113,.14)",
+      "--focus": "#2563eb",
+      "--font": "\"Segoe UI\", Inter, system-ui, -apple-system, sans-serif",
+      "--primary": "#60a5fa",
+      "--primary-soft": "rgba(96,165,250,.16)",
+      "--primary-strong": "#3b82f6",
+      "--radius": "12px",
+      "--radius-sm": "8px",
+      "--shadow": "0 1px 2px rgba(0,0,0,.35), 0 10px 28px rgba(0,0,0,.28)",
+      "--sidebar": "#08101d",
+      "--sidebar-active": "#163055",
+      "--sidebar-hover": "#13213a",
+      "--sidebar-muted": "#7f95b3",
+      "--sidebar-text": "#dbe7f5",
+      "--success": "#4ade80",
+      "--success-soft": "rgba(74,222,128,.14)",
+      "--text": "#e6edf7",
+      "--text-muted": "#9fb0c7",
+      "--warning": "#fbbf24",
+      "--warning-soft": "rgba(251,191,36,.14)"
+    },
+    "font_faces": [
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "400"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "400"
+      },
+      {
+        "family": "Poppins",
+        "status": "loaded",
+        "style": "normal",
+        "weight": "400"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "500"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "500"
+      },
+      {
+        "family": "Poppins",
+        "status": "loaded",
+        "style": "normal",
+        "weight": "500"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "700"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "700"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "700"
+      }
+    ],
+    "font_sizes": [
+      {
+        "count": 8,
+        "value": "16px"
+      },
+      {
+        "count": 5,
+        "value": "8.75px"
+      },
+      {
+        "count": 2,
+        "value": "12px"
+      },
+      {
+        "count": 1,
+        "value": "20px"
+      },
+      {
+        "count": 1,
+        "value": "14px"
+      }
+    ],
+    "font_weights": [
+      {
+        "count": 15,
+        "value": "400"
+      },
+      {
+        "count": 2,
+        "value": "500"
+      }
+    ],
+    "fonts": [
+      {
+        "count": 17,
+        "value": "Poppins, Roboto, Helvetica, Arial, sans-serif"
+      }
+    ],
+    "max_widths": [
+      {
+        "count": 1,
+        "value": "420px"
+      }
+    ],
+    "radii": [
+      {
+        "count": 4,
+        "value": "4px"
+      },
+      {
+        "count": 1,
+        "value": "8px"
+      }
+    ],
+    "shadows": [
+      {
+        "count": 1,
+        "value": "rgba(0, 0, 0, 0.3) 0px 5px 15px 0px"
+      }
+    ],
+    "spacing": [
+      {
+        "count": 13,
+        "value": "16px"
+      },
+      {
+        "count": 10,
+        "value": "4px"
+      },
+      {
+        "count": 7,
+        "value": "8px"
+      },
+      {
+        "count": 4,
+        "value": "16.5px"
+      },
+      {
+        "count": 4,
+        "value": "14px"
+      },
+      {
+        "count": 4,
+        "value": "12px"
+      },
+      {
+        "count": 2,
+        "value": "24px"
+      },
+      {
+        "count": 2,
+        "value": "10px"
+      },
+      {
+        "count": 1,
+        "value": "8.75px"
+      }
+    ],
+    "text_colors": [
+      {
+        "count": 4,
+        "value": "#9ca3af"
+      },
+      {
+        "count": 3,
+        "value": "#ffde07"
+      },
+      {
+        "count": 3,
+        "value": "#000000de"
+      },
+      {
+        "count": 2,
+        "value": "#ffffff"
+      },
+      {
+        "count": 2,
+        "value": "#e5e7eb"
+      },
+      {
+        "count": 2,
+        "value": "#1976d2"
+      },
+      {
+        "count": 1,
+        "value": "#000000"
+      }
+    ]
+  },
+  "forms": [
+    {
+      "action": "",
+      "fields": [
+        {
+          "label": "Email *",
+          "name": "email",
+          "placeholder": "",
+          "required": true,
+          "tag": "input",
+          "type": "email"
+        },
+        {
+          "label": "",
+          "name": "",
+          "placeholder": "",
+          "required": false,
+          "tag": "fieldset",
+          "type": "fieldset"
+        },
+        {
+          "label": "Senha *",
+          "name": "password",
+          "placeholder": "",
+          "required": true,
+          "tag": "input",
+          "type": "password"
+        },
+        {
+          "label": "",
+          "name": "",
+          "placeholder": "",
+          "required": false,
+          "tag": "fieldset",
+          "type": "fieldset"
+        },
+        {
+          "label": "Mostrar senha",
+          "name": "",
+          "placeholder": "",
+          "required": false,
+          "tag": "button",
+          "type": "button"
+        },
+        {
+          "label": "",
+          "name": "",
+          "placeholder": "",
+          "required": false,
+          "tag": "button",
+          "type": "button"
+        },
+        {
+          "label": "",
+          "name": "",
+          "placeholder": "",
+          "required": false,
+          "tag": "button",
+          "type": "submit"
+        },
+        {
+          "label": "",
+          "name": "",
+          "placeholder": "",
+          "required": false,
+          "tag": "button",
+          "type": "button"
+        }
+      ],
+      "method": "get"
+    }
+  ],
+  "headings": [
+    {
+      "level": 2,
+      "text": "Bem vindo de volta!"
+    }
+  ],
+  "health": {
+    "errors": [],
+    "failed_requests": []
+  },
+  "lang": "pt-BR",
+  "layouts": [
+    {
+      "blocks": [
+        {
+          "h": 900,
+          "heading": "Bem vindo de volta!",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "main",
+          "w": 1440,
+          "y": 0
+        }
+      ],
+      "page_h": 900,
+      "page_w": 1440,
+      "type": {
+        "body": 16,
+        "h1": 0,
+        "h2": 20,
+        "h3": 0
+      },
+      "width": 1440
+    },
+    {
+      "blocks": [
+        {
+          "h": 900,
+          "heading": "Bem vindo de volta!",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "main",
+          "w": 768,
+          "y": 0
+        }
+      ],
+      "page_h": 900,
+      "page_w": 768,
+      "type": {
+        "body": 16,
+        "h1": 0,
+        "h2": 20,
+        "h3": 0
+      },
+      "width": 768
+    },
+    {
+      "blocks": [
+        {
+          "h": 900,
+          "heading": "Bem vindo de volta!",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "main",
+          "w": 390,
+          "y": 0
+        }
+      ],
+      "page_h": 900,
+      "page_w": 390,
+      "type": {
+        "body": 16,
+        "h1": 0,
+        "h2": 20,
+        "h3": 0
+      },
+      "width": 390
+    }
+  ],
+  "links": [
+    {
+      "href": "http://127.0.0.1:53171/forgot-password",
+      "text": "Esqueceu a senha?"
+    },
+    {
+      "href": "http://127.0.0.1:53171/",
+      "text": "Quero saber mais"
+    },
+    {
+      "href": "http://127.0.0.1:53171/login",
+      "text": "login"
+    },
+    {
+      "href": "http://127.0.0.1:53171/politica-de-privacidade",
+      "text": "Política de Privacidade"
+    },
+    {
+      "href": "http://127.0.0.1:53171/account/privacy",
+      "text": "gerencie seus dados"
+    },
+    {
+      "href": "http://127.0.0.1:53171/politica-de-privacidade",
+      "text": "Política de Privacidade"
+    }
+  ],
+  "meta": {
+    "description": "",
+    "icons": [
+      "http://127.0.0.1:53171/favicon.ico"
+    ],
+    "og_image": "",
+    "og_title": "",
+    "theme_color": ""
+  },
+  "outline": [
+    {
+      "box": {
+        "h": 900,
+        "w": 1440,
+        "x": 0,
+        "y": 0
+      },
+      "class": "sf-auth-main",
+      "color": "#ffffff",
+      "depth": 4,
+      "display": "flex",
+      "flex": "row",
+      "font": "16px 400",
+      "tag": "main"
+    },
+    {
+      "alt": "SendFlow",
+      "box": {
+        "h": 40,
+        "w": 62,
+        "x": 936,
+        "y": 166
+      },
+      "color": "#000000de",
+      "depth": 6,
+      "font": "16px 400",
+      "src": "https://sendflow.com.br/assets/logo-sendflow-CFfyEAex.svg",
+      "tag": "img"
+    },
+    {
+      "box": {
+        "h": 30,
+        "w": 288,
+        "x": 936,
+        "y": 229
+      },
+      "color": "#ffffff",
+      "depth": 6,
+      "font": "20px 500",
+      "tag": "h2",
+      "text": "Bem vindo de volta!"
+    },
+    {
+      "box": {
+        "h": 303,
+        "w": 288,
+        "x": 936,
+        "y": 275
+      },
+      "class": "sf-auth-form",
+      "color": "#000000de",
+      "depth": 6,
+      "display": "grid",
+      "font": "16px 400",
+      "grid": "288px",
+      "tag": "form"
+    },
+    {
+      "background": "#ffffff",
+      "box": {
+        "h": 55,
+        "w": 288,
+        "x": 936,
+        "y": 292
+      },
+      "color": "#000000de",
+      "depth": 8,
+      "font": "13.714px 400",
+      "name": "email",
+      "placeholder": "",
+      "tag": "input",
+      "type": "email"
+    },
+    {
+      "background": "#ffffff",
+      "box": {
+        "h": 55,
+        "w": 288,
+        "x": 936,
+        "y": 380
+      },
+      "color": "#000000de",
+      "depth": 8,
+      "font": "13.714px 400",
+      "name": "password",
+      "placeholder": "",
+      "tag": "input",
+      "type": "password"
+    },
+    {
+      "box": {
+        "h": 33,
+        "w": 16,
+        "x": 936,
+        "y": 451
+      },
+      "class": "sf-auth-icon",
+      "color": "#9ca3af",
+      "depth": 8,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "👁"
+    },
+    {
+      "box": {
+        "h": 33,
+        "w": 22,
+        "x": 960,
+        "y": 451
+      },
+      "class": "sf-auth-icon",
+      "color": "#9ca3af",
+      "depth": 8,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "🔒"
+    },
+    {
+      "background": "#ffde07",
+      "box": {
+        "h": 45,
+        "w": 288,
+        "x": 936,
+        "y": 492
+      },
+      "class": "sf-auth-submit",
+      "color": "#000000",
+      "depth": 7,
+      "font": "16px 500",
+      "tag": "button",
+      "text": "Entrar"
+    },
+    {
+      "box": {
+        "h": 33,
+        "w": 288,
+        "x": 936,
+        "y": 545
+      },
+      "class": "sf-auth-linkbtn",
+      "color": "#9ca3af",
+      "depth": 7,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Esqueceu a senha?"
+    },
+    {
+      "box": {
+        "h": 21,
+        "w": 135,
+        "x": 936,
+        "y": 586
+      },
+      "class": "sf-auth-link",
+      "color": "#ffde07",
+      "depth": 6,
+      "font": "14px 400",
+      "href": "http://127.0.0.1:53171/forgot-password",
+      "tag": "a",
+      "text": "Esqueceu a senha?"
+    },
+    {
+      "box": {
+        "h": 25,
+        "w": 288,
+        "x": 936,
+        "y": 624
+      },
+      "class": "sf-auth-more",
+      "color": "#000000de",
+      "depth": 6,
+      "font": "16px 400",
+      "tag": "p",
+      "text": "Quero saber mais | login"
+    },
+    {
+      "box": {
+        "h": 23,
+        "w": 143,
+        "x": 936,
+        "y": 625
+      },
+      "color": "#ffde07",
+      "depth": 7,
+      "font": "16px 400",
+      "href": "http://127.0.0.1:53171/",
+      "tag": "a",
+      "text": "Quero saber mais"
+    },
+    {
+      "box": {
+        "h": 23,
+        "w": 39,
+        "x": 1092,
+        "y": 625
+      },
+      "color": "#ffde07",
+      "depth": 7,
+      "font": "16px 400",
+      "href": "http://127.0.0.1:53171/login",
+      "tag": "a",
+      "text": "login"
+    },
+    {
+      "box": {
+        "h": 61,
+        "w": 288,
+        "x": 936,
+        "y": 665
+      },
+      "class": "sf-auth-legal",
+      "color": "#9ca3af",
+      "depth": 6,
+      "font": "8.75px 400",
+      "tag": "p",
+      "text": "Utilizamos cookies para melhorar sua experiência. Ao continuar, você pode aceitar e saber mais em nossa Política de Privacidade e gerencie seus dados. Cookies essenciais para o funcionamento. Apenas c"
+    },
+    {
+      "box": {
+        "h": 12,
+        "w": 100,
+        "x": 1123,
+        "y": 677
+      },
+      "color": "#1976d2",
+      "depth": 7,
+      "font": "8.75px 400",
+      "href": "http://127.0.0.1:53171/politica-de-privacidade",
+      "tag": "a",
+      "text": "Política de Privacidade"
+    },
+    {
+      "box": {
+        "h": 12,
+        "w": 91,
+        "x": 944,
+        "y": 689
+      },
+      "color": "#1976d2",
+      "depth": 7,
+      "font": "8.75px 400",
+      "href": "http://127.0.0.1:53171/account/privacy",
+      "tag": "a",
+      "text": "gerencie seus dados"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 289,
+        "x": 537,
+        "y": 827
+      },
+      "color": "#000000de",
+      "depth": 5,
+      "font": "12px 400",
+      "tag": "p",
+      "text": "Usamos cookies para melhorar sua experiência. Política de Privacidade"
+    },
+    {
+      "box": {
+        "h": 17,
+        "w": 136,
+        "x": 537,
+        "y": 845
+      },
+      "color": "#000000de",
+      "depth": 6,
+      "font": "12px 400",
+      "href": "http://127.0.0.1:53171/politica-de-privacidade",
+      "tag": "a",
+      "text": "Política de Privacidade"
+    },
+    {
+      "background": "#1976d2",
+      "box": {
+        "h": 41,
+        "w": 81,
+        "x": 838,
+        "y": 824
+      },
+      "color": "#ffffff",
+      "depth": 5,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    }
+  ],
+  "page": {
+    "h": 900,
+    "w": 1440
+  },
+  "text": "Bem vindo de volta! Email * Senha * 👁 🔒 Entrar Esqueceu a senha? Esqueceu a senha? Quero saber mais | login Utilizamos cookies para melhorar sua experiência. Ao continuar, você pode aceitar e saber mais em nossa Política de Privacidade e gerencie seus dados. Cookies essenciais para o funcionamento. Apenas com consentimento. 07/2026 análise importa da aba ao apertar automática botão. Cookies 11 13 51 all. Usamos cookies para melhorar sua experiência. Política de Privacidade Aceitar",
+  "title": "Grupos",
+  "unreadable_stylesheets": 1,
+  "url": "http://127.0.0.1:53171/login",
+  "viewport": {
+    "h": 900,
+    "w": 1440
+  }
+}

@@ -1,0 +1,6668 @@
+{
+  "a11y": {
+    "images_without_alt": 0,
+    "landmarks": {
+      "banner": 2,
+      "complementary": 1,
+      "main": 1,
+      "navigation": 2
+    },
+    "lang": "pt-BR",
+    "unnamed_controls": 0,
+    "unnamed_examples": []
+  },
+  "assets": {
+    "background_images": [],
+    "fonts": [
+      "https://fonts.googleapis.com/css2"
+    ],
+    "images": [
+      {
+        "alt": "SendFlow",
+        "h": 1081,
+        "src": "https://sendflow.com.br/assets/logo-sendflow-CFfyEAex.svg",
+        "w": 1683
+      }
+    ],
+    "inline_scripts": 0,
+    "requests": [
+      {
+        "bytes": 0,
+        "type": "link",
+        "url": "https://fonts.googleapis.com/css2"
+      },
+      {
+        "bytes": 272692,
+        "type": "script",
+        "url": "http://127.0.0.1:53171/assets/index-DS6QDfZ3.js"
+      },
+      {
+        "bytes": 29549,
+        "type": "link",
+        "url": "http://127.0.0.1:53171/assets/index-8zKK5jeG.css"
+      },
+      {
+        "bytes": 0,
+        "type": "img",
+        "url": "https://sendflow.com.br/assets/logo-sendflow-CFfyEAex.svg"
+      },
+      {
+        "bytes": 303,
+        "type": "other",
+        "url": "http://127.0.0.1:53171/favicon.ico"
+      }
+    ],
+    "scripts": [
+      "http://127.0.0.1:53171/assets/index-DS6QDfZ3.js"
+    ],
+    "stylesheets": [
+      "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap",
+      "http://127.0.0.1:53171/assets/index-8zKK5jeG.css"
+    ]
+  },
+  "breakpoints": [
+    {
+      "count": 1,
+      "px": 390,
+      "query": "max-width 390px"
+    },
+    {
+      "count": 1,
+      "px": 600,
+      "query": "max-width 600px"
+    },
+    {
+      "count": 1,
+      "px": 640,
+      "query": "max-width 640px"
+    },
+    {
+      "count": 1,
+      "px": 767,
+      "query": "max-width 767px"
+    },
+    {
+      "count": 2,
+      "px": 900,
+      "query": "max-width 900px"
+    },
+    {
+      "count": 1,
+      "px": 1023,
+      "query": "max-width 1023px"
+    },
+    {
+      "count": 1,
+      "px": 1100,
+      "query": "max-width 1100px"
+    },
+    {
+      "count": 1,
+      "px": 1180,
+      "query": "max-width 1180px"
+    }
+  ],
+  "design": {
+    "backgrounds": [
+      {
+        "count": 143,
+        "value": "#f0f0f0"
+      },
+      {
+        "count": 3,
+        "value": "#ffffff"
+      },
+      {
+        "count": 2,
+        "value": "#f3f4f6"
+      },
+      {
+        "count": 1,
+        "value": "#151515"
+      },
+      {
+        "count": 1,
+        "value": "#1976d2"
+      }
+    ],
+    "css_variables": {
+      "--bg": "#0b1220",
+      "--bg-elev": "#121c2f",
+      "--bg-muted": "#17233b",
+      "--border": "#24324d",
+      "--danger": "#f87171",
+      "--danger-soft": "rgba(248,113,113,.14)",
+      "--focus": "#2563eb",
+      "--font": "\"Segoe UI\", Inter, system-ui, -apple-system, sans-serif",
+      "--primary": "#60a5fa",
+      "--primary-soft": "rgba(96,165,250,.16)",
+      "--primary-strong": "#3b82f6",
+      "--radius": "12px",
+      "--radius-sm": "8px",
+      "--shadow": "0 1px 2px rgba(0,0,0,.35), 0 10px 28px rgba(0,0,0,.28)",
+      "--sidebar": "#08101d",
+      "--sidebar-active": "#163055",
+      "--sidebar-hover": "#13213a",
+      "--sidebar-muted": "#7f95b3",
+      "--sidebar-text": "#dbe7f5",
+      "--success": "#4ade80",
+      "--success-soft": "rgba(74,222,128,.14)",
+      "--text": "#e6edf7",
+      "--text-muted": "#9fb0c7",
+      "--warning": "#fbbf24",
+      "--warning-soft": "rgba(251,191,36,.14)"
+    },
+    "font_faces": [
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "400"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "400"
+      },
+      {
+        "family": "Poppins",
+        "status": "loaded",
+        "style": "normal",
+        "weight": "400"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "500"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "500"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "500"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "700"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "700"
+      },
+      {
+        "family": "Poppins",
+        "status": "loaded",
+        "style": "normal",
+        "weight": "700"
+      }
+    ],
+    "font_sizes": [
+      {
+        "count": 145,
+        "value": "16px"
+      },
+      {
+        "count": 128,
+        "value": "13.6px"
+      },
+      {
+        "count": 31,
+        "value": "19.5px"
+      },
+      {
+        "count": 2,
+        "value": "12px"
+      },
+      {
+        "count": 1,
+        "value": "27px"
+      }
+    ],
+    "font_weights": [
+      {
+        "count": 274,
+        "value": "400"
+      },
+      {
+        "count": 33,
+        "value": "700"
+      }
+    ],
+    "fonts": [
+      {
+        "count": 304,
+        "value": "Poppins, Roboto, \"Helvetica Neue\", Arial, sans-serif"
+      },
+      {
+        "count": 3,
+        "value": "Poppins, Roboto, Helvetica, Arial, sans-serif"
+      }
+    ],
+    "max_widths": [
+      {
+        "count": 1,
+        "value": "1240px"
+      },
+      {
+        "count": 1,
+        "value": "420px"
+      }
+    ],
+    "radii": [
+      {
+        "count": 2,
+        "value": "16px"
+      },
+      {
+        "count": 1,
+        "value": "8px"
+      },
+      {
+        "count": 1,
+        "value": "4px"
+      }
+    ],
+    "shadows": [
+      {
+        "count": 1,
+        "value": "rgba(0, 0, 0, 0.3) 0px 5px 15px 0px"
+      }
+    ],
+    "spacing": [
+      {
+        "count": 350,
+        "value": "8px"
+      },
+      {
+        "count": 286,
+        "value": "1px"
+      },
+      {
+        "count": 286,
+        "value": "6px"
+      },
+      {
+        "count": 68,
+        "value": "16px"
+      },
+      {
+        "count": 62,
+        "value": "13.6px"
+      },
+      {
+        "count": 33,
+        "value": "24px"
+      },
+      {
+        "count": 30,
+        "value": "40px"
+      },
+      {
+        "count": 8,
+        "value": "12px"
+      },
+      {
+        "count": 7,
+        "value": "20px"
+      },
+      {
+        "count": 1,
+        "value": "32px"
+      },
+      {
+        "count": 1,
+        "value": "56px"
+      },
+      {
+        "count": 1,
+        "value": "28px"
+      },
+      {
+        "count": 1,
+        "value": "36px"
+      },
+      {
+        "count": 1,
+        "value": "14px"
+      },
+      {
+        "count": 1,
+        "value": "10px"
+      },
+      {
+        "count": 1,
+        "value": "4px"
+      }
+    ],
+    "text_colors": [
+      {
+        "count": 170,
+        "value": "#1f2937"
+      },
+      {
+        "count": 125,
+        "value": "#374151"
+      },
+      {
+        "count": 5,
+        "value": "#ffffff"
+      },
+      {
+        "count": 3,
+        "value": "#ffde07"
+      },
+      {
+        "count": 2,
+        "value": "#0f172a"
+      },
+      {
+        "count": 2,
+        "value": "#000000de"
+      }
+    ]
+  },
+  "forms": [],
+  "headings": [
+    {
+      "level": 1,
+      "text": "TERMOS DE USO DA PLATAFORMA SENDFLOW"
+    },
+    {
+      "level": 2,
+      "text": "1. APRESENTAÇÃO"
+    },
+    {
+      "level": 2,
+      "text": "2. SOBRE A SENDFLOW"
+    },
+    {
+      "level": 2,
+      "text": "3. DEFINIÇÕES"
+    },
+    {
+      "level": 2,
+      "text": "4. QUEM PODE UTILIZAR A PLATAFORMA"
+    },
+    {
+      "level": 2,
+      "text": "5. CADASTRO E SEGURANÇA DA CONTA"
+    },
+    {
+      "level": 2,
+      "text": "6. REGISTROS DE ACESSO (LOGS)"
+    },
+    {
+      "level": 2,
+      "text": "7. PLANOS, ASSINATURAS E PAGAMENTOS"
+    },
+    {
+      "level": 2,
+      "text": "8. CANCELAMENTO, REEMBOLSO E ENCERRAMENTO DA ASSINATURA"
+    },
+    {
+      "level": 2,
+      "text": "9. BACKUP"
+    },
+    {
+      "level": 2,
+      "text": "10. UTILIZAÇÃO DA PLATAFORMA"
+    },
+    {
+      "level": 2,
+      "text": "11. NÃO GARANTIA DE RESULTADOS"
+    },
+    {
+      "level": 2,
+      "text": "12. OBRIGAÇÕES DO CLIENTE"
+    },
+    {
+      "level": 2,
+      "text": "13. CONDUTAS PROIBIDAS"
+    },
+    {
+      "level": 2,
+      "text": "14. INTEGRAÇÕES E SERVIÇOS DE TERCEIROS"
+    },
+    {
+      "level": 2,
+      "text": "15. DEPENDÊNCIA DE TERCEIROS"
+    },
+    {
+      "level": 2,
+      "text": "16. POLÍTICAS DO WHATSAPP E DA META"
+    },
+    {
+      "level": 2,
+      "text": "17. API E RECURSOS DE DESENVOLVIMENTO"
+    },
+    {
+      "level": 2,
+      "text": "18. RECURSOS DE INTELIGÊNCIA ARTIFICIAL"
+    },
+    {
+      "level": 2,
+      "text": "19. PROPRIEDADE INTELECTUAL"
+    },
+    {
+      "level": 2,
+      "text": "20. PRIVACIDADE E PROTEÇÃO DE DADOS"
+    },
+    {
+      "level": 2,
+      "text": "21. A TITULARIDADE DOS DADOS"
+    },
+    {
+      "level": 2,
+      "text": "22. DISPONIBILIDADE DA PLATAFORMA"
+    },
+    {
+      "level": 2,
+      "text": "23. LIMITAÇÃO DE RESPONSABILIDADE"
+    },
+    {
+      "level": 2,
+      "text": "24. SUSPENSÃO E ENCERRAMENTO DA CONTA"
+    },
+    {
+      "level": 2,
+      "text": "25. CONFIDENCIALIDADE"
+    },
+    {
+      "level": 2,
+      "text": "26. COMUNICAÇÕES"
+    },
+    {
+      "level": 2,
+      "text": "27. ALTERAÇÕES DA PLATAFORMA"
+    },
+    {
+      "level": 2,
+      "text": "28. SUPORTE, ONBOARDING E TREINAMENTOS"
+    },
+    {
+      "level": 2,
+      "text": "29. ALTERAÇÕES DESTES TERMOS"
+    },
+    {
+      "level": 2,
+      "text": "30. DISPOSIÇÕES GERAIS"
+    },
+    {
+      "level": 2,
+      "text": "Índice"
+    }
+  ],
+  "health": {
+    "errors": [],
+    "failed_requests": []
+  },
+  "lang": "pt-BR",
+  "layouts": [
+    {
+      "blocks": [
+        {
+          "background": "#151515",
+          "h": 55,
+          "pad": [
+            12,
+            20,
+            12,
+            20
+          ],
+          "per_row": 1,
+          "tag": "header",
+          "w": 1425,
+          "y": 0
+        },
+        {
+          "h": 31,
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "nav",
+          "w": 413,
+          "y": 12
+        },
+        {
+          "column": {
+            "max_w": 1240,
+            "pad": [
+              0,
+              0
+            ],
+            "w": 1240,
+            "x": 93
+          },
+          "h": 19426,
+          "heading": "TERMOS DE USO DA PLATAFORMA SENDFLOW",
+          "pad": [
+            32,
+            16,
+            56,
+            16
+          ],
+          "per_row": 2,
+          "tag": "main",
+          "w": 1425,
+          "y": 55
+        },
+        {
+          "background": "#ffffff",
+          "h": 19338,
+          "heading": "TERMOS DE USO DA PLATAFORMA SENDFLOW",
+          "pad": [
+            28,
+            24,
+            36,
+            24
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 280,
+          "y": 87
+        },
+        {
+          "h": 19274,
+          "heading": "TERMOS DE USO DA PLATAFORMA SENDFLOW",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "article",
+          "w": 232,
+          "y": 115
+        },
+        {
+          "h": 553,
+          "heading": "1. APRESENTAÇÃO",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 232,
+          "y": 687
+        },
+        {
+          "h": 553,
+          "heading": "2. SOBRE A SENDFLOW",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 232,
+          "y": 1265
+        },
+        {
+          "h": 553,
+          "heading": "3. DEFINIÇÕES",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 232,
+          "y": 1842
+        },
+        {
+          "h": 582,
+          "heading": "4. QUEM PODE UTILIZAR A PLATAFORMA",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 232,
+          "y": 2419
+        },
+        {
+          "h": 582,
+          "heading": "5. CADASTRO E SEGURANÇA DA CONTA",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 232,
+          "y": 3026
+        },
+        {
+          "h": 582,
+          "heading": "6. REGISTROS DE ACESSO (LOGS)",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 232,
+          "y": 3632
+        },
+        {
+          "h": 635,
+          "heading": "7. PLANOS, ASSINATURAS E PAGAMENTOS",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 232,
+          "y": 4239
+        },
+        {
+          "h": 664,
+          "heading": "8. CANCELAMENTO, REEMBOLSO E ENCERRAMENTO DA ASSINATURA",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 232,
+          "y": 4897
+        },
+        {
+          "h": 553,
+          "heading": "9. BACKUP",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 232,
+          "y": 5585
+        },
+        {
+          "h": 582,
+          "heading": "10. UTILIZAÇÃO DA PLATAFORMA",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 232,
+          "y": 6162
+        },
+        {
+          "h": 582,
+          "heading": "11. NÃO GARANTIA DE RESULTADOS",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 232,
+          "y": 6769
+        },
+        {
+          "h": 582,
+          "heading": "12. OBRIGAÇÕES DO CLIENTE",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 232,
+          "y": 7375
+        },
+        {
+          "h": 582,
+          "heading": "13. CONDUTAS PROIBIDAS",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 232,
+          "y": 7982
+        },
+        {
+          "h": 635,
+          "heading": "14. INTEGRAÇÕES E SERVIÇOS DE TERCEIROS",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 232,
+          "y": 8588
+        },
+        {
+          "h": 582,
+          "heading": "15. DEPENDÊNCIA DE TERCEIROS",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 232,
+          "y": 9247
+        },
+        {
+          "h": 582,
+          "heading": "16. POLÍTICAS DO WHATSAPP E DA META",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 232,
+          "y": 9853
+        },
+        {
+          "h": 582,
+          "heading": "17. API E RECURSOS DE DESENVOLVIMENTO",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 232,
+          "y": 10460
+        },
+        {
+          "h": 611,
+          "heading": "18. RECURSOS DE INTELIGÊNCIA ARTIFICIAL",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 232,
+          "y": 11066
+        },
+        {
+          "h": 582,
+          "heading": "19. PROPRIEDADE INTELECTUAL",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 232,
+          "y": 11702
+        },
+        {
+          "h": 582,
+          "heading": "20. PRIVACIDADE E PROTEÇÃO DE DADOS",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 232,
+          "y": 12308
+        },
+        {
+          "h": 582,
+          "heading": "21. A TITULARIDADE DOS DADOS",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 232,
+          "y": 12915
+        },
+        {
+          "h": 582,
+          "heading": "22. DISPONIBILIDADE DA PLATAFORMA",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 232,
+          "y": 13521
+        },
+        {
+          "h": 582,
+          "heading": "23. LIMITAÇÃO DE RESPONSABILIDADE",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 232,
+          "y": 14127
+        },
+        {
+          "h": 635,
+          "heading": "24. SUSPENSÃO E ENCERRAMENTO DA CONTA",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 232,
+          "y": 14734
+        },
+        {
+          "h": 582,
+          "heading": "25. CONFIDENCIALIDADE",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 232,
+          "y": 15392
+        },
+        {
+          "h": 553,
+          "heading": "26. COMUNICAÇÕES",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 232,
+          "y": 15999
+        },
+        {
+          "h": 582,
+          "heading": "27. ALTERAÇÕES DA PLATAFORMA",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 232,
+          "y": 16576
+        },
+        {
+          "h": 635,
+          "heading": "28. SUPORTE, ONBOARDING E TREINAMENTOS",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 232,
+          "y": 17183
+        },
+        {
+          "h": 582,
+          "heading": "29. ALTERAÇÕES DESTES TERMOS",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 232,
+          "y": 17841
+        },
+        {
+          "h": 582,
+          "heading": "30. DISPOSIÇÕES GERAIS",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 232,
+          "y": 18448
+        },
+        {
+          "background": "#ffffff",
+          "h": 1305,
+          "heading": "Índice",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "aside",
+          "w": 940,
+          "y": 87
+        },
+        {
+          "h": 53,
+          "heading": "Índice",
+          "pad": [
+            14,
+            20,
+            10,
+            20
+          ],
+          "per_row": 1,
+          "tag": "header",
+          "w": 940,
+          "y": 87
+        },
+        {
+          "h": 1252,
+          "pad": [
+            4,
+            12,
+            24,
+            12
+          ],
+          "per_row": 1,
+          "tag": "nav",
+          "w": 940,
+          "y": 140
+        }
+      ],
+      "page_h": 19481,
+      "page_w": 1425,
+      "type": {
+        "body": 14,
+        "h1": 27,
+        "h2": 20,
+        "h3": 0
+      },
+      "width": 1440
+    },
+    {
+      "blocks": [
+        {
+          "background": "#151515",
+          "h": 55,
+          "pad": [
+            12,
+            20,
+            12,
+            20
+          ],
+          "per_row": 1,
+          "tag": "header",
+          "w": 753,
+          "y": 0
+        },
+        {
+          "h": 31,
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "nav",
+          "w": 413,
+          "y": 12
+        },
+        {
+          "column": {
+            "max_w": 1240,
+            "pad": [
+              0,
+              0
+            ],
+            "w": 721,
+            "x": 16
+          },
+          "h": 10150,
+          "heading": "TERMOS DE USO DA PLATAFORMA SENDFLOW",
+          "pad": [
+            32,
+            16,
+            56,
+            16
+          ],
+          "per_row": 1,
+          "tag": "main",
+          "w": 753,
+          "y": 55
+        },
+        {
+          "background": "#ffffff",
+          "h": 8737,
+          "heading": "TERMOS DE USO DA PLATAFORMA SENDFLOW",
+          "pad": [
+            28,
+            24,
+            36,
+            24
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 721,
+          "y": 87
+        },
+        {
+          "h": 8673,
+          "heading": "TERMOS DE USO DA PLATAFORMA SENDFLOW",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "article",
+          "w": 673,
+          "y": 115
+        },
+        {
+          "h": 252,
+          "heading": "1. APRESENTAÇÃO",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 673,
+          "y": 399
+        },
+        {
+          "h": 252,
+          "heading": "2. SOBRE A SENDFLOW",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 673,
+          "y": 675
+        },
+        {
+          "h": 252,
+          "heading": "3. DEFINIÇÕES",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 673,
+          "y": 952
+        },
+        {
+          "h": 252,
+          "heading": "4. QUEM PODE UTILIZAR A PLATAFORMA",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 673,
+          "y": 1228
+        },
+        {
+          "h": 252,
+          "heading": "5. CADASTRO E SEGURANÇA DA CONTA",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 673,
+          "y": 1504
+        },
+        {
+          "h": 252,
+          "heading": "6. REGISTROS DE ACESSO (LOGS)",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 673,
+          "y": 1780
+        },
+        {
+          "h": 252,
+          "heading": "7. PLANOS, ASSINATURAS E PAGAMENTOS",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 673,
+          "y": 2057
+        },
+        {
+          "h": 252,
+          "heading": "8. CANCELAMENTO, REEMBOLSO E ENCERRAMENTO DA ASSINATURA",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 673,
+          "y": 2333
+        },
+        {
+          "h": 252,
+          "heading": "9. BACKUP",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 673,
+          "y": 2609
+        },
+        {
+          "h": 252,
+          "heading": "10. UTILIZAÇÃO DA PLATAFORMA",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 673,
+          "y": 2885
+        },
+        {
+          "h": 252,
+          "heading": "11. NÃO GARANTIA DE RESULTADOS",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 673,
+          "y": 3162
+        },
+        {
+          "h": 252,
+          "heading": "12. OBRIGAÇÕES DO CLIENTE",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 673,
+          "y": 3438
+        },
+        {
+          "h": 252,
+          "heading": "13. CONDUTAS PROIBIDAS",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 673,
+          "y": 3714
+        },
+        {
+          "h": 252,
+          "heading": "14. INTEGRAÇÕES E SERVIÇOS DE TERCEIROS",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 673,
+          "y": 3990
+        },
+        {
+          "h": 252,
+          "heading": "15. DEPENDÊNCIA DE TERCEIROS",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 673,
+          "y": 4267
+        },
+        {
+          "h": 252,
+          "heading": "16. POLÍTICAS DO WHATSAPP E DA META",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 673,
+          "y": 4543
+        },
+        {
+          "h": 252,
+          "heading": "17. API E RECURSOS DE DESENVOLVIMENTO",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 673,
+          "y": 4819
+        },
+        {
+          "h": 252,
+          "heading": "18. RECURSOS DE INTELIGÊNCIA ARTIFICIAL",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 673,
+          "y": 5095
+        },
+        {
+          "h": 252,
+          "heading": "19. PROPRIEDADE INTELECTUAL",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 673,
+          "y": 5372
+        },
+        {
+          "h": 252,
+          "heading": "20. PRIVACIDADE E PROTEÇÃO DE DADOS",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 673,
+          "y": 5648
+        },
+        {
+          "h": 252,
+          "heading": "21. A TITULARIDADE DOS DADOS",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 673,
+          "y": 5924
+        },
+        {
+          "h": 252,
+          "heading": "22. DISPONIBILIDADE DA PLATAFORMA",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 673,
+          "y": 6200
+        },
+        {
+          "h": 252,
+          "heading": "23. LIMITAÇÃO DE RESPONSABILIDADE",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 673,
+          "y": 6477
+        },
+        {
+          "h": 252,
+          "heading": "24. SUSPENSÃO E ENCERRAMENTO DA CONTA",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 673,
+          "y": 6753
+        },
+        {
+          "h": 252,
+          "heading": "25. CONFIDENCIALIDADE",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 673,
+          "y": 7029
+        },
+        {
+          "h": 252,
+          "heading": "26. COMUNICAÇÕES",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 673,
+          "y": 7305
+        },
+        {
+          "h": 252,
+          "heading": "27. ALTERAÇÕES DA PLATAFORMA",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 673,
+          "y": 7582
+        },
+        {
+          "h": 252,
+          "heading": "28. SUPORTE, ONBOARDING E TREINAMENTOS",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 673,
+          "y": 7858
+        },
+        {
+          "h": 252,
+          "heading": "29. ALTERAÇÕES DESTES TERMOS",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 673,
+          "y": 8134
+        },
+        {
+          "h": 252,
+          "heading": "30. DISPOSIÇÕES GERAIS",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 673,
+          "y": 8410
+        },
+        {
+          "background": "#ffffff",
+          "h": 1305,
+          "heading": "Índice",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "aside",
+          "w": 721,
+          "y": 8844
+        },
+        {
+          "h": 53,
+          "heading": "Índice",
+          "pad": [
+            14,
+            20,
+            10,
+            20
+          ],
+          "per_row": 1,
+          "tag": "header",
+          "w": 721,
+          "y": 8844
+        },
+        {
+          "h": 1252,
+          "pad": [
+            4,
+            12,
+            24,
+            12
+          ],
+          "per_row": 1,
+          "tag": "nav",
+          "w": 721,
+          "y": 8897
+        }
+      ],
+      "page_h": 10205,
+      "page_w": 753,
+      "type": {
+        "body": 14,
+        "h1": 27,
+        "h2": 20,
+        "h3": 0
+      },
+      "width": 768
+    },
+    {
+      "blocks": [
+        {
+          "background": "#151515",
+          "h": 86,
+          "pad": [
+            12,
+            20,
+            12,
+            20
+          ],
+          "per_row": 1,
+          "tag": "header",
+          "w": 390,
+          "y": 0
+        },
+        {
+          "h": 62,
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "nav",
+          "w": 271,
+          "y": 12
+        },
+        {
+          "column": {
+            "max_w": 1240,
+            "pad": [
+              0,
+              0
+            ],
+            "w": 374,
+            "x": 8
+          },
+          "h": 12304,
+          "heading": "TERMOS DE USO DA PLATAFORMA SENDFLOW",
+          "pad": [
+            16,
+            8,
+            48,
+            8
+          ],
+          "per_row": 4,
+          "tag": "main",
+          "w": 390,
+          "y": 86
+        },
+        {
+          "background": "#ffffff",
+          "h": 10895,
+          "heading": "TERMOS DE USO DA PLATAFORMA SENDFLOW",
+          "pad": [
+            76,
+            16,
+            28,
+            16
+          ],
+          "per_row": 4,
+          "tag": "section",
+          "w": 374,
+          "y": 102
+        },
+        {
+          "h": 10791,
+          "heading": "TERMOS DE USO DA PLATAFORMA SENDFLOW",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 4,
+          "tag": "article",
+          "w": 342,
+          "y": 178
+        },
+        {
+          "h": 318,
+          "heading": "1. APRESENTAÇÃO",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 342,
+          "y": 485
+        },
+        {
+          "h": 318,
+          "heading": "2. SOBRE A SENDFLOW",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 342,
+          "y": 827
+        },
+        {
+          "h": 318,
+          "heading": "3. DEFINIÇÕES",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 342,
+          "y": 1169
+        },
+        {
+          "h": 318,
+          "heading": "4. QUEM PODE UTILIZAR A PLATAFORMA",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 342,
+          "y": 1511
+        },
+        {
+          "h": 318,
+          "heading": "5. CADASTRO E SEGURANÇA DA CONTA",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 342,
+          "y": 1854
+        },
+        {
+          "h": 318,
+          "heading": "6. REGISTROS DE ACESSO (LOGS)",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 342,
+          "y": 2196
+        },
+        {
+          "h": 318,
+          "heading": "7. PLANOS, ASSINATURAS E PAGAMENTOS",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 342,
+          "y": 2538
+        },
+        {
+          "h": 358,
+          "heading": "8. CANCELAMENTO, REEMBOLSO E ENCERRAMENTO DA ASSINATURA",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 342,
+          "y": 2880
+        },
+        {
+          "h": 318,
+          "heading": "9. BACKUP",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 342,
+          "y": 3262
+        },
+        {
+          "h": 318,
+          "heading": "10. UTILIZAÇÃO DA PLATAFORMA",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 342,
+          "y": 3604
+        },
+        {
+          "h": 318,
+          "heading": "11. NÃO GARANTIA DE RESULTADOS",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 342,
+          "y": 3946
+        },
+        {
+          "h": 318,
+          "heading": "12. OBRIGAÇÕES DO CLIENTE",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 342,
+          "y": 4289
+        },
+        {
+          "h": 318,
+          "heading": "13. CONDUTAS PROIBIDAS",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 342,
+          "y": 4631
+        },
+        {
+          "h": 318,
+          "heading": "14. INTEGRAÇÕES E SERVIÇOS DE TERCEIROS",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 342,
+          "y": 4973
+        },
+        {
+          "h": 318,
+          "heading": "15. DEPENDÊNCIA DE TERCEIROS",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 342,
+          "y": 5315
+        },
+        {
+          "h": 318,
+          "heading": "16. POLÍTICAS DO WHATSAPP E DA META",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 342,
+          "y": 5657
+        },
+        {
+          "h": 318,
+          "heading": "17. API E RECURSOS DE DESENVOLVIMENTO",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 342,
+          "y": 6000
+        },
+        {
+          "h": 318,
+          "heading": "18. RECURSOS DE INTELIGÊNCIA ARTIFICIAL",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 342,
+          "y": 6342
+        },
+        {
+          "h": 318,
+          "heading": "19. PROPRIEDADE INTELECTUAL",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 342,
+          "y": 6684
+        },
+        {
+          "h": 318,
+          "heading": "20. PRIVACIDADE E PROTEÇÃO DE DADOS",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 342,
+          "y": 7026
+        },
+        {
+          "h": 318,
+          "heading": "21. A TITULARIDADE DOS DADOS",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 342,
+          "y": 7368
+        },
+        {
+          "h": 318,
+          "heading": "22. DISPONIBILIDADE DA PLATAFORMA",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 342,
+          "y": 7710
+        },
+        {
+          "h": 318,
+          "heading": "23. LIMITAÇÃO DE RESPONSABILIDADE",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 342,
+          "y": 8053
+        },
+        {
+          "h": 318,
+          "heading": "24. SUSPENSÃO E ENCERRAMENTO DA CONTA",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 342,
+          "y": 8395
+        },
+        {
+          "h": 318,
+          "heading": "25. CONFIDENCIALIDADE",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 342,
+          "y": 8737
+        },
+        {
+          "h": 318,
+          "heading": "26. COMUNICAÇÕES",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 342,
+          "y": 9079
+        },
+        {
+          "h": 318,
+          "heading": "27. ALTERAÇÕES DA PLATAFORMA",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 342,
+          "y": 9421
+        },
+        {
+          "h": 318,
+          "heading": "28. SUPORTE, ONBOARDING E TREINAMENTOS",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 342,
+          "y": 9764
+        },
+        {
+          "h": 318,
+          "heading": "29. ALTERAÇÕES DESTES TERMOS",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 342,
+          "y": 10106
+        },
+        {
+          "h": 318,
+          "heading": "30. DISPOSIÇÕES GERAIS",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 342,
+          "y": 10448
+        },
+        {
+          "background": "#ffffff",
+          "h": 1325,
+          "heading": "Índice",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "aside",
+          "w": 374,
+          "y": 11017
+        },
+        {
+          "h": 53,
+          "heading": "Índice",
+          "pad": [
+            14,
+            20,
+            10,
+            20
+          ],
+          "per_row": 1,
+          "tag": "header",
+          "w": 374,
+          "y": 11017
+        },
+        {
+          "h": 1272,
+          "pad": [
+            4,
+            12,
+            24,
+            12
+          ],
+          "per_row": 1,
+          "tag": "nav",
+          "w": 374,
+          "y": 11070
+        }
+      ],
+      "page_h": 12390,
+      "page_w": 390,
+      "type": {
+        "body": 11,
+        "h1": 16,
+        "h2": 14,
+        "h3": 0
+      },
+      "width": 390
+    }
+  ],
+  "links": [
+    {
+      "href": "http://127.0.0.1:53171/",
+      "text": "Início"
+    },
+    {
+      "href": "http://127.0.0.1:53171/login",
+      "text": "Entrar"
+    },
+    {
+      "href": "http://127.0.0.1:53171/politica-de-privacidade",
+      "text": "Privacidade"
+    },
+    {
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-1",
+      "text": "1. APRESENTAÇÃO"
+    },
+    {
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-2",
+      "text": "2. SOBRE A SENDFLOW"
+    },
+    {
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-3",
+      "text": "3. DEFINIÇÕES"
+    },
+    {
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-4",
+      "text": "4. QUEM PODE UTILIZAR A PLATAFORMA"
+    },
+    {
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-5",
+      "text": "5. CADASTRO E SEGURANÇA DA CONTA"
+    },
+    {
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-6",
+      "text": "6. REGISTROS DE ACESSO (LOGS)"
+    },
+    {
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-7",
+      "text": "7. PLANOS, ASSINATURAS E PAGAMENTOS"
+    },
+    {
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-8",
+      "text": "8. CANCELAMENTO, REEMBOLSO E ENCERRAMENTO DA ASSINATURA"
+    },
+    {
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-9",
+      "text": "9. BACKUP"
+    },
+    {
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-10",
+      "text": "10. UTILIZAÇÃO DA PLATAFORMA"
+    },
+    {
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-11",
+      "text": "11. NÃO GARANTIA DE RESULTADOS"
+    },
+    {
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-12",
+      "text": "12. OBRIGAÇÕES DO CLIENTE"
+    },
+    {
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-13",
+      "text": "13. CONDUTAS PROIBIDAS"
+    },
+    {
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-14",
+      "text": "14. INTEGRAÇÕES E SERVIÇOS DE TERCEIROS"
+    },
+    {
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-15",
+      "text": "15. DEPENDÊNCIA DE TERCEIROS"
+    },
+    {
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-16",
+      "text": "16. POLÍTICAS DO WHATSAPP E DA META"
+    },
+    {
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-17",
+      "text": "17. API E RECURSOS DE DESENVOLVIMENTO"
+    },
+    {
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-18",
+      "text": "18. RECURSOS DE INTELIGÊNCIA ARTIFICIAL"
+    },
+    {
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-19",
+      "text": "19. PROPRIEDADE INTELECTUAL"
+    },
+    {
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-20",
+      "text": "20. PRIVACIDADE E PROTEÇÃO DE DADOS"
+    },
+    {
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-21",
+      "text": "21. A TITULARIDADE DOS DADOS"
+    },
+    {
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-22",
+      "text": "22. DISPONIBILIDADE DA PLATAFORMA"
+    },
+    {
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-23",
+      "text": "23. LIMITAÇÃO DE RESPONSABILIDADE"
+    },
+    {
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-24",
+      "text": "24. SUSPENSÃO E ENCERRAMENTO DA CONTA"
+    },
+    {
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-25",
+      "text": "25. CONFIDENCIALIDADE"
+    },
+    {
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-26",
+      "text": "26. COMUNICAÇÕES"
+    },
+    {
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-27",
+      "text": "27. ALTERAÇÕES DA PLATAFORMA"
+    },
+    {
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-28",
+      "text": "28. SUPORTE, ONBOARDING E TREINAMENTOS"
+    },
+    {
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-29",
+      "text": "29. ALTERAÇÕES DESTES TERMOS"
+    },
+    {
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-30",
+      "text": "30. DISPOSIÇÕES GERAIS"
+    },
+    {
+      "href": "http://127.0.0.1:53171/politica-de-privacidade",
+      "text": "Política de Privacidade"
+    }
+  ],
+  "meta": {
+    "description": "",
+    "icons": [
+      "http://127.0.0.1:53171/favicon.ico"
+    ],
+    "og_image": "",
+    "og_title": "",
+    "theme_color": ""
+  },
+  "outline": [
+    {
+      "background": "#151515",
+      "box": {
+        "h": 55,
+        "w": 1425,
+        "x": 0,
+        "y": 0
+      },
+      "class": "sf-legal-banner",
+      "color": "#ffffff",
+      "depth": 4,
+      "display": "flex",
+      "flex": "row",
+      "font": "16px 400",
+      "tag": "header"
+    },
+    {
+      "box": {
+        "h": 31,
+        "w": 413,
+        "x": 992,
+        "y": 12
+      },
+      "color": "#ffffff",
+      "depth": 5,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "nav"
+    },
+    {
+      "box": {
+        "h": 19,
+        "w": 36,
+        "x": 1004,
+        "y": 19
+      },
+      "color": "#ffde07",
+      "depth": 6,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/",
+      "tag": "a",
+      "text": "Início"
+    },
+    {
+      "box": {
+        "h": 19,
+        "w": 40,
+        "x": 1052,
+        "y": 19
+      },
+      "color": "#ffde07",
+      "depth": 6,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/login",
+      "tag": "a",
+      "text": "Entrar"
+    },
+    {
+      "box": {
+        "h": 19,
+        "w": 81,
+        "x": 1104,
+        "y": 19
+      },
+      "color": "#ffde07",
+      "depth": 6,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/politica-de-privacidade",
+      "tag": "a",
+      "text": "Privacidade"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 60,
+        "x": 1185,
+        "y": 12
+      },
+      "color": "#ffffff",
+      "depth": 6,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Menu"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 82,
+        "x": 1245,
+        "y": 12
+      },
+      "color": "#ffffff",
+      "depth": 6,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Contato"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 78,
+        "x": 1327,
+        "y": 12
+      },
+      "color": "#ffffff",
+      "depth": 6,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Suporte"
+    },
+    {
+      "box": {
+        "h": 19426,
+        "w": 1425,
+        "x": 0,
+        "y": 55
+      },
+      "class": "sf-legal-main",
+      "color": "#1f2937",
+      "depth": 4,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "main"
+    },
+    {
+      "background": "#ffffff",
+      "box": {
+        "h": 19338,
+        "w": 280,
+        "x": 93,
+        "y": 87
+      },
+      "class": "sf-legal-article-wrap",
+      "color": "#1f2937",
+      "depth": 6,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 19274,
+        "w": 232,
+        "x": 117,
+        "y": 115
+      },
+      "color": "#1f2937",
+      "depth": 7,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "article"
+    },
+    {
+      "box": {
+        "h": 120,
+        "w": 232,
+        "x": 117,
+        "y": 115
+      },
+      "color": "#0f172a",
+      "depth": 8,
+      "font": "27px 700",
+      "id": "termos-title",
+      "tag": "h1",
+      "text": "TERMOS DE USO DA PLATAFORMA SENDFLOW"
+    },
+    {
+      "alt": "SendFlow",
+      "box": {
+        "h": 48,
+        "w": 75,
+        "x": 117,
+        "y": 255
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "font": "16px 400",
+      "src": "https://sendflow.com.br/assets/logo-sendflow-CFfyEAex.svg",
+      "tag": "img"
+    },
+    {
+      "box": {
+        "h": 324,
+        "w": 232,
+        "x": 117,
+        "y": 340
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Estes Termos de Uso regulam o acesso e o uso da plataforma SendFlow pelo cliente, com regras para cadastro, planos, serviços, integrações e responsabilidades. Por meio desta plataforma, o usuário pode"
+    },
+    {
+      "box": {
+        "h": 553,
+        "w": 232,
+        "x": 117,
+        "y": 687
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "id": "sec-1",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 29,
+        "w": 232,
+        "x": 117,
+        "y": 687
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "1. APRESENTAÇÃO"
+    },
+    {
+      "box": {
+        "h": 277,
+        "w": 232,
+        "x": 117,
+        "y": 730
+      },
+      "color": "#374151",
+      "depth": 9,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta seção descreve as condições da plataforma SendFlow relacionadas a 1. apresentação, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utiliza"
+    },
+    {
+      "box": {
+        "h": 116,
+        "w": 232,
+        "x": 117,
+        "y": 1023
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 106,
+        "x": 117,
+        "y": 1163
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 73,
+        "x": 230,
+        "y": 1163
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 81,
+        "x": 117,
+        "y": 1210
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Recusar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 96,
+        "x": 205,
+        "y": 1210
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Continuar"
+    },
+    {
+      "box": {
+        "h": 553,
+        "w": 232,
+        "x": 117,
+        "y": 1265
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "id": "sec-2",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 29,
+        "w": 232,
+        "x": 117,
+        "y": 1265
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "2. SOBRE A SENDFLOW"
+    },
+    {
+      "box": {
+        "h": 277,
+        "w": 232,
+        "x": 117,
+        "y": 1307
+      },
+      "color": "#374151",
+      "depth": 9,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta seção descreve as condições da plataforma SendFlow relacionadas a 2. sobre a sendflow, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá uti"
+    },
+    {
+      "box": {
+        "h": 116,
+        "w": 232,
+        "x": 117,
+        "y": 1600
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 106,
+        "x": 117,
+        "y": 1740
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 73,
+        "x": 230,
+        "y": 1740
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 81,
+        "x": 117,
+        "y": 1787
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Recusar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 96,
+        "x": 205,
+        "y": 1787
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Continuar"
+    },
+    {
+      "box": {
+        "h": 553,
+        "w": 232,
+        "x": 117,
+        "y": 1842
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "id": "sec-3",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 29,
+        "w": 232,
+        "x": 117,
+        "y": 1842
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "3. DEFINIÇÕES"
+    },
+    {
+      "box": {
+        "h": 277,
+        "w": 232,
+        "x": 117,
+        "y": 1885
+      },
+      "color": "#374151",
+      "depth": 9,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta seção descreve as condições da plataforma SendFlow relacionadas a 3. definições, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar "
+    },
+    {
+      "box": {
+        "h": 116,
+        "w": 232,
+        "x": 117,
+        "y": 2178
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 106,
+        "x": 117,
+        "y": 2317
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 73,
+        "x": 230,
+        "y": 2317
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 81,
+        "x": 117,
+        "y": 2364
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Recusar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 96,
+        "x": 205,
+        "y": 2364
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Continuar"
+    },
+    {
+      "box": {
+        "h": 582,
+        "w": 232,
+        "x": 117,
+        "y": 2419
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "id": "sec-4",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 58,
+        "w": 232,
+        "x": 117,
+        "y": 2419
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "4. QUEM PODE UTILIZAR A PLATAFORMA"
+    },
+    {
+      "box": {
+        "h": 277,
+        "w": 232,
+        "x": 117,
+        "y": 2491
+      },
+      "color": "#374151",
+      "depth": 9,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta seção descreve as condições da plataforma SendFlow relacionadas a 4. quem pode utilizar a plataforma, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usu"
+    },
+    {
+      "box": {
+        "h": 116,
+        "w": 232,
+        "x": 117,
+        "y": 2784
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 106,
+        "x": 117,
+        "y": 2924
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 73,
+        "x": 230,
+        "y": 2924
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 81,
+        "x": 117,
+        "y": 2971
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Recusar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 96,
+        "x": 205,
+        "y": 2971
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Continuar"
+    },
+    {
+      "box": {
+        "h": 582,
+        "w": 232,
+        "x": 117,
+        "y": 3026
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "id": "sec-5",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 58,
+        "w": 232,
+        "x": 117,
+        "y": 3026
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "5. CADASTRO E SEGURANÇA DA CONTA"
+    },
+    {
+      "box": {
+        "h": 277,
+        "w": 232,
+        "x": 117,
+        "y": 3098
+      },
+      "color": "#374151",
+      "depth": 9,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta seção descreve as condições da plataforma SendFlow relacionadas a 5. cadastro e segurança da conta, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuár"
+    },
+    {
+      "box": {
+        "h": 116,
+        "w": 232,
+        "x": 117,
+        "y": 3391
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 106,
+        "x": 117,
+        "y": 3530
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 73,
+        "x": 230,
+        "y": 3530
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 81,
+        "x": 117,
+        "y": 3577
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Recusar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 96,
+        "x": 205,
+        "y": 3577
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Continuar"
+    },
+    {
+      "box": {
+        "h": 582,
+        "w": 232,
+        "x": 117,
+        "y": 3632
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "id": "sec-6",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 58,
+        "w": 232,
+        "x": 117,
+        "y": 3632
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "6. REGISTROS DE ACESSO (LOGS)"
+    },
+    {
+      "box": {
+        "h": 277,
+        "w": 232,
+        "x": 117,
+        "y": 3704
+      },
+      "color": "#374151",
+      "depth": 9,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta seção descreve as condições da plataforma SendFlow relacionadas a 6. registros de acesso (logs), para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário "
+    },
+    {
+      "box": {
+        "h": 116,
+        "w": 232,
+        "x": 117,
+        "y": 3997
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 106,
+        "x": 117,
+        "y": 4137
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 73,
+        "x": 230,
+        "y": 4137
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 81,
+        "x": 117,
+        "y": 4184
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Recusar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 96,
+        "x": 205,
+        "y": 4184
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Continuar"
+    },
+    {
+      "box": {
+        "h": 635,
+        "w": 232,
+        "x": 117,
+        "y": 4239
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "id": "sec-7",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 87,
+        "w": 232,
+        "x": 117,
+        "y": 4239
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "7. PLANOS, ASSINATURAS E PAGAMENTOS"
+    },
+    {
+      "box": {
+        "h": 300,
+        "w": 232,
+        "x": 117,
+        "y": 4339
+      },
+      "color": "#374151",
+      "depth": 9,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta seção descreve as condições da plataforma SendFlow relacionadas a 7. planos, assinaturas e pagamentos, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O us"
+    },
+    {
+      "box": {
+        "h": 116,
+        "w": 232,
+        "x": 117,
+        "y": 4656
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 106,
+        "x": 117,
+        "y": 4795
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 73,
+        "x": 230,
+        "y": 4795
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 81,
+        "x": 117,
+        "y": 4842
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Recusar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 96,
+        "x": 205,
+        "y": 4842
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Continuar"
+    },
+    {
+      "box": {
+        "h": 664,
+        "w": 232,
+        "x": 117,
+        "y": 4897
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "id": "sec-8",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 116,
+        "w": 232,
+        "x": 117,
+        "y": 4897
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "8. CANCELAMENTO, REEMBOLSO E ENCERRAMENTO DA ASSINATURA"
+    },
+    {
+      "box": {
+        "h": 300,
+        "w": 232,
+        "x": 117,
+        "y": 5027
+      },
+      "color": "#374151",
+      "depth": 9,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta seção descreve as condições da plataforma SendFlow relacionadas a 8. cancelamento, reembolso e encerramento da assinatura, para que o cliente compreenda os serviços, as regras de uso e as obrigaç"
+    },
+    {
+      "box": {
+        "h": 116,
+        "w": 232,
+        "x": 117,
+        "y": 5343
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 106,
+        "x": 117,
+        "y": 5483
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 73,
+        "x": 230,
+        "y": 5483
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 81,
+        "x": 117,
+        "y": 5530
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Recusar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 96,
+        "x": 205,
+        "y": 5530
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Continuar"
+    },
+    {
+      "box": {
+        "h": 553,
+        "w": 232,
+        "x": 117,
+        "y": 5585
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "id": "sec-9",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 29,
+        "w": 232,
+        "x": 117,
+        "y": 5585
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "9. BACKUP"
+    },
+    {
+      "box": {
+        "h": 277,
+        "w": 232,
+        "x": 117,
+        "y": 5628
+      },
+      "color": "#374151",
+      "depth": 9,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta seção descreve as condições da plataforma SendFlow relacionadas a 9. backup, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar ou n"
+    },
+    {
+      "box": {
+        "h": 116,
+        "w": 232,
+        "x": 117,
+        "y": 5921
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 106,
+        "x": 117,
+        "y": 6060
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 73,
+        "x": 230,
+        "y": 6060
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 81,
+        "x": 117,
+        "y": 6107
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Recusar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 96,
+        "x": 205,
+        "y": 6107
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Continuar"
+    },
+    {
+      "box": {
+        "h": 582,
+        "w": 232,
+        "x": 117,
+        "y": 6162
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "id": "sec-10",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 58,
+        "w": 232,
+        "x": 117,
+        "y": 6162
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "10. UTILIZAÇÃO DA PLATAFORMA"
+    },
+    {
+      "box": {
+        "h": 277,
+        "w": 232,
+        "x": 117,
+        "y": 6234
+      },
+      "color": "#374151",
+      "depth": 9,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta seção descreve as condições da plataforma SendFlow relacionadas a 10. utilização da plataforma, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário p"
+    },
+    {
+      "box": {
+        "h": 116,
+        "w": 232,
+        "x": 117,
+        "y": 6527
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 106,
+        "x": 117,
+        "y": 6667
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 73,
+        "x": 230,
+        "y": 6667
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 81,
+        "x": 117,
+        "y": 6714
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Recusar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 96,
+        "x": 205,
+        "y": 6714
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Continuar"
+    },
+    {
+      "box": {
+        "h": 582,
+        "w": 232,
+        "x": 117,
+        "y": 6769
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "id": "sec-11",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 58,
+        "w": 232,
+        "x": 117,
+        "y": 6769
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "11. NÃO GARANTIA DE RESULTADOS"
+    },
+    {
+      "box": {
+        "h": 277,
+        "w": 232,
+        "x": 117,
+        "y": 6840
+      },
+      "color": "#374151",
+      "depth": 9,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta seção descreve as condições da plataforma SendFlow relacionadas a 11. não garantia de resultados, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário"
+    },
+    {
+      "box": {
+        "h": 116,
+        "w": 232,
+        "x": 117,
+        "y": 7134
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 106,
+        "x": 117,
+        "y": 7273
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 73,
+        "x": 230,
+        "y": 7273
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 81,
+        "x": 117,
+        "y": 7320
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Recusar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 96,
+        "x": 205,
+        "y": 7320
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Continuar"
+    },
+    {
+      "box": {
+        "h": 582,
+        "w": 232,
+        "x": 117,
+        "y": 7375
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "id": "sec-12",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 58,
+        "w": 232,
+        "x": 117,
+        "y": 7375
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "12. OBRIGAÇÕES DO CLIENTE"
+    },
+    {
+      "box": {
+        "h": 277,
+        "w": 232,
+        "x": 117,
+        "y": 7447
+      },
+      "color": "#374151",
+      "depth": 9,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta seção descreve as condições da plataforma SendFlow relacionadas a 12. obrigações do cliente, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário pode"
+    },
+    {
+      "box": {
+        "h": 116,
+        "w": 232,
+        "x": 117,
+        "y": 7740
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 106,
+        "x": 117,
+        "y": 7880
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 73,
+        "x": 230,
+        "y": 7880
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 81,
+        "x": 117,
+        "y": 7927
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Recusar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 96,
+        "x": 205,
+        "y": 7927
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Continuar"
+    },
+    {
+      "box": {
+        "h": 582,
+        "w": 232,
+        "x": 117,
+        "y": 7982
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "id": "sec-13",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 58,
+        "w": 232,
+        "x": 117,
+        "y": 7982
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "13. CONDUTAS PROIBIDAS"
+    },
+    {
+      "box": {
+        "h": 277,
+        "w": 232,
+        "x": 117,
+        "y": 8053
+      },
+      "color": "#374151",
+      "depth": 9,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta seção descreve as condições da plataforma SendFlow relacionadas a 13. condutas proibidas, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá "
+    },
+    {
+      "box": {
+        "h": 116,
+        "w": 232,
+        "x": 117,
+        "y": 8347
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 106,
+        "x": 117,
+        "y": 8486
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 73,
+        "x": 230,
+        "y": 8486
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 81,
+        "x": 117,
+        "y": 8533
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Recusar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 96,
+        "x": 205,
+        "y": 8533
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Continuar"
+    },
+    {
+      "box": {
+        "h": 635,
+        "w": 232,
+        "x": 117,
+        "y": 8588
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "id": "sec-14",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 87,
+        "w": 232,
+        "x": 117,
+        "y": 8588
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "14. INTEGRAÇÕES E SERVIÇOS DE TERCEIROS"
+    },
+    {
+      "box": {
+        "h": 300,
+        "w": 232,
+        "x": 117,
+        "y": 8689
+      },
+      "color": "#374151",
+      "depth": 9,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta seção descreve as condições da plataforma SendFlow relacionadas a 14. integrações e serviços de terceiros, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. "
+    },
+    {
+      "box": {
+        "h": 116,
+        "w": 232,
+        "x": 117,
+        "y": 9005
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 106,
+        "x": 117,
+        "y": 9145
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 73,
+        "x": 230,
+        "y": 9145
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 81,
+        "x": 117,
+        "y": 9192
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Recusar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 96,
+        "x": 205,
+        "y": 9192
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Continuar"
+    },
+    {
+      "box": {
+        "h": 582,
+        "w": 232,
+        "x": 117,
+        "y": 9247
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "id": "sec-15",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 58,
+        "w": 232,
+        "x": 117,
+        "y": 9247
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "15. DEPENDÊNCIA DE TERCEIROS"
+    },
+    {
+      "box": {
+        "h": 277,
+        "w": 232,
+        "x": 117,
+        "y": 9318
+      },
+      "color": "#374151",
+      "depth": 9,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta seção descreve as condições da plataforma SendFlow relacionadas a 15. dependência de terceiros, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário p"
+    },
+    {
+      "box": {
+        "h": 116,
+        "w": 232,
+        "x": 117,
+        "y": 9612
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 106,
+        "x": 117,
+        "y": 9751
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 73,
+        "x": 230,
+        "y": 9751
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 81,
+        "x": 117,
+        "y": 9798
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Recusar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 96,
+        "x": 205,
+        "y": 9798
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Continuar"
+    },
+    {
+      "box": {
+        "h": 582,
+        "w": 232,
+        "x": 117,
+        "y": 9853
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "id": "sec-16",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 58,
+        "w": 232,
+        "x": 117,
+        "y": 9853
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "16. POLÍTICAS DO WHATSAPP E DA META"
+    },
+    {
+      "box": {
+        "h": 277,
+        "w": 232,
+        "x": 117,
+        "y": 9925
+      },
+      "color": "#374151",
+      "depth": 9,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta seção descreve as condições da plataforma SendFlow relacionadas a 16. políticas do whatsapp e da meta, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O us"
+    },
+    {
+      "box": {
+        "h": 116,
+        "w": 232,
+        "x": 117,
+        "y": 10218
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 106,
+        "x": 117,
+        "y": 10358
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 73,
+        "x": 230,
+        "y": 10358
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 81,
+        "x": 117,
+        "y": 10405
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Recusar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 96,
+        "x": 205,
+        "y": 10405
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Continuar"
+    },
+    {
+      "box": {
+        "h": 582,
+        "w": 232,
+        "x": 117,
+        "y": 10460
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "id": "sec-17",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 58,
+        "w": 232,
+        "x": 117,
+        "y": 10460
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "17. API E RECURSOS DE DESENVOLVIMENTO"
+    },
+    {
+      "box": {
+        "h": 277,
+        "w": 232,
+        "x": 117,
+        "y": 10531
+      },
+      "color": "#374151",
+      "depth": 9,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta seção descreve as condições da plataforma SendFlow relacionadas a 17. api e recursos de desenvolvimento, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O "
+    },
+    {
+      "box": {
+        "h": 116,
+        "w": 232,
+        "x": 117,
+        "y": 10825
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 106,
+        "x": 117,
+        "y": 10964
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 73,
+        "x": 230,
+        "y": 10964
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 81,
+        "x": 117,
+        "y": 11011
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Recusar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 96,
+        "x": 205,
+        "y": 11011
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Continuar"
+    },
+    {
+      "box": {
+        "h": 611,
+        "w": 232,
+        "x": 117,
+        "y": 11066
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "id": "sec-18",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 87,
+        "w": 232,
+        "x": 117,
+        "y": 11066
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "18. RECURSOS DE INTELIGÊNCIA ARTIFICIAL"
+    },
+    {
+      "box": {
+        "h": 277,
+        "w": 232,
+        "x": 117,
+        "y": 11167
+      },
+      "color": "#374151",
+      "depth": 9,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta seção descreve as condições da plataforma SendFlow relacionadas a 18. recursos de inteligência artificial, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. "
+    },
+    {
+      "box": {
+        "h": 116,
+        "w": 232,
+        "x": 117,
+        "y": 11460
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 106,
+        "x": 117,
+        "y": 11600
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 73,
+        "x": 230,
+        "y": 11600
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 81,
+        "x": 117,
+        "y": 11647
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Recusar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 96,
+        "x": 205,
+        "y": 11647
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Continuar"
+    },
+    {
+      "box": {
+        "h": 582,
+        "w": 232,
+        "x": 117,
+        "y": 11702
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "id": "sec-19",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 58,
+        "w": 232,
+        "x": 117,
+        "y": 11702
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "19. PROPRIEDADE INTELECTUAL"
+    },
+    {
+      "box": {
+        "h": 277,
+        "w": 232,
+        "x": 117,
+        "y": 11773
+      },
+      "color": "#374151",
+      "depth": 9,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta seção descreve as condições da plataforma SendFlow relacionadas a 19. propriedade intelectual, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário po"
+    },
+    {
+      "box": {
+        "h": 116,
+        "w": 232,
+        "x": 117,
+        "y": 12067
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 106,
+        "x": 117,
+        "y": 12206
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 73,
+        "x": 230,
+        "y": 12206
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 81,
+        "x": 117,
+        "y": 12253
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Recusar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 96,
+        "x": 205,
+        "y": 12253
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Continuar"
+    },
+    {
+      "box": {
+        "h": 582,
+        "w": 232,
+        "x": 117,
+        "y": 12308
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "id": "sec-20",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 58,
+        "w": 232,
+        "x": 117,
+        "y": 12308
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "20. PRIVACIDADE E PROTEÇÃO DE DADOS"
+    },
+    {
+      "box": {
+        "h": 277,
+        "w": 232,
+        "x": 117,
+        "y": 12380
+      },
+      "color": "#374151",
+      "depth": 9,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta seção descreve as condições da plataforma SendFlow relacionadas a 20. privacidade e proteção de dados, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O us"
+    },
+    {
+      "box": {
+        "h": 116,
+        "w": 232,
+        "x": 117,
+        "y": 12673
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 106,
+        "x": 117,
+        "y": 12813
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 73,
+        "x": 230,
+        "y": 12813
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 81,
+        "x": 117,
+        "y": 12860
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Recusar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 96,
+        "x": 205,
+        "y": 12860
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Continuar"
+    },
+    {
+      "box": {
+        "h": 582,
+        "w": 232,
+        "x": 117,
+        "y": 12915
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "id": "sec-21",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 58,
+        "w": 232,
+        "x": 117,
+        "y": 12915
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "21. A TITULARIDADE DOS DADOS"
+    },
+    {
+      "box": {
+        "h": 277,
+        "w": 232,
+        "x": 117,
+        "y": 12986
+      },
+      "color": "#374151",
+      "depth": 9,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta seção descreve as condições da plataforma SendFlow relacionadas a 21. a titularidade dos dados, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário p"
+    },
+    {
+      "box": {
+        "h": 116,
+        "w": 232,
+        "x": 117,
+        "y": 13279
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 106,
+        "x": 117,
+        "y": 13419
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 73,
+        "x": 230,
+        "y": 13419
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 81,
+        "x": 117,
+        "y": 13466
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Recusar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 96,
+        "x": 205,
+        "y": 13466
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Continuar"
+    },
+    {
+      "box": {
+        "h": 582,
+        "w": 232,
+        "x": 117,
+        "y": 13521
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "id": "sec-22",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 58,
+        "w": 232,
+        "x": 117,
+        "y": 13521
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "22. DISPONIBILIDADE DA PLATAFORMA"
+    },
+    {
+      "box": {
+        "h": 277,
+        "w": 232,
+        "x": 117,
+        "y": 13593
+      },
+      "color": "#374151",
+      "depth": 9,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta seção descreve as condições da plataforma SendFlow relacionadas a 22. disponibilidade da plataforma, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuá"
+    },
+    {
+      "box": {
+        "h": 116,
+        "w": 232,
+        "x": 117,
+        "y": 13886
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 106,
+        "x": 117,
+        "y": 14025
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 73,
+        "x": 230,
+        "y": 14025
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 81,
+        "x": 117,
+        "y": 14072
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Recusar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 96,
+        "x": 205,
+        "y": 14072
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Continuar"
+    },
+    {
+      "box": {
+        "h": 582,
+        "w": 232,
+        "x": 117,
+        "y": 14127
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "id": "sec-23",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 58,
+        "w": 232,
+        "x": 117,
+        "y": 14127
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "23. LIMITAÇÃO DE RESPONSABILIDADE"
+    },
+    {
+      "box": {
+        "h": 277,
+        "w": 232,
+        "x": 117,
+        "y": 14199
+      },
+      "color": "#374151",
+      "depth": 9,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta seção descreve as condições da plataforma SendFlow relacionadas a 23. limitação de responsabilidade, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuá"
+    },
+    {
+      "box": {
+        "h": 116,
+        "w": 232,
+        "x": 117,
+        "y": 14492
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 106,
+        "x": 117,
+        "y": 14632
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 73,
+        "x": 230,
+        "y": 14632
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 81,
+        "x": 117,
+        "y": 14679
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Recusar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 96,
+        "x": 205,
+        "y": 14679
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Continuar"
+    },
+    {
+      "box": {
+        "h": 635,
+        "w": 232,
+        "x": 117,
+        "y": 14734
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "id": "sec-24",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 87,
+        "w": 232,
+        "x": 117,
+        "y": 14734
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "24. SUSPENSÃO E ENCERRAMENTO DA CONTA"
+    },
+    {
+      "box": {
+        "h": 300,
+        "w": 232,
+        "x": 117,
+        "y": 14834
+      },
+      "color": "#374151",
+      "depth": 9,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta seção descreve as condições da plataforma SendFlow relacionadas a 24. suspensão e encerramento da conta, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O "
+    },
+    {
+      "box": {
+        "h": 116,
+        "w": 232,
+        "x": 117,
+        "y": 15151
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 106,
+        "x": 117,
+        "y": 15290
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 73,
+        "x": 230,
+        "y": 15290
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 81,
+        "x": 117,
+        "y": 15337
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Recusar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 96,
+        "x": 205,
+        "y": 15337
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Continuar"
+    },
+    {
+      "box": {
+        "h": 582,
+        "w": 232,
+        "x": 117,
+        "y": 15392
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "id": "sec-25",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 58,
+        "w": 232,
+        "x": 117,
+        "y": 15392
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "25. CONFIDENCIALIDADE"
+    },
+    {
+      "box": {
+        "h": 277,
+        "w": 232,
+        "x": 117,
+        "y": 15464
+      },
+      "color": "#374151",
+      "depth": 9,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta seção descreve as condições da plataforma SendFlow relacionadas a 25. confidencialidade, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá u"
+    },
+    {
+      "box": {
+        "h": 116,
+        "w": 232,
+        "x": 117,
+        "y": 15757
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 106,
+        "x": 117,
+        "y": 15897
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 73,
+        "x": 230,
+        "y": 15897
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 81,
+        "x": 117,
+        "y": 15944
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Recusar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 96,
+        "x": 205,
+        "y": 15944
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Continuar"
+    },
+    {
+      "box": {
+        "h": 553,
+        "w": 232,
+        "x": 117,
+        "y": 15999
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "id": "sec-26",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 29,
+        "w": 232,
+        "x": 117,
+        "y": 15999
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "26. COMUNICAÇÕES"
+    },
+    {
+      "box": {
+        "h": 277,
+        "w": 232,
+        "x": 117,
+        "y": 16041
+      },
+      "color": "#374151",
+      "depth": 9,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta seção descreve as condições da plataforma SendFlow relacionadas a 26. comunicações, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utiliz"
+    },
+    {
+      "box": {
+        "h": 116,
+        "w": 232,
+        "x": 117,
+        "y": 16335
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 106,
+        "x": 117,
+        "y": 16474
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 73,
+        "x": 230,
+        "y": 16474
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 81,
+        "x": 117,
+        "y": 16521
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Recusar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 96,
+        "x": 205,
+        "y": 16521
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Continuar"
+    },
+    {
+      "box": {
+        "h": 582,
+        "w": 232,
+        "x": 117,
+        "y": 16576
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "id": "sec-27",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 58,
+        "w": 232,
+        "x": 117,
+        "y": 16576
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "27. ALTERAÇÕES DA PLATAFORMA"
+    },
+    {
+      "box": {
+        "h": 277,
+        "w": 232,
+        "x": 117,
+        "y": 16648
+      },
+      "color": "#374151",
+      "depth": 9,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta seção descreve as condições da plataforma SendFlow relacionadas a 27. alterações da plataforma, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário p"
+    },
+    {
+      "box": {
+        "h": 116,
+        "w": 232,
+        "x": 117,
+        "y": 16941
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 106,
+        "x": 117,
+        "y": 17081
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 73,
+        "x": 230,
+        "y": 17081
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 81,
+        "x": 117,
+        "y": 17128
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Recusar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 96,
+        "x": 205,
+        "y": 17128
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Continuar"
+    },
+    {
+      "box": {
+        "h": 635,
+        "w": 232,
+        "x": 117,
+        "y": 17183
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "id": "sec-28",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 87,
+        "w": 232,
+        "x": 117,
+        "y": 17183
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "28. SUPORTE, ONBOARDING E TREINAMENTOS"
+    },
+    {
+      "box": {
+        "h": 300,
+        "w": 232,
+        "x": 117,
+        "y": 17283
+      },
+      "color": "#374151",
+      "depth": 9,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta seção descreve as condições da plataforma SendFlow relacionadas a 28. suporte, onboarding e treinamentos, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O"
+    },
+    {
+      "box": {
+        "h": 116,
+        "w": 232,
+        "x": 117,
+        "y": 17600
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 106,
+        "x": 117,
+        "y": 17739
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 73,
+        "x": 230,
+        "y": 17739
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 81,
+        "x": 117,
+        "y": 17786
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Recusar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 96,
+        "x": 205,
+        "y": 17786
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Continuar"
+    },
+    {
+      "box": {
+        "h": 582,
+        "w": 232,
+        "x": 117,
+        "y": 17841
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "id": "sec-29",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 58,
+        "w": 232,
+        "x": 117,
+        "y": 17841
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "29. ALTERAÇÕES DESTES TERMOS"
+    },
+    {
+      "box": {
+        "h": 277,
+        "w": 232,
+        "x": 117,
+        "y": 17913
+      },
+      "color": "#374151",
+      "depth": 9,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta seção descreve as condições da plataforma SendFlow relacionadas a 29. alterações destes termos, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário p"
+    },
+    {
+      "box": {
+        "h": 116,
+        "w": 232,
+        "x": 117,
+        "y": 18206
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 106,
+        "x": 117,
+        "y": 18346
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 73,
+        "x": 230,
+        "y": 18346
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 81,
+        "x": 117,
+        "y": 18393
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Recusar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 96,
+        "x": 205,
+        "y": 18393
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Continuar"
+    },
+    {
+      "box": {
+        "h": 582,
+        "w": 232,
+        "x": 117,
+        "y": 18448
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "id": "sec-30",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 58,
+        "w": 232,
+        "x": 117,
+        "y": 18448
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "30. DISPOSIÇÕES GERAIS"
+    },
+    {
+      "box": {
+        "h": 277,
+        "w": 232,
+        "x": 117,
+        "y": 18519
+      },
+      "color": "#374151",
+      "depth": 9,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta seção descreve as condições da plataforma SendFlow relacionadas a 30. disposições gerais, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá "
+    },
+    {
+      "box": {
+        "h": 116,
+        "w": 232,
+        "x": 117,
+        "y": 18813
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 106,
+        "x": 117,
+        "y": 18952
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 73,
+        "x": 230,
+        "y": 18952
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 81,
+        "x": 117,
+        "y": 18999
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Recusar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 96,
+        "x": 205,
+        "y": 18999
+      },
+      "color": "#1f2937",
+      "depth": 10,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Continuar"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 67,
+        "x": 117,
+        "y": 19046
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Ação 1"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 71,
+        "x": 191,
+        "y": 19046
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Ação 2"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 71,
+        "x": 270,
+        "y": 19046
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Ação 3"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 72,
+        "x": 117,
+        "y": 19085
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Ação 4"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 72,
+        "x": 196,
+        "y": 19085
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Ação 5"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 72,
+        "x": 276,
+        "y": 19085
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Ação 6"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 71,
+        "x": 117,
+        "y": 19124
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Ação 7"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 72,
+        "x": 195,
+        "y": 19124
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Ação 8"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 72,
+        "x": 275,
+        "y": 19124
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Ação 9"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 77,
+        "x": 117,
+        "y": 19163
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Ação 10"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 72,
+        "x": 202,
+        "y": 19163
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Ação 11"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 76,
+        "x": 117,
+        "y": 19202
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Ação 12"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 76,
+        "x": 201,
+        "y": 19202
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Ação 13"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 77,
+        "x": 117,
+        "y": 19241
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Ação 14"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 77,
+        "x": 202,
+        "y": 19241
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Ação 15"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 77,
+        "x": 117,
+        "y": 19280
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Ação 16"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 76,
+        "x": 202,
+        "y": 19280
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Ação 17"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 77,
+        "x": 117,
+        "y": 19319
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Ação 18"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 77,
+        "x": 202,
+        "y": 19319
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Ação 19"
+    },
+    {
+      "background": "#f0f0f0",
+      "box": {
+        "h": 31,
+        "w": 81,
+        "x": 117,
+        "y": 19358
+      },
+      "color": "#1f2937",
+      "depth": 9,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Ação 20"
+    },
+    {
+      "background": "#ffffff",
+      "box": {
+        "h": 1305,
+        "w": 940,
+        "x": 393,
+        "y": 87
+      },
+      "class": "sf-legal-aside",
+      "color": "#1f2937",
+      "depth": 6,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "aside"
+    },
+    {
+      "box": {
+        "h": 53,
+        "w": 940,
+        "x": 393,
+        "y": 87
+      },
+      "color": "#1f2937",
+      "depth": 7,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "header"
+    },
+    {
+      "box": {
+        "h": 29,
+        "w": 900,
+        "x": 413,
+        "y": 101
+      },
+      "color": "#0f172a",
+      "depth": 8,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "Índice"
+    },
+    {
+      "box": {
+        "h": 1252,
+        "w": 940,
+        "x": 393,
+        "y": 140
+      },
+      "color": "#1f2937",
+      "depth": 7,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "nav"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 144
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-1",
+      "tag": "a",
+      "text": "1. APRESENTAÇÃO"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 180
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-2",
+      "tag": "a",
+      "text": "2. SOBRE A SENDFLOW"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 216
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-3",
+      "tag": "a",
+      "text": "3. DEFINIÇÕES"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 252
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-4",
+      "tag": "a",
+      "text": "4. QUEM PODE UTILIZAR A PLATAFORMA"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 288
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-5",
+      "tag": "a",
+      "text": "5. CADASTRO E SEGURANÇA DA CONTA"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 324
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-6",
+      "tag": "a",
+      "text": "6. REGISTROS DE ACESSO (LOGS)"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 360
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-7",
+      "tag": "a",
+      "text": "7. PLANOS, ASSINATURAS E PAGAMENTOS"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 396
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-8",
+      "tag": "a",
+      "text": "8. CANCELAMENTO, REEMBOLSO E ENCERRAMENTO DA ASSINATURA"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 432
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-9",
+      "tag": "a",
+      "text": "9. BACKUP"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 468
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-10",
+      "tag": "a",
+      "text": "10. UTILIZAÇÃO DA PLATAFORMA"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 504
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-11",
+      "tag": "a",
+      "text": "11. NÃO GARANTIA DE RESULTADOS"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 540
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-12",
+      "tag": "a",
+      "text": "12. OBRIGAÇÕES DO CLIENTE"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 576
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-13",
+      "tag": "a",
+      "text": "13. CONDUTAS PROIBIDAS"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 612
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-14",
+      "tag": "a",
+      "text": "14. INTEGRAÇÕES E SERVIÇOS DE TERCEIROS"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 648
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-15",
+      "tag": "a",
+      "text": "15. DEPENDÊNCIA DE TERCEIROS"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 684
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-16",
+      "tag": "a",
+      "text": "16. POLÍTICAS DO WHATSAPP E DA META"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 720
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-17",
+      "tag": "a",
+      "text": "17. API E RECURSOS DE DESENVOLVIMENTO"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 756
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-18",
+      "tag": "a",
+      "text": "18. RECURSOS DE INTELIGÊNCIA ARTIFICIAL"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 792
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-19",
+      "tag": "a",
+      "text": "19. PROPRIEDADE INTELECTUAL"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 828
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-20",
+      "tag": "a",
+      "text": "20. PRIVACIDADE E PROTEÇÃO DE DADOS"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 864
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-21",
+      "tag": "a",
+      "text": "21. A TITULARIDADE DOS DADOS"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 900
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-22",
+      "tag": "a",
+      "text": "22. DISPONIBILIDADE DA PLATAFORMA"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 936
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-23",
+      "tag": "a",
+      "text": "23. LIMITAÇÃO DE RESPONSABILIDADE"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 972
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-24",
+      "tag": "a",
+      "text": "24. SUSPENSÃO E ENCERRAMENTO DA CONTA"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 1008
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-25",
+      "tag": "a",
+      "text": "25. CONFIDENCIALIDADE"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 1044
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-26",
+      "tag": "a",
+      "text": "26. COMUNICAÇÕES"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 1080
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-27",
+      "tag": "a",
+      "text": "27. ALTERAÇÕES DA PLATAFORMA"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 1116
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-28",
+      "tag": "a",
+      "text": "28. SUPORTE, ONBOARDING E TREINAMENTOS"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 1152
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-29",
+      "tag": "a",
+      "text": "29. ALTERAÇÕES DESTES TERMOS"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 1188
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:53171/termo-de-uso#sec-30",
+      "tag": "a",
+      "text": "30. DISPOSIÇÕES GERAIS"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 1224
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "tag": "button",
+      "text": "Voltar ao topo"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 1260
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "tag": "button",
+      "text": "Imprimir"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 1296
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "tag": "button",
+      "text": "Compartilhar"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 916,
+        "x": 405,
+        "y": 1332
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "tag": "button",
+      "text": "Baixar PDF"
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 289,
+        "x": 530,
+        "y": 827
+      },
+      "color": "#000000de",
+      "depth": 5,
+      "font": "12px 400",
+      "tag": "p",
+      "text": "Usamos cookies para melhorar sua experiência. Política de Privacidade"
+    },
+    {
+      "box": {
+        "h": 17,
+        "w": 136,
+        "x": 530,
+        "y": 845
+      },
+      "color": "#000000de",
+      "depth": 6,
+      "font": "12px 400",
+      "href": "http://127.0.0.1:53171/politica-de-privacidade",
+      "tag": "a",
+      "text": "Política de Privacidade"
+    },
+    {
+      "background": "#1976d2",
+      "box": {
+        "h": 41,
+        "w": 81,
+        "x": 831,
+        "y": 824
+      },
+      "color": "#ffffff",
+      "depth": 5,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    }
+  ],
+  "page": {
+    "h": 19481,
+    "w": 1425
+  },
+  "text": "SendFlow InícioEntrarPrivacidadeMenuContatoSuporte TERMOS DE USO DA PLATAFORMA SENDFLOW Estes Termos de Uso regulam o acesso e o uso da plataforma SendFlow pelo cliente, com regras para cadastro, planos, serviços, integrações e responsabilidades. Por meio desta plataforma, o usuário poderá utilizar as funcionalidades, ou caso haja qualquer violação, poderão ser aplicadas as medidas cabíveis. Seus dados e informações serão tratados na plataforma pela SendFlow, no caso de descumprimento. 1. APRESENTAÇÃO Esta seção descreve as condições da plataforma SendFlow relacionadas a 1. apresentação, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar ou não as funcionalidades, em qualquer hipótese. Por este termo ou por lei, em caso de qualquer situação, o cliente se obriga. Condição aplicável ao uso da plataforma. Responsabilidade do cliente e da SendFlow pelos seus dados e informações. Saiba mais Aceitar Recusar Continuar 2. SOBRE A SENDFLOW Esta seção descreve as condições da plataforma SendFlow relacionadas a 2. sobre a sendflow, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar ou não as funcionalidades, em qualquer hipótese. Por este termo ou por lei, em caso de qualquer situação, o cliente se obriga. Condição aplicável ao uso da plataforma. Responsabilidade do cliente e da SendFlow pelos seus dados e informações. Saiba mais Aceitar Recusar Continuar 3. DEFINIÇÕES Esta seção descreve as condições da plataforma SendFlow relacionadas a 3. definições, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar ou não as funcionalidades, em qualquer hipótese. Por este termo ou por lei, em caso de qualquer situação, o cliente se obriga. Condição aplicável ao uso da plataforma. Responsabilidade do cliente e da SendFlow pelos seus dados e informações. Saiba mais Aceitar Recusar Continuar 4. QUEM PODE UTILIZAR A PLATAFORMA Esta seção descreve as condições da plataforma SendFlow relacionadas a 4. quem pode utilizar a plataforma, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar ou não as funcionalidades, em qualquer hipótese. Por este termo ou por lei, em caso de qualquer situação, o cliente se obriga. Condição aplicável ao uso da plataforma. Responsabilidade do cliente e da SendFlow pelos seus dados e informações. Saiba mais Aceitar Recusar Continuar 5. CADASTRO E SEGURANÇA DA CONTA Esta seção descreve as condições da plataforma SendFlow relacionadas a 5. cadastro e segurança da conta, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar ou não as funcionalidades, em qualquer hipótese. Por este termo ou por lei, em caso de qualquer situação, o cliente se obriga. Condição aplicável ao uso da plataforma. Responsabilidade do cliente e da SendFlow pelos seus dados e informações. Saiba mais Aceitar Recusar Continuar 6. REGISTROS DE ACESSO (LOGS) Esta seção descreve as condições da plataforma SendFlow relacionadas a 6. registros de acesso (logs), para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar ou não as funcionalidades, em qualquer hipótese. Por este termo ou por lei, em caso de qualquer situação, o cliente se obriga. Condição aplicável ao uso da plataforma. Responsabilidade do cliente e da SendFlow pelos seus dados e informações. Saiba mais Aceitar Recusar Continuar 7. PLANOS, ASSINATURAS E PAGAMENTOS Esta seção descreve as condições da plataforma SendFlow relacionadas a 7. planos, assinaturas e pagamentos, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar ou não as funcionalidades, em qualquer hipótese. Por este termo ou por lei, em caso de qualquer situação, o cliente se obriga. Condição aplicável ao uso da plataforma. Responsabilidade do cliente e da SendFlow pelos seus dados e informações. Saiba mais Aceitar Recusar Continuar 8. CANCELAMENTO, REEMBOLSO E ENCERRAMENTO DA ASSINATURA Esta seção descreve as condições da plataforma SendFlow relacionadas a 8. cancelamento, reembolso e encerramento da assinatura, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar ou não as funcionalidades, em qualquer hipótese. Por este termo ou por lei, em caso de qualquer situação, o cliente se obriga. Condição aplicável ao uso da plataforma. Responsabilidade do cliente e da SendFlow pelos seus dados e informações. Saiba mais Aceitar Recusar Continuar 9. BACKUP Esta seção descreve as condições da plataforma SendFlow relacionadas a 9. backup, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar ou não as funcionalidades, em qualquer hipótese. Por este termo ou por lei, em caso de qualquer situação, o cliente se obriga. Condição aplicável ao uso da plataforma. Responsabilidade do cliente e da SendFlow pelos seus dados e informações. Saiba mais Aceitar Recusar Continuar 10. UTILIZAÇÃO DA PLATAFORMA Esta seção descreve as condições da plataforma SendFlow relacionadas a 10. utilização da plataforma, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar ou não as funcionalidades, em qualquer hipótese. Por este termo ou por lei, em caso de qualquer situação, o cliente se obriga. Condição aplicável ao uso da plataforma. Responsabilidade do cliente e da SendFlow pelos seus dados e informações. Saiba mais Aceitar Recusar Continuar 11. NÃO GARANTIA DE RESULTADOS Esta seção descreve as condições da plataforma SendFlow relacionadas a 11. não garantia de resultados, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar ou não as funcionalidades, em qualquer hipótese. Por este termo ou por lei, em caso de qualquer situação, o cliente se obriga. Condição aplicável ao uso da plataforma. Responsabilidade do cliente e da SendFlow pelos seus dados e informações. Saiba mais Aceitar Recusar Continuar 12. OBRIGAÇÕES DO CLIENTE Esta seção descreve as condições da plataforma SendFlow relacionadas a 12. obrigações do cliente, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar ou não as funcionalidades, em qualquer hipótese. Por este termo ou por lei, em caso de qualquer situação, o cliente se obriga. Condição aplicável ao uso da plataforma. Responsabilidade do cliente e da SendFlow pelos seus dados e informações. Saiba mais Aceitar Recusar Continuar 13. CONDUTAS PROIBIDAS Esta seção descreve as condições da plataforma SendFlow relacionadas a 13. condutas proibidas, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar ou não as funcionalidades, em qualquer hipótese. Por este termo ou por lei, em caso de qualquer situação, o cliente se obriga. Condição aplicável ao uso da plataforma. Responsabilidade do cliente e da SendFlow pelos seus dados e informações. Saiba mais Aceitar Recusar Continuar 14. INTEGRAÇÕES E SERVIÇOS DE TERCEIROS Esta seção descreve as condições da plataforma SendFlow relacionadas a 14. integrações e serviços de terceiros, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar ou não as funcionalidades, em qualquer hipótese. Por este termo ou por lei, em caso de qualquer situação, o cliente se obriga. Condição aplicável ao uso da plataforma. Responsabilidade do cliente e da SendFlow pelos seus dados e informações. Saiba mais Aceitar Recusar Continuar 15. DEPENDÊNCIA DE TERCEIROS Esta seção descreve as condições da plataforma SendFlow relacionadas a 15. dependência de terceiros, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar ou não as funcionalidades, em qualquer hipótese. Por este termo ou por lei, em caso de qualquer situação, o cliente se obriga. Condição aplicável ao uso da plataforma. Responsabilidade do cliente e da SendFlow pelos seus dados e informações. Saiba mais Aceitar Recusar Continuar 16. POLÍTICAS DO WHATSAPP E DA META Esta seção descreve as condições da plataforma SendFlow relacionadas a 16. políticas do whatsapp e da meta, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar ou não as funcionalidades, em qualquer hipótese. Por este termo ou por lei, em caso de qualquer situação, o cliente se obriga. Condição aplicável ao uso da plataforma. Responsabilidade do cliente e da SendFlow pelos seus dados e informações. Saiba mais Aceitar Recusar Continuar 17. API E RECURSOS DE DESENVOLVIMENTO Esta seção descreve as condições da plataforma SendFlow relacionadas a 17. api e recursos de desenvolvimento, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar ou não as funcionalidades, em qualquer hipótese. Por este termo ou por lei, em caso de qualquer situação, o cliente se obriga. Condição aplicável ao uso da plataforma. Responsabilidade do cliente e da SendFlow pelos seus dados e informações. Saiba mais Aceitar Recusar Continuar 18. RECURSOS DE INTELIGÊNCIA ARTIFICIAL Esta seção descreve as condições da plataforma SendFlow relacionadas a 18. recursos de inteligência artificial, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar ou não as funcionalidades, em qualquer hipótese. Por este termo ou por lei, em caso de qualquer situação, o cliente se obriga. Condição aplicável ao uso da plataforma. Responsabilidade do cliente e da SendFlow pelos seus dados e informações. Saiba mais Aceitar Recusar Continuar 19. PROPRIEDADE INTELECTUAL Esta seção descreve as condições da plataforma SendFlow relacionadas a 19. propriedade intelectual, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar ou não as funcionalidades, em qualquer hipótese. Por este termo ou por lei, em caso de qualquer situação, o cliente se obriga. Condição aplicável ao uso da plataforma. Responsabilidade do cliente e da SendFlow pelos seus dados e informações. Saiba mais Aceitar Recusar Continuar 20. PRIVACIDADE E PROTEÇÃO DE DADOS Esta seção descreve as condições da plataforma SendFlow relacionadas a 20. privacidade e proteção de dados, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar ou não as funcionalidades, em qualquer hipótese. Por este termo ou por lei, em caso de qualquer situação, o cliente se obriga. Condição aplicável ao uso da plataforma. Responsabilidade do cliente e da SendFlow pelos seus dados e informações. Saiba mais Aceitar Recusar Continuar 21. A TITULARIDADE DOS DADOS Esta seção descreve as condições da plataforma SendFlow relacionadas a 21. a titularidade dos dados, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar ou não as funcionalidades, em qualquer hipótese. Por este termo ou por lei, em caso de qualquer situação, o cliente se obriga. Condição aplicável ao uso da plataforma. Responsabilidade do cliente e da SendFlow pelos seus dados e informações. Saiba mais Aceitar Recusar Continuar 22. DISPONIBILIDADE DA PLATAFORMA Esta seção descreve as condições da plataforma SendFlow relacionadas a 22. disponibilidade da plataforma, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar ou não as funcionalidades, em qualquer hipótese. Por este termo ou por lei, em caso de qualquer situação, o cliente se obriga. Condição aplicável ao uso da plataforma. Responsabilidade do cliente e da SendFlow pelos seus dados e informações. Saiba mais Aceitar Recusar Continuar 23. LIMITAÇÃO DE RESPONSABILIDADE Esta seção descreve as condições da plataforma SendFlow relacionadas a 23. limitação de responsabilidade, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar ou não as funcionalidades, em qualquer hipótese. Por este termo ou por lei, em caso de qualquer situação, o cliente se obriga. Condição aplicável ao uso da plataforma. Responsabilidade do cliente e da SendFlow pelos seus dados e informações. Saiba mais Aceitar Recusar Continuar 24. SUSPENSÃO E ENCERRAMENTO DA CONTA Esta seção descreve as condições da plataforma SendFlow relacionadas a 24. suspensão e encerramento da conta, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar ou não as funcionalidades, em qualquer hipótese. Por este termo ou por lei, em caso de qualquer situação, o cliente se obriga. Condição aplicável ao uso da plataforma. Responsabilidade do cliente e da SendFlow pelos seus dados e informações. Saiba mais Aceitar Recusar Continuar 25. CONFIDENCIALIDADE Esta seção descreve as condições da plataforma SendFlow relacionadas a 25. confidencialidade, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar ou não as funcionalidades, em qualquer hipótese. Por este termo ou por lei, em caso de qualquer situação, o cliente se obriga. Condição aplicável ao uso da plataforma. Responsabilidade do cliente e da SendFlow pelos seus dados e informações. Saiba mais Aceitar Recusar Continuar 26. COMUNICAÇÕES Esta seção descreve as condições da plataforma SendFlow relacionadas a 26. comunicações, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar ou não as funcionalidades, em qualquer hipótese. Por este termo ou por lei, em caso de qualquer situação, o cliente se obriga. Condição aplicável ao uso da plataforma. Responsabilidade do cliente e da SendFlow pelos seus dados e informações. Saiba mais Aceitar Recusar Continuar 27. ALTERAÇÕES DA PLATAFORMA Esta seção descreve as condições da plataforma SendFlow relacionadas a 27. alterações da plataforma, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar ou não as funcionalidades, em qualquer hipótese. Por este termo ou por lei, em caso de qualquer situação, o cliente se obriga. Condição aplicável ao uso da plataforma. Responsabilidade do cliente e da SendFlow pelos seus dados e informações. Saiba mais Aceitar Recusar Continuar 28. SUPORTE, ONBOARDING E TREINAMENTOS Esta seção descreve as condições da plataforma SendFlow relacionadas a 28. suporte, onboarding e treinamentos, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar ou não as funcionalidades, em qualquer hipótese. Por este termo ou por lei, em caso de qualquer situação, o cliente se obriga. Condição aplicável ao uso da plataforma. Responsabilidade do cliente e da SendFlow pelos seus dados e informações. Saiba mais Aceitar Recusar Continuar 29. ALTERAÇÕES DESTES TERMOS Esta seção descreve as condições da plataforma SendFlow relacionadas a 29. alterações destes termos, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar ou não as funcionalidades, em qualquer hipótese. Por este termo ou por lei, em caso de qualquer situação, o cliente se obriga. Condição aplicável ao uso da plataforma. Responsabilidade do cliente e da SendFlow pelos seus dados e informações. Saiba mais Aceitar Recusar Continuar 30. DISPOSIÇÕES GERAIS Esta seção descreve as condições da plataforma SendFlow relacionadas a 30. disposições gerais, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis. O usuário poderá utilizar ou não as funcionalidades, em qualquer hipótese. Por este termo ou por lei, em caso de qualquer situação, o cliente se obriga. Condição aplicável ao uso da plataforma. Responsabilidade do cliente e da SendFlow pelos seus dados e informações. Saiba mais Aceitar Recusar Continuar Ação 1 Ação 2 Ação 3 Ação 4 Ação 5 Ação 6 Ação 7 Ação 8 Ação 9 Ação 10 Ação 11 Ação 12 Ação 13 Ação 14 Ação 15 Ação 16 Ação 17 Ação 18 Ação 19 Ação 20 Índice 1. APRESENTAÇÃO 2. SOBRE A SENDFLOW 3. DEFINIÇÕES 4. QUEM PODE UTILIZAR A PLATAFORMA 5. CADASTRO E SEGURANÇA DA CONTA 6. REGISTROS DE ACESSO (LOGS) 7. PLANOS, ASSINATURAS E PAGAMENTOS 8. CANCELAMENTO, REEMBOLSO E ENCERRAMENTO DA ASSINATURA 9. BACKUP 10. UTILIZAÇÃO DA PLATAFORMA 11. NÃO GARANTIA DE RESULTADOS 12. OBRIGAÇÕES DO CLIENTE 13. CONDUTAS PROIBIDAS 14. INTEGRAÇÕES E SERVIÇOS DE TERCEIROS 15. DEPENDÊNCIA DE TERCEIROS 16. POLÍTICAS DO WHATSAPP E DA META 17. API E RECURSOS DE DESENVOLVIMENTO 18. RECURSOS DE INTELIGÊNCIA ARTIFICIAL 19. PROPRIEDADE INTELECTUAL 20. PRIVACIDADE E PROTEÇÃO DE DADOS 21. A TITULARIDADE DOS DADOS 22. DISPONIBILIDADE DA PLATAFORMA 23. LIMITAÇÃO DE RESPONSABILIDADE 24. SUSPENSÃO E ENCERRAMENTO DA CONTA 25. CONFIDENCIALIDADE 26. COMUNICAÇÕES 27. ALTERAÇÕES DA PLATAFORMA 28. SUPORTE, ONBOARDING E TREINAMENTOS 29. ALTERAÇÕES DESTES TERMOS 30. DISPOSIÇÕES GERAIS Voltar ao topo Imprimir Compartilhar Baixar PDF Usamos cookies para melhorar sua experiência. Política de Privacidade Aceitar",
+  "title": "Grupos",
+  "unreadable_stylesheets": 1,
+  "url": "http://127.0.0.1:53171/termo-de-uso",
+  "viewport": {
+    "h": 900,
+    "w": 1440
+  }
+}

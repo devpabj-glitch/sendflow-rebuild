@@ -1,0 +1,1321 @@
+{
+  "a11y": {
+    "images_without_alt": 0,
+    "landmarks": {
+      "banner": 1,
+      "complementary": 1,
+      "main": 1,
+      "navigation": 1
+    },
+    "lang": "pt-BR",
+    "unnamed_controls": 0,
+    "unnamed_examples": []
+  },
+  "assets": {
+    "background_images": [],
+    "fonts": [],
+    "images": [],
+    "inline_scripts": 0,
+    "requests": [
+      {
+        "bytes": 243628,
+        "type": "script",
+        "url": "http://127.0.0.1:59103/assets/index-hUTVDO7F.js"
+      },
+      {
+        "bytes": 10348,
+        "type": "link",
+        "url": "http://127.0.0.1:59103/assets/index-CpjN8VaK.css"
+      },
+      {
+        "bytes": 309,
+        "type": "other",
+        "url": "http://127.0.0.1:59103/favicon.ico"
+      },
+      {
+        "bytes": 309,
+        "type": "other",
+        "url": "http://127.0.0.1:59103/favicon.ico"
+      }
+    ],
+    "scripts": [
+      "http://127.0.0.1:59103/assets/index-hUTVDO7F.js"
+    ],
+    "stylesheets": [
+      "http://127.0.0.1:59103/assets/index-CpjN8VaK.css"
+    ]
+  },
+  "breakpoints": [
+    {
+      "count": 1,
+      "px": 900,
+      "query": "max-width 900px"
+    }
+  ],
+  "design": {
+    "backgrounds": [
+      {
+        "count": 10,
+        "value": "#ffffff"
+      },
+      {
+        "count": 5,
+        "value": "#eef1f7"
+      },
+      {
+        "count": 4,
+        "value": "#dbeafe"
+      },
+      {
+        "count": 2,
+        "value": "#fef3c7"
+      },
+      {
+        "count": 1,
+        "value": "#f4f6fb"
+      },
+      {
+        "count": 1,
+        "value": "#111827"
+      },
+      {
+        "count": 1,
+        "value": "#1e3a5f"
+      },
+      {
+        "count": 1,
+        "value": "#ffffffe0"
+      },
+      {
+        "count": 1,
+        "value": "#dcfce7"
+      }
+    ],
+    "css_variables": {
+      "--bg": "#0b1220",
+      "--bg-elev": "#121c2f",
+      "--bg-muted": "#17233b",
+      "--border": "#24324d",
+      "--danger": "#f87171",
+      "--danger-soft": "rgba(248,113,113,.14)",
+      "--focus": "#2563eb",
+      "--font": "\"Segoe UI\", Inter, system-ui, -apple-system, sans-serif",
+      "--primary": "#60a5fa",
+      "--primary-soft": "rgba(96,165,250,.16)",
+      "--primary-strong": "#3b82f6",
+      "--radius": "12px",
+      "--radius-sm": "8px",
+      "--shadow": "0 1px 2px rgba(0,0,0,.35), 0 10px 28px rgba(0,0,0,.28)",
+      "--sidebar": "#08101d",
+      "--sidebar-active": "#163055",
+      "--sidebar-hover": "#13213a",
+      "--sidebar-muted": "#7f95b3",
+      "--sidebar-text": "#dbe7f5",
+      "--success": "#4ade80",
+      "--success-soft": "rgba(74,222,128,.14)",
+      "--text": "#e6edf7",
+      "--text-muted": "#9fb0c7",
+      "--warning": "#fbbf24",
+      "--warning-soft": "rgba(251,191,36,.14)"
+    },
+    "font_faces": [],
+    "font_sizes": [
+      {
+        "count": 16,
+        "value": "13.44px"
+      },
+      {
+        "count": 14,
+        "value": "12.48px"
+      },
+      {
+        "count": 12,
+        "value": "14.72px"
+      },
+      {
+        "count": 10,
+        "value": "16px"
+      },
+      {
+        "count": 5,
+        "value": "13.76px"
+      },
+      {
+        "count": 4,
+        "value": "27.2px"
+      },
+      {
+        "count": 2,
+        "value": "16.8px"
+      },
+      {
+        "count": 2,
+        "value": "18.72px"
+      },
+      {
+        "count": 1,
+        "value": "11.52px"
+      },
+      {
+        "count": 1,
+        "value": "13.12px"
+      },
+      {
+        "count": 1,
+        "value": "23.2px"
+      },
+      {
+        "count": 1,
+        "value": "15.2px"
+      }
+    ],
+    "font_weights": [
+      {
+        "count": 31,
+        "value": "400"
+      },
+      {
+        "count": 19,
+        "value": "700"
+      },
+      {
+        "count": 13,
+        "value": "600"
+      },
+      {
+        "count": 4,
+        "value": "750"
+      },
+      {
+        "count": 1,
+        "value": "500"
+      },
+      {
+        "count": 1,
+        "value": "800"
+      }
+    ],
+    "fonts": [
+      {
+        "count": 69,
+        "value": "\"Segoe UI\", Inter, system-ui, -apple-system, sans-serif"
+      }
+    ],
+    "max_widths": [
+      {
+        "count": 1,
+        "value": "520px"
+      }
+    ],
+    "radii": [
+      {
+        "count": 18,
+        "value": "8px"
+      },
+      {
+        "count": 11,
+        "value": "999px"
+      },
+      {
+        "count": 6,
+        "value": "12px"
+      },
+      {
+        "count": 3,
+        "value": "10px"
+      },
+      {
+        "count": 1,
+        "value": "50%"
+      }
+    ],
+    "shadows": [
+      {
+        "count": 6,
+        "value": "rgba(16, 24, 40, 0.06) 0px 1px 2px 0px, rgba(16, 24, 40, 0.06) 0px 8px 24px 0px"
+      }
+    ],
+    "spacing": [
+      {
+        "count": 80,
+        "value": "10px"
+      },
+      {
+        "count": 51,
+        "value": "8px"
+      },
+      {
+        "count": 48,
+        "value": "9px"
+      },
+      {
+        "count": 28,
+        "value": "16px"
+      },
+      {
+        "count": 26,
+        "value": "6px"
+      },
+      {
+        "count": 20,
+        "value": "3px"
+      },
+      {
+        "count": 18,
+        "value": "2px"
+      },
+      {
+        "count": 10,
+        "value": "12px"
+      },
+      {
+        "count": 5,
+        "value": "4px"
+      },
+      {
+        "count": 4,
+        "value": "1px"
+      },
+      {
+        "count": 4,
+        "value": "14px"
+      },
+      {
+        "count": 4,
+        "value": "5px"
+      },
+      {
+        "count": 3,
+        "value": "18px"
+      },
+      {
+        "count": 3,
+        "value": "22px"
+      },
+      {
+        "count": 2,
+        "value": "20px"
+      },
+      {
+        "count": 2,
+        "value": "18.72px"
+      },
+      {
+        "count": 1,
+        "value": "40px"
+      }
+    ],
+    "text_colors": [
+      {
+        "count": 23,
+        "value": "#5f6b7a"
+      },
+      {
+        "count": 18,
+        "value": "#1b2430"
+      },
+      {
+        "count": 12,
+        "value": "#e5e7eb"
+      },
+      {
+        "count": 5,
+        "value": "#9ca3af"
+      },
+      {
+        "count": 3,
+        "value": "#b45309"
+      },
+      {
+        "count": 3,
+        "value": "#1d4ed8"
+      },
+      {
+        "count": 2,
+        "value": "#ffffff"
+      },
+      {
+        "count": 2,
+        "value": "#15803d"
+      },
+      {
+        "count": 1,
+        "value": "#2563eb"
+      }
+    ]
+  },
+  "forms": [],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Visão geral"
+    },
+    {
+      "level": 3,
+      "text": "Contas recentes"
+    },
+    {
+      "level": 3,
+      "text": "Campanhas recentes"
+    }
+  ],
+  "health": {
+    "errors": [],
+    "failed_requests": [
+      {
+        "status": 404,
+        "type": "Other",
+        "url": "http://127.0.0.1:59103/favicon.ico"
+      },
+      {
+        "status": 404,
+        "type": "Other",
+        "url": "http://127.0.0.1:59103/favicon.ico"
+      }
+    ]
+  },
+  "lang": "pt-BR",
+  "layouts": [
+    {
+      "blocks": [
+        {
+          "background": "#111827",
+          "h": 900,
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "aside",
+          "w": 260,
+          "y": 0
+        },
+        {
+          "h": 662,
+          "pad": [
+            4,
+            10,
+            18,
+            10
+          ],
+          "per_row": 1,
+          "tag": "nav",
+          "w": 259,
+          "y": 73
+        },
+        {
+          "background": "#ffffffe0",
+          "column": {
+            "max_w": 520,
+            "pad": [
+              12,
+              12
+            ],
+            "w": 490,
+            "x": 280
+          },
+          "gap": 12,
+          "h": 66,
+          "pad": [
+            12,
+            20,
+            12,
+            20
+          ],
+          "per_row": 1,
+          "tag": "header",
+          "w": 1180,
+          "y": 0
+        },
+        {
+          "h": 663,
+          "heading": "Visão geral",
+          "pad": [
+            22,
+            22,
+            40,
+            22
+          ],
+          "per_row": 4,
+          "tag": "main",
+          "w": 1180,
+          "y": 66
+        }
+      ],
+      "page_h": 900,
+      "page_w": 1440,
+      "type": {
+        "body": 15,
+        "h1": 23,
+        "h2": 0,
+        "h3": 19
+      },
+      "width": 1440
+    },
+    {
+      "blocks": [
+        {
+          "background": "#111827",
+          "h": 900,
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "aside",
+          "w": 270,
+          "y": 0
+        },
+        {
+          "h": 662,
+          "pad": [
+            4,
+            10,
+            18,
+            10
+          ],
+          "per_row": 1,
+          "tag": "nav",
+          "w": 269,
+          "y": 73
+        },
+        {
+          "background": "#ffffffe0",
+          "column": {
+            "max_w": 520,
+            "pad": [
+              12,
+              12
+            ],
+            "w": 267,
+            "x": 62
+          },
+          "gap": 12,
+          "h": 62,
+          "pad": [
+            10,
+            12,
+            10,
+            12
+          ],
+          "per_row": 1,
+          "tag": "header",
+          "w": 768,
+          "y": 0
+        },
+        {
+          "h": 775,
+          "heading": "Visão geral",
+          "pad": [
+            16,
+            14,
+            30,
+            14
+          ],
+          "per_row": 3,
+          "tag": "main",
+          "w": 768,
+          "y": 62
+        }
+      ],
+      "page_h": 900,
+      "page_w": 768,
+      "type": {
+        "body": 15,
+        "h1": 23,
+        "h2": 0,
+        "h3": 19
+      },
+      "width": 768
+    },
+    {
+      "blocks": [
+        {
+          "background": "#111827",
+          "h": 900,
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "aside",
+          "w": 270,
+          "y": 0
+        },
+        {
+          "h": 662,
+          "pad": [
+            4,
+            10,
+            18,
+            10
+          ],
+          "per_row": 1,
+          "tag": "nav",
+          "w": 269,
+          "y": 73
+        },
+        {
+          "background": "#ffffffe0",
+          "column": {
+            "max_w": 520,
+            "pad": [
+              12,
+              12
+            ],
+            "w": 78,
+            "x": 62
+          },
+          "gap": 12,
+          "h": 62,
+          "pad": [
+            10,
+            12,
+            10,
+            12
+          ],
+          "per_row": 2,
+          "tag": "header",
+          "w": 390,
+          "y": 0
+        },
+        {
+          "h": 1444,
+          "heading": "Visão geral",
+          "pad": [
+            16,
+            14,
+            30,
+            14
+          ],
+          "per_row": 2,
+          "tag": "main",
+          "w": 390,
+          "y": 62
+        }
+      ],
+      "page_h": 1506,
+      "page_w": 390,
+      "type": {
+        "body": 15,
+        "h1": 23,
+        "h2": 0,
+        "h3": 19
+      },
+      "width": 390
+    }
+  ],
+  "links": [
+    {
+      "href": "http://127.0.0.1:59103/#/whats/overview",
+      "text": "Visão geral"
+    },
+    {
+      "href": "http://127.0.0.1:59103/#/whats/accounts-campaigns",
+      "text": "Contas e Campanhas"
+    },
+    {
+      "href": "http://127.0.0.1:59103/#/whats/accounts",
+      "text": "Contas"
+    },
+    {
+      "href": "http://127.0.0.1:59103/#/whats/campaigns",
+      "text": "Campanhas"
+    },
+    {
+      "href": "http://127.0.0.1:59103/#/whats/group-search",
+      "text": "Buscar grupos"
+    },
+    {
+      "href": "http://127.0.0.1:59103/#/whats/actions",
+      "text": "Ações"
+    },
+    {
+      "href": "http://127.0.0.1:59103/#/whats/automations",
+      "text": "Automações"
+    },
+    {
+      "href": "http://127.0.0.1:59103/#/whats/leads",
+      "text": "Leads"
+    },
+    {
+      "href": "http://127.0.0.1:59103/#/whats/deeplinks",
+      "text": "Deep links"
+    },
+    {
+      "href": "http://127.0.0.1:59103/#/whats/history",
+      "text": "Histórico de auditoria"
+    },
+    {
+      "href": "http://127.0.0.1:59103/#/whats/team",
+      "text": "Equipe"
+    },
+    {
+      "href": "http://127.0.0.1:59103/#/whats/webhooks",
+      "text": "Webhooks"
+    },
+    {
+      "href": "http://127.0.0.1:59103/#/whats/accounts",
+      "text": "Ver contas"
+    },
+    {
+      "href": "http://127.0.0.1:59103/#/whats/campaigns",
+      "text": "Ver campanhas"
+    }
+  ],
+  "meta": {
+    "description": "",
+    "icons": [],
+    "og_image": "",
+    "og_title": "",
+    "theme_color": ""
+  },
+  "outline": [
+    {
+      "background": "#111827",
+      "box": {
+        "h": 900,
+        "w": 260,
+        "x": 0,
+        "y": 0
+      },
+      "class": "sidebar",
+      "color": "#e5e7eb",
+      "depth": 4,
+      "display": "flex",
+      "flex": "column",
+      "font": "16px 400",
+      "tag": "aside"
+    },
+    {
+      "box": {
+        "h": 662,
+        "w": 259,
+        "x": 0,
+        "y": 73
+      },
+      "class": "nav",
+      "color": "#e5e7eb",
+      "depth": 5,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "nav"
+    },
+    {
+      "box": {
+        "h": 32,
+        "w": 239,
+        "x": 10,
+        "y": 85
+      },
+      "class": "nav-group-title",
+      "color": "#9ca3af",
+      "depth": 7,
+      "font": "12.48px 700",
+      "tag": "button",
+      "text": "INÍCIO"
+    },
+    {
+      "box": {
+        "h": 14,
+        "w": 14,
+        "x": 225,
+        "y": 94
+      },
+      "color": "#9ca3af",
+      "depth": 9,
+      "font": "12.48px 700",
+      "tag": "svg"
+    },
+    {
+      "background": "#1e3a5f",
+      "box": {
+        "h": 38,
+        "w": 239,
+        "x": 10,
+        "y": 119
+      },
+      "class": "nav-item active",
+      "color": "#ffffff",
+      "depth": 8,
+      "font": "14.72px 400",
+      "href": "http://127.0.0.1:59103/#/whats/overview",
+      "tag": "a",
+      "text": "Visão geral"
+    },
+    {
+      "box": {
+        "h": 18,
+        "w": 18,
+        "x": 20,
+        "y": 129
+      },
+      "color": "#ffffff",
+      "depth": 10,
+      "font": "14.72px 400",
+      "tag": "svg"
+    },
+    {
+      "box": {
+        "h": 38,
+        "w": 239,
+        "x": 10,
+        "y": 159
+      },
+      "class": "nav-item",
+      "color": "#e5e7eb",
+      "depth": 8,
+      "font": "14.72px 400",
+      "href": "http://127.0.0.1:59103/#/whats/accounts-campaigns",
+      "tag": "a",
+      "text": "Contas e Campanhas"
+    },
+    {
+      "box": {
+        "h": 18,
+        "w": 18,
+        "x": 20,
+        "y": 169
+      },
+      "color": "#e5e7eb",
+      "depth": 10,
+      "font": "14.72px 400",
+      "tag": "svg"
+    },
+    {
+      "box": {
+        "h": 32,
+        "w": 239,
+        "x": 10,
+        "y": 205
+      },
+      "class": "nav-group-title",
+      "color": "#9ca3af",
+      "depth": 7,
+      "font": "12.48px 700",
+      "tag": "button",
+      "text": "OPERAÇÃO"
+    },
+    {
+      "box": {
+        "h": 14,
+        "w": 14,
+        "x": 225,
+        "y": 214
+      },
+      "color": "#9ca3af",
+      "depth": 9,
+      "font": "12.48px 700",
+      "tag": "svg"
+    },
+    {
+      "box": {
+        "h": 38,
+        "w": 239,
+        "x": 10,
+        "y": 239
+      },
+      "class": "nav-item",
+      "color": "#e5e7eb",
+      "depth": 8,
+      "font": "14.72px 400",
+      "href": "http://127.0.0.1:59103/#/whats/accounts",
+      "tag": "a",
+      "text": "Contas"
+    },
+    {
+      "box": {
+        "h": 18,
+        "w": 18,
+        "x": 20,
+        "y": 249
+      },
+      "color": "#e5e7eb",
+      "depth": 10,
+      "font": "14.72px 400",
+      "tag": "svg"
+    },
+    {
+      "box": {
+        "h": 38,
+        "w": 239,
+        "x": 10,
+        "y": 279
+      },
+      "class": "nav-item",
+      "color": "#e5e7eb",
+      "depth": 8,
+      "font": "14.72px 400",
+      "href": "http://127.0.0.1:59103/#/whats/campaigns",
+      "tag": "a",
+      "text": "Campanhas"
+    },
+    {
+      "box": {
+        "h": 18,
+        "w": 18,
+        "x": 20,
+        "y": 289
+      },
+      "color": "#e5e7eb",
+      "depth": 10,
+      "font": "14.72px 400",
+      "tag": "svg"
+    },
+    {
+      "box": {
+        "h": 38,
+        "w": 239,
+        "x": 10,
+        "y": 319
+      },
+      "class": "nav-item",
+      "color": "#e5e7eb",
+      "depth": 8,
+      "font": "14.72px 400",
+      "href": "http://127.0.0.1:59103/#/whats/group-search",
+      "tag": "a",
+      "text": "Buscar grupos"
+    },
+    {
+      "box": {
+        "h": 18,
+        "w": 18,
+        "x": 20,
+        "y": 329
+      },
+      "color": "#e5e7eb",
+      "depth": 10,
+      "font": "14.72px 400",
+      "tag": "svg"
+    },
+    {
+      "box": {
+        "h": 38,
+        "w": 239,
+        "x": 10,
+        "y": 359
+      },
+      "class": "nav-item",
+      "color": "#e5e7eb",
+      "depth": 8,
+      "font": "14.72px 400",
+      "href": "http://127.0.0.1:59103/#/whats/actions",
+      "tag": "a",
+      "text": "Ações"
+    },
+    {
+      "box": {
+        "h": 18,
+        "w": 18,
+        "x": 20,
+        "y": 369
+      },
+      "color": "#e5e7eb",
+      "depth": 10,
+      "font": "14.72px 400",
+      "tag": "svg"
+    },
+    {
+      "box": {
+        "h": 38,
+        "w": 239,
+        "x": 10,
+        "y": 399
+      },
+      "class": "nav-item",
+      "color": "#e5e7eb",
+      "depth": 8,
+      "font": "14.72px 400",
+      "href": "http://127.0.0.1:59103/#/whats/automations",
+      "tag": "a",
+      "text": "Automações"
+    },
+    {
+      "box": {
+        "h": 18,
+        "w": 18,
+        "x": 20,
+        "y": 409
+      },
+      "color": "#e5e7eb",
+      "depth": 10,
+      "font": "14.72px 400",
+      "tag": "svg"
+    },
+    {
+      "box": {
+        "h": 32,
+        "w": 239,
+        "x": 10,
+        "y": 445
+      },
+      "class": "nav-group-title",
+      "color": "#9ca3af",
+      "depth": 7,
+      "font": "12.48px 700",
+      "tag": "button",
+      "text": "GESTÃO"
+    },
+    {
+      "box": {
+        "h": 14,
+        "w": 14,
+        "x": 225,
+        "y": 454
+      },
+      "color": "#9ca3af",
+      "depth": 9,
+      "font": "12.48px 700",
+      "tag": "svg"
+    },
+    {
+      "box": {
+        "h": 38,
+        "w": 239,
+        "x": 10,
+        "y": 479
+      },
+      "class": "nav-item",
+      "color": "#e5e7eb",
+      "depth": 8,
+      "font": "14.72px 400",
+      "href": "http://127.0.0.1:59103/#/whats/leads",
+      "tag": "a",
+      "text": "Leads"
+    },
+    {
+      "box": {
+        "h": 18,
+        "w": 18,
+        "x": 20,
+        "y": 489
+      },
+      "color": "#e5e7eb",
+      "depth": 10,
+      "font": "14.72px 400",
+      "tag": "svg"
+    },
+    {
+      "box": {
+        "h": 38,
+        "w": 239,
+        "x": 10,
+        "y": 519
+      },
+      "class": "nav-item",
+      "color": "#e5e7eb",
+      "depth": 8,
+      "font": "14.72px 400",
+      "href": "http://127.0.0.1:59103/#/whats/deeplinks",
+      "tag": "a",
+      "text": "Deep links"
+    },
+    {
+      "box": {
+        "h": 18,
+        "w": 18,
+        "x": 20,
+        "y": 529
+      },
+      "color": "#e5e7eb",
+      "depth": 10,
+      "font": "14.72px 400",
+      "tag": "svg"
+    },
+    {
+      "box": {
+        "h": 38,
+        "w": 239,
+        "x": 10,
+        "y": 559
+      },
+      "class": "nav-item",
+      "color": "#e5e7eb",
+      "depth": 8,
+      "font": "14.72px 400",
+      "href": "http://127.0.0.1:59103/#/whats/history",
+      "tag": "a",
+      "text": "Histórico de auditoria"
+    },
+    {
+      "box": {
+        "h": 18,
+        "w": 18,
+        "x": 20,
+        "y": 569
+      },
+      "color": "#e5e7eb",
+      "depth": 10,
+      "font": "14.72px 400",
+      "tag": "svg"
+    },
+    {
+      "box": {
+        "h": 32,
+        "w": 239,
+        "x": 10,
+        "y": 605
+      },
+      "class": "nav-group-title",
+      "color": "#9ca3af",
+      "depth": 7,
+      "font": "12.48px 700",
+      "tag": "button",
+      "text": "CONFIGURAÇÕES"
+    },
+    {
+      "box": {
+        "h": 14,
+        "w": 14,
+        "x": 225,
+        "y": 614
+      },
+      "color": "#9ca3af",
+      "depth": 9,
+      "font": "12.48px 700",
+      "tag": "svg"
+    },
+    {
+      "box": {
+        "h": 38,
+        "w": 239,
+        "x": 10,
+        "y": 639
+      },
+      "class": "nav-item",
+      "color": "#e5e7eb",
+      "depth": 8,
+      "font": "14.72px 400",
+      "href": "http://127.0.0.1:59103/#/whats/team",
+      "tag": "a",
+      "text": "Equipe"
+    },
+    {
+      "box": {
+        "h": 18,
+        "w": 18,
+        "x": 20,
+        "y": 649
+      },
+      "color": "#e5e7eb",
+      "depth": 10,
+      "font": "14.72px 400",
+      "tag": "svg"
+    },
+    {
+      "box": {
+        "h": 38,
+        "w": 239,
+        "x": 10,
+        "y": 679
+      },
+      "class": "nav-item",
+      "color": "#e5e7eb",
+      "depth": 8,
+      "font": "14.72px 400",
+      "href": "http://127.0.0.1:59103/#/whats/webhooks",
+      "tag": "a",
+      "text": "Webhooks"
+    },
+    {
+      "box": {
+        "h": 18,
+        "w": 18,
+        "x": 20,
+        "y": 689
+      },
+      "color": "#e5e7eb",
+      "depth": 10,
+      "font": "14.72px 400",
+      "tag": "svg"
+    },
+    {
+      "background": "#ffffffe0",
+      "box": {
+        "h": 66,
+        "w": 1180,
+        "x": 260,
+        "y": 0
+      },
+      "class": "topbar",
+      "color": "#1b2430",
+      "depth": 5,
+      "display": "flex",
+      "flex": "row",
+      "font": "16px 400",
+      "tag": "header"
+    },
+    {
+      "box": {
+        "h": 18,
+        "w": 17,
+        "x": 293,
+        "y": 24
+      },
+      "color": "#5f6b7a",
+      "depth": 7,
+      "font": "16px 400",
+      "tag": "svg"
+    },
+    {
+      "box": {
+        "h": 23,
+        "w": 439,
+        "x": 318,
+        "y": 21
+      },
+      "color": "#1b2430",
+      "depth": 7,
+      "font": "16px 400",
+      "name": "",
+      "placeholder": "Busca global (contas, campanhas, leads, grupos, módulos)",
+      "tag": "input",
+      "type": "text"
+    },
+    {
+      "background": "#ffffff",
+      "box": {
+        "h": 38,
+        "w": 38,
+        "x": 1258,
+        "y": 14
+      },
+      "class": "icon-btn",
+      "color": "#5f6b7a",
+      "depth": 6,
+      "font": "16px 400",
+      "tag": "button"
+    },
+    {
+      "box": {
+        "h": 18,
+        "w": 18,
+        "x": 1268,
+        "y": 24
+      },
+      "color": "#5f6b7a",
+      "depth": 7,
+      "font": "16px 400",
+      "tag": "svg"
+    },
+    {
+      "box": {
+        "h": 663,
+        "w": 1180,
+        "x": 260,
+        "y": 66
+      },
+      "class": "content",
+      "color": "#1b2430",
+      "depth": 5,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "main"
+    },
+    {
+      "box": {
+        "h": 31,
+        "w": 317,
+        "x": 282,
+        "y": 88
+      },
+      "class": "page-title",
+      "color": "#1b2430",
+      "depth": 9,
+      "font": "23.2px 700",
+      "tag": "h1",
+      "text": "Visão geral"
+    },
+    {
+      "box": {
+        "h": 20,
+        "w": 317,
+        "x": 282,
+        "y": 123
+      },
+      "class": "page-sub",
+      "color": "#5f6b7a",
+      "depth": 9,
+      "font": "15.2px 400",
+      "tag": "p",
+      "text": "Indicadores principais das contas e campanhas."
+    },
+    {
+      "box": {
+        "h": 25,
+        "w": 527,
+        "x": 299,
+        "y": 306
+      },
+      "color": "#1b2430",
+      "depth": 9,
+      "font": "18.72px 700",
+      "tag": "h3",
+      "text": "Contas recentes"
+    },
+    {
+      "background": "#ffffff",
+      "box": {
+        "h": 30,
+        "w": 83,
+        "x": 299,
+        "y": 642
+      },
+      "class": "btn sm",
+      "color": "#1b2430",
+      "depth": 10,
+      "font": "13.44px 600",
+      "href": "http://127.0.0.1:59103/#/whats/accounts",
+      "tag": "a",
+      "text": "Ver contas"
+    },
+    {
+      "box": {
+        "h": 25,
+        "w": 527,
+        "x": 874,
+        "y": 306
+      },
+      "color": "#1b2430",
+      "depth": 9,
+      "font": "18.72px 700",
+      "tag": "h3",
+      "text": "Campanhas recentes"
+    },
+    {
+      "background": "#ffffff",
+      "box": {
+        "h": 30,
+        "w": 112,
+        "x": 874,
+        "y": 642
+      },
+      "class": "btn sm",
+      "color": "#1b2430",
+      "depth": 10,
+      "font": "13.44px 600",
+      "href": "http://127.0.0.1:59103/#/whats/campaigns",
+      "tag": "a",
+      "text": "Ver campanhas"
+    }
+  ],
+  "page": {
+    "h": 900,
+    "w": 1440
+  },
+  "text": "O Orbit Painel Gestão de canais INÍCIO Visão geral Contas e Campanhas OPERAÇÃO Contas Campanhas Buscar grupos Ações Automações GESTÃO Leads Deep links Histórico de auditoria CONFIGURAÇÕES Equipe Webhooks OP Operador Visão geral Indicadores principais das contas e campanhas. Contas · Total 7 Todas as contas cadastradas Contas · Online 3 Conectadas agora Contas · Offline 2 2 sem sessão Campanhas associadas 5 Vinculadas a uma conta Contas recentes Pós-venda Premium 31/10/2026, 21:00 Sem sessão Linha Eventos 27/10/2026, 21:00 Offline Recuperação Carrinho 20/10/2026, 21:00 Online Canal Parceiros 14/10/2026, 21:00 Sem sessão Pré-vendas Nordeste 01/10/2026, 21:00 Offline Ver contas Campanhas recentes Black Friday Lista VIP 21/10/2026, 21:00 Ativa Onboarding Clientes Novos 24/09/2026, 21:00 Ativa Lançamento Coleção Q4 19/09/2026, 21:00 Ativa Reativação Inativos 09/08/2026, 21:00 Arquivada Pesquisa NPS Trimestral 04/07/2026, 21:00 Arquivada Ver campanhas",
+  "title": "Orbit Painel",
+  "unreadable_stylesheets": 0,
+  "url": "http://127.0.0.1:59103/#/whats/overview",
+  "viewport": {
+    "h": 900,
+    "w": 1440
+  }
+}

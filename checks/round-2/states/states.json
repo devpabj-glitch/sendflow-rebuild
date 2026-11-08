@@ -1,0 +1,66 @@
+{
+  "states": [
+    {
+      "changed": [
+        "expanded"
+      ],
+      "file": "state-1.png",
+      "index": 0,
+      "kind": "menu",
+      "label": "Como faço para assinar o Sendi?",
+      "sha256": "e3b5bd869bd0493ecf4b9ab47d11308b7a7b3ea8caafa04c4dcf5010124faea2"
+    },
+    {
+      "changed": [
+        "expanded"
+      ],
+      "file": "state-2.png",
+      "index": 1,
+      "kind": "menu",
+      "label": "Como acesso o SendFlow depois de assinar?",
+      "sha256": "4f470a26b7a4667580f64739cd5248f2d3338ab852f2c76db19af135be419606"
+    },
+    {
+      "changed": [
+        "expanded"
+      ],
+      "file": "state-3.png",
+      "index": 2,
+      "kind": "menu",
+      "label": "Posso ter meu chip banido?",
+      "sha256": "a5c8dcb7c69b1e97a13f9a8a3009725cd647a65f620ddf15ed3c69c4306ab6f1"
+    },
+    {
+      "changed": [
+        "expanded"
+      ],
+      "file": "state-4.png",
+      "index": 3,
+      "kind": "menu",
+      "label": "O Sendi cria grupos automaticamente?",
+      "sha256": "69881836223818d3e8f7f806bd642b968f939ea1759ce03a7d3653041bbf7189"
+    },
+    {
+      "changed": [
+        "expanded"
+      ],
+      "file": "state-5.png",
+      "index": 4,
+      "kind": "menu",
+      "label": "Quanto tempo de garantia eu tenho?",
+      "sha256": "ab8b8fbde5138daf8e68f561301b982d9d0f48f6da05116599cf6ccd9d51c090"
+    },
+    {
+      "changed": [
+        "expanded"
+      ],
+      "file": "state-6.png",
+      "index": 5,
+      "kind": "menu",
+      "label": "Quais as formas de pagamento?",
+      "sha256": "cc93cc91bfac0ee359164c7248a3547c6528d77ac3313deebabe8838cac79e31"
+    }
+  ],
+  "url": "http://127.0.0.1:60487/",
+  "width": 1440
+}

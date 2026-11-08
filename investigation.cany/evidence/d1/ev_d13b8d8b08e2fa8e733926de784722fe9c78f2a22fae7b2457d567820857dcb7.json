@@ -1,0 +1,78 @@
+{
+  "id": "ev_d13b8d8b08e2fa8e733926de784722fe9c78f2a22fae7b2457d567820857dcb7",
+  "subject": {
+    "kind": "website",
+    "name": "https://sendflow.pro/forgot-password"
+  },
+  "operation": "web_site_open",
+  "params": {
+    "height": 900,
+    "url": "https://sendflow.pro/forgot-password",
+    "width": 1440
+  },
+  "result": {
+    "browser": "Chrome/156.0.8078.74",
+    "facts": {
+      "elements": 213,
+      "forms": 1,
+      "height": 900,
+      "images": 1,
+      "lang": "pt-BR",
+      "links": 3,
+      "ready": "complete",
+      "title": "SendFlow",
+      "url": "https://sendflow.pro/forgot-password",
+      "width": 1440
+    },
+    "health": {
+      "errors": [
+        {
+          "kind": "console",
+          "text": "[Firestore permission-denied] query",
+          "url": ""
+        },
+        {
+          "kind": "script",
+          "text": "FirebaseError: Missing or insufficient permissions.",
+          "url": "https://sendflow.pro/_next/static/immutable/chunks/0e9b71q8aph0r.js"
+        }
+      ],
+      "failed_requests": [
+        {
+          "status": 403,
+          "type": "Fetch",
+          "url": "https://content-firebaseappcheck.googleapis.com/v1/projects/whatsapp-ultimate/apps/1:1001566239133:web:14374ff3a95e7b5d641774:exchangeRecaptchaV3Token"
+        }
+      ]
+    },
+    "title": "SendFlow",
+    "url": "https://sendflow.pro/forgot-password"
+  },
+  "summary": "Opened https://sendflow.pro/forgot-password: \"SendFlow\". While loading: 2 error(s), 1 failed request(s).",
+  "confidence": "observed",
+  "authority": "our-run",
+  "environment": {
+    "clean_room": false,
+    "engine": "cdp",
+    "engine_version": "1.3",
+    "host": "windows-x86_64"
+  },
+  "limitations": [
+    {
+      "code": "private_profile",
+      "message": "A fresh private browser: pages behind a login show their signed-out state."
+    }
+  ],
+  "coverage": {
+    "status": "complete",
+    "examined": 1,
+    "total": 1
+  },
+  "locations": [
+    {
+      "kind": "url",
+      "value": "https://sendflow.pro/forgot-password"
+    }
+  ],
+  "links": []
+}

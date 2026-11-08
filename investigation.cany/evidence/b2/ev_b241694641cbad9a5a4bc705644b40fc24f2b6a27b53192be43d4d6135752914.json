@@ -1,0 +1,72 @@
+{
+  "id": "ev_b241694641cbad9a5a4bc705644b40fc24f2b6a27b53192be43d4d6135752914",
+  "subject": {
+    "kind": "website",
+    "name": "https://sendflow.com.br/"
+  },
+  "operation": "web_site_open",
+  "params": {
+    "height": 900,
+    "url": "https://sendflow.com.br/",
+    "width": 1440
+  },
+  "result": {
+    "browser": "Chrome/156.0.8078.74",
+    "facts": {
+      "elements": 604,
+      "forms": 0,
+      "height": 9915,
+      "images": 62,
+      "lang": "en",
+      "links": 22,
+      "ready": "complete",
+      "title": "SendFlow | Automação de grupos e comunidades WhatsApp",
+      "url": "https://sendflow.com.br/",
+      "width": 1425
+    },
+    "health": {
+      "errors": [],
+      "failed_requests": [
+        {
+          "error": "net::ERR_CONNECTION_RESET",
+          "type": "Script",
+          "url": "https://bat.bing.com/bat.js"
+        },
+        {
+          "error": "net::ERR_CONNECTION_RESET",
+          "type": "Image",
+          "url": "https://c.bing.com/c.gif"
+        }
+      ]
+    },
+    "title": "SendFlow | Automação de grupos e comunidades WhatsApp",
+    "url": "https://sendflow.com.br/"
+  },
+  "summary": "Opened https://sendflow.com.br/: \"SendFlow | Automação de grupos e comunidades WhatsApp\". While loading: 0 error(s), 2 failed request(s).",
+  "confidence": "observed",
+  "authority": "our-run",
+  "environment": {
+    "clean_room": false,
+    "engine": "cdp",
+    "engine_version": "1.3",
+    "host": "windows-x86_64"
+  },
+  "limitations": [
+    {
+      "code": "private_profile",
+      "message": "A fresh private browser: pages behind a login show their signed-out state."
+    }
+  ],
+  "coverage": {
+    "status": "complete",
+    "examined": 1,
+    "total": 1
+  },
+  "locations": [
+    {
+      "kind": "url",
+      "value": "https://sendflow.com.br/"
+    }
+  ],
+  "links": []
+}

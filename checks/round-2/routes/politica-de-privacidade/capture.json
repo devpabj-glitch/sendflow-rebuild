@@ -1,0 +1,1463 @@
+{
+  "a11y": {
+    "images_without_alt": 0,
+    "landmarks": {
+      "banner": 1,
+      "main": 1,
+      "navigation": 1
+    },
+    "lang": "pt-BR",
+    "unnamed_controls": 0,
+    "unnamed_examples": []
+  },
+  "assets": {
+    "background_images": [],
+    "fonts": [
+      "https://fonts.googleapis.com/css2"
+    ],
+    "images": [
+      {
+        "alt": "SendFlow",
+        "h": 1081,
+        "src": "https://sendflow.com.br/assets/logo-sendflow-CFfyEAex.svg",
+        "w": 1683
+      }
+    ],
+    "inline_scripts": 0,
+    "requests": [
+      {
+        "bytes": 0,
+        "type": "link",
+        "url": "https://fonts.googleapis.com/css2"
+      },
+      {
+        "bytes": 18034,
+        "type": "link",
+        "url": "http://127.0.0.1:60487/assets/index-CGjFf2Jf.css"
+      },
+      {
+        "bytes": 260877,
+        "type": "script",
+        "url": "http://127.0.0.1:60487/assets/index-DtoVzuzC.js"
+      },
+      {
+        "bytes": 0,
+        "type": "img",
+        "url": "https://sendflow.com.br/assets/logo-sendflow-CFfyEAex.svg"
+      },
+      {
+        "bytes": 303,
+        "type": "other",
+        "url": "http://127.0.0.1:60487/favicon.ico"
+      }
+    ],
+    "scripts": [
+      "http://127.0.0.1:60487/assets/index-DtoVzuzC.js"
+    ],
+    "stylesheets": [
+      "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap",
+      "http://127.0.0.1:60487/assets/index-CGjFf2Jf.css"
+    ]
+  },
+  "breakpoints": [
+    {
+      "count": 1,
+      "px": 600,
+      "query": "max-width 600px"
+    },
+    {
+      "count": 1,
+      "px": 640,
+      "query": "max-width 640px"
+    },
+    {
+      "count": 1,
+      "px": 767,
+      "query": "max-width 767px"
+    },
+    {
+      "count": 2,
+      "px": 900,
+      "query": "max-width 900px"
+    },
+    {
+      "count": 1,
+      "px": 1023,
+      "query": "max-width 1023px"
+    },
+    {
+      "count": 1,
+      "px": 1180,
+      "query": "max-width 1180px"
+    }
+  ],
+  "design": {
+    "backgrounds": [
+      {
+        "count": 2,
+        "value": "#f3f4f6"
+      },
+      {
+        "count": 2,
+        "value": "#ffffff"
+      },
+      {
+        "count": 1,
+        "value": "#151515"
+      },
+      {
+        "count": 1,
+        "value": "#1976d2"
+      }
+    ],
+    "css_variables": {
+      "--bg": "#0b1220",
+      "--bg-elev": "#121c2f",
+      "--bg-muted": "#17233b",
+      "--border": "#24324d",
+      "--danger": "#f87171",
+      "--danger-soft": "rgba(248,113,113,.14)",
+      "--focus": "#2563eb",
+      "--font": "\"Segoe UI\", Inter, system-ui, -apple-system, sans-serif",
+      "--primary": "#60a5fa",
+      "--primary-soft": "rgba(96,165,250,.16)",
+      "--primary-strong": "#3b82f6",
+      "--radius": "12px",
+      "--radius-sm": "8px",
+      "--shadow": "0 1px 2px rgba(0,0,0,.35), 0 10px 28px rgba(0,0,0,.28)",
+      "--sidebar": "#08101d",
+      "--sidebar-active": "#163055",
+      "--sidebar-hover": "#13213a",
+      "--sidebar-muted": "#7f95b3",
+      "--sidebar-text": "#dbe7f5",
+      "--success": "#4ade80",
+      "--success-soft": "rgba(74,222,128,.14)",
+      "--text": "#e6edf7",
+      "--text-muted": "#9fb0c7",
+      "--warning": "#fbbf24",
+      "--warning-soft": "rgba(251,191,36,.14)"
+    },
+    "font_faces": [
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "400"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "400"
+      },
+      {
+        "family": "Poppins",
+        "status": "loaded",
+        "style": "normal",
+        "weight": "400"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "500"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "500"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "500"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "700"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "700"
+      },
+      {
+        "family": "Poppins",
+        "status": "loaded",
+        "style": "normal",
+        "weight": "700"
+      }
+    ],
+    "font_sizes": [
+      {
+        "count": 24,
+        "value": "13.6px"
+      },
+      {
+        "count": 12,
+        "value": "19.5px"
+      },
+      {
+        "count": 7,
+        "value": "15px"
+      },
+      {
+        "count": 2,
+        "value": "16px"
+      },
+      {
+        "count": 2,
+        "value": "12px"
+      },
+      {
+        "count": 1,
+        "value": "27px"
+      }
+    ],
+    "font_weights": [
+      {
+        "count": 27,
+        "value": "400"
+      },
+      {
+        "count": 21,
+        "value": "700"
+      }
+    ],
+    "fonts": [
+      {
+        "count": 45,
+        "value": "Poppins, Roboto, \"Helvetica Neue\", Arial, sans-serif"
+      },
+      {
+        "count": 3,
+        "value": "Poppins, Roboto, Helvetica, Arial, sans-serif"
+      }
+    ],
+    "max_widths": [
+      {
+        "count": 1,
+        "value": "1140px"
+      },
+      {
+        "count": 1,
+        "value": "420px"
+      }
+    ],
+    "radii": [
+      {
+        "count": 1,
+        "value": "16px"
+      },
+      {
+        "count": 1,
+        "value": "8px"
+      },
+      {
+        "count": 1,
+        "value": "4px"
+      }
+    ],
+    "shadows": [
+      {
+        "count": 1,
+        "value": "rgba(0, 0, 0, 0.3) 0px 5px 15px 0px"
+      }
+    ],
+    "spacing": [
+      {
+        "count": 38,
+        "value": "13.6px"
+      },
+      {
+        "count": 15,
+        "value": "16px"
+      },
+      {
+        "count": 14,
+        "value": "24px"
+      },
+      {
+        "count": 14,
+        "value": "8px"
+      },
+      {
+        "count": 7,
+        "value": "6px"
+      },
+      {
+        "count": 6,
+        "value": "12px"
+      },
+      {
+        "count": 5,
+        "value": "20px"
+      },
+      {
+        "count": 1,
+        "value": "32px"
+      },
+      {
+        "count": 1,
+        "value": "56px"
+      },
+      {
+        "count": 1,
+        "value": "28px"
+      },
+      {
+        "count": 1,
+        "value": "36px"
+      },
+      {
+        "count": 1,
+        "value": "40px"
+      }
+    ],
+    "text_colors": [
+      {
+        "count": 21,
+        "value": "#374151"
+      },
+      {
+        "count": 19,
+        "value": "#1f2937"
+      },
+      {
+        "count": 3,
+        "value": "#ffde07"
+      },
+      {
+        "count": 2,
+        "value": "#ffffff"
+      },
+      {
+        "count": 2,
+        "value": "#000000de"
+      },
+      {
+        "count": 1,
+        "value": "#0f172a"
+      }
+    ]
+  },
+  "forms": [],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Política de Privacidade do SendFlow"
+    },
+    {
+      "level": 2,
+      "text": "Introdução"
+    },
+    {
+      "level": 2,
+      "text": "1. Dados Coletados"
+    },
+    {
+      "level": 3,
+      "text": "1.1. Informações pessoais"
+    },
+    {
+      "level": 3,
+      "text": "1.2. Informações coletadas automaticamente"
+    },
+    {
+      "level": 3,
+      "text": "1.3. Dados de terceiros"
+    },
+    {
+      "level": 2,
+      "text": "2. Uso dos Dados"
+    },
+    {
+      "level": 2,
+      "text": "3. Compartilhamento de Dados"
+    },
+    {
+      "level": 3,
+      "text": "3.1. Prestadores de serviço e parceiros"
+    },
+    {
+      "level": 3,
+      "text": "3.2. Integrações com plataformas de terceiros"
+    },
+    {
+      "level": 3,
+      "text": "3.3. Obrigação legal"
+    },
+    {
+      "level": 3,
+      "text": "3.4. Sem venda de dados"
+    },
+    {
+      "level": 2,
+      "text": "4. Segurança dos Dados"
+    },
+    {
+      "level": 2,
+      "text": "5. Retenção dos Dados"
+    },
+    {
+      "level": 2,
+      "text": "6. Direitos dos Usuários"
+    },
+    {
+      "level": 2,
+      "text": "7. Cookies e Tecnologias Similares"
+    },
+    {
+      "level": 2,
+      "text": "8. Transferência Internacional de Dados"
+    },
+    {
+      "level": 2,
+      "text": "9. Alterações nesta Política"
+    },
+    {
+      "level": 2,
+      "text": "10. Contato"
+    },
+    {
+      "level": 2,
+      "text": "11. Jurisdição e Conformidade Legal"
+    }
+  ],
+  "health": {
+    "errors": [],
+    "failed_requests": []
+  },
+  "lang": "pt-BR",
+  "layouts": [
+    {
+      "blocks": [
+        {
+          "background": "#151515",
+          "h": 49,
+          "pad": [
+            12,
+            20,
+            12,
+            20
+          ],
+          "per_row": 1,
+          "tag": "header",
+          "w": 1425,
+          "y": 0
+        },
+        {
+          "h": 25,
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "nav",
+          "w": 162,
+          "y": 12
+        },
+        {
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              0,
+              0
+            ],
+            "w": 1140,
+            "x": 143
+          },
+          "h": 1995,
+          "heading": "Política de Privacidade do SendFlow",
+          "pad": [
+            32,
+            16,
+            56,
+            16
+          ],
+          "per_row": 1,
+          "tag": "main",
+          "w": 1425,
+          "y": 49
+        },
+        {
+          "background": "#ffffff",
+          "h": 1907,
+          "heading": "Política de Privacidade do SendFlow",
+          "pad": [
+            28,
+            24,
+            36,
+            24
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 840,
+          "y": 81
+        },
+        {
+          "h": 1830,
+          "heading": "Política de Privacidade do SendFlow",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "article",
+          "w": 792,
+          "y": 109
+        }
+      ],
+      "page_h": 2044,
+      "page_w": 1425,
+      "type": {
+        "body": 14,
+        "h1": 27,
+        "h2": 20,
+        "h3": 15
+      },
+      "width": 1440
+    },
+    {
+      "blocks": [
+        {
+          "background": "#151515",
+          "h": 49,
+          "pad": [
+            12,
+            20,
+            12,
+            20
+          ],
+          "per_row": 1,
+          "tag": "header",
+          "w": 753,
+          "y": 0
+        },
+        {
+          "h": 25,
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "nav",
+          "w": 162,
+          "y": 12
+        },
+        {
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              0,
+              0
+            ],
+            "w": 721,
+            "x": 16
+          },
+          "h": 2065,
+          "heading": "Política de Privacidade do SendFlow",
+          "pad": [
+            32,
+            16,
+            56,
+            16
+          ],
+          "per_row": 1,
+          "tag": "main",
+          "w": 753,
+          "y": 49
+        },
+        {
+          "background": "#ffffff",
+          "h": 1977,
+          "heading": "Política de Privacidade do SendFlow",
+          "pad": [
+            28,
+            24,
+            36,
+            24
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 721,
+          "y": 81
+        },
+        {
+          "h": 1899,
+          "heading": "Política de Privacidade do SendFlow",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "article",
+          "w": 673,
+          "y": 109
+        }
+      ],
+      "page_h": 2114,
+      "page_w": 753,
+      "type": {
+        "body": 14,
+        "h1": 27,
+        "h2": 20,
+        "h3": 15
+      },
+      "width": 768
+    },
+    {
+      "blocks": [
+        {
+          "background": "#151515",
+          "h": 49,
+          "pad": [
+            12,
+            20,
+            12,
+            20
+          ],
+          "per_row": 2,
+          "tag": "header",
+          "w": 390,
+          "y": 0
+        },
+        {
+          "h": 25,
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "nav",
+          "w": 162,
+          "y": 12
+        },
+        {
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              0,
+              0
+            ],
+            "w": 374,
+            "x": 8
+          },
+          "h": 2148,
+          "heading": "Política de Privacidade do SendFlow",
+          "pad": [
+            16,
+            8,
+            48,
+            8
+          ],
+          "per_row": 1,
+          "tag": "main",
+          "w": 390,
+          "y": 49
+        },
+        {
+          "background": "#ffffff",
+          "h": 2084,
+          "heading": "Política de Privacidade do SendFlow",
+          "pad": [
+            76,
+            16,
+            28,
+            16
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 374,
+          "y": 65
+        },
+        {
+          "h": 1969,
+          "heading": "Política de Privacidade do SendFlow",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "article",
+          "w": 342,
+          "y": 141
+        }
+      ],
+      "page_h": 2197,
+      "page_w": 390,
+      "type": {
+        "body": 11,
+        "h1": 16,
+        "h2": 14,
+        "h3": 15
+      },
+      "width": 390
+    }
+  ],
+  "links": [
+    {
+      "href": "http://127.0.0.1:60487/",
+      "text": "Início"
+    },
+    {
+      "href": "http://127.0.0.1:60487/login",
+      "text": "Entrar"
+    },
+    {
+      "href": "http://127.0.0.1:60487/termo-de-uso",
+      "text": "Termos"
+    },
+    {
+      "href": "http://127.0.0.1:60487/politica-de-privacidade",
+      "text": "Política de Privacidade"
+    }
+  ],
+  "meta": {
+    "description": "",
+    "icons": [
+      "http://127.0.0.1:60487/favicon.ico"
+    ],
+    "og_image": "",
+    "og_title": "",
+    "theme_color": ""
+  },
+  "outline": [
+    {
+      "background": "#151515",
+      "box": {
+        "h": 49,
+        "w": 1425,
+        "x": 0,
+        "y": 0
+      },
+      "class": "sf-legal-banner",
+      "color": "#ffffff",
+      "depth": 4,
+      "display": "flex",
+      "flex": "row",
+      "font": "16px 400",
+      "tag": "header"
+    },
+    {
+      "box": {
+        "h": 25,
+        "w": 162,
+        "x": 1243,
+        "y": 12
+      },
+      "color": "#ffffff",
+      "depth": 5,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "nav"
+    },
+    {
+      "box": {
+        "h": 19,
+        "w": 36,
+        "x": 1255,
+        "y": 16
+      },
+      "color": "#ffde07",
+      "depth": 6,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:60487/",
+      "tag": "a",
+      "text": "Início"
+    },
+    {
+      "box": {
+        "h": 19,
+        "w": 40,
+        "x": 1302,
+        "y": 16
+      },
+      "color": "#ffde07",
+      "depth": 6,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:60487/login",
+      "tag": "a",
+      "text": "Entrar"
+    },
+    {
+      "box": {
+        "h": 19,
+        "w": 51,
+        "x": 1354,
+        "y": 16
+      },
+      "color": "#ffde07",
+      "depth": 6,
+      "font": "13.6px 400",
+      "href": "http://127.0.0.1:60487/termo-de-uso",
+      "tag": "a",
+      "text": "Termos"
+    },
+    {
+      "box": {
+        "h": 1995,
+        "w": 1425,
+        "x": 0,
+        "y": 49
+      },
+      "class": "sf-legal-main",
+      "color": "#1f2937",
+      "depth": 4,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "main"
+    },
+    {
+      "background": "#ffffff",
+      "box": {
+        "h": 1907,
+        "w": 840,
+        "x": 143,
+        "y": 81
+      },
+      "class": "sf-legal-article-wrap",
+      "color": "#1f2937",
+      "depth": 6,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 1830,
+        "w": 792,
+        "x": 167,
+        "y": 109
+      },
+      "color": "#1f2937",
+      "depth": 7,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "article"
+    },
+    {
+      "box": {
+        "h": 40,
+        "w": 792,
+        "x": 167,
+        "y": 109
+      },
+      "color": "#0f172a",
+      "depth": 8,
+      "font": "27px 700",
+      "id": "priv-title",
+      "tag": "h1",
+      "text": "Política de Privacidade do SendFlow"
+    },
+    {
+      "alt": "SendFlow",
+      "box": {
+        "h": 48,
+        "w": 75,
+        "x": 167,
+        "y": 169
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "font": "16px 400",
+      "src": "https://sendflow.com.br/assets/logo-sendflow-CFfyEAex.svg",
+      "tag": "img"
+    },
+    {
+      "box": {
+        "h": 29,
+        "w": 792,
+        "x": 167,
+        "y": 248
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "Introdução"
+    },
+    {
+      "box": {
+        "h": 46,
+        "w": 792,
+        "x": 167,
+        "y": 291
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta Política de Privacidade do SendFlow descreve como os dados e informações dos usuários são tratados na plataforma, em conformidade com as leis aplicáveis e com o compromisso da SendFlow com a priv"
+    },
+    {
+      "box": {
+        "h": 29,
+        "w": 792,
+        "x": 167,
+        "y": 361
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "1. Dados Coletados"
+    },
+    {
+      "box": {
+        "h": 23,
+        "w": 792,
+        "x": 167,
+        "y": 403
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "A SendFlow pode coletar dados necessários para o funcionamento da plataforma e dos serviços."
+    },
+    {
+      "box": {
+        "h": 23,
+        "w": 792,
+        "x": 167,
+        "y": 443
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "font": "15px 700",
+      "tag": "h3",
+      "text": "1.1. Informações pessoais"
+    },
+    {
+      "box": {
+        "h": 23,
+        "w": 792,
+        "x": 167,
+        "y": 479
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Podemos coletar informações pessoais fornecidas pelo usuário, como nome, email e dados de contato."
+    },
+    {
+      "box": {
+        "h": 23,
+        "w": 792,
+        "x": 167,
+        "y": 518
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "font": "15px 700",
+      "tag": "h3",
+      "text": "1.2. Informações coletadas automaticamente"
+    },
+    {
+      "box": {
+        "h": 23,
+        "w": 792,
+        "x": 167,
+        "y": 555
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Informações técnicas podem ser coletadas automaticamente durante o uso da plataforma."
+    },
+    {
+      "box": {
+        "h": 23,
+        "w": 792,
+        "x": 167,
+        "y": 594
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "font": "15px 700",
+      "tag": "h3",
+      "text": "1.3. Dados de terceiros"
+    },
+    {
+      "box": {
+        "h": 23,
+        "w": 792,
+        "x": 167,
+        "y": 631
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Dados podem ser recebidos de integrações ou serviços de terceiros, conforme autorizado."
+    },
+    {
+      "box": {
+        "h": 29,
+        "w": 792,
+        "x": 167,
+        "y": 678
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "2. Uso dos Dados"
+    },
+    {
+      "box": {
+        "h": 46,
+        "w": 792,
+        "x": 167,
+        "y": 720
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Os dados são usados para operar a plataforma, prestar serviços, melhorar a experiência e cumprir obrigações legais."
+    },
+    {
+      "box": {
+        "h": 46,
+        "w": 792,
+        "x": 167,
+        "y": 782
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "box": {
+        "h": 29,
+        "w": 792,
+        "x": 167,
+        "y": 853
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "3. Compartilhamento de Dados"
+    },
+    {
+      "box": {
+        "h": 23,
+        "w": 792,
+        "x": 167,
+        "y": 895
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "O compartilhamento de dados pode ocorrer nas situações descritas nesta política."
+    },
+    {
+      "box": {
+        "h": 23,
+        "w": 792,
+        "x": 167,
+        "y": 934
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "font": "15px 700",
+      "tag": "h3",
+      "text": "3.1. Prestadores de serviço e parceiros"
+    },
+    {
+      "box": {
+        "h": 23,
+        "w": 792,
+        "x": 167,
+        "y": 971
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Podemos compartilhar dados com parceiros que apoiam a operação da plataforma."
+    },
+    {
+      "box": {
+        "h": 23,
+        "w": 792,
+        "x": 167,
+        "y": 1010
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "font": "15px 700",
+      "tag": "h3",
+      "text": "3.2. Integrações com plataformas de terceiros"
+    },
+    {
+      "box": {
+        "h": 23,
+        "w": 792,
+        "x": 167,
+        "y": 1047
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Integrações podem envolver troca de informações com serviços conectados."
+    },
+    {
+      "box": {
+        "h": 23,
+        "w": 792,
+        "x": 167,
+        "y": 1086
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "font": "15px 700",
+      "tag": "h3",
+      "text": "3.3. Obrigação legal"
+    },
+    {
+      "box": {
+        "h": 23,
+        "w": 792,
+        "x": 167,
+        "y": 1122
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Dados podem ser compartilhados para cumprir obrigações legais ou ordens de autoridades."
+    },
+    {
+      "box": {
+        "h": 23,
+        "w": 792,
+        "x": 167,
+        "y": 1161
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "font": "15px 700",
+      "tag": "h3",
+      "text": "3.4. Sem venda de dados"
+    },
+    {
+      "box": {
+        "h": 23,
+        "w": 792,
+        "x": 167,
+        "y": 1198
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "A SendFlow não vende dados pessoais dos usuários."
+    },
+    {
+      "box": {
+        "h": 29,
+        "w": 792,
+        "x": 167,
+        "y": 1245
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "4. Segurança dos Dados"
+    },
+    {
+      "box": {
+        "h": 23,
+        "w": 792,
+        "x": 167,
+        "y": 1288
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Adotamos medidas para proteger os dados e informações armazenados na plataforma."
+    },
+    {
+      "box": {
+        "h": 29,
+        "w": 792,
+        "x": 167,
+        "y": 1335
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "5. Retenção dos Dados"
+    },
+    {
+      "box": {
+        "h": 23,
+        "w": 792,
+        "x": 167,
+        "y": 1377
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Os dados são retidos pelo tempo necessário para as finalidades da plataforma ou exigências legais."
+    },
+    {
+      "box": {
+        "h": 29,
+        "w": 792,
+        "x": 167,
+        "y": 1425
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "6. Direitos dos Usuários"
+    },
+    {
+      "box": {
+        "h": 23,
+        "w": 792,
+        "x": 167,
+        "y": 1467
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Os usuários podem exercer seus direitos sobre dados pessoais, conforme a legislação aplicável."
+    },
+    {
+      "box": {
+        "h": 29,
+        "w": 792,
+        "x": 167,
+        "y": 1514
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "7. Cookies e Tecnologias Similares"
+    },
+    {
+      "box": {
+        "h": 23,
+        "w": 792,
+        "x": 167,
+        "y": 1557
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Cookies podem ser usados para melhorar a experiência na plataforma SendFlow."
+    },
+    {
+      "box": {
+        "h": 29,
+        "w": 792,
+        "x": 167,
+        "y": 1604
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "8. Transferência Internacional de Dados"
+    },
+    {
+      "box": {
+        "h": 23,
+        "w": 792,
+        "x": 167,
+        "y": 1647
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Dados podem ser transferidos internacionalmente quando necessário para os serviços."
+    },
+    {
+      "box": {
+        "h": 29,
+        "w": 792,
+        "x": 167,
+        "y": 1694
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "9. Alterações nesta Política"
+    },
+    {
+      "box": {
+        "h": 23,
+        "w": 792,
+        "x": 167,
+        "y": 1736
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta política pode ser atualizada para refletir mudanças na plataforma ou na lei."
+    },
+    {
+      "box": {
+        "h": 29,
+        "w": 792,
+        "x": 167,
+        "y": 1783
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "10. Contato"
+    },
+    {
+      "box": {
+        "h": 23,
+        "w": 792,
+        "x": 167,
+        "y": 1826
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Em caso de dúvidas sobre privacidade e dados, entre em contato com a SendFlow."
+    },
+    {
+      "box": {
+        "h": 29,
+        "w": 792,
+        "x": 167,
+        "y": 1873
+      },
+      "color": "#1f2937",
+      "depth": 8,
+      "font": "19.5px 700",
+      "tag": "h2",
+      "text": "11. Jurisdição e Conformidade Legal"
+    },
+    {
+      "box": {
+        "h": 23,
+        "w": 792,
+        "x": 167,
+        "y": 1916
+      },
+      "color": "#374151",
+      "depth": 8,
+      "font": "13.6px 400",
+      "tag": "p",
+      "text": "Esta política é interpretada de acordo com a legislação aplicável."
+    },
+    {
+      "box": {
+        "h": 36,
+        "w": 289,
+        "x": 530,
+        "y": 827
+      },
+      "color": "#000000de",
+      "depth": 5,
+      "font": "12px 400",
+      "tag": "p",
+      "text": "Usamos cookies para melhorar sua experiência. Política de Privacidade"
+    },
+    {
+      "box": {
+        "h": 17,
+        "w": 136,
+        "x": 530,
+        "y": 845
+      },
+      "color": "#000000de",
+      "depth": 6,
+      "font": "12px 400",
+      "href": "http://127.0.0.1:60487/politica-de-privacidade",
+      "tag": "a",
+      "text": "Política de Privacidade"
+    },
+    {
+      "background": "#1976d2",
+      "box": {
+        "h": 41,
+        "w": 81,
+        "x": 831,
+        "y": 824
+      },
+      "color": "#ffffff",
+      "depth": 5,
+      "font": "16px 400",
+      "tag": "button",
+      "text": "Aceitar"
+    }
+  ],
+  "page": {
+    "h": 2044,
+    "w": 1425
+  },
+  "text": "SendFlow InícioEntrarTermos Política de Privacidade do SendFlow Introdução Esta Política de Privacidade do SendFlow descreve como os dados e informações dos usuários são tratados na plataforma, em conformidade com as leis aplicáveis e com o compromisso da SendFlow com a privacidade. 1. Dados Coletados A SendFlow pode coletar dados necessários para o funcionamento da plataforma e dos serviços. 1.1. Informações pessoais Podemos coletar informações pessoais fornecidas pelo usuário, como nome, email e dados de contato. 1.2. Informações coletadas automaticamente Informações técnicas podem ser coletadas automaticamente durante o uso da plataforma. 1.3. Dados de terceiros Dados podem ser recebidos de integrações ou serviços de terceiros, conforme autorizado. 2. Uso dos Dados Os dados são usados para operar a plataforma, prestar serviços, melhorar a experiência e cumprir obrigações legais. Fornecer e manter os serviços do SendFlow. Comunicar informações importantes sobre a plataforma. 3. Compartilhamento de Dados O compartilhamento de dados pode ocorrer nas situações descritas nesta política. 3.1. Prestadores de serviço e parceiros Podemos compartilhar dados com parceiros que apoiam a operação da plataforma. 3.2. Integrações com plataformas de terceiros Integrações podem envolver troca de informações com serviços conectados. 3.3. Obrigação legal Dados podem ser compartilhados para cumprir obrigações legais ou ordens de autoridades. 3.4. Sem venda de dados A SendFlow não vende dados pessoais dos usuários. 4. Segurança dos Dados Adotamos medidas para proteger os dados e informações armazenados na plataforma. 5. Retenção dos Dados Os dados são retidos pelo tempo necessário para as finalidades da plataforma ou exigências legais. 6. Direitos dos Usuários Os usuários podem exercer seus direitos sobre dados pessoais, conforme a legislação aplicável. 7. Cookies e Tecnologias Similares Cookies podem ser usados para melhorar a experiência na plataforma SendFlow. 8. Transferência Internacional de Dados Dados podem ser transferidos internacionalmente quando necessário para os serviços. 9. Alterações nesta Política Esta política pode ser atualizada para refletir mudanças na plataforma ou na lei. 10. Contato Em caso de dúvidas sobre privacidade e dados, entre em contato com a SendFlow. 11. Jurisdição e Conformidade Legal Esta política é interpretada de acordo com a legislação aplicável. Usamos cookies para melhorar sua experiência. Política de Privacidade Aceitar",
+  "title": "SendFlow | Automação de grupos e comunidades WhatsApp",
+  "unreadable_stylesheets": 1,
+  "url": "http://127.0.0.1:60487/politica-de-privacidade",
+  "viewport": {
+    "h": 900,
+    "w": 1440
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "ev_6065f0febb4558a764dc6ab00116beb6f3ee895237c4f8626c92ee30b0c07913",
+  "subject": {
+    "kind": "website",
+    "name": "https://sendflow.pro/termo-de-uso"
+  },
+  "operation": "web_site_open",
+  "params": {
+    "height": 900,
+    "url": "https://sendflow.pro/termo-de-uso",
+    "width": 1440
+  },
+  "result": {
+    "browser": "Chrome/156.0.8078.74",
+    "facts": {
+      "elements": 691,
+      "forms": 0,
+      "height": 9873,
+      "images": 1,
+      "lang": "pt-BR",
+      "links": 3,
+      "ready": "complete",
+      "title": "SendFlow",
+      "url": "https://sendflow.pro/termo-de-uso",
+      "width": 1428
+    },
+    "health": {
+      "errors": [
+        {
+          "kind": "console",
+          "text": "[Firestore permission-denied] query",
+          "url": ""
+        },
+        {
+          "kind": "script",
+          "text": "FirebaseError: Missing or insufficient permissions.",
+          "url": "https://sendflow.pro/_next/static/immutable/chunks/0e9b71q8aph0r.js"
+        }
+      ],
+      "failed_requests": [
+        {
+          "status": 403,
+          "type": "Fetch",
+          "url": "https://content-firebaseappcheck.googleapis.com/v1/projects/whatsapp-ultimate/apps/1:1001566239133:web:14374ff3a95e7b5d641774:exchangeRecaptchaV3Token"
+        }
+      ]
+    },
+    "title": "SendFlow",
+    "url": "https://sendflow.pro/termo-de-uso"
+  },
+  "summary": "Opened https://sendflow.pro/termo-de-uso: \"SendFlow\". While loading: 2 error(s), 1 failed request(s).",
+  "confidence": "observed",
+  "authority": "our-run",
+  "environment": {
+    "clean_room": false,
+    "engine": "cdp",
+    "engine_version": "1.3",
+    "host": "windows-x86_64"
+  },
+  "limitations": [
+    {
+      "code": "private_profile",
+      "message": "A fresh private browser: pages behind a login show their signed-out state."
+    }
+  ],
+  "coverage": {
+    "status": "complete",
+    "examined": 1,
+    "total": 1
+  },
+  "locations": [
+    {
+      "kind": "url",
+      "value": "https://sendflow.pro/termo-de-uso"
+    }
+  ],
+  "links": []
+}

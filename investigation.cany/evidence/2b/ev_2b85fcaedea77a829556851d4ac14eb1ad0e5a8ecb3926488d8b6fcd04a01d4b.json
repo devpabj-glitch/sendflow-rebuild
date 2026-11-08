@@ -1,0 +1,106 @@
+{
+  "id": "ev_2b85fcaedea77a829556851d4ac14eb1ad0e5a8ecb3926488d8b6fcd04a01d4b",
+  "subject": {
+    "kind": "website",
+    "name": "http://127.0.0.1:56171/"
+  },
+  "operation": "web_page_states_capture",
+  "params": {
+    "max_states": 8,
+    "width": 1440
+  },
+  "result": {
+    "folder": "C:\\Users\\ccpru\\sendflow-rebuild\\checks\\round-0\\states",
+    "found": 6,
+    "states": [
+      {
+        "changed": [
+          "expanded"
+        ],
+        "file": "state-1.png",
+        "index": 0,
+        "kind": "menu",
+        "label": "Como faço para assinar o Sendi?",
+        "sha256": "56bd9342ab2b33cc460de213dfe217078ce914dfd753b05b25bac45b920fde46"
+      },
+      {
+        "changed": [
+          "expanded"
+        ],
+        "file": "state-2.png",
+        "index": 1,
+        "kind": "menu",
+        "label": "Como acesso o SendFlow depois de assinar?",
+        "sha256": "4a3bb6902ff7099a92ef9c34b4d1e69d3546ff27b59b65beac1caeee2ec7dbeb"
+      },
+      {
+        "changed": [
+          "expanded"
+        ],
+        "file": "state-3.png",
+        "index": 2,
+        "kind": "menu",
+        "label": "Posso ter meu chip banido?",
+        "sha256": "84bb3e47f3a9bf0f54bd209adaaa5e907904e52728acd76daea15ed9407ff699"
+      },
+      {
+        "changed": [
+          "expanded"
+        ],
+        "file": "state-4.png",
+        "index": 3,
+        "kind": "menu",
+        "label": "O Sendi cria grupos automaticamente?",
+        "sha256": "a648637f046ad757fea5a2f2c28b0f788b144020bc6a35f959e46cf0cdf6521f"
+      },
+      {
+        "changed": [
+          "expanded"
+        ],
+        "file": "state-5.png",
+        "index": 4,
+        "kind": "menu",
+        "label": "Quanto tempo de garantia eu tenho?",
+        "sha256": "ce547711f40599f9a327100c5d90c1b0ea9192ea343485361ab8bafb0790f59e"
+      },
+      {
+        "changed": [
+          "expanded"
+        ],
+        "file": "state-6.png",
+        "index": 5,
+        "kind": "menu",
+        "label": "Quais as formas de pagamento?",
+        "sha256": "1b627d0973bdceef2290c54875cbdf1763f292caf21049ffffdfa72a2855fa2f"
+      }
+    ],
+    "url": "http://127.0.0.1:56171/"
+  },
+  "summary": "Opened 6 of 6 control(s) on http://127.0.0.1:56171/; 6 pictured in C:\\Users\\ccpru\\sendflow-rebuild\\checks\\round-0\\states.",
+  "confidence": "observed",
+  "authority": "our-run",
+  "environment": {
+    "clean_room": false,
+    "engine": "cdp",
+    "engine_version": "1.3",
+    "host": "windows-x86_64"
+  },
+  "limitations": [
+    {
+      "code": "first_controls",
+      "message": "Only the first controls found are opened, one at a time; menus inside menus and hover-only menus are not."
+    }
+  ],
+  "coverage": {
+    "status": "complete",
+    "examined": 6,
+    "total": 6
+  },
+  "locations": [
+    {
+      "kind": "url",
+      "value": "http://127.0.0.1:56171/"
+    }
+  ],
+  "links": []
+}

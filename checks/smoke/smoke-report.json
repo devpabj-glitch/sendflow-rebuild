@@ -1,0 +1,115 @@
+{
+  "status": "OK",
+  "loginWorks": true,
+  "modules": [
+    {
+      "route": "/",
+      "ok": true,
+      "hasBrand": false,
+      "chars": 4072
+    },
+    {
+      "route": "/whats/overview (sem sessão)",
+      "ok": true,
+      "hasBrand": false,
+      "url": "http://localhost:4173/login"
+    },
+    {
+      "route": "/login (senha errada)",
+      "ok": true,
+      "hasBrand": false
+    },
+    {
+      "route": "/login (fluxo)",
+      "ok": true,
+      "hasBrand": false,
+      "url": "http://localhost:4173/whats/overview"
+    },
+    {
+      "route": "/whats/overview",
+      "ok": true,
+      "hasBrand": false,
+      "chars": 516
+    },
+    {
+      "route": "/whats/accounts",
+      "ok": true,
+      "hasBrand": false,
+      "chars": 479
+    },
+    {
+      "route": "/whats/accounts-campaigns",
+      "ok": true,
+      "hasBrand": false,
+      "chars": 591
+    },
+    {
+      "route": "/whats/campaigns",
+      "ok": true,
+      "hasBrand": false,
+      "chars": 1664
+    },
+    {
+      "route": "/whats/group-search",
+      "ok": true,
+      "hasBrand": false,
+      "chars": 550
+    },
+    {
+      "route": "/whats/actions",
+      "ok": true,
+      "hasBrand": false,
+      "chars": 541
+    },
+    {
+      "route": "/whats/automations",
+      "ok": true,
+      "hasBrand": false,
+      "chars": 443
+    },
+    {
+      "route": "/whats/leads",
+      "ok": true,
+      "hasBrand": false,
+      "chars": 475
+    },
+    {
+      "route": "/whats/deeplinks",
+      "ok": true,
+      "hasBrand": false,
+      "chars": 500
+    },
+    {
+      "route": "/whats/history",
+      "ok": true,
+      "hasBrand": false,
+      "chars": 482
+    },
+    {
+      "route": "/whats/team",
+      "ok": true,
+      "hasBrand": false,
+      "chars": 419
+    },
+    {
+      "route": "/whats/webhooks",
+      "ok": true,
+      "hasBrand": false,
+      "chars": 466
+    },
+    {
+      "route": "/termo-de-uso",
+      "ok": true,
+      "hasBrand": false,
+      "chars": 12203
+    },
+    {
+      "route": "/politica-de-privacidade",
+      "ok": true,
+      "hasBrand": false,
+      "chars": 2524
+    }
+  ],
+  "externalBrandRequests": [],
+  "consoleErrors": []
+}

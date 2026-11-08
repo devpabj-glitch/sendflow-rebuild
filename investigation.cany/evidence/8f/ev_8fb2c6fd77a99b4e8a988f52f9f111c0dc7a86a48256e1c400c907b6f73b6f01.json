@@ -1,0 +1,611 @@
+{
+  "id": "ev_8fb2c6fd77a99b4e8a988f52f9f111c0dc7a86a48256e1c400c907b6f73b6f01",
+  "subject": {
+    "kind": "website",
+    "name": "https://sendflow.pro/login"
+  },
+  "operation": "web_site_capture",
+  "params": {
+    "include_html": false,
+    "max_height": 12000,
+    "noise_pass": true,
+    "visitor_view": false,
+    "widths": [
+      1440,
+      768,
+      390
+    ]
+  },
+  "result": {
+    "counts": {
+      "forms": 1,
+      "headings": 1,
+      "images": 1,
+      "links": 4,
+      "outline": 21
+    },
+    "design": {
+      "backgrounds": [
+        {
+          "count": 1,
+          "value": "#151515"
+        },
+        {
+          "count": 1,
+          "value": "#ffde07"
+        },
+        {
+          "count": 1,
+          "value": "#ffffff"
+        },
+        {
+          "count": 1,
+          "value": "#1976d2"
+        }
+      ],
+      "css_variables": {
+        "--color-control-bg-dark": "#005c4b",
+        "--color-control-bg-light": "#d9fdd3",
+        "--color-control-bg-light-deep": "#d1f4cc"
+      },
+      "font_faces": [
+        {
+          "family": "Material Icons",
+          "status": "loaded",
+          "style": "normal",
+          "weight": "400"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "300"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "300"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "300"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "300"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "300"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "300"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "300"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "300"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "300"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "400"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "400"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "400"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "400"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "400"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "400"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "400"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "400"
+        },
+        {
+          "family": "Roboto",
+          "status": "loaded",
+          "style": "normal",
+          "weight": "400"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "500"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "500"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "500"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "500"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "500"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "500"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "500"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "500"
+        },
+        {
+          "family": "Roboto",
+          "status": "loaded",
+          "style": "normal",
+          "weight": "500"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "600"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "600"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "600"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "600"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "600"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "600"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "600"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "600"
+        },
+        {
+          "family": "Roboto",
+          "status": "loaded",
+          "style": "normal",
+          "weight": "600"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "700"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "700"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "700"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "700"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "700"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "700"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "700"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "700"
+        },
+        {
+          "family": "Roboto",
+          "status": "unloaded",
+          "style": "normal",
+          "weight": "700"
+        }
+      ],
+      "font_sizes": [
+        {
+          "count": 4,
+          "value": "13.333px"
+        },
+        {
+          "count": 3,
+          "value": "13.714px"
+        },
+        {
+          "count": 3,
+          "value": "8.75px"
+        },
+        {
+          "count": 2,
+          "value": "24px"
+        },
+        {
+          "count": 2,
+          "value": "8.125px"
+        },
+        {
+          "count": 1,
+          "value": "20px"
+        },
+        {
+          "count": 1,
+          "value": "14px"
+        },
+        {
+          "count": 1,
+          "value": "12px"
+        },
+        {
+          "count": 1,
+          "value": "10px"
+        }
+      ],
+      "font_weights": [
+        {
+          "count": 12,
+          "value": "400"
+        },
+        {
+          "count": 5,
+          "value": "500"
+        },
+        {
+          "count": 1,
+          "value": "600"
+        }
+      ],
+      "fonts": [
+        {
+          "count": 10,
+          "value": "Poppins, Roboto, Helvetica, Arial, sans-serif"
+        },
+        {
+          "count": 6,
+          "value": "Roboto, Helvetica, Arial, sans-serif"
+        },
+        {
+          "count": 2,
+          "value": "\"Material Icons\""
+        }
+      ],
+      "max_widths": [
+        {
+          "count": 1,
+          "value": "300px"
+        },
+        {
+          "count": 1,
+          "value": "320px"
+        },
+        {
+          "count": 1,
+          "value": "400px"
+        },
+        {
+          "count": 1,
+          "value": "720px"
+        }
+      ],
+      "radii": [
+        {
+          "count": 8,
+          "value": "4px"
+        },
+        {
+          "count": 7,
+          "value": "8px"
+        },
+        {
+          "count": 2,
+          "value": "50%"
+        }
+      ],
+      "shadows": [
+        {
+          "count": 1,
+          "value": "rgba(0, 0, 0, 0.2) 0px 5px 5px -3px, rgba(0, 0, 0, 0.14) 0px 8px 10px 1px, rgba(0, 0, 0, 0.12) 0px 3px 14px 2px"
+        },
+        {
+          "count": 1,
+          "value": "rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px"
+        }
+      ],
+      "spacing": [
+        {
+          "count": 9,
+          "value": "8px"
+        },
+        {
+          "count": 8,
+          "value": "5px"
+        },
+        {
+          "count": 7,
+          "value": "16px"
+        },
+        {
+          "count": 6,
+          "value": "24px"
+        },
+        {
+          "count": 5,
+          "value": "4px"
+        },
+        {
+          "count": 4,
+          "value": "16.5px"
+        },
+        {
+          "count": 4,
+          "value": "14px"
+        },
+        {
+          "count": 4,
+          "value": "6px"
+        },
+        {
+          "count": 4,
+          "value": "20px"
+        },
+        {
+          "count": 2,
+          "value": "128px"
+        },
+        {
+          "count": 2,
+          "value": "32px"
+        },
+        {
+          "count": 2,
+          "value": "15px"
+        },
+        {
+          "count": 2,
+          "value": "10px"
+        },
+        {
+          "count": 2,
+          "value": "-1px"
+        },
+        {
+          "count": 1,
+          "value": "192px"
+        }
+      ],
+      "text_colors": [
+        {
+          "count": 4,
+          "value": "#e5e7eb"
+        },
+        {
+          "count": 3,
+          "value": "#00000099"
+        },
+        {
+          "count": 2,
+          "value": "#ffde07"
+        },
+        {
+          "count": 2,
+          "value": "#ffffff"
+        },
+        {
+          "count": 2,
+          "value": "#9ca3af"
+        },
+        {
+          "count": 2,
+          "value": "#000000de"
+        },
+        {
+          "count": 1,
+          "value": "#000000"
+        },
+        {
+          "count": 1,
+          "value": "#1976d2"
+        },
+        {
+          "count": 1,
+          "value": "#0000008a"
+        }
+      ]
+    },
+    "files": [
+      "README.md",
+      "capture.json"
+    ],
+    "html_bytes": 0,
+    "output_directory": "C:\\Users\\ccpru\\sendflow-rebuild\\capture\\routes\\login",
+    "screenshots": [
+      {
+        "css_width": 1440,
+        "cut": false,
+        "file": "screenshot-1440.png",
+        "height": 900,
+        "noise_tiles": 0,
+        "sha256": "0217457a4873a4b784994b731b214619049f5736f8b03d2e65a177b203e821f6",
+        "width": 1440
+      },
+      {
+        "css_width": 768,
+        "cut": false,
+        "file": "screenshot-768.png",
+        "height": 900,
+        "noise_tiles": 0,
+        "sha256": "4ff0f4d90ec6c56f88b8a4303e714cc590e81dab775a2aef7d1f31bd14bbdc71",
+        "width": 768
+      },
+      {
+        "css_width": 390,
+        "cut": false,
+        "file": "screenshot-390.png",
+        "height": 900,
+        "noise_tiles": 0,
+        "sha256": "4bf279e98f76edbbc3befdfbe2d34221c41798dbc88cb6f97931b91ebc156868",
+        "width": 390
+      }
+    ],
+    "title": "SendFlow",
+    "url": "https://sendflow.pro/login"
+  },
+  "summary": "Captured https://sendflow.pro/login: 3 screenshot(s), 21 outline items, 1 headings, 1 images, 4 links, 1 forms → C:\\Users\\ccpru\\sendflow-rebuild\\capture\\routes\\login.",
+  "confidence": "observed",
+  "authority": "our-run",
+  "environment": {
+    "clean_room": false,
+    "engine": "cdp",
+    "engine_version": "1.3",
+    "host": "windows-x86_64"
+  },
+  "limitations": [
+    {
+      "code": "one_state",
+      "message": "One state of the page: menus, dialogs and content behind interactions are not opened."
+    },
+    {
+      "code": "cross_origin_css",
+      "message": "CSS custom properties and breakpoints from cross-origin stylesheets can't be read."
+    }
+  ],
+  "coverage": {
+    "status": "complete",
+    "examined": 3,
+    "total": 3
+  },
+  "locations": [
+    {
+      "kind": "url",
+      "value": "https://sendflow.pro/login"
+    },
+    {
+      "kind": "path",
+      "value": "C:\\Users\\ccpru\\sendflow-rebuild\\capture\\routes\\login"
+    }
+  ],
+  "links": []
+}

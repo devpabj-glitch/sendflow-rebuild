@@ -1,0 +1,92 @@
+{
+  "startedAt": "2026-11-07T16:34:47.496Z",
+  "pages": [
+    {
+      "url": "https://sendflow.pro/whats/overview",
+      "title": "SendFlow",
+      "file": "whats_overview.json"
+    },
+    {
+      "url": "https://sendflow.pro/whats/actions",
+      "title": "SendFlow",
+      "file": "whats_actions.json"
+    },
+    {
+      "url": "https://sendflow.pro/whats/automations",
+      "title": "SendFlow",
+      "file": "whats_automations.json"
+    },
+    {
+      "url": "https://sendflow.pro/whats/projects",
+      "title": "SendFlow",
+      "file": "whats_projects.json"
+    },
+    {
+      "url": "https://sendflow.pro/whats/leads",
+      "title": "SendFlow",
+      "file": "whats_leads.json"
+    },
+    {
+      "url": "https://sendflow.pro/whats/broadcasts",
+      "title": "SendFlow",
+      "file": "whats_broadcasts.json"
+    },
+    {
+      "url": "https://sendflow.pro/whats/leads-groups",
+      "title": "SendFlow",
+      "file": "whats_leads_groups.json"
+    },
+    {
+      "url": "https://sendflow.pro/whats/deeplinks",
+      "title": "SendFlow",
+      "file": "whats_deeplinks.json"
+    },
+    {
+      "url": "https://sendflow.pro/whats/history",
+      "title": "SendFlow",
+      "file": "whats_history.json"
+    },
+    {
+      "url": "https://sendflow.pro/whats/attendants",
+      "title": "SendFlow",
+      "file": "whats_attendants.json"
+    },
+    {
+      "url": "https://sendflow.pro/whats/contents",
+      "title": "SendFlow",
+      "file": "whats_contents.json"
+    },
+    {
+      "url": "https://sendflow.pro/whats/accounts-campaigns",
+      "title": "SendFlow",
+      "file": "whats_accounts_campaigns.json"
+    },
+    {
+      "url": "https://sendflow.pro/whats/accounts",
+      "title": "SendFlow",
+      "file": "whats_accounts.json"
+    },
+    {
+      "url": "https://sendflow.pro/whats/campaigns",
+      "title": "SendFlow",
+      "file": "whats_campaigns.json"
+    },
+    {
+      "url": "https://sendflow.pro/whats/webhooks",
+      "title": "SendFlow",
+      "file": "whats_webhooks.json"
+    },
+    {
+      "url": "https://sendflow.pro/privacy.html",
+      "title": "Política de Privacidade - SendFlow",
+      "file": "privacy_html.json"
+    },
+    {
+      "url": "https://sendflow.pro/account/privacy",
+      "title": "SendFlow",
+      "file": "account_privacy.json"
+    }
+  ],
+  "finishedAt": "2026-11-07T16:45:55.877Z",
+  "totalVisited": 17
+}

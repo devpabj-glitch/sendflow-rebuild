@@ -1,0 +1,46 @@
+{
+  "states": [
+    {
+      "changed": [
+        "expanded"
+      ],
+      "file": "state-1.png",
+      "index": 0,
+      "kind": "menu",
+      "label": "Como faço para assinar o Sendi?",
+      "sha256": "7aed4403c5f7d2071e6fd188414d2f1ff44f8b16745bb86653185bb0acf69080"
+    },
+    {
+      "changed": [
+        "expanded"
+      ],
+      "file": "state-2.png",
+      "index": 1,
+      "kind": "menu",
+      "label": "Como acesso o SendFlow depois de assinar?",
+      "sha256": "4e91e1e2a2830cfb1ab8f5b5c20f41648e577cea40509e1c61e10e10ffcc4fdf"
+    },
+    {
+      "changed": [
+        "expanded"
+      ],
+      "file": "state-3.png",
+      "index": 2,
+      "kind": "menu",
+      "label": "Posso ter meu chip banido?",
+      "sha256": "095e26eabd93125adffb3c0b6469ae14bb4ae356e1dc94497f7cfafb3018570a"
+    },
+    {
+      "changed": [
+        "expanded"
+      ],
+      "file": "state-4.png",
+      "index": 3,
+      "kind": "menu",
+      "label": "O Sendi cria grupos automaticamente?",
+      "sha256": "75e8573b1727236f85d4dfae401480648c0cc29fb471810a24a088c01038cd88"
+    }
+  ],
+  "url": "https://sendflow.com.br/",
+  "width": 1440
+}

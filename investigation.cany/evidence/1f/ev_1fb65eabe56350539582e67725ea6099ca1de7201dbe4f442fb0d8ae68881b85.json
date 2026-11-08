@@ -1,0 +1,61 @@
+{
+  "id": "ev_1fb65eabe56350539582e67725ea6099ca1de7201dbe4f442fb0d8ae68881b85",
+  "subject": {
+    "kind": "website",
+    "name": "http://127.0.0.1:59103/forgot-password"
+  },
+  "operation": "web_site_open",
+  "params": {
+    "height": 900,
+    "url": "http://127.0.0.1:59103/forgot-password",
+    "width": 1440
+  },
+  "result": {
+    "browser": "Chrome/156.0.8078.74",
+    "facts": {
+      "elements": 227,
+      "forms": 0,
+      "height": 900,
+      "images": 0,
+      "lang": "pt-BR",
+      "links": 14,
+      "ready": "complete",
+      "title": "Orbit Painel",
+      "url": "http://127.0.0.1:59103/forgot-password#/whats/overview",
+      "width": 1440
+    },
+    "health": {
+      "errors": [],
+      "failed_requests": []
+    },
+    "title": "Orbit Painel",
+    "url": "http://127.0.0.1:59103/forgot-password#/whats/overview"
+  },
+  "summary": "Opened http://127.0.0.1:59103/forgot-password: \"Orbit Painel\".",
+  "confidence": "observed",
+  "authority": "our-run",
+  "environment": {
+    "clean_room": false,
+    "engine": "cdp",
+    "engine_version": "1.3",
+    "host": "windows-x86_64"
+  },
+  "limitations": [
+    {
+      "code": "private_profile",
+      "message": "A fresh private browser: pages behind a login show their signed-out state."
+    }
+  ],
+  "coverage": {
+    "status": "complete",
+    "examined": 1,
+    "total": 1
+  },
+  "locations": [
+    {
+      "kind": "url",
+      "value": "http://127.0.0.1:59103/forgot-password"
+    }
+  ],
+  "links": []
+}

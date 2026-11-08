@@ -1,0 +1,648 @@
+{
+  "id": "ev_ce3fd04df28be081fca33dad1dfa9b69863d3352c38dff4c6cafc33fe34141dc",
+  "subject": {
+    "kind": "website",
+    "name": "https://sendflow.com.br/"
+  },
+  "operation": "web_site_capture",
+  "params": {
+    "include_html": true,
+    "max_height": 12000,
+    "noise_pass": true,
+    "visitor_view": false,
+    "widths": [
+      1440,
+      768,
+      390
+    ]
+  },
+  "result": {
+    "counts": {
+      "forms": 0,
+      "headings": 18,
+      "images": 62,
+      "links": 22,
+      "outline": 232
+    },
+    "design": {
+      "backgrounds": [
+        {
+          "count": 19,
+          "value": "#000000"
+        },
+        {
+          "count": 9,
+          "value": "#fede05"
+        },
+        {
+          "count": 5,
+          "value": "#ffffff"
+        },
+        {
+          "count": 3,
+          "value": "#1a1a1a"
+        },
+        {
+          "count": 3,
+          "value": "#171717"
+        },
+        {
+          "count": 3,
+          "value": "#ffffffe6"
+        },
+        {
+          "count": 2,
+          "value": "#e1251b"
+        },
+        {
+          "count": 2,
+          "value": "#d9d9d9"
+        },
+        {
+          "count": 2,
+          "value": "#c8161d"
+        },
+        {
+          "count": 2,
+          "value": "#13261b"
+        },
+        {
+          "count": 1,
+          "value": "#0e0e0e"
+        },
+        {
+          "count": 1,
+          "value": "#f3f3f1"
+        },
+        {
+          "count": 1,
+          "value": "#151515"
+        },
+        {
+          "count": 1,
+          "value": "#22c55e"
+        },
+        {
+          "count": 1,
+          "value": "#ffffff40"
+        }
+      ],
+      "css_variables": {
+        "--accent": "lab(96.286% -.852436 -2.46847)",
+        "--accent-foreground": "lab(7.78673% 1.82345 -15.0537)",
+        "--animate-fade-in": "fade-in .5s ease-out both",
+        "--animate-plan-flash": "plan-flash .9s ease-out",
+        "--animate-plan-pop": "plan-pop .5s cubic-bezier(.34, 1.56, .64, 1)",
+        "--animate-pulse": "pulse 2s cubic-bezier(.4, 0, .6, 1) infinite",
+        "--animate-spin": "spin 1s linear infinite",
+        "--aspect-video": "16 / 9",
+        "--background": "lab(100% 0 0)",
+        "--bf-banner-gradient": "linear-gradient(105deg, var(--color-bf-gold) 5%, var(--color-bf-gold-light) 64%, var(--color-bf-gold-deep))",
+        "--bf-gold-shadow": "0 5px 0 var(--color-bf-gold-deep), 0 14px 26px color-mix(in oklab, var(--color-bf-gold) 25%, transparent)",
+        "--bf-panel-shadow": "0 18px 32px color-mix(in oklab, var(--color-bf-ink) 20%, transparent)",
+        "--bf-plan-cta-gradient": "linear-gradient(180deg, #ffe86b 0%, #ffde07 50%, #e8c400 100%)",
+        "--bf-reference-grid": "linear-gradient(to right, color-mix(in oklab, var(--color-bf-ink) 6%, transparent) 1px, transparent 1px), linear-gradien",
+        "--blur-3xl": "64px",
+        "--blur-md": "12px",
+        "--blur-sm": "8px",
+        "--blur-xl": "24px",
+        "--border": "lab(91.7353% -.998765 -4.76968)",
+        "--card": "lab(100% 0 0)",
+        "--card-foreground": "lab(1.76974% 1.32743 -9.28855)",
+        "--chart-1": "lab(57.1026% 64.2584 89.8886)",
+        "--chart-2": "lab(55.0223% -41.0774 -3.90277)",
+        "--chart-3": "lab(30.372% -13.1853 -18.7887)",
+        "--chart-4": "lab(80.1641% 16.6016 99.2089)",
+        "--chart-5": "lab(72.7183% 31.8672 97.9407)",
+        "--color-background": "var(--background)",
+        "--color-bf-copy": "lab(32.72% -.0000149012 0)",
+        "--color-bf-gold": "lab(87.8695% 1.9846 84.5684)",
+        "--color-bf-gold-deep": "lab(76.0235% 6.77949 76.256)",
+        "--color-bf-gold-light": "lab(93.612% -.488579 54.5717)",
+        "--color-bf-ink": "lab(2.47865% 0 0)",
+        "--color-bf-paper": "lab(98.9349% -.526786 5.71389)",
+        "--color-black": "#000",
+        "--color-border": "var(--border)",
+        "--color-brand": "lab(89.2115% -3.26949 82.3075)",
+        "--color-brand-foreground": "lab(3.6999% 0 0)",
+        "--color-foreground": "var(--foreground)",
+        "--color-gray-200": "lab(91.6229% -.159115 -2.26791)",
+        "--color-gray-300": "lab(85.1236% -.612259 -3.7138)",
+        "--color-gray-400": "lab(65.9269% -.832707 -8.17473)",
+        "--color-gray-500": "lab(47.7841% -.393182 -10.0268)",
+        "--color-gray-600": "lab(35.6337% -1.58697 -10.8425)",
+        "--color-gray-700": "lab(27.1134% -.956401 -12.3224)",
+        "--color-gray-800": "lab(16.1051% -1.18239 -11.7533)",
+        "--color-gray-900": "lab(8.11897% .811279 -12.254)",
+        "--color-neutral-200": "lab(90.952% 0 -.0000119209)",
+        "--color-neutral-300": "lab(84.92% 0 -.0000119209)",
+        "--color-neutral-400": "lab(66.128% -.0000298023 .0000119209)",
+        "--color-neutral-600": "lab(34.924% 0 0)",
+        "--color-neutral-700": "lab(27.036% 0 0)",
+        "--color-neutral-800": "lab(15.204% 0 -.00000596046)",
+        "--color-neutral-900": "lab(7.78201% -.0000149012 0)",
+        "--color-red-300": "lab(76.5514% 36.422 15.5335)",
+        "--color-red-400": "lab(63.7053% 60.745 31.3109)",
+        "--color-red-50": "lab(96.5005% 4.18508 1.52328)",
+        "--color-red-600": "lab(48.4493% 77.4328 61.5452)",
+        "--color-sf-black": "#040506",
+        "--color-sf-white": "#fcfbf8",
+        "--color-sf-yellow": "#ffe70a",
+        "--color-white": "#fff",
+        "--color-yellow-100": "lab(97.3564% -4.51407 27.344)",
+        "--color-yellow-200": "lab(94.3433% -5.00429 52.9663)",
+        "--color-yellow-300": "lab(89.7033% -.480294 84.4917)",
+        "--color-yellow-400": "lab(83.2664% 8.65132 106.895)",
+        "--color-yellow-50": "lab(98.6846% -1.79055 9.7766)",
+        "--color-yellow-500": "lab(76.3898% 14.5258 98.4589)",
+        "--color-zinc-100": "lab(96.1634% .0993311 -.364041)",
+        "--color-zinc-200": "lab(90.6853% .399232 -1.45452)",
+        "--color-zinc-300": "lab(84.9837% .601262 -2.17986)",
+        "--color-zinc-400": "lab(65.6464% 1.53497 -5.42429)",
+        "--color-zinc-500": "lab(47.8878% 1.65477 -5.77283)",
+        "--color-zinc-600": "lab(35.1166% 1.78212 -6.1173)",
+        "--color-zinc-700": "lab(26.8019% 1.35387 -4.68303)",
+        "--color-zinc-800": "lab(15.7305% .613764 -2.16959)",
+        "--color-zinc-900": "lab(8.30603% .618205 -2.16572)",
+        "--container-2xl": "42rem",
+        "--container-3xl": "48rem",
+        "--container-4xl": "56rem",
+        "--container-5xl": "64rem",
+        "--container-lg": "32rem",
+        "--container-md": "28rem",
+        "--container-sm": "24rem",
+        "--container-xl": "36rem",
+        "--default-font-family": "var(--font-sans)",
+        "--default-mono-font-family": "var(--font-mono)",
+        "--default-transition-duration": ".15s",
+        "--default-transition-timing-function": "cubic-bezier(.4, 0, .2, 1)",
+        "--destructive": "lab(48.4493% 77.4328 61.5452)",
+        "--destructive-foreground": "lab(98.1434% -.369519 -1.05966)",
+        "--ease-in-out": "cubic-bezier(.4, 0, .2, 1)",
+        "--ease-out": "cubic-bezier(0, 0, .2, 1)",
+        "--font-body": "\"Inter\", system-ui, sans-serif",
+        "--font-display": "\"Bricolage Grotesque\", system-ui, sans-serif",
+        "--font-inter": "\"Inter\", system-ui, sans-serif",
+        "--font-mono": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+        "--font-sans": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "--font-weight-black": "900",
+        "--font-weight-bold": "700",
+        "--font-weight-extrabold": "800",
+        "--font-weight-extralight": "200",
+        "--font-weight-light": "300",
+        "--font-weight-medium": "500",
+        "--font-weight-normal": "400",
+        "--font-weight-semibold": "600",
+        "--foreground": "lab(1.76974% 1.32743 -9.28855)",
+        "--input": "lab(91.7353% -.998765 -4.76968)",
+        "--leading-normal": "1.5",
+        "--leading-relaxed": "1.625",
+        "--leading-snug": "1.375",
+        "--leading-tight": "1.25",
+        "--muted": "lab(96.286% -.852436 -2.46847)",
+        "--muted-foreground": "lab(48.0876% -2.03595 -16.5814)",
+        "--popover": "lab(100% 0 0)",
+        "--popover-foreground": "lab(1.76974% 1.32743 -9.28855)",
+        "--primary": "lab(7.78673% 1.82345 -15.0537)",
+        "--primary-foreground": "lab(98.1434% -.369519 -1.05966)",
+        "--radius": ".625rem",
+        "--ring": "lab(65.5349% -2.25151 -14.5072)",
+        "--secondary": "lab(96.286% -.852436 -2.46847)",
+        "--secondary-foreground": "lab(7.78673% 1.82345 -15.0537)",
+        "--sidebar": "lab(98.1434% -.369519 -1.05966)",
+        "--sidebar-accent": "lab(96.286% -.852436 -2.46847)",
+        "--sidebar-accent-foreground": "lab(7.78673% 1.82345 -15.0537)",
+        "--sidebar-border": "lab(91.7353% -.998765 -4.76968)",
+        "--sidebar-foreground": "lab(1.76974% 1.32743 -9.28855)",
+        "--sidebar-primary": "lab(7.78673% 1.82345 -15.0537)",
+        "--sidebar-primary-foreground": "lab(98.1434% -.369519 -1.05966)",
+        "--sidebar-ring": "lab(65.5349% -2.25151 -14.5072)",
+        "--spacing": ".25rem",
+        "--text-2xl": "1.5rem",
+        "--text-2xl--line-height": "calc(2 / 1.5)",
+        "--text-3xl": "1.875rem",
+        "--text-3xl--line-height": "1.2",
+        "--text-4xl": "2.25rem",
+        "--text-4xl--line-height": "calc(2.5 / 2.25)",
+        "--text-5xl": "3rem",
+        "--text-5xl--line-height": "1",
+        "--text-6xl": "3.75rem",
+        "--text-6xl--line-height": "1",
+        "--text-7xl": "4.5rem",
+        "--text-7xl--line-height": "1",
+        "--text-8xl": "6rem",
+        "--text-8xl--line-height": "1",
+        "--text-base": "1rem",
+        "--text-base--line-height": "1.5",
+        "--text-lg": "1.125rem",
+        "--text-lg--line-height": "calc(1.75 / 1.125)",
+        "--text-sm": ".875rem",
+        "--text-sm--line-height": "calc(1.25 / .875)",
+        "--text-xl": "1.25rem",
+        "--text-xl--line-height": "calc(1.75 / 1.25)",
+        "--text-xs": ".75rem",
+        "--text-xs--line-height": "calc(1 / .75)",
+        "--tracking-tight": "-.025em",
+        "--tracking-wide": ".025em",
+        "--tracking-wider": ".05em",
+        "--tracking-widest": ".1em"
+      },
+      "font_faces": [],
+      "font_sizes": [
+        {
+          "count": 51,
+          "value": "14px"
+        },
+        {
+          "count": 32,
+          "value": "16px"
+        },
+        {
+          "count": 16,
+          "value": "18px"
+        },
+        {
+          "count": 15,
+          "value": "12px"
+        },
+        {
+          "count": 9,
+          "value": "36px"
+        },
+        {
+          "count": 6,
+          "value": "13px"
+        },
+        {
+          "count": 5,
+          "value": "24px"
+        },
+        {
+          "count": 3,
+          "value": "20px"
+        },
+        {
+          "count": 3,
+          "value": "60px"
+        },
+        {
+          "count": 2,
+          "value": "34px"
+        },
+        {
+          "count": 1,
+          "value": "30px"
+        },
+        {
+          "count": 1,
+          "value": "48px"
+        }
+      ],
+      "font_weights": [
+        {
+          "count": 64,
+          "value": "400"
+        },
+        {
+          "count": 41,
+          "value": "700"
+        },
+        {
+          "count": 18,
+          "value": "600"
+        },
+        {
+          "count": 16,
+          "value": "500"
+        },
+        {
+          "count": 3,
+          "value": "900"
+        },
+        {
+          "count": 1,
+          "value": "300"
+        },
+        {
+          "count": 1,
+          "value": "800"
+        }
+      ],
+      "fonts": [
+        {
+          "count": 144,
+          "value": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+        }
+      ],
+      "max_widths": [
+        {
+          "count": 12,
+          "value": "400px"
+        },
+        {
+          "count": 8,
+          "value": "1140px"
+        },
+        {
+          "count": 5,
+          "value": "1240px"
+        },
+        {
+          "count": 3,
+          "value": "320px"
+        },
+        {
+          "count": 2,
+          "value": "560px"
+        },
+        {
+          "count": 1,
+          "value": "1440px"
+        },
+        {
+          "count": 1,
+          "value": "576px"
+        },
+        {
+          "count": 1,
+          "value": "315.264px"
+        }
+      ],
+      "radii": [
+        {
+          "count": 32,
+          "value": "14px"
+        },
+        {
+          "count": 20,
+          "value": "8px"
+        },
+        {
+          "count": 12,
+          "value": "22px"
+        },
+        {
+          "count": 9,
+          "value": "18px"
+        },
+        {
+          "count": 5,
+          "value": "9999px"
+        },
+        {
+          "count": 1,
+          "value": "28px"
+        },
+        {
+          "count": 1,
+          "value": "0px 0px 100px 100px"
+        }
+      ],
+      "shadows": [
+        {
+          "count": 3,
+          "value": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px"
+        },
+        {
+          "count": 3,
+          "value": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px"
+        },
+        {
+          "count": 1,
+          "value": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.5) 0px 30px 80px -30px"
+        }
+      ],
+      "spacing": [
+        {
+          "count": 100,
+          "value": "12px"
+        },
+        {
+          "count": 75,
+          "value": "20px"
+        },
+        {
+          "count": 70,
+          "value": "32px"
+        },
+        {
+          "count": 67,
+          "value": "24px"
+        },
+        {
+          "count": 38,
+          "value": "4px"
+        },
+        {
+          "count": 37,
+          "value": "16px"
+        },
+        {
+          "count": 24,
+          "value": "19px"
+        },
+        {
+          "count": 24,
+          "value": "46px"
+        },
+        {
+          "count": 14,
+          "value": "40px"
+        },
+        {
+          "count": 9,
+          "value": "80px"
+        },
+        {
+          "count": 8,
+          "value": "8px"
+        },
+        {
+          "count": 6,
+          "value": "112px"
+        },
+        {
+          "count": 6,
+          "value": "48px"
+        },
+        {
+          "count": 6,
+          "value": "56px"
+        },
+        {
+          "count": 6,
+          "value": "-1px"
+        },
+        {
+          "count": 5,
+          "value": "64px"
+        },
+        {
+          "count": 4,
+          "value": "128px"
+        },
+        {
+          "count": 3,
+          "value": "36px"
+        },
+        {
+          "count": 3,
+          "value": "41px"
+        },
+        {
+          "count": 2,
+          "value": "10px"
+        },
+        {
+          "count": 2,
+          "value": "384px"
+        },
+        {
+          "count": 2,
+          "value": "28px"
+        },
+        {
+          "count": 1,
+          "value": "144px"
+        },
+        {
+          "count": 1,
+          "value": "256px"
+        }
+      ],
+      "text_colors": [
+        {
+          "count": 49,
+          "value": "#18181b"
+        },
+        {
+          "count": 34,
+          "value": "#ffffff"
+        },
+        {
+          "count": 14,
+          "value": "#fede05"
+        },
+        {
+          "count": 12,
+          "value": "#d4d4d4"
+        },
+        {
+          "count": 6,
+          "value": "#d4d4d8"
+        },
+        {
+          "count": 5,
+          "value": "#000000"
+        },
+        {
+          "count": 5,
+          "value": "#f4f4f5"
+        },
+        {
+          "count": 5,
+          "value": "#52525c"
+        },
+        {
+          "count": 4,
+          "value": "#171717"
+        },
+        {
+          "count": 3,
+          "value": "#262626"
+        },
+        {
+          "count": 3,
+          "value": "#3f3f46"
+        },
+        {
+          "count": 2,
+          "value": "#e5e5e5"
+        },
+        {
+          "count": 1,
+          "value": "#9f9fa9"
+        },
+        {
+          "count": 1,
+          "value": "#a1a1a1"
+        }
+      ]
+    },
+    "files": [
+      "README.md",
+      "capture.json"
+    ],
+    "html_bytes": 132871,
+    "output_directory": "C:\\Users\\ccpru\\sendflow-rebuild\\capture",
+    "screenshots": [
+      {
+        "css_width": 1440,
+        "cut": false,
+        "file": "screenshot-1440.png",
+        "height": 10147,
+        "noise_file": "noise-1440.png",
+        "noise_tiles": 1408,
+        "sha256": "638835dbdea1742ff8b54af4b62018e48f11a80f2ec7f9ebdd92de1eebf71703",
+        "width": 1440
+      },
+      {
+        "css_width": 768,
+        "cut": false,
+        "file": "screenshot-768.png",
+        "height": 11067,
+        "noise_file": "noise-768.png",
+        "noise_tiles": 909,
+        "sha256": "1ffe24e0c3104532b9cdbf713ede05669f733ad69f7dfc175d54a4f6c58dfa9f",
+        "width": 768
+      },
+      {
+        "css_width": 390,
+        "cut": true,
+        "file": "screenshot-390.png",
+        "height": 12000,
+        "noise_file": "noise-390.png",
+        "noise_tiles": 1248,
+        "sha256": "da35ad7c0fc2f86063ead6dc5da81e222f40dd38ea0370da0e30d31d34ae27a4",
+        "width": 390
+      }
+    ],
+    "title": "SendFlow | Automação de grupos e comunidades WhatsApp",
+    "url": "https://sendflow.com.br/"
+  },
+  "summary": "Captured https://sendflow.com.br/: 3 screenshot(s), 232 outline items, 18 headings, 62 images, 22 links, 0 forms → C:\\Users\\ccpru\\sendflow-rebuild\\capture.",
+  "confidence": "observed",
+  "authority": "our-run",
+  "environment": {
+    "clean_room": false,
+    "engine": "cdp",
+    "engine_version": "1.3",
+    "host": "windows-x86_64"
+  },
+  "limitations": [
+    {
+      "code": "one_state",
+      "message": "One state of the page: menus, dialogs and content behind interactions are not opened."
+    },
+    {
+      "code": "cross_origin_css",
+      "message": "CSS custom properties and breakpoints from cross-origin stylesheets can't be read."
+    }
+  ],
+  "coverage": {
+    "status": "complete",
+    "examined": 3,
+    "total": 3
+  },
+  "locations": [
+    {
+      "kind": "url",
+      "value": "https://sendflow.com.br/"
+    },
+    {
+      "kind": "path",
+      "value": "C:\\Users\\ccpru\\sendflow-rebuild\\capture"
+    }
+  ],
+  "links": []
+}

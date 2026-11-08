@@ -1,0 +1,4383 @@
+{
+  "a11y": {
+    "images_without_alt": 0,
+    "landmarks": {
+      "banner": 1,
+      "contentinfo": 1,
+      "main": 1,
+      "navigation": 2
+    },
+    "lang": "en",
+    "unnamed_controls": 0,
+    "unnamed_examples": []
+  },
+  "assets": {
+    "background_images": [],
+    "fonts": [
+      "https://fonts.googleapis.com/css2"
+    ],
+    "images": [
+      {
+        "alt": "SendFlow",
+        "h": 1081,
+        "src": "https://sendflow.com.br/assets/logo-sendflow-CFfyEAex.svg",
+        "w": 1683
+      },
+      {
+        "alt": "Patrocinador oficial do Hotmart Fire desde 2024",
+        "h": 98,
+        "src": "https://sendflow.com.br/__l5e/assets-v1/c09ffb8d-5e86-44ed-93d8-3c05ecfa6da7/banner-hotmart-fire-desktop.svg",
+        "w": 1440
+      },
+      {
+        "alt": "",
+        "h": 440,
+        "src": "https://sendflow.com.br/assets/leadscoring-mockup-hLghpPKE.png",
+        "w": 546
+      },
+      {
+        "alt": "Mensagens de clientes elogiando o suporte do SendFlow",
+        "h": 498,
+        "src": "https://sendflow.com.br/assets/support-phones-sX2i2BHY.png",
+        "w": 580
+      },
+      {
+        "alt": "V4 Company",
+        "h": 900,
+        "src": "https://sendflow.com.br/assets/v4-D6WcgyDU.jpg",
+        "w": 900
+      },
+      {
+        "alt": "Pedro Sobral",
+        "h": 1080,
+        "src": "https://sendflow.com.br/assets/pedro-sobral-CUqbWEpd.jpg",
+        "w": 1080
+      },
+      {
+        "alt": "Priscila Zillo",
+        "h": 896,
+        "src": "https://sendflow.com.br/assets/priscila-zillo-V40qjWJ9.jpg",
+        "w": 896
+      },
+      {
+        "alt": "Empiricus",
+        "h": 489,
+        "src": "https://sendflow.com.br/assets/empiricus-BDdO1DU5.jpg",
+        "w": 489
+      },
+      {
+        "alt": "Exame.",
+        "h": 828,
+        "src": "https://sendflow.com.br/assets/exame-kqtrayH2.jpg",
+        "w": 828
+      },
+      {
+        "alt": "O Corpo Explica",
+        "h": 900,
+        "src": "https://sendflow.com.br/assets/corpo-explica-CCR8wgqO.jpg",
+        "w": 900
+      },
+      {
+        "alt": "V4 Company",
+        "h": 900,
+        "src": "https://sendflow.com.br/assets/v4-D6WcgyDU.jpg",
+        "w": 900
+      },
+      {
+        "alt": "Pedro Sobral",
+        "h": 1080,
+        "src": "https://sendflow.com.br/assets/pedro-sobral-CUqbWEpd.jpg",
+        "w": 1080
+      },
+      {
+        "alt": "Priscila Zillo",
+        "h": 896,
+        "src": "https://sendflow.com.br/assets/priscila-zillo-V40qjWJ9.jpg",
+        "w": 896
+      },
+      {
+        "alt": "Empiricus",
+        "h": 489,
+        "src": "https://sendflow.com.br/assets/empiricus-BDdO1DU5.jpg",
+        "w": 489
+      },
+      {
+        "alt": "Exame.",
+        "h": 828,
+        "src": "https://sendflow.com.br/assets/exame-kqtrayH2.jpg",
+        "w": 828
+      },
+      {
+        "alt": "O Corpo Explica",
+        "h": 900,
+        "src": "https://sendflow.com.br/assets/corpo-explica-CCR8wgqO.jpg",
+        "w": 900
+      },
+      {
+        "alt": "Painel de Lead Scoring do Sendi",
+        "h": 440,
+        "src": "https://sendflow.com.br/assets/leadscoring-mockup-hLghpPKE.png",
+        "w": 546
+      },
+      {
+        "alt": "Manual Antibanimento SendFlow",
+        "h": 943,
+        "src": "https://sendflow.com.br/assets/manual-antibanimento-tablet-CVXGN7xR.png",
+        "w": 1136
+      },
+      {
+        "alt": "",
+        "h": 1325,
+        "src": "https://sendflow.com.br/assets/section-bg-4-D8GH582z.png",
+        "w": 1920
+      },
+      {
+        "alt": "",
+        "h": 1325,
+        "src": "https://sendflow.com.br/assets/section-bg-4-D8GH582z.png",
+        "w": 1920
+      },
+      {
+        "alt": "",
+        "h": 1325,
+        "src": "https://sendflow.com.br/assets/section-bg-4-D8GH582z.png",
+        "w": 1920
+      },
+      {
+        "alt": "",
+        "h": 1325,
+        "src": "https://sendflow.com.br/assets/section-bg-4-D8GH582z.png",
+        "w": 1920
+      },
+      {
+        "alt": "",
+        "h": 1325,
+        "src": "https://sendflow.com.br/assets/section-bg-4-D8GH582z.png",
+        "w": 1920
+      },
+      {
+        "alt": "",
+        "h": 1325,
+        "src": "https://sendflow.com.br/assets/section-bg-4-D8GH582z.png",
+        "w": 1920
+      },
+      {
+        "alt": "",
+        "h": 1325,
+        "src": "https://sendflow.com.br/assets/section-bg-4-D8GH582z.png",
+        "w": 1920
+      },
+      {
+        "alt": "SendFlow",
+        "h": 1081,
+        "src": "https://sendflow.com.br/assets/logo-sendflow-CFfyEAex.svg",
+        "w": 1683
+      },
+      {
+        "alt": "",
+        "h": 498,
+        "src": "https://sendflow.com.br/assets/support-phones-sX2i2BHY.png",
+        "w": 580
+      }
+    ],
+    "inline_scripts": 0,
+    "requests": [
+      {
+        "bytes": 0,
+        "type": "link",
+        "url": "https://fonts.googleapis.com/css2"
+      },
+      {
+        "bytes": 29549,
+        "type": "link",
+        "url": "http://127.0.0.1:50061/assets/index-8zKK5jeG.css"
+      },
+      {
+        "bytes": 272692,
+        "type": "script",
+        "url": "http://127.0.0.1:50061/assets/index-DS6QDfZ3.js"
+      },
+      {
+        "bytes": 0,
+        "type": "img",
+        "url": "https://sendflow.com.br/assets/logo-sendflow-CFfyEAex.svg"
+      },
+      {
+        "bytes": 0,
+        "type": "img",
+        "url": "https://sendflow.com.br/__l5e/assets-v1/c09ffb8d-5e86-44ed-93d8-3c05ecfa6da7/banner-hotmart-fire-desktop.svg"
+      },
+      {
+        "bytes": 0,
+        "type": "img",
+        "url": "https://sendflow.com.br/assets/leadscoring-mockup-hLghpPKE.png"
+      },
+      {
+        "bytes": 0,
+        "type": "img",
+        "url": "https://sendflow.com.br/assets/support-phones-sX2i2BHY.png"
+      },
+      {
+        "bytes": 0,
+        "type": "img",
+        "url": "https://sendflow.com.br/assets/v4-D6WcgyDU.jpg"
+      },
+      {
+        "bytes": 0,
+        "type": "img",
+        "url": "https://sendflow.com.br/assets/pedro-sobral-CUqbWEpd.jpg"
+      },
+      {
+        "bytes": 0,
+        "type": "img",
+        "url": "https://sendflow.com.br/assets/priscila-zillo-V40qjWJ9.jpg"
+      },
+      {
+        "bytes": 0,
+        "type": "img",
+        "url": "https://sendflow.com.br/assets/empiricus-BDdO1DU5.jpg"
+      },
+      {
+        "bytes": 0,
+        "type": "img",
+        "url": "https://sendflow.com.br/assets/exame-kqtrayH2.jpg"
+      },
+      {
+        "bytes": 0,
+        "type": "img",
+        "url": "https://sendflow.com.br/assets/corpo-explica-CCR8wgqO.jpg"
+      },
+      {
+        "bytes": 0,
+        "type": "img",
+        "url": "https://sendflow.com.br/assets/manual-antibanimento-tablet-CVXGN7xR.png"
+      },
+      {
+        "bytes": 0,
+        "type": "img",
+        "url": "https://sendflow.com.br/assets/section-bg-4-D8GH582z.png"
+      },
+      {
+        "bytes": 303,
+        "type": "other",
+        "url": "http://127.0.0.1:50061/favicon.ico"
+      }
+    ],
+    "scripts": [
+      "http://127.0.0.1:50061/assets/index-DS6QDfZ3.js"
+    ],
+    "stylesheets": [
+      "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap",
+      "http://127.0.0.1:50061/assets/index-8zKK5jeG.css"
+    ]
+  },
+  "breakpoints": [
+    {
+      "count": 1,
+      "px": 390,
+      "query": "max-width 390px"
+    },
+    {
+      "count": 1,
+      "px": 600,
+      "query": "max-width 600px"
+    },
+    {
+      "count": 1,
+      "px": 640,
+      "query": "max-width 640px"
+    },
+    {
+      "count": 1,
+      "px": 767,
+      "query": "max-width 767px"
+    },
+    {
+      "count": 2,
+      "px": 900,
+      "query": "max-width 900px"
+    },
+    {
+      "count": 1,
+      "px": 1023,
+      "query": "max-width 1023px"
+    },
+    {
+      "count": 1,
+      "px": 1100,
+      "query": "max-width 1100px"
+    },
+    {
+      "count": 1,
+      "px": 1180,
+      "query": "max-width 1180px"
+    }
+  ],
+  "design": {
+    "backgrounds": [
+      {
+        "count": 26,
+        "value": "#171717"
+      },
+      {
+        "count": 10,
+        "value": "#000000"
+      },
+      {
+        "count": 8,
+        "value": "#fede05"
+      },
+      {
+        "count": 6,
+        "value": "#1a1a1a"
+      },
+      {
+        "count": 5,
+        "value": "#ffffff"
+      }
+    ],
+    "css_variables": {
+      "--bg": "#0b1220",
+      "--bg-elev": "#121c2f",
+      "--bg-muted": "#17233b",
+      "--border": "#24324d",
+      "--danger": "#f87171",
+      "--danger-soft": "rgba(248,113,113,.14)",
+      "--focus": "#2563eb",
+      "--font": "\"Segoe UI\", Inter, system-ui, -apple-system, sans-serif",
+      "--primary": "#60a5fa",
+      "--primary-soft": "rgba(96,165,250,.16)",
+      "--primary-strong": "#3b82f6",
+      "--radius": "12px",
+      "--radius-sm": "8px",
+      "--shadow": "0 1px 2px rgba(0,0,0,.35), 0 10px 28px rgba(0,0,0,.28)",
+      "--sidebar": "#08101d",
+      "--sidebar-active": "#163055",
+      "--sidebar-hover": "#13213a",
+      "--sidebar-muted": "#7f95b3",
+      "--sidebar-text": "#dbe7f5",
+      "--success": "#4ade80",
+      "--success-soft": "rgba(74,222,128,.14)",
+      "--text": "#e6edf7",
+      "--text-muted": "#9fb0c7",
+      "--warning": "#fbbf24",
+      "--warning-soft": "rgba(251,191,36,.14)"
+    },
+    "font_faces": [
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "400"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "400"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "400"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "500"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "500"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "500"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "700"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "700"
+      },
+      {
+        "family": "Poppins",
+        "status": "unloaded",
+        "style": "normal",
+        "weight": "700"
+      }
+    ],
+    "font_sizes": [
+      {
+        "count": 44,
+        "value": "14px"
+      },
+      {
+        "count": 13,
+        "value": "24px"
+      },
+      {
+        "count": 11,
+        "value": "34px"
+      },
+      {
+        "count": 10,
+        "value": "36px"
+      },
+      {
+        "count": 10,
+        "value": "16px"
+      },
+      {
+        "count": 7,
+        "value": "18px"
+      }
+    ],
+    "font_weights": [
+      {
+        "count": 53,
+        "value": "400"
+      },
+      {
+        "count": 21,
+        "value": "600"
+      },
+      {
+        "count": 21,
+        "value": "700"
+      }
+    ],
+    "fonts": [
+      {
+        "count": 95,
+        "value": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+      }
+    ],
+    "max_widths": [
+      {
+        "count": 14,
+        "value": "900px"
+      },
+      {
+        "count": 9,
+        "value": "1140px"
+      },
+      {
+        "count": 4,
+        "value": "1240px"
+      },
+      {
+        "count": 1,
+        "value": "980px"
+      },
+      {
+        "count": 1,
+        "value": "760px"
+      },
+      {
+        "count": 1,
+        "value": "300px"
+      },
+      {
+        "count": 1,
+        "value": "200px"
+      }
+    ],
+    "radii": [
+      {
+        "count": 35,
+        "value": "8px"
+      },
+      {
+        "count": 9,
+        "value": "14px"
+      },
+      {
+        "count": 3,
+        "value": "12px"
+      }
+    ],
+    "shadows": [],
+    "spacing": [
+      {
+        "count": 89,
+        "value": "12px"
+      },
+      {
+        "count": 72,
+        "value": "20px"
+      },
+      {
+        "count": 65,
+        "value": "24px"
+      },
+      {
+        "count": 56,
+        "value": "16px"
+      },
+      {
+        "count": 40,
+        "value": "10px"
+      },
+      {
+        "count": 11,
+        "value": "112px"
+      },
+      {
+        "count": 5,
+        "value": "18px"
+      },
+      {
+        "count": 4,
+        "value": "80px"
+      },
+      {
+        "count": 4,
+        "value": "32px"
+      },
+      {
+        "count": 4,
+        "value": "128px"
+      },
+      {
+        "count": 2,
+        "value": "48px"
+      },
+      {
+        "count": 1,
+        "value": "256px"
+      }
+    ],
+    "text_colors": [
+      {
+        "count": 31,
+        "value": "#ffffff"
+      },
+      {
+        "count": 30,
+        "value": "#d4d4d8"
+      },
+      {
+        "count": 12,
+        "value": "#fede05"
+      },
+      {
+        "count": 9,
+        "value": "#18181b"
+      },
+      {
+        "count": 8,
+        "value": "#000000"
+      },
+      {
+        "count": 5,
+        "value": "#d4d4d4"
+      }
+    ]
+  },
+  "forms": [],
+  "headings": [
+    {
+      "level": 1,
+      "text": "A ferramenta de automação de Grupos e Comunidades de WhatsApp mais completa e intuitiva para escalar com segurança."
+    },
+    {
+      "level": 2,
+      "text": "Decepcionado com o suporte desastroso das ferramentas de marketing digital?"
+    },
+    {
+      "level": 2,
+      "text": "Os maiores players do mercado usam o Sendi"
+    },
+    {
+      "level": 2,
+      "text": "Fale diretamente com seus leads mais engajados"
+    },
+    {
+      "level": 3,
+      "text": "Conecte o SendFlow com as principais ferramentas do Mercado"
+    },
+    {
+      "level": 3,
+      "text": "Manual antibanimento:"
+    },
+    {
+      "level": 2,
+      "text": "Olha o que nossos clientes falam da gente:"
+    },
+    {
+      "level": 2,
+      "text": "Veja mais algumas funcionalidades do Sendi:"
+    },
+    {
+      "level": 3,
+      "text": "Funcionalidade 1"
+    },
+    {
+      "level": 3,
+      "text": "Funcionalidade 2"
+    },
+    {
+      "level": 3,
+      "text": "Funcionalidade 3"
+    },
+    {
+      "level": 3,
+      "text": "Funcionalidade 4"
+    },
+    {
+      "level": 3,
+      "text": "Funcionalidade 5"
+    },
+    {
+      "level": 3,
+      "text": "Funcionalidade 6"
+    },
+    {
+      "level": 2,
+      "text": "Nossa, mas para oferecer tudo isso o Sendi deve custar uma pequena fortuna, certo? Errado!"
+    },
+    {
+      "level": 3,
+      "text": "Essencial"
+    },
+    {
+      "level": 3,
+      "text": "Profissional"
+    },
+    {
+      "level": 3,
+      "text": "Escala"
+    },
+    {
+      "level": 2,
+      "text": "SUA SATISFAÇÃO IMPORTA!"
+    },
+    {
+      "level": 2,
+      "text": "Dúvidas? Esse guia pode te ajudar:"
+    },
+    {
+      "level": 3,
+      "text": "Como faço para assinar o Sendi?"
+    },
+    {
+      "level": 3,
+      "text": "Como acesso o SendFlow depois de assinar?"
+    },
+    {
+      "level": 3,
+      "text": "Posso ter meu chip banido?"
+    },
+    {
+      "level": 3,
+      "text": "O Sendi cria grupos automaticamente?"
+    },
+    {
+      "level": 3,
+      "text": "Quanto tempo de garantia eu tenho?"
+    },
+    {
+      "level": 3,
+      "text": "Quais as formas de pagamento?"
+    },
+    {
+      "level": 2,
+      "text": "Ainda com dúvidas?"
+    }
+  ],
+  "health": {
+    "errors": [],
+    "failed_requests": []
+  },
+  "lang": "en",
+  "layouts": [
+    {
+      "blocks": [
+        {
+          "background": "#000000",
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 1140,
+            "x": 143
+          },
+          "h": 75,
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "header",
+          "w": 1425,
+          "y": 0
+        },
+        {
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 1140,
+            "x": 143
+          },
+          "h": 8064,
+          "heading": "A ferramenta de automação de Grupos e Comunidades de WhatsApp mais completa e in",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "main",
+          "w": 1425,
+          "y": 75
+        },
+        {
+          "background": "#000000",
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 1140,
+            "x": 143
+          },
+          "h": 838,
+          "heading": "A ferramenta de automação de Grupos e Comunidades de WhatsApp mais completa e in",
+          "pad": [
+            80,
+            0,
+            80,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 1425,
+          "y": 75
+        },
+        {
+          "background": "#000000",
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 1140,
+            "x": 143
+          },
+          "h": 683,
+          "heading": "Decepcionado com o suporte desastroso das ferramentas de marketing digital?",
+          "pad": [
+            112,
+            0,
+            112,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 1425,
+          "y": 913
+        },
+        {
+          "background": "#ffffff",
+          "column": {
+            "max_w": 1240,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 1240,
+            "x": 93
+          },
+          "h": 474,
+          "heading": "Os maiores players do mercado usam o Sendi",
+          "pad": [
+            112,
+            0,
+            112,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 1425,
+          "y": 1595
+        },
+        {
+          "background": "#000000",
+          "column": {
+            "max_w": 1240,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 1240,
+            "x": 93
+          },
+          "h": 1389,
+          "heading": "Fale diretamente com seus leads mais engajados",
+          "pad": [
+            128,
+            0,
+            128,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 1425,
+          "y": 2069
+        },
+        {
+          "background": "#ffffff",
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 1140,
+            "x": 143
+          },
+          "h": 941,
+          "heading": "Manual antibanimento:",
+          "pad": [
+            128,
+            0,
+            128,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 1425,
+          "y": 3459
+        },
+        {
+          "background": "#000000",
+          "column": {
+            "max_w": 1240,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 1240,
+            "x": 93
+          },
+          "h": 652,
+          "heading": "Olha o que nossos clientes falam da gente:",
+          "pad": [
+            112,
+            0,
+            256,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 1425,
+          "y": 4400
+        },
+        {
+          "background": "#ffffff",
+          "column": {
+            "max_w": 1240,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 1240,
+            "x": 93
+          },
+          "h": 698,
+          "heading": "Veja mais algumas funcionalidades do Sendi:",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 1425,
+          "y": 5052
+        },
+        {
+          "background": "#1a1a1a",
+          "column": {
+            "max_w": 900,
+            "pad": [
+              0,
+              0
+            ],
+            "w": 339,
+            "x": 137
+          },
+          "h": 306,
+          "heading": "Funcionalidade 1",
+          "pad": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "per_row": 1,
+          "tag": "article",
+          "w": 387,
+          "y": 5118
+        },
+        {
+          "background": "#1a1a1a",
+          "column": {
+            "max_w": 900,
+            "pad": [
+              0,
+              0
+            ],
+            "w": 339,
+            "x": 543
+          },
+          "h": 306,
+          "heading": "Funcionalidade 2",
+          "pad": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "per_row": 1,
+          "tag": "article",
+          "w": 387,
+          "y": 5118
+        },
+        {
+          "background": "#1a1a1a",
+          "column": {
+            "max_w": 900,
+            "pad": [
+              0,
+              0
+            ],
+            "w": 339,
+            "x": 950
+          },
+          "h": 306,
+          "heading": "Funcionalidade 3",
+          "pad": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "per_row": 1,
+          "tag": "article",
+          "w": 387,
+          "y": 5118
+        },
+        {
+          "background": "#1a1a1a",
+          "column": {
+            "max_w": 900,
+            "pad": [
+              0,
+              0
+            ],
+            "w": 339,
+            "x": 137
+          },
+          "h": 306,
+          "heading": "Funcionalidade 4",
+          "pad": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "per_row": 1,
+          "tag": "article",
+          "w": 387,
+          "y": 5444
+        },
+        {
+          "background": "#1a1a1a",
+          "column": {
+            "max_w": 900,
+            "pad": [
+              0,
+              0
+            ],
+            "w": 339,
+            "x": 543
+          },
+          "h": 306,
+          "heading": "Funcionalidade 5",
+          "pad": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "per_row": 1,
+          "tag": "article",
+          "w": 387,
+          "y": 5444
+        },
+        {
+          "background": "#1a1a1a",
+          "column": {
+            "max_w": 900,
+            "pad": [
+              0,
+              0
+            ],
+            "w": 339,
+            "x": 950
+          },
+          "h": 306,
+          "heading": "Funcionalidade 6",
+          "pad": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "per_row": 1,
+          "tag": "article",
+          "w": 387,
+          "y": 5444
+        },
+        {
+          "background": "#000000",
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 1140,
+            "x": 143
+          },
+          "h": 654,
+          "heading": "Nossa, mas para oferecer tudo isso o Sendi deve custar uma pequena fortuna, cert",
+          "pad": [
+            80,
+            20,
+            80,
+            20
+          ],
+          "per_row": 3,
+          "tag": "section",
+          "w": 1425,
+          "y": 5750
+        },
+        {
+          "background": "#171717",
+          "h": 256,
+          "heading": "Essencial",
+          "pad": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "per_row": 1,
+          "tag": "article",
+          "w": 356,
+          "y": 6068
+        },
+        {
+          "background": "#171717",
+          "h": 256,
+          "heading": "Profissional",
+          "pad": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "per_row": 1,
+          "tag": "article",
+          "w": 356,
+          "y": 6068
+        },
+        {
+          "background": "#171717",
+          "h": 256,
+          "heading": "Escala",
+          "pad": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "per_row": 1,
+          "tag": "article",
+          "w": 356,
+          "y": 6068
+        },
+        {
+          "background": "#ffffff",
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 1140,
+            "x": 143
+          },
+          "h": 419,
+          "heading": "SUA SATISFAÇÃO IMPORTA!",
+          "pad": [
+            112,
+            0,
+            112,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 1425,
+          "y": 6404
+        },
+        {
+          "background": "#000000",
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 1140,
+            "x": 143
+          },
+          "h": 896,
+          "heading": "Dúvidas? Esse guia pode te ajudar:",
+          "pad": [
+            112,
+            0,
+            112,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 1425,
+          "y": 6823
+        },
+        {
+          "background": "#ffffff",
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 1140,
+            "x": 143
+          },
+          "h": 419,
+          "heading": "Ainda com dúvidas?",
+          "pad": [
+            112,
+            0,
+            112,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 1425,
+          "y": 7720
+        },
+        {
+          "background": "#000000",
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 1140,
+            "x": 143
+          },
+          "h": 431,
+          "pad": [
+            48,
+            0,
+            48,
+            0
+          ],
+          "per_row": 1,
+          "tag": "footer",
+          "w": 1425,
+          "y": 8139
+        }
+      ],
+      "page_h": 8570,
+      "page_w": 1425,
+      "type": {
+        "body": 18,
+        "h1": 36,
+        "h2": 36,
+        "h3": 34
+      },
+      "width": 1440
+    },
+    {
+      "blocks": [
+        {
+          "background": "#000000",
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 753,
+            "x": 0
+          },
+          "h": 75,
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "header",
+          "w": 753,
+          "y": 0
+        },
+        {
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 753,
+            "x": 0
+          },
+          "h": 9284,
+          "heading": "A ferramenta de automação de Grupos e Comunidades de WhatsApp mais completa e in",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "main",
+          "w": 753,
+          "y": 75
+        },
+        {
+          "background": "#000000",
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 753,
+            "x": 0
+          },
+          "h": 853,
+          "heading": "A ferramenta de automação de Grupos e Comunidades de WhatsApp mais completa e in",
+          "pad": [
+            80,
+            0,
+            80,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 753,
+          "y": 75
+        },
+        {
+          "background": "#000000",
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 753,
+            "x": 0
+          },
+          "h": 738,
+          "heading": "Decepcionado com o suporte desastroso das ferramentas de marketing digital?",
+          "pad": [
+            112,
+            0,
+            112,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 753,
+          "y": 928
+        },
+        {
+          "background": "#ffffff",
+          "column": {
+            "max_w": 1240,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 753,
+            "x": 0
+          },
+          "h": 600,
+          "heading": "Os maiores players do mercado usam o Sendi",
+          "pad": [
+            112,
+            0,
+            112,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 753,
+          "y": 1666
+        },
+        {
+          "background": "#000000",
+          "column": {
+            "max_w": 1240,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 753,
+            "x": 0
+          },
+          "h": 1475,
+          "heading": "Fale diretamente com seus leads mais engajados",
+          "pad": [
+            128,
+            0,
+            128,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 753,
+          "y": 2266
+        },
+        {
+          "background": "#ffffff",
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 753,
+            "x": 0
+          },
+          "h": 969,
+          "heading": "Manual antibanimento:",
+          "pad": [
+            128,
+            0,
+            128,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 753,
+          "y": 3740
+        },
+        {
+          "background": "#000000",
+          "column": {
+            "max_w": 1240,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 753,
+            "x": 0
+          },
+          "h": 883,
+          "heading": "Olha o que nossos clientes falam da gente:",
+          "pad": [
+            112,
+            0,
+            256,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 753,
+          "y": 4709
+        },
+        {
+          "background": "#ffffff",
+          "column": {
+            "max_w": 1240,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 753,
+            "x": 0
+          },
+          "h": 1065,
+          "heading": "Veja mais algumas funcionalidades do Sendi:",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 753,
+          "y": 5592
+        },
+        {
+          "background": "#1a1a1a",
+          "column": {
+            "max_w": 900,
+            "pad": [
+              0,
+              0
+            ],
+            "w": 299,
+            "x": 44
+          },
+          "h": 306,
+          "heading": "Funcionalidade 1",
+          "pad": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "per_row": 1,
+          "tag": "article",
+          "w": 347,
+          "y": 5699
+        },
+        {
+          "background": "#1a1a1a",
+          "column": {
+            "max_w": 900,
+            "pad": [
+              0,
+              0
+            ],
+            "w": 299,
+            "x": 411
+          },
+          "h": 306,
+          "heading": "Funcionalidade 2",
+          "pad": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "per_row": 1,
+          "tag": "article",
+          "w": 347,
+          "y": 5699
+        },
+        {
+          "background": "#1a1a1a",
+          "column": {
+            "max_w": 900,
+            "pad": [
+              0,
+              0
+            ],
+            "w": 299,
+            "x": 44
+          },
+          "h": 306,
+          "heading": "Funcionalidade 3",
+          "pad": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "per_row": 1,
+          "tag": "article",
+          "w": 347,
+          "y": 6025
+        },
+        {
+          "background": "#1a1a1a",
+          "column": {
+            "max_w": 900,
+            "pad": [
+              0,
+              0
+            ],
+            "w": 299,
+            "x": 411
+          },
+          "h": 306,
+          "heading": "Funcionalidade 4",
+          "pad": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "per_row": 1,
+          "tag": "article",
+          "w": 347,
+          "y": 6025
+        },
+        {
+          "background": "#1a1a1a",
+          "column": {
+            "max_w": 900,
+            "pad": [
+              0,
+              0
+            ],
+            "w": 299,
+            "x": 44
+          },
+          "h": 306,
+          "heading": "Funcionalidade 5",
+          "pad": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "per_row": 1,
+          "tag": "article",
+          "w": 347,
+          "y": 6351
+        },
+        {
+          "background": "#1a1a1a",
+          "column": {
+            "max_w": 900,
+            "pad": [
+              0,
+              0
+            ],
+            "w": 299,
+            "x": 411
+          },
+          "h": 306,
+          "heading": "Funcionalidade 6",
+          "pad": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "per_row": 1,
+          "tag": "article",
+          "w": 347,
+          "y": 6351
+        },
+        {
+          "background": "#000000",
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 713,
+            "x": 20
+          },
+          "h": 967,
+          "heading": "Nossa, mas para oferecer tudo isso o Sendi deve custar uma pequena fortuna, cert",
+          "pad": [
+            80,
+            20,
+            80,
+            20
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 753,
+          "y": 6657
+        },
+        {
+          "background": "#171717",
+          "h": 256,
+          "heading": "Essencial",
+          "pad": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "per_row": 1,
+          "tag": "article",
+          "w": 329,
+          "y": 7016
+        },
+        {
+          "background": "#171717",
+          "h": 256,
+          "heading": "Profissional",
+          "pad": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "per_row": 1,
+          "tag": "article",
+          "w": 329,
+          "y": 7016
+        },
+        {
+          "background": "#171717",
+          "h": 256,
+          "heading": "Escala",
+          "pad": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "per_row": 1,
+          "tag": "article",
+          "w": 329,
+          "y": 7288
+        },
+        {
+          "background": "#ffffff",
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 753,
+            "x": 0
+          },
+          "h": 419,
+          "heading": "SUA SATISFAÇÃO IMPORTA!",
+          "pad": [
+            112,
+            0,
+            112,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 753,
+          "y": 7624
+        },
+        {
+          "background": "#000000",
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 753,
+            "x": 0
+          },
+          "h": 896,
+          "heading": "Dúvidas? Esse guia pode te ajudar:",
+          "pad": [
+            112,
+            0,
+            112,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 753,
+          "y": 8044
+        },
+        {
+          "background": "#ffffff",
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 753,
+            "x": 0
+          },
+          "h": 419,
+          "heading": "Ainda com dúvidas?",
+          "pad": [
+            112,
+            0,
+            112,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 753,
+          "y": 8940
+        },
+        {
+          "background": "#000000",
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 753,
+            "x": 0
+          },
+          "h": 452,
+          "pad": [
+            48,
+            0,
+            48,
+            0
+          ],
+          "per_row": 1,
+          "tag": "footer",
+          "w": 753,
+          "y": 9359
+        }
+      ],
+      "page_h": 9811,
+      "page_w": 753,
+      "type": {
+        "body": 18,
+        "h1": 36,
+        "h2": 36,
+        "h3": 34
+      },
+      "width": 768
+    },
+    {
+      "blocks": [
+        {
+          "background": "#000000",
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 390,
+            "x": 0
+          },
+          "h": 110,
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 1,
+          "tag": "header",
+          "w": 390,
+          "y": 0
+        },
+        {
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 390,
+            "x": 0
+          },
+          "h": 9017,
+          "heading": "A ferramenta de automação de Grupos e Comunidades de WhatsApp mais completa e in",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "main",
+          "w": 390,
+          "y": 110
+        },
+        {
+          "background": "#000000",
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 390,
+            "x": 0
+          },
+          "h": 897,
+          "heading": "A ferramenta de automação de Grupos e Comunidades de WhatsApp mais completa e in",
+          "pad": [
+            80,
+            0,
+            80,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 390,
+          "y": 110
+        },
+        {
+          "background": "#000000",
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 390,
+            "x": 0
+          },
+          "h": 666,
+          "heading": "Decepcionado com o suporte desastroso das ferramentas de marketing digital?",
+          "pad": [
+            40,
+            0,
+            40,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 390,
+          "y": 1007
+        },
+        {
+          "background": "#ffffff",
+          "column": {
+            "max_w": 1240,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 390,
+            "x": 0
+          },
+          "h": 1278,
+          "heading": "Os maiores players do mercado usam o Sendi",
+          "pad": [
+            40,
+            0,
+            40,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 390,
+          "y": 1672
+        },
+        {
+          "background": "#000000",
+          "column": {
+            "max_w": 1240,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 390,
+            "x": 0
+          },
+          "h": 1232,
+          "heading": "Fale diretamente com seus leads mais engajados",
+          "pad": [
+            40,
+            0,
+            40,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 390,
+          "y": 2950
+        },
+        {
+          "background": "#ffffff",
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 390,
+            "x": 0
+          },
+          "h": 677,
+          "heading": "Manual antibanimento:",
+          "pad": [
+            40,
+            0,
+            40,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 390,
+          "y": 4182
+        },
+        {
+          "background": "#000000",
+          "column": {
+            "max_w": 1240,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 390,
+            "x": 0
+          },
+          "h": 579,
+          "heading": "Olha o que nossos clientes falam da gente:",
+          "pad": [
+            40,
+            0,
+            256,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 390,
+          "y": 4860
+        },
+        {
+          "background": "#ffffff",
+          "column": {
+            "max_w": 1240,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 390,
+            "x": 0
+          },
+          "h": 1177,
+          "heading": "Veja mais algumas funcionalidades do Sendi:",
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 390,
+          "y": 5439
+        },
+        {
+          "background": "#1a1a1a",
+          "column": {
+            "max_w": 900,
+            "pad": [
+              0,
+              0
+            ],
+            "w": 117,
+            "x": 44
+          },
+          "h": 343,
+          "heading": "Funcionalidade 1",
+          "pad": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "per_row": 1,
+          "tag": "article",
+          "w": 165,
+          "y": 5518
+        },
+        {
+          "background": "#1a1a1a",
+          "column": {
+            "max_w": 900,
+            "pad": [
+              0,
+              0
+            ],
+            "w": 117,
+            "x": 229
+          },
+          "h": 343,
+          "heading": "Funcionalidade 2",
+          "pad": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "per_row": 1,
+          "tag": "article",
+          "w": 165,
+          "y": 5518
+        },
+        {
+          "background": "#1a1a1a",
+          "column": {
+            "max_w": 900,
+            "pad": [
+              0,
+              0
+            ],
+            "w": 117,
+            "x": 44
+          },
+          "h": 343,
+          "heading": "Funcionalidade 3",
+          "pad": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "per_row": 1,
+          "tag": "article",
+          "w": 165,
+          "y": 5881
+        },
+        {
+          "background": "#1a1a1a",
+          "column": {
+            "max_w": 900,
+            "pad": [
+              0,
+              0
+            ],
+            "w": 117,
+            "x": 229
+          },
+          "h": 343,
+          "heading": "Funcionalidade 4",
+          "pad": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "per_row": 1,
+          "tag": "article",
+          "w": 165,
+          "y": 5881
+        },
+        {
+          "background": "#1a1a1a",
+          "column": {
+            "max_w": 900,
+            "pad": [
+              0,
+              0
+            ],
+            "w": 117,
+            "x": 44
+          },
+          "h": 372,
+          "heading": "Funcionalidade 5",
+          "pad": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "per_row": 1,
+          "tag": "article",
+          "w": 165,
+          "y": 6244
+        },
+        {
+          "background": "#1a1a1a",
+          "column": {
+            "max_w": 900,
+            "pad": [
+              0,
+              0
+            ],
+            "w": 117,
+            "x": 229
+          },
+          "h": 372,
+          "heading": "Funcionalidade 6",
+          "pad": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "per_row": 1,
+          "tag": "article",
+          "w": 165,
+          "y": 6244
+        },
+        {
+          "background": "#000000",
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 350,
+            "x": 20
+          },
+          "h": 1179,
+          "heading": "Nossa, mas para oferecer tudo isso o Sendi deve custar uma pequena fortuna, cert",
+          "pad": [
+            80,
+            20,
+            80,
+            20
+          ],
+          "per_row": 2,
+          "tag": "section",
+          "w": 390,
+          "y": 6616
+        },
+        {
+          "background": "#171717",
+          "h": 340,
+          "heading": "Essencial",
+          "pad": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "per_row": 1,
+          "tag": "article",
+          "w": 147,
+          "y": 7019
+        },
+        {
+          "background": "#171717",
+          "h": 340,
+          "heading": "Profissional",
+          "pad": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "per_row": 1,
+          "tag": "article",
+          "w": 147,
+          "y": 7019
+        },
+        {
+          "background": "#171717",
+          "h": 340,
+          "heading": "Escala",
+          "pad": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "per_row": 1,
+          "tag": "article",
+          "w": 147,
+          "y": 7375
+        },
+        {
+          "background": "#ffffff",
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 390,
+            "x": 0
+          },
+          "h": 271,
+          "heading": "SUA SATISFAÇÃO IMPORTA!",
+          "pad": [
+            40,
+            0,
+            40,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 390,
+          "y": 7795
+        },
+        {
+          "background": "#000000",
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 390,
+            "x": 0
+          },
+          "h": 790,
+          "heading": "Dúvidas? Esse guia pode te ajudar:",
+          "pad": [
+            40,
+            0,
+            40,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 390,
+          "y": 8066
+        },
+        {
+          "background": "#ffffff",
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 390,
+            "x": 0
+          },
+          "h": 271,
+          "heading": "Ainda com dúvidas?",
+          "pad": [
+            40,
+            0,
+            40,
+            0
+          ],
+          "per_row": 1,
+          "tag": "section",
+          "w": 390,
+          "y": 8856
+        },
+        {
+          "background": "#000000",
+          "column": {
+            "max_w": 1140,
+            "pad": [
+              20,
+              20
+            ],
+            "w": 390,
+            "x": 0
+          },
+          "h": 508,
+          "pad": [
+            48,
+            0,
+            48,
+            0
+          ],
+          "per_row": 2,
+          "tag": "footer",
+          "w": 390,
+          "y": 9127
+        },
+        {
+          "gap": 16,
+          "h": 54,
+          "pad": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "per_row": 2,
+          "tag": "nav",
+          "w": 350,
+          "y": 9533
+        }
+      ],
+      "page_h": 9635,
+      "page_w": 390,
+      "type": {
+        "body": 18,
+        "h1": 24,
+        "h2": 24,
+        "h3": 20
+      },
+      "width": 390
+    }
+  ],
+  "links": [
+    {
+      "href": "http://127.0.0.1:50061/#funcionalidades",
+      "text": "Funcionalidades"
+    },
+    {
+      "href": "http://127.0.0.1:50061/#planos",
+      "text": "Planos"
+    },
+    {
+      "href": "http://127.0.0.1:50061/#faq",
+      "text": "Dúvidas"
+    },
+    {
+      "href": "http://127.0.0.1:50061/login",
+      "text": "Entrar"
+    },
+    {
+      "href": "http://127.0.0.1:50061/#planos",
+      "text": "Saiba mais"
+    },
+    {
+      "href": "http://127.0.0.1:50061/#planos",
+      "text": "Quero meu Sendi"
+    },
+    {
+      "href": "http://127.0.0.1:50061/#planos",
+      "text": "Saiba mais"
+    },
+    {
+      "href": "http://127.0.0.1:50061/#planos",
+      "text": "Saiba mais"
+    },
+    {
+      "href": "http://127.0.0.1:50061/#faq",
+      "text": "Saiba mais"
+    },
+    {
+      "href": "http://127.0.0.1:50061/#faq",
+      "text": "Saiba mais"
+    },
+    {
+      "href": "http://127.0.0.1:50061/#faq",
+      "text": "Saiba mais"
+    },
+    {
+      "href": "http://127.0.0.1:50061/#planos",
+      "text": "Saiba mais"
+    },
+    {
+      "href": "http://127.0.0.1:50061/termo-de-uso",
+      "text": "Termos de Uso"
+    },
+    {
+      "href": "http://127.0.0.1:50061/politica-de-privacidade",
+      "text": "Política de Privacidade"
+    },
+    {
+      "href": "http://127.0.0.1:50061/login",
+      "text": "Entrar"
+    },
+    {
+      "href": "http://127.0.0.1:50061/#",
+      "text": "FAQ"
+    },
+    {
+      "href": "http://127.0.0.1:50061/#",
+      "text": "Contato"
+    }
+  ],
+  "meta": {
+    "description": "",
+    "icons": [
+      "http://127.0.0.1:50061/favicon.ico"
+    ],
+    "og_image": "",
+    "og_title": "",
+    "theme_color": ""
+  },
+  "outline": [
+    {
+      "background": "#000000",
+      "box": {
+        "h": 75,
+        "w": 1425,
+        "x": 0,
+        "y": 0
+      },
+      "class": "sf-header",
+      "color": "#ffffff",
+      "depth": 4,
+      "display": "block",
+      "font": "16px 400",
+      "role": "banner",
+      "tag": "header"
+    },
+    {
+      "alt": "SendFlow",
+      "box": {
+        "h": 42,
+        "w": 65,
+        "x": 163,
+        "y": 16
+      },
+      "class": "sf-logo",
+      "color": "#ffffff",
+      "depth": 6,
+      "font": "16px 400",
+      "src": "https://sendflow.com.br/assets/logo-sendflow-CFfyEAex.svg",
+      "tag": "img"
+    },
+    {
+      "box": {
+        "h": 19,
+        "w": 280,
+        "x": 983,
+        "y": 28
+      },
+      "class": "sf-nav",
+      "color": "#ffffff",
+      "depth": 6,
+      "display": "flex",
+      "flex": "row",
+      "font": "16px 400",
+      "tag": "nav"
+    },
+    {
+      "box": {
+        "h": 19,
+        "w": 99,
+        "x": 983,
+        "y": 28
+      },
+      "color": "#d4d4d4",
+      "depth": 7,
+      "font": "14px 400",
+      "href": "http://127.0.0.1:50061/#funcionalidades",
+      "tag": "a",
+      "text": "Funcionalidades"
+    },
+    {
+      "box": {
+        "h": 19,
+        "w": 40,
+        "x": 1100,
+        "y": 28
+      },
+      "color": "#d4d4d4",
+      "depth": 7,
+      "font": "14px 400",
+      "href": "http://127.0.0.1:50061/#planos",
+      "tag": "a",
+      "text": "Planos"
+    },
+    {
+      "box": {
+        "h": 19,
+        "w": 49,
+        "x": 1159,
+        "y": 28
+      },
+      "color": "#d4d4d4",
+      "depth": 7,
+      "font": "14px 400",
+      "href": "http://127.0.0.1:50061/#faq",
+      "tag": "a",
+      "text": "Dúvidas"
+    },
+    {
+      "box": {
+        "h": 19,
+        "w": 37,
+        "x": 1226,
+        "y": 28
+      },
+      "color": "#d4d4d4",
+      "depth": 7,
+      "font": "14px 400",
+      "href": "http://127.0.0.1:50061/login",
+      "tag": "a",
+      "text": "Entrar"
+    },
+    {
+      "box": {
+        "h": 8064,
+        "w": 1425,
+        "x": 0,
+        "y": 75
+      },
+      "color": "#ffffff",
+      "depth": 4,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "main"
+    },
+    {
+      "background": "#000000",
+      "box": {
+        "h": 838,
+        "w": 1425,
+        "x": 0,
+        "y": 75
+      },
+      "class": "sf-hero",
+      "color": "#ffffff",
+      "depth": 5,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 124,
+        "w": 980,
+        "x": 163,
+        "y": 155
+      },
+      "color": "#ffffff",
+      "depth": 7,
+      "font": "36px 700",
+      "tag": "h1",
+      "text": "A ferramenta de automação de Grupos e Comunidades de WhatsApp mais completa e intuitiva para escalar com segurança."
+    },
+    {
+      "box": {
+        "h": 96,
+        "w": 760,
+        "x": 163,
+        "y": 303
+      },
+      "color": "#d4d4d4",
+      "depth": 7,
+      "font": "18px 400",
+      "tag": "p",
+      "text": "Com o Sendi e o SendFlow você automatiza mensagens, organiza sua operação em grupos e comunidades do WhatsApp e tem mais controle para escalar com segurança. Recursos ilimitados no seu plano até os la"
+    },
+    {
+      "background": "#fede05",
+      "box": {
+        "h": 45,
+        "w": 109,
+        "x": 163,
+        "y": 423
+      },
+      "class": "sf-btn-primary",
+      "color": "#000000",
+      "depth": 8,
+      "font": "14px 600",
+      "href": "http://127.0.0.1:50061/#planos",
+      "tag": "a",
+      "text": "Saiba mais"
+    },
+    {
+      "box": {
+        "h": 45,
+        "w": 153,
+        "x": 284,
+        "y": 423
+      },
+      "class": "sf-btn-secondary",
+      "color": "#fede05",
+      "depth": 8,
+      "font": "14px 600",
+      "href": "http://127.0.0.1:50061/#planos",
+      "tag": "a",
+      "text": "Quero meu Sendi"
+    },
+    {
+      "alt": "Patrocinador oficial do Hotmart Fire desde 2024",
+      "box": {
+        "h": 75,
+        "w": 1100,
+        "x": 163,
+        "y": 492
+      },
+      "class": "sf-hero-banner",
+      "color": "#ffffff",
+      "depth": 7,
+      "font": "16px 400",
+      "src": "https://sendflow.com.br/__l5e/assets-v1/c09ffb8d-5e86-44ed-93d8-3c05ecfa6da7/banner-hotmart-fire-desktop.svg",
+      "tag": "img"
+    },
+    {
+      "alt": "",
+      "box": {
+        "h": 242,
+        "w": 300,
+        "x": 163,
+        "y": 591
+      },
+      "color": "#ffffff",
+      "depth": 7,
+      "font": "16px 400",
+      "src": "https://sendflow.com.br/assets/leadscoring-mockup-hLghpPKE.png",
+      "tag": "img"
+    },
+    {
+      "background": "#000000",
+      "box": {
+        "h": 683,
+        "w": 1425,
+        "x": 0,
+        "y": 913
+      },
+      "class": "sf-section sf-dark",
+      "color": "#ffffff",
+      "depth": 5,
+      "display": "block",
+      "font": "16px 400",
+      "id": "suporte",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 124,
+        "w": 534,
+        "x": 163,
+        "y": 1077
+      },
+      "color": "#ffffff",
+      "depth": 8,
+      "font": "36px 700",
+      "tag": "h2",
+      "text": "Decepcionado com o suporte desastroso das ferramentas de marketing digital?"
+    },
+    {
+      "box": {
+        "h": 154,
+        "w": 534,
+        "x": 163,
+        "y": 1217
+      },
+      "color": "#ffffff",
+      "depth": 8,
+      "font": "24px 400",
+      "tag": "p",
+      "text": "Com o SendFlow você conta com suporte e uma plataforma pensada para quem trabalha com WhatsApp todos os dias, para você focar no que importa na sua operação."
+    },
+    {
+      "background": "#fede05",
+      "box": {
+        "h": 45,
+        "w": 109,
+        "x": 163,
+        "y": 1386
+      },
+      "class": "sf-btn-primary",
+      "color": "#000000",
+      "depth": 8,
+      "font": "14px 600",
+      "href": "http://127.0.0.1:50061/#planos",
+      "tag": "a",
+      "text": "Saiba mais"
+    },
+    {
+      "alt": "Mensagens de clientes elogiando o suporte do SendFlow",
+      "box": {
+        "h": 459,
+        "w": 534,
+        "x": 729,
+        "y": 1025
+      },
+      "class": "sf-img",
+      "color": "#ffffff",
+      "depth": 7,
+      "font": "16px 400",
+      "src": "https://sendflow.com.br/assets/support-phones-sX2i2BHY.png",
+      "tag": "img"
+    },
+    {
+      "background": "#ffffff",
+      "box": {
+        "h": 474,
+        "w": 1425,
+        "x": 0,
+        "y": 1595
+      },
+      "class": "sf-section",
+      "color": "#18181b",
+      "depth": 5,
+      "display": "block",
+      "font": "16px 400",
+      "id": "players",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 41,
+        "w": 1200,
+        "x": 113,
+        "y": 1707
+      },
+      "color": "#18181b",
+      "depth": 7,
+      "font": "36px 700",
+      "tag": "h2",
+      "text": "Os maiores players do mercado usam o Sendi"
+    },
+    {
+      "box": {
+        "h": 77,
+        "w": 900,
+        "x": 113,
+        "y": 1765
+      },
+      "color": "#18181b",
+      "depth": 7,
+      "font": "24px 400",
+      "tag": "p",
+      "text": "Grandes operações confiam no SendFlow para gerenciar grupos, comunidades e automações no WhatsApp."
+    },
+    {
+      "box": {
+        "h": 68,
+        "w": 1200,
+        "x": 113,
+        "y": 1865
+      },
+      "class": "sf-logo-grid",
+      "color": "#18181b",
+      "depth": 7,
+      "display": "grid",
+      "font": "16px 400",
+      "grid": "85.3281px 85.3281px 85.3438px 85.3281px 85.3281px 85.3438px 85.3281px 85.3281px 85.3438px 85.3281px 85.3281px 85.3438px",
+      "tag": "ul"
+    },
+    {
+      "alt": "V4 Company",
+      "box": {
+        "h": 64,
+        "w": 85,
+        "x": 113,
+        "y": 1865
+      },
+      "color": "#18181b",
+      "depth": 9,
+      "font": "16px 400",
+      "src": "https://sendflow.com.br/assets/v4-D6WcgyDU.jpg",
+      "tag": "img"
+    },
+    {
+      "alt": "Pedro Sobral",
+      "box": {
+        "h": 64,
+        "w": 85,
+        "x": 214,
+        "y": 1865
+      },
+      "color": "#18181b",
+      "depth": 9,
+      "font": "16px 400",
+      "src": "https://sendflow.com.br/assets/pedro-sobral-CUqbWEpd.jpg",
+      "tag": "img"
+    },
+    {
+      "alt": "Priscila Zillo",
+      "box": {
+        "h": 64,
+        "w": 85,
+        "x": 315,
+        "y": 1865
+      },
+      "color": "#18181b",
+      "depth": 9,
+      "font": "16px 400",
+      "src": "https://sendflow.com.br/assets/priscila-zillo-V40qjWJ9.jpg",
+      "tag": "img"
+    },
+    {
+      "alt": "Empiricus",
+      "box": {
+        "h": 64,
+        "w": 85,
+        "x": 417,
+        "y": 1865
+      },
+      "color": "#18181b",
+      "depth": 9,
+      "font": "16px 400",
+      "src": "https://sendflow.com.br/assets/empiricus-BDdO1DU5.jpg",
+      "tag": "img"
+    },
+    {
+      "alt": "Exame.",
+      "box": {
+        "h": 64,
+        "w": 85,
+        "x": 518,
+        "y": 1865
+      },
+      "color": "#18181b",
+      "depth": 9,
+      "font": "16px 400",
+      "src": "https://sendflow.com.br/assets/exame-kqtrayH2.jpg",
+      "tag": "img"
+    },
+    {
+      "alt": "O Corpo Explica",
+      "box": {
+        "h": 64,
+        "w": 85,
+        "x": 619,
+        "y": 1865
+      },
+      "color": "#18181b",
+      "depth": 9,
+      "font": "16px 400",
+      "src": "https://sendflow.com.br/assets/corpo-explica-CCR8wgqO.jpg",
+      "tag": "img"
+    },
+    {
+      "alt": "V4 Company",
+      "box": {
+        "h": 64,
+        "w": 85,
+        "x": 721,
+        "y": 1865
+      },
+      "color": "#18181b",
+      "depth": 9,
+      "font": "16px 400",
+      "src": "https://sendflow.com.br/assets/v4-D6WcgyDU.jpg",
+      "tag": "img"
+    },
+    {
+      "alt": "Pedro Sobral",
+      "box": {
+        "h": 64,
+        "w": 85,
+        "x": 822,
+        "y": 1865
+      },
+      "color": "#18181b",
+      "depth": 9,
+      "font": "16px 400",
+      "src": "https://sendflow.com.br/assets/pedro-sobral-CUqbWEpd.jpg",
+      "tag": "img"
+    },
+    {
+      "alt": "Priscila Zillo",
+      "box": {
+        "h": 64,
+        "w": 85,
+        "x": 923,
+        "y": 1865
+      },
+      "color": "#18181b",
+      "depth": 9,
+      "font": "16px 400",
+      "src": "https://sendflow.com.br/assets/priscila-zillo-V40qjWJ9.jpg",
+      "tag": "img"
+    },
+    {
+      "alt": "Empiricus",
+      "box": {
+        "h": 64,
+        "w": 85,
+        "x": 1025,
+        "y": 1865
+      },
+      "color": "#18181b",
+      "depth": 9,
+      "font": "16px 400",
+      "src": "https://sendflow.com.br/assets/empiricus-BDdO1DU5.jpg",
+      "tag": "img"
+    },
+    {
+      "alt": "Exame.",
+      "box": {
+        "h": 64,
+        "w": 85,
+        "x": 1126,
+        "y": 1865
+      },
+      "color": "#18181b",
+      "depth": 9,
+      "font": "16px 400",
+      "src": "https://sendflow.com.br/assets/exame-kqtrayH2.jpg",
+      "tag": "img"
+    },
+    {
+      "alt": "O Corpo Explica",
+      "box": {
+        "h": 64,
+        "w": 85,
+        "x": 1227,
+        "y": 1865
+      },
+      "color": "#18181b",
+      "depth": 9,
+      "font": "16px 400",
+      "src": "https://sendflow.com.br/assets/corpo-explica-CCR8wgqO.jpg",
+      "tag": "img"
+    },
+    {
+      "background": "#000000",
+      "box": {
+        "h": 1389,
+        "w": 1425,
+        "x": 0,
+        "y": 2069
+      },
+      "class": "sf-section sf-dark sf-pad-lg",
+      "color": "#ffffff",
+      "depth": 5,
+      "display": "block",
+      "font": "16px 400",
+      "id": "leads",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 41,
+        "w": 1200,
+        "x": 113,
+        "y": 2197
+      },
+      "color": "#ffffff",
+      "depth": 7,
+      "font": "36px 700",
+      "tag": "h2",
+      "text": "Fale diretamente com seus leads mais engajados"
+    },
+    {
+      "box": {
+        "h": 77,
+        "w": 900,
+        "x": 113,
+        "y": 2255
+      },
+      "color": "#ffffff",
+      "depth": 7,
+      "font": "24px 400",
+      "tag": "p",
+      "text": "Use o Sendi para se comunicar com sua base, automatizar fluxos e acompanhar resultados em uma plataforma completa para WhatsApp."
+    },
+    {
+      "alt": "Painel de Lead Scoring do Sendi",
+      "box": {
+        "h": 725,
+        "w": 900,
+        "x": 263,
+        "y": 2356
+      },
+      "class": "sf-img sf-img-wide",
+      "color": "#ffffff",
+      "depth": 7,
+      "font": "16px 400",
+      "src": "https://sendflow.com.br/assets/leadscoring-mockup-hLghpPKE.png",
+      "tag": "img"
+    },
+    {
+      "box": {
+        "h": 46,
+        "w": 1200,
+        "x": 113,
+        "y": 3105
+      },
+      "color": "#ffffff",
+      "depth": 7,
+      "font": "34px 700",
+      "tag": "h3",
+      "text": "Conecte o SendFlow com as principais ferramentas do Mercado"
+    },
+    {
+      "box": {
+        "h": 132,
+        "w": 1200,
+        "x": 113,
+        "y": 3175
+      },
+      "class": "sf-integration-list",
+      "color": "#ffffff",
+      "depth": 7,
+      "display": "grid",
+      "font": "16px 400",
+      "grid": "85.3281px 85.3281px 85.3438px 85.3281px 85.3281px 85.3438px 85.3281px 85.3281px 85.3438px 85.3281px 85.3281px 85.3438px",
+      "tag": "ul"
+    },
+    {
+      "background": "#ffffff",
+      "box": {
+        "h": 941,
+        "w": 1425,
+        "x": 0,
+        "y": 3459
+      },
+      "class": "sf-section sf-pad-lg",
+      "color": "#18181b",
+      "depth": 5,
+      "display": "block",
+      "font": "16px 400",
+      "id": "manual",
+      "tag": "section"
+    },
+    {
+      "alt": "Manual Antibanimento SendFlow",
+      "box": {
+        "h": 443,
+        "w": 534,
+        "x": 163,
+        "y": 3708
+      },
+      "class": "sf-img",
+      "color": "#18181b",
+      "depth": 7,
+      "font": "16px 400",
+      "src": "https://sendflow.com.br/assets/manual-antibanimento-tablet-CVXGN7xR.png",
+      "tag": "img"
+    },
+    {
+      "box": {
+        "h": 46,
+        "w": 534,
+        "x": 729,
+        "y": 3611
+      },
+      "color": "#18181b",
+      "depth": 8,
+      "font": "34px 700",
+      "tag": "h3",
+      "text": "Manual antibanimento:"
+    },
+    {
+      "box": {
+        "h": 154,
+        "w": 534,
+        "x": 729,
+        "y": 3669
+      },
+      "color": "#18181b",
+      "depth": 8,
+      "font": "24px 400",
+      "tag": "p",
+      "text": "Tenha acesso a orientações práticas para operar com mais cuidado no WhatsApp e proteger sua estrutura com o SendFlow, com regras para usar todas as funções de forma segura."
+    },
+    {
+      "background": "#fede05",
+      "box": {
+        "h": 45,
+        "w": 109,
+        "x": 729,
+        "y": 3838
+      },
+      "class": "sf-btn-primary",
+      "color": "#000000",
+      "depth": 8,
+      "font": "14px 600",
+      "href": "http://127.0.0.1:50061/#planos",
+      "tag": "a",
+      "text": "Saiba mais"
+    },
+    {
+      "alt": "",
+      "box": {
+        "h": 369,
+        "w": 534,
+        "x": 729,
+        "y": 3899
+      },
+      "color": "#18181b",
+      "depth": 8,
+      "font": "16px 400",
+      "src": "https://sendflow.com.br/assets/section-bg-4-D8GH582z.png",
+      "tag": "img"
+    },
+    {
+      "background": "#000000",
+      "box": {
+        "h": 652,
+        "w": 1425,
+        "x": 0,
+        "y": 4400
+      },
+      "class": "sf-section sf-dark",
+      "color": "#ffffff",
+      "depth": 5,
+      "display": "block",
+      "font": "16px 400",
+      "id": "depoimentos",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 41,
+        "w": 1200,
+        "x": 113,
+        "y": 4512
+      },
+      "color": "#ffffff",
+      "depth": 7,
+      "font": "36px 700",
+      "tag": "h2",
+      "text": "Olha o que nossos clientes falam da gente:"
+    },
+    {
+      "background": "#171717",
+      "box": {
+        "h": 219,
+        "w": 389,
+        "x": 113,
+        "y": 4577
+      },
+      "color": "#ffffff",
+      "depth": 8,
+      "font": "16px 400",
+      "tag": "video"
+    },
+    {
+      "background": "#171717",
+      "box": {
+        "h": 219,
+        "w": 389,
+        "x": 518,
+        "y": 4577
+      },
+      "color": "#ffffff",
+      "depth": 8,
+      "font": "16px 400",
+      "tag": "video"
+    },
+    {
+      "background": "#171717",
+      "box": {
+        "h": 219,
+        "w": 389,
+        "x": 923,
+        "y": 4577
+      },
+      "color": "#ffffff",
+      "depth": 8,
+      "font": "16px 400",
+      "tag": "video"
+    },
+    {
+      "background": "#ffffff",
+      "box": {
+        "h": 698,
+        "w": 1425,
+        "x": 0,
+        "y": 5052
+      },
+      "class": "sf-section",
+      "color": "#18181b",
+      "depth": 5,
+      "display": "block",
+      "font": "16px 400",
+      "id": "funcionalidades",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 41,
+        "w": 1200,
+        "x": 113,
+        "y": 5052
+      },
+      "color": "#18181b",
+      "depth": 7,
+      "font": "36px 700",
+      "tag": "h2",
+      "text": "Veja mais algumas funcionalidades do Sendi:"
+    },
+    {
+      "background": "#1a1a1a",
+      "box": {
+        "h": 306,
+        "w": 387,
+        "x": 113,
+        "y": 5118
+      },
+      "class": "sf-feature-card",
+      "color": "#ffffff",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "article"
+    },
+    {
+      "alt": "",
+      "box": {
+        "h": 306,
+        "w": 387,
+        "x": 113,
+        "y": 5118
+      },
+      "class": "sf-feature-bg",
+      "color": "#ffffff",
+      "depth": 9,
+      "font": "16px 400",
+      "src": "https://sendflow.com.br/assets/section-bg-4-D8GH582z.png",
+      "tag": "img"
+    },
+    {
+      "box": {
+        "h": 46,
+        "w": 339,
+        "x": 137,
+        "y": 5166
+      },
+      "color": "#ffffff",
+      "depth": 9,
+      "font": "34px 700",
+      "tag": "h3",
+      "text": "Funcionalidade 1"
+    },
+    {
+      "box": {
+        "h": 115,
+        "w": 339,
+        "x": 137,
+        "y": 5224
+      },
+      "color": "#ffffff",
+      "depth": 9,
+      "font": "24px 400",
+      "tag": "p",
+      "text": "Automação de mensagens em grupos e comunidades do WhatsApp"
+    },
+    {
+      "box": {
+        "h": 45,
+        "w": 109,
+        "x": 137,
+        "y": 5355
+      },
+      "class": "sf-btn-secondary",
+      "color": "#fede05",
+      "depth": 9,
+      "font": "14px 600",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#1a1a1a",
+      "box": {
+        "h": 306,
+        "w": 387,
+        "x": 519,
+        "y": 5118
+      },
+      "class": "sf-feature-card",
+      "color": "#ffffff",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "article"
+    },
+    {
+      "alt": "",
+      "box": {
+        "h": 306,
+        "w": 387,
+        "x": 519,
+        "y": 5118
+      },
+      "class": "sf-feature-bg",
+      "color": "#ffffff",
+      "depth": 9,
+      "font": "16px 400",
+      "src": "https://sendflow.com.br/assets/section-bg-4-D8GH582z.png",
+      "tag": "img"
+    },
+    {
+      "box": {
+        "h": 46,
+        "w": 339,
+        "x": 543,
+        "y": 5166
+      },
+      "color": "#ffffff",
+      "depth": 9,
+      "font": "34px 700",
+      "tag": "h3",
+      "text": "Funcionalidade 2"
+    },
+    {
+      "box": {
+        "h": 115,
+        "w": 339,
+        "x": 543,
+        "y": 5224
+      },
+      "color": "#ffffff",
+      "depth": 9,
+      "font": "24px 400",
+      "tag": "p",
+      "text": "Gestão de grupos e comunidades com mais controle"
+    },
+    {
+      "box": {
+        "h": 45,
+        "w": 109,
+        "x": 543,
+        "y": 5355
+      },
+      "class": "sf-btn-secondary",
+      "color": "#fede05",
+      "depth": 9,
+      "font": "14px 600",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#1a1a1a",
+      "box": {
+        "h": 306,
+        "w": 387,
+        "x": 926,
+        "y": 5118
+      },
+      "class": "sf-feature-card",
+      "color": "#ffffff",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "article"
+    },
+    {
+      "alt": "",
+      "box": {
+        "h": 306,
+        "w": 387,
+        "x": 926,
+        "y": 5118
+      },
+      "class": "sf-feature-bg",
+      "color": "#ffffff",
+      "depth": 9,
+      "font": "16px 400",
+      "src": "https://sendflow.com.br/assets/section-bg-4-D8GH582z.png",
+      "tag": "img"
+    },
+    {
+      "box": {
+        "h": 46,
+        "w": 339,
+        "x": 950,
+        "y": 5166
+      },
+      "color": "#ffffff",
+      "depth": 9,
+      "font": "34px 700",
+      "tag": "h3",
+      "text": "Funcionalidade 3"
+    },
+    {
+      "box": {
+        "h": 77,
+        "w": 339,
+        "x": 950,
+        "y": 5224
+      },
+      "color": "#ffffff",
+      "depth": 9,
+      "font": "24px 400",
+      "tag": "p",
+      "text": "Recursos para escalar sua operação com segurança"
+    },
+    {
+      "box": {
+        "h": 45,
+        "w": 109,
+        "x": 950,
+        "y": 5317
+      },
+      "class": "sf-btn-secondary",
+      "color": "#fede05",
+      "depth": 9,
+      "font": "14px 600",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#1a1a1a",
+      "box": {
+        "h": 306,
+        "w": 387,
+        "x": 113,
+        "y": 5444
+      },
+      "class": "sf-feature-card",
+      "color": "#ffffff",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "article"
+    },
+    {
+      "alt": "",
+      "box": {
+        "h": 306,
+        "w": 387,
+        "x": 113,
+        "y": 5444
+      },
+      "class": "sf-feature-bg",
+      "color": "#ffffff",
+      "depth": 9,
+      "font": "16px 400",
+      "src": "https://sendflow.com.br/assets/section-bg-4-D8GH582z.png",
+      "tag": "img"
+    },
+    {
+      "box": {
+        "h": 46,
+        "w": 339,
+        "x": 137,
+        "y": 5492
+      },
+      "color": "#ffffff",
+      "depth": 9,
+      "font": "34px 700",
+      "tag": "h3",
+      "text": "Funcionalidade 4"
+    },
+    {
+      "box": {
+        "h": 77,
+        "w": 339,
+        "x": 137,
+        "y": 5550
+      },
+      "color": "#ffffff",
+      "depth": 9,
+      "font": "24px 400",
+      "tag": "p",
+      "text": "Integrações com as principais ferramentas do mercado"
+    },
+    {
+      "box": {
+        "h": 45,
+        "w": 109,
+        "x": 137,
+        "y": 5643
+      },
+      "class": "sf-btn-secondary",
+      "color": "#fede05",
+      "depth": 9,
+      "font": "14px 600",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#1a1a1a",
+      "box": {
+        "h": 306,
+        "w": 387,
+        "x": 519,
+        "y": 5444
+      },
+      "class": "sf-feature-card",
+      "color": "#ffffff",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "article"
+    },
+    {
+      "alt": "",
+      "box": {
+        "h": 306,
+        "w": 387,
+        "x": 519,
+        "y": 5444
+      },
+      "class": "sf-feature-bg",
+      "color": "#ffffff",
+      "depth": 9,
+      "font": "16px 400",
+      "src": "https://sendflow.com.br/assets/section-bg-4-D8GH582z.png",
+      "tag": "img"
+    },
+    {
+      "box": {
+        "h": 46,
+        "w": 339,
+        "x": 543,
+        "y": 5492
+      },
+      "color": "#ffffff",
+      "depth": 9,
+      "font": "34px 700",
+      "tag": "h3",
+      "text": "Funcionalidade 5"
+    },
+    {
+      "box": {
+        "h": 77,
+        "w": 339,
+        "x": 543,
+        "y": 5550
+      },
+      "color": "#ffffff",
+      "depth": 9,
+      "font": "24px 400",
+      "tag": "p",
+      "text": "Mais agilidade para sua equipe no dia a dia"
+    },
+    {
+      "box": {
+        "h": 45,
+        "w": 109,
+        "x": 543,
+        "y": 5643
+      },
+      "class": "sf-btn-secondary",
+      "color": "#fede05",
+      "depth": 9,
+      "font": "14px 600",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#1a1a1a",
+      "box": {
+        "h": 306,
+        "w": 387,
+        "x": 926,
+        "y": 5444
+      },
+      "class": "sf-feature-card",
+      "color": "#ffffff",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "article"
+    },
+    {
+      "alt": "",
+      "box": {
+        "h": 306,
+        "w": 387,
+        "x": 926,
+        "y": 5444
+      },
+      "class": "sf-feature-bg",
+      "color": "#ffffff",
+      "depth": 9,
+      "font": "16px 400",
+      "src": "https://sendflow.com.br/assets/section-bg-4-D8GH582z.png",
+      "tag": "img"
+    },
+    {
+      "box": {
+        "h": 46,
+        "w": 339,
+        "x": 950,
+        "y": 5492
+      },
+      "color": "#ffffff",
+      "depth": 9,
+      "font": "34px 700",
+      "tag": "h3",
+      "text": "Funcionalidade 6"
+    },
+    {
+      "box": {
+        "h": 115,
+        "w": 339,
+        "x": 950,
+        "y": 5550
+      },
+      "color": "#ffffff",
+      "depth": 9,
+      "font": "24px 400",
+      "tag": "p",
+      "text": "Acompanhamento para melhorar seus resultados com o SendFlow"
+    },
+    {
+      "box": {
+        "h": 45,
+        "w": 109,
+        "x": 950,
+        "y": 5681
+      },
+      "class": "sf-btn-secondary",
+      "color": "#fede05",
+      "depth": 9,
+      "font": "14px 600",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#000000",
+      "box": {
+        "h": 654,
+        "w": 1425,
+        "x": 0,
+        "y": 5750
+      },
+      "class": "sf-section sf-dark",
+      "color": "#ffffff",
+      "depth": 5,
+      "display": "block",
+      "font": "16px 400",
+      "id": "planos",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 83,
+        "w": 1100,
+        "x": 163,
+        "y": 5830
+      },
+      "color": "#ffffff",
+      "depth": 7,
+      "font": "36px 700",
+      "tag": "h2",
+      "text": "Nossa, mas para oferecer tudo isso o Sendi deve custar uma pequena fortuna, certo? Errado!"
+    },
+    {
+      "box": {
+        "h": 115,
+        "w": 900,
+        "x": 163,
+        "y": 5929
+      },
+      "color": "#ffffff",
+      "depth": 7,
+      "font": "24px 400",
+      "tag": "p",
+      "text": "O SendFlow foi criado para entregar uma solução completa para automação de grupos e comunidades de WhatsApp, com o melhor custo-benefício para você escalar sua operação."
+    },
+    {
+      "background": "#171717",
+      "box": {
+        "h": 256,
+        "w": 356,
+        "x": 163,
+        "y": 6068
+      },
+      "class": "sf-plan",
+      "color": "#ffffff",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "article"
+    },
+    {
+      "box": {
+        "h": 46,
+        "w": 306,
+        "x": 188,
+        "y": 6117
+      },
+      "color": "#ffffff",
+      "depth": 9,
+      "font": "34px 700",
+      "tag": "h3",
+      "text": "Essencial"
+    },
+    {
+      "box": {
+        "h": 63,
+        "w": 306,
+        "x": 188,
+        "y": 6175
+      },
+      "color": "#d4d4d8",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#fede05",
+      "box": {
+        "h": 45,
+        "w": 109,
+        "x": 188,
+        "y": 6254
+      },
+      "class": "sf-btn-primary",
+      "color": "#000000",
+      "depth": 9,
+      "font": "14px 600",
+      "href": "http://127.0.0.1:50061/#faq",
+      "tag": "a",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#171717",
+      "box": {
+        "h": 256,
+        "w": 356,
+        "x": 535,
+        "y": 6068
+      },
+      "class": "sf-plan",
+      "color": "#ffffff",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "article"
+    },
+    {
+      "box": {
+        "h": 46,
+        "w": 306,
+        "x": 560,
+        "y": 6117
+      },
+      "color": "#ffffff",
+      "depth": 9,
+      "font": "34px 700",
+      "tag": "h3",
+      "text": "Profissional"
+    },
+    {
+      "box": {
+        "h": 63,
+        "w": 306,
+        "x": 560,
+        "y": 6175
+      },
+      "color": "#d4d4d8",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#fede05",
+      "box": {
+        "h": 45,
+        "w": 109,
+        "x": 560,
+        "y": 6254
+      },
+      "class": "sf-btn-primary",
+      "color": "#000000",
+      "depth": 9,
+      "font": "14px 600",
+      "href": "http://127.0.0.1:50061/#faq",
+      "tag": "a",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#171717",
+      "box": {
+        "h": 256,
+        "w": 356,
+        "x": 907,
+        "y": 6068
+      },
+      "class": "sf-plan",
+      "color": "#ffffff",
+      "depth": 8,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "article"
+    },
+    {
+      "box": {
+        "h": 46,
+        "w": 306,
+        "x": 932,
+        "y": 6117
+      },
+      "color": "#ffffff",
+      "depth": 9,
+      "font": "34px 700",
+      "tag": "h3",
+      "text": "Escala"
+    },
+    {
+      "box": {
+        "h": 63,
+        "w": 306,
+        "x": 932,
+        "y": 6175
+      },
+      "color": "#d4d4d8",
+      "depth": 9,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "ul"
+    },
+    {
+      "background": "#fede05",
+      "box": {
+        "h": 45,
+        "w": 109,
+        "x": 932,
+        "y": 6254
+      },
+      "class": "sf-btn-primary",
+      "color": "#000000",
+      "depth": 9,
+      "font": "14px 600",
+      "href": "http://127.0.0.1:50061/#faq",
+      "tag": "a",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#ffffff",
+      "box": {
+        "h": 419,
+        "w": 1425,
+        "x": 0,
+        "y": 6404
+      },
+      "class": "sf-section",
+      "color": "#18181b",
+      "depth": 5,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 41,
+        "w": 1100,
+        "x": 163,
+        "y": 6516
+      },
+      "color": "#18181b",
+      "depth": 7,
+      "font": "36px 700",
+      "tag": "h2",
+      "text": "SUA SATISFAÇÃO IMPORTA!"
+    },
+    {
+      "box": {
+        "h": 77,
+        "w": 900,
+        "x": 163,
+        "y": 6573
+      },
+      "color": "#18181b",
+      "depth": 7,
+      "font": "24px 400",
+      "tag": "p",
+      "text": "O SendFlow e o Sendi foram feitos para ajudar você a ter mais resultado com grupos e comunidades no WhatsApp."
+    },
+    {
+      "background": "#fede05",
+      "box": {
+        "h": 45,
+        "w": 109,
+        "x": 163,
+        "y": 6666
+      },
+      "class": "sf-btn-primary",
+      "color": "#000000",
+      "depth": 7,
+      "font": "14px 600",
+      "tag": "button",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#000000",
+      "box": {
+        "h": 896,
+        "w": 1425,
+        "x": 0,
+        "y": 6823
+      },
+      "class": "sf-section sf-dark",
+      "color": "#ffffff",
+      "depth": 5,
+      "display": "block",
+      "font": "16px 400",
+      "id": "faq",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 41,
+        "w": 1100,
+        "x": 163,
+        "y": 6935
+      },
+      "color": "#ffffff",
+      "depth": 7,
+      "font": "36px 700",
+      "tag": "h2",
+      "text": "Dúvidas? Esse guia pode te ajudar:"
+    },
+    {
+      "box": {
+        "h": 64,
+        "w": 1100,
+        "x": 163,
+        "y": 7026
+      },
+      "class": "faq-q",
+      "color": "#ffffff",
+      "depth": 9,
+      "font": "34px 700",
+      "tag": "h3",
+      "text": "Como faço para assinar o Sendi?"
+    },
+    {
+      "box": {
+        "h": 64,
+        "w": 1100,
+        "x": 163,
+        "y": 7026
+      },
+      "class": "faq-btn",
+      "color": "#ffffff",
+      "depth": 10,
+      "font": "18px 600",
+      "id": "faq-btn-0",
+      "tag": "button",
+      "text": "Como faço para assinar o Sendi?"
+    },
+    {
+      "box": {
+        "h": 8,
+        "w": 12,
+        "x": 1251,
+        "y": 7054
+      },
+      "color": "#ffffff",
+      "depth": 11,
+      "font": "18px 600",
+      "tag": "svg"
+    },
+    {
+      "box": {
+        "h": 64,
+        "w": 1100,
+        "x": 163,
+        "y": 7127
+      },
+      "class": "faq-q",
+      "color": "#ffffff",
+      "depth": 9,
+      "font": "34px 700",
+      "tag": "h3",
+      "text": "Como acesso o SendFlow depois de assinar?"
+    },
+    {
+      "box": {
+        "h": 64,
+        "w": 1100,
+        "x": 163,
+        "y": 7127
+      },
+      "class": "faq-btn",
+      "color": "#ffffff",
+      "depth": 10,
+      "font": "18px 600",
+      "id": "faq-btn-1",
+      "tag": "button",
+      "text": "Como acesso o SendFlow depois de assinar?"
+    },
+    {
+      "box": {
+        "h": 8,
+        "w": 12,
+        "x": 1251,
+        "y": 7155
+      },
+      "color": "#ffffff",
+      "depth": 11,
+      "font": "18px 600",
+      "tag": "svg"
+    },
+    {
+      "box": {
+        "h": 64,
+        "w": 1100,
+        "x": 163,
+        "y": 7228
+      },
+      "class": "faq-q",
+      "color": "#ffffff",
+      "depth": 9,
+      "font": "34px 700",
+      "tag": "h3",
+      "text": "Posso ter meu chip banido?"
+    },
+    {
+      "box": {
+        "h": 64,
+        "w": 1100,
+        "x": 163,
+        "y": 7228
+      },
+      "class": "faq-btn",
+      "color": "#ffffff",
+      "depth": 10,
+      "font": "18px 600",
+      "id": "faq-btn-2",
+      "tag": "button",
+      "text": "Posso ter meu chip banido?"
+    },
+    {
+      "box": {
+        "h": 8,
+        "w": 12,
+        "x": 1251,
+        "y": 7256
+      },
+      "color": "#ffffff",
+      "depth": 11,
+      "font": "18px 600",
+      "tag": "svg"
+    },
+    {
+      "box": {
+        "h": 64,
+        "w": 1100,
+        "x": 163,
+        "y": 7329
+      },
+      "class": "faq-q",
+      "color": "#ffffff",
+      "depth": 9,
+      "font": "34px 700",
+      "tag": "h3",
+      "text": "O Sendi cria grupos automaticamente?"
+    },
+    {
+      "box": {
+        "h": 64,
+        "w": 1100,
+        "x": 163,
+        "y": 7329
+      },
+      "class": "faq-btn",
+      "color": "#ffffff",
+      "depth": 10,
+      "font": "18px 600",
+      "id": "faq-btn-3",
+      "tag": "button",
+      "text": "O Sendi cria grupos automaticamente?"
+    },
+    {
+      "box": {
+        "h": 8,
+        "w": 12,
+        "x": 1251,
+        "y": 7357
+      },
+      "color": "#ffffff",
+      "depth": 11,
+      "font": "18px 600",
+      "tag": "svg"
+    },
+    {
+      "box": {
+        "h": 64,
+        "w": 1100,
+        "x": 163,
+        "y": 7430
+      },
+      "class": "faq-q",
+      "color": "#ffffff",
+      "depth": 9,
+      "font": "34px 700",
+      "tag": "h3",
+      "text": "Quanto tempo de garantia eu tenho?"
+    },
+    {
+      "box": {
+        "h": 64,
+        "w": 1100,
+        "x": 163,
+        "y": 7430
+      },
+      "class": "faq-btn",
+      "color": "#ffffff",
+      "depth": 10,
+      "font": "18px 600",
+      "id": "faq-btn-4",
+      "tag": "button",
+      "text": "Quanto tempo de garantia eu tenho?"
+    },
+    {
+      "box": {
+        "h": 8,
+        "w": 12,
+        "x": 1251,
+        "y": 7458
+      },
+      "color": "#ffffff",
+      "depth": 11,
+      "font": "18px 600",
+      "tag": "svg"
+    },
+    {
+      "box": {
+        "h": 64,
+        "w": 1100,
+        "x": 163,
+        "y": 7531
+      },
+      "class": "faq-q",
+      "color": "#ffffff",
+      "depth": 9,
+      "font": "34px 700",
+      "tag": "h3",
+      "text": "Quais as formas de pagamento?"
+    },
+    {
+      "box": {
+        "h": 64,
+        "w": 1100,
+        "x": 163,
+        "y": 7531
+      },
+      "class": "faq-btn",
+      "color": "#ffffff",
+      "depth": 10,
+      "font": "18px 600",
+      "id": "faq-btn-5",
+      "tag": "button",
+      "text": "Quais as formas de pagamento?"
+    },
+    {
+      "box": {
+        "h": 8,
+        "w": 12,
+        "x": 1251,
+        "y": 7559
+      },
+      "color": "#ffffff",
+      "depth": 11,
+      "font": "18px 600",
+      "tag": "svg"
+    },
+    {
+      "background": "#ffffff",
+      "box": {
+        "h": 419,
+        "w": 1425,
+        "x": 0,
+        "y": 7720
+      },
+      "class": "sf-section",
+      "color": "#18181b",
+      "depth": 5,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "section"
+    },
+    {
+      "box": {
+        "h": 41,
+        "w": 1100,
+        "x": 163,
+        "y": 7832
+      },
+      "color": "#18181b",
+      "depth": 7,
+      "font": "36px 700",
+      "tag": "h2",
+      "text": "Ainda com dúvidas?"
+    },
+    {
+      "box": {
+        "h": 77,
+        "w": 900,
+        "x": 163,
+        "y": 7889
+      },
+      "color": "#18181b",
+      "depth": 7,
+      "font": "24px 400",
+      "tag": "p",
+      "text": "Fale com nossa equipe e saiba mais sobre como o SendFlow e o Sendi podem ajudar você no WhatsApp."
+    },
+    {
+      "background": "#fede05",
+      "box": {
+        "h": 45,
+        "w": 109,
+        "x": 163,
+        "y": 7982
+      },
+      "class": "sf-btn-primary",
+      "color": "#000000",
+      "depth": 7,
+      "font": "14px 600",
+      "href": "http://127.0.0.1:50061/#planos",
+      "tag": "a",
+      "text": "Saiba mais"
+    },
+    {
+      "background": "#000000",
+      "box": {
+        "h": 431,
+        "w": 1425,
+        "x": 0,
+        "y": 8139
+      },
+      "class": "sf-footer",
+      "color": "#d4d4d8",
+      "depth": 4,
+      "display": "block",
+      "font": "16px 400",
+      "tag": "footer"
+    },
+    {
+      "alt": "SendFlow",
+      "box": {
+        "h": 42,
+        "w": 65,
+        "x": 163,
+        "y": 8188
+      },
+      "class": "sf-logo",
+      "color": "#d4d4d8",
+      "depth": 6,
+      "font": "16px 400",
+      "src": "https://sendflow.com.br/assets/logo-sendflow-CFfyEAex.svg",
+      "tag": "img"
+    },
+    {
+      "alt": "",
+      "box": {
+        "h": 172,
+        "w": 200,
+        "x": 163,
+        "y": 8246
+      },
+      "color": "#d4d4d8",
+      "depth": 6,
+      "font": "16px 400",
+      "src": "https://sendflow.com.br/assets/support-phones-sX2i2BHY.png",
+      "tag": "img"
+    },
+    {
+      "box": {
+        "h": 21,
+        "w": 1100,
+        "x": 163,
+        "y": 8450
+      },
+      "color": "#d4d4d8",
+      "depth": 6,
+      "font": "16px 400",
+      "tag": "p",
+      "text": "SendFlow para automação de grupos e comunidades do WhatsApp. Mais controle para você com o Sendi."
+    },
+    {
+      "box": {
+        "h": 19,
+        "w": 1100,
+        "x": 163,
+        "y": 8503
+      },
+      "color": "#d4d4d8",
+      "depth": 6,
+      "display": "flex",
+      "flex": "row",
+      "font": "16px 400",
+      "tag": "nav"
+    },
+    {
+      "box": {
+        "h": 19,
+        "w": 91,
+        "x": 163,
+        "y": 8503
+      },
+      "color": "#fede05",
+      "depth": 7,
+      "font": "14px 400",
+      "href": "http://127.0.0.1:50061/termo-de-uso",
+      "tag": "a",
+      "text": "Termos de Uso"
+    },
+    {
+      "box": {
+        "h": 19,
+        "w": 138,
+        "x": 270,
+        "y": 8503
+      },
+      "color": "#fede05",
+      "depth": 7,
+      "font": "14px 400",
+      "href": "http://127.0.0.1:50061/politica-de-privacidade",
+      "tag": "a",
+      "text": "Política de Privacidade"
+    },
+    {
+      "box": {
+        "h": 19,
+        "w": 37,
+        "x": 424,
+        "y": 8503
+      },
+      "color": "#fede05",
+      "depth": 7,
+      "font": "14px 400",
+      "href": "http://127.0.0.1:50061/login",
+      "tag": "a",
+      "text": "Entrar"
+    },
+    {
+      "box": {
+        "h": 19,
+        "w": 26,
+        "x": 476,
+        "y": 8503
+      },
+      "color": "#fede05",
+      "depth": 7,
+      "font": "14px 400",
+      "href": "http://127.0.0.1:50061/#",
+      "tag": "a",
+      "text": "FAQ"
+    },
+    {
+      "box": {
+        "h": 19,
+        "w": 50,
+        "x": 518,
+        "y": 8503
+      },
+      "color": "#fede05",
+      "depth": 7,
+      "font": "14px 400",
+      "href": "http://127.0.0.1:50061/#",
+      "tag": "a",
+      "text": "Contato"
+    }
+  ],
+  "page": {
+    "h": 8570,
+    "w": 1425
+  },
+  "text": "Funcionalidades Planos Dúvidas Entrar A ferramenta de automação de Grupos e Comunidades de WhatsApp mais completa e intuitiva para escalar com segurança. Com o Sendi e o SendFlow você automatiza mensagens, organiza sua operação em grupos e comunidades do WhatsApp e tem mais controle para escalar com segurança. Recursos ilimitados no seu plano até os lançamentos. Aproveite todas as vantagens ao apertar o botão automático na aba correta, ou use o disparo 6x por campanha. Saiba mais Quero meu Sendi Decepcionado com o suporte desastroso das ferramentas de marketing digital? Com o SendFlow você conta com suporte e uma plataforma pensada para quem trabalha com WhatsApp todos os dias, para você focar no que importa na sua operação. Saiba mais Os maiores players do mercado usam o Sendi Grandes operações confiam no SendFlow para gerenciar grupos, comunidades e automações no WhatsApp. Fale diretamente com seus leads mais engajados Use o Sendi para se comunicar com sua base, automatizar fluxos e acompanhar resultados em uma plataforma completa para WhatsApp. Conecte o SendFlow com as principais ferramentas do Mercado Kiwify Eduzz Digital Manager Guru Stripe Curseduca Ticto Hubla ActiveCampaign GreatPages Unnichat Hotmart Greenn Tray WooCommerce TMB BlitzPay Voomp Pagar.me Builderall Appmax Manual antibanimento: Tenha acesso a orientações práticas para operar com mais cuidado no WhatsApp e proteger sua estrutura com o SendFlow, com regras para usar todas as funções de forma segura. Saiba mais Olha o que nossos clientes falam da gente: Veja mais algumas funcionalidades do Sendi: Funcionalidade 1 Automação de mensagens em grupos e comunidades do WhatsApp Saiba mais Funcionalidade 2 Gestão de grupos e comunidades com mais controle Saiba mais Funcionalidade 3 Recursos para escalar sua operação com segurança Saiba mais Funcionalidade 4 Integrações com as principais ferramentas do mercado Saiba mais Funcionalidade 5 Mais agilidade para sua equipe no dia a dia Saiba mais Funcionalidade 6 Acompanhamento para melhorar seus resultados com o SendFlow Saiba mais Nossa, mas para oferecer tudo isso o Sendi deve custar uma pequena fortuna, certo? Errado! O SendFlow foi criado para entregar uma solução completa para automação de grupos e comunidades de WhatsApp, com o melhor custo-benefício para você escalar sua operação. Essencial Automação no WhatsApp Gestão de grupos Suporte SendFlow Saiba mais Profissional Automação no WhatsApp Gestão de grupos Suporte SendFlow Saiba mais Escala Automação no WhatsApp Gestão de grupos Suporte SendFlow Saiba mais SUA SATISFAÇÃO IMPORTA! O SendFlow e o Sendi foram feitos para ajudar você a ter mais resultado com grupos e comunidades no WhatsApp. Saiba mais Dúvidas? Esse guia pode te ajudar: Como faço para assinar o Sendi? Como acesso o SendFlow depois de assinar? Posso ter meu chip banido? O Sendi cria grupos automaticamente? Quanto tempo de garantia eu tenho? Quais as formas de pagamento? Ainda com dúvidas? Fale com nossa equipe e saiba mais sobre como o SendFlow e o Sendi podem ajudar você no WhatsApp. Saiba mais SendFlow para automação de grupos e comunidades do WhatsApp. Mais controle para você com o Sendi. Termos de Uso Política de Privacidade Entrar FAQ Contato",
+  "title": "Grupos",
+  "unreadable_stylesheets": 1,
+  "url": "http://127.0.0.1:50061/",
+  "viewport": {
+    "h": 900,
+    "w": 1440
+  }
+}

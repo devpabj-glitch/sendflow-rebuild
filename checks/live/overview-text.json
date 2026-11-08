@@ -1,0 +1,46 @@
+{
+  "nav": "home | Início | dashboard | Visão | geral | expand_more | offline_bolt | Ações | account_tree | Automações | folder | Projetos | groups | Leads | cell_tower | Broadcast | podcasts | Broadcast | Legado | tune | Personalização | expand_more | hub | Integrações | expand_more | link | Deep | link | security | Segurança | expand_more | history | Histórico | people | Equipe | school | Treinamentos",
+  "header": "",
+  "main": "Visão geral\nBuscar\n+ k\nbrightness_7\nnotifications\nTello\nT\nperson\nTello Ribeiro\ntelloassuntos@gmail.com\n(81) 986903953\nCONFIGURAÇÕES\nchevron_right\nhub\nMapa Contas × Campanhas\nTodas as associações estão em ordem\nVer dashboard\nchevron_right\nContas\n0/1\nadd_circle_outline\nNenhum registro encontrado\nCampanhas\n0/\nall_inclusive\nadd_circle_outline\nNenhum registro encontrado\nWebhooks\n0\nadd_circle_outline\nNenhum registro encontrado",
+  "cards": [
+    {
+      "c": "MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 flex h-full flex-auto flex-col overflow-hidden NavbarStyle2Content-",
+      "t": "home Início dashboard Visão geral expand_more offline_bolt Ações account_tree Automações folder Projetos groups Leads cell_tower Broadcast podcasts Broadcast Legado tune Personaliz",
+      "box": [
+        0,
+        0,
+        230,
+        991
+      ],
+      "bg": "rgb(21, 21, 21)",
+      "br": "0px",
+      "pad": "0px"
+    },
+    {
+      "c": "MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 css-a11amc",
+      "t": "cookie Sua privacidade importa Usamos cookies essenciais para o funcionamento da plataforma e, com seu consentimento, cookies de análise e marketing para melhorar sua experiência. ",
+      "box": [
+        600,
+        850,
+        720,
+        117
+      ],
+      "bg": "rgb(255, 255, 255)",
+      "br": "8px",
+      "pad": "20px"
+    },
+    {
+      "c": "MuiPaper-root MuiPaper-elevation MuiPaper-elevation16 MuiDrawer-paper NotificationPanel-root MuiDrawer-paperAnchorRight ",
+      "t": "",
+      "box": [
+        1920,
+        0,
+        320,
+        991
+      ],
+      "bg": "rgb(21, 21, 21)",
+      "br": "0px",
+      "pad": "0px"
+    }
+  ]
+}
