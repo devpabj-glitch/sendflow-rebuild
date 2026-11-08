@@ -981,4 +981,46 @@ body.sf-legal-body{background:#f3f4f6;color:#1f2937;font-family:Poppins,Roboto, 
     height: auto;
     margin: 0 auto;
   }
+  .sf-container { min-width: 0; }
+  .sf-players-grid { width: 100%; min-width: 0; max-width: 100%; }
+  .sf-two-col { grid-template-columns: 1fr; }
+  .sf-two-col h2, .sf-section h2 { overflow-wrap: anywhere; }
+}
+
+/* Login/recuperação: o padding direito de 144px é do desktop com a marca.
+   Abaixo de 900px a marca some e esse padding empurra o formulário para a esquerda. */
+@media (max-width: 900px) {
+  .sf-auth2-page { width: 100%; max-width: 100%; flex-direction: column; }
+  .sf-auth2-main {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 32px 16px 200px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+  }
+  .sf-auth2-col { width: 100%; max-width: 320px; }
+  .sf-auth2-footer {
+    position: static;
+    width: 100%;
+    text-align: center;
+    padding: 8px 16px 24px;
+    box-sizing: border-box;
+  }
+  .sf-auth2-cookie {
+    left: 12px;
+    right: 12px;
+    width: auto;
+    max-width: none;
+    transform: none;
+    margin: 0;
+    box-sizing: border-box;
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+  .sf-auth2-cookie-copy,
+  .sf-auth2-cookie-copy p { min-width: 0; max-width: none; }
+  .sf-auth2-cookie-actions { flex-wrap: wrap; justify-content: flex-end; min-width: 0; }
 }
