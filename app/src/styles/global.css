@@ -960,3 +960,25 @@ body.sf-legal-body{background:#f3f4f6;color:#1f2937;font-family:Poppins,Roboto, 
   .sf-plan-full{color:#52525b}
   .sf-plan-installment{color:#71717a}
 }
+
+/* Home no celular: a escala desktop (2 colunas e 110px) não vale abaixo de 901px. */
+@media (max-width: 900px) {
+  .sf-hero { padding: 0; }
+  .sf-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px 0 28px;
+    text-align: center;
+  }
+  .sf-hero-grid h1,
+  .sf-hero-grid p { text-align: center; max-width: none; }
+  .sf-hero-copy { display: flex; flex-direction: column; align-items: center; min-width: 0; }
+  .sf-hero-mockup {
+    justify-self: center;
+    width: min(100%, 420px);
+    max-width: 100%;
+    max-height: none;
+    height: auto;
+    margin: 0 auto;
+  }
+}
