@@ -8,7 +8,7 @@ export type Lang = 'pt' | 'en' | 'es'
 type Dict = Record<string, string>
 
 const pt: Dict = {
-  'nav.home': 'Início', 'nav.overview': 'Visão geral', 'nav.actions': 'Ações',
+  'nav.home': 'Início', 'nav.overview': 'Visão geral', 'nav.accounts': 'Contas', 'nav.campaigns': 'Campanhas', 'nav.webhooks': 'Webhooks', 'nav.actions': 'Ações',
   'nav.automations': 'Automações', 'nav.projects': 'Projetos', 'nav.leads': 'Leads',
   'nav.broadcasts': 'Broadcast', 'nav.legacy': 'Broadcast legado', 'nav.personalization': 'Personalização',
   'nav.integrations': 'Integrações', 'nav.deeplinks': 'Deep link', 'nav.security': 'Segurança',
@@ -39,7 +39,7 @@ const pt: Dict = {
 }
 
 const en: Dict = {
-  'nav.home': 'Home', 'nav.overview': 'Overview', 'nav.actions': 'Actions',
+  'nav.home': 'Home', 'nav.overview': 'Overview', 'nav.accounts': 'Accounts', 'nav.campaigns': 'Campaigns', 'nav.webhooks': 'Webhooks', 'nav.actions': 'Actions',
   'nav.automations': 'Automations', 'nav.projects': 'Projects', 'nav.leads': 'Leads',
   'nav.broadcasts': 'Broadcast', 'nav.legacy': 'Legacy broadcast', 'nav.personalization': 'Personalization',
   'nav.integrations': 'Integrations', 'nav.deeplinks': 'Deep links', 'nav.security': 'Security',
@@ -69,7 +69,7 @@ const en: Dict = {
 }
 
 const es: Dict = {
-  'nav.home': 'Inicio', 'nav.overview': 'Resumen', 'nav.actions': 'Acciones',
+  'nav.home': 'Inicio', 'nav.overview': 'Resumen', 'nav.accounts': 'Cuentas', 'nav.campaigns': 'Campañas', 'nav.webhooks': 'Webhooks', 'nav.actions': 'Acciones',
   'nav.automations': 'Automatizaciones', 'nav.projects': 'Proyectos', 'nav.leads': 'Leads',
   'nav.broadcasts': 'Difusión', 'nav.legacy': 'Difusión legado', 'nav.personalization': 'Personalización',
   'nav.integrations': 'Integraciones', 'nav.deeplinks': 'Enlaces', 'nav.security': 'Seguridad',

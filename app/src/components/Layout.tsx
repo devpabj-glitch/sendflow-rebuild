@@ -5,12 +5,16 @@ import { useStore } from '../store'
 import { currentUser, logout } from '../auth'
 import { LangFlag, useI18n } from '../i18n'
 import type { Lang } from '../i18n'
+import { useDemo } from '../demo/DemoContext'
 
 type Item = { to: string; labelKey: string; icon: React.ReactNode; end?: boolean }
 
 const items: Item[] = [
   { to: '/whats/overview', labelKey: 'nav.home', icon: <M.home size={22} />, end: true },
   { to: '/whats/accounts-campaigns', labelKey: 'nav.overview', icon: <M.dashboard size={22} /> },
+  { to: '/whats/accounts', labelKey: 'nav.accounts', icon: <M.users size={22} /> },
+  { to: '/whats/campaigns', labelKey: 'nav.campaigns', icon: <M.folder size={22} /> },
+  { to: '/whats/webhooks', labelKey: 'nav.webhooks', icon: <M.link size={22} /> },
   { to: '/whats/actions', labelKey: 'nav.actions', icon: <M.bolt size={22} /> },
   { to: '/whats/automations', labelKey: 'nav.automations', icon: <M.flow size={22} /> },
   { to: '/whats/projects', labelKey: 'nav.projects', icon: <M.folder size={22} /> },
@@ -26,16 +30,18 @@ const items: Item[] = [
   { to: '/whats/contents', labelKey: 'nav.trainings', icon: <M.school size={22} /> },
 ]
 
-const overviewGroup = ['/whats/accounts', '/whats/accounts-campaigns', '/whats/campaigns', '/whats/webhooks', '/whats/group-search']
+const overviewGroup = ['/whats/accounts-campaigns', '/whats/group-search']
 
 function railOn(to: string, path: string) {
   if (to === '/whats/accounts-campaigns') return overviewGroup.includes(path)
+  if (to === '/whats/campaigns') return path === to || path.startsWith('/whats/campaigns/')
   if (to === '/whats/overview') return path === '/whats/overview'
   return path === to
 }
 
 export function Layout() {
   const { theme, toggleTheme, data } = useStore()
+  const { demo, setDemo } = useDemo()
   const { t, lang, setLang } = useI18n()
   const user = currentUser()
   const userName = user?.name || 'Usuário'
@@ -52,7 +58,7 @@ export function Layout() {
   const [copied, setCopied] = useState(false)
   const loc = useLocation()
   const nav = useNavigate()
-  const title = t('title.' + loc.pathname)
+  const title = loc.pathname.startsWith('/whats/campaigns/') ? 'Campanha' : t('title.' + loc.pathname)
 
   useEffect(() => { document.title = 'Grupos' }, [])
   useEffect(() => {
@@ -188,7 +194,12 @@ export function Layout() {
             </div>
           ) : null}
         </header>
+        {demo ? <p className="demo-banner">Demonstração com exemplos fictícios. Não é uma conta real e não grava no servidor.</p> : null}
         <div className="g-content" onClick={() => { setMenu(false); setBell(false) }}>
+          <div className="demo-switch demo-switch-bar">
+            <button type="button" className={!demo ? 'is-on' : ''} onClick={() => setDemo(false)}>Vazio</button>
+            <button type="button" className={demo ? 'is-on' : ''} onClick={() => setDemo(true)}>Demonstração</button>
+          </div>
           <Outlet />
         </div>
       </div>

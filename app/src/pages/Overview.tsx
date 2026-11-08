@@ -2,17 +2,25 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { I, M } from '../components/Icons'
 import { currentUser } from '../auth'
-
-const quotas = [
-  { title: 'Contas', value: '0/1', to: '/whats/accounts' },
-  { title: 'Campanhas', value: '0/∞', to: '/whats/campaigns' },
-  { title: 'Webhooks', value: '0', to: '/whats/webhooks' },
-]
+import { useDemo } from '../demo/DemoContext'
+import { useModuleLists } from '../demo/useModule'
+import { entryPercent } from '../demo/rules'
 
 export default function Overview() {
   const [open, setOpen] = useState(false)
+  const [qAcc, setQAcc] = useState('')
+  const [qCamp, setQCamp] = useState('')
+  const [qHook, setQHook] = useState('')
   const user = currentUser()
   const displayName = user?.name || 'Usuário'
+  const { demo } = useDemo()
+  const { accounts, campaigns, webhooks } = useModuleLists()
+
+  const accRows = accounts.filter(a => !qAcc.trim() || a.name.toLowerCase().includes(qAcc.toLowerCase()))
+  const campRows = campaigns.filter(c => !qCamp.trim() || c.name.toLowerCase().includes(qCamp.toLowerCase()))
+  const hookRows = webhooks.filter(w => !qHook.trim() || w.name.toLowerCase().includes(qHook.toLowerCase()))
+  const accountQuota = demo ? `${accounts.length}/∞` : `${accounts.length}/1`
+
   return (
     <div className="ov">
       <section className="ov-card ov-profile">
@@ -43,15 +51,64 @@ export default function Overview() {
       </section>
 
       <section className="ov-grid">
-        {quotas.map(card => (
-          <article className="ov-card ov-slot" key={card.title}>
-            <header>
-              <h2>{card.title} <span>{card.value}</span></h2>
-              <Link to={card.to} className="ov-add" aria-label={`Adicionar ${card.title}`}><I.plusCircle size={22} /></Link>
-            </header>
-            <p>Nenhum registro encontrado</p>
-          </article>
-        ))}
+        <article className="ov-card ov-slot">
+          <header>
+            <h2>Contas <span>{accountQuota}</span></h2>
+            <Link to="/whats/accounts" className="ov-add" aria-label="Adicionar Contas"><I.plusCircle size={22} /></Link>
+          </header>
+          <label className="ov-col-search"><span>Buscar</span><input value={qAcc} onChange={e => setQAcc(e.target.value)} /></label>
+          {accRows.length === 0 ? <p>Nenhum registro encontrado</p> : (
+            <ul className="ov-rows">
+              {accRows.map(a => (
+                <li key={a.id}>
+                  <span className="ov-avatar sm" aria-hidden="true">{a.name.slice(0, 1)}</span>
+                  <i className={a.status === 'connected' ? 'ov-dot on' : 'ov-dot'} />
+                  <strong>{a.name}</strong>
+                  <Link to="/whats/accounts" aria-label={`Abrir ${a.name}`}>›</Link>
+                </li>
+              ))}
+            </ul>
+          )}
+        </article>
+        <article className="ov-card ov-slot">
+          <header>
+            <h2>Campanhas <span>{campaigns.length}/∞</span></h2>
+            <Link to="/whats/campaigns" className="ov-add" aria-label="Adicionar Campanhas"><I.plusCircle size={22} /></Link>
+          </header>
+          <label className="ov-col-search"><span>Buscar</span><input value={qCamp} onChange={e => setQCamp(e.target.value)} /></label>
+          {campRows.length === 0 ? <p>Nenhum registro encontrado</p> : (
+            <ul className="ov-rows">
+              {campRows.map(c => {
+                const met = c.metricsByPeriod['90'] || { clicks: 0, entries: 0, exits: 0, participants: 0, groups: 0 }
+                return (
+                  <li key={c.id}>
+                    <i className="ov-dot on" />
+                    <Link to={`/whats/campaigns/${c.id}`}><strong>{c.name}</strong></Link>
+                    <small>{met.clicks} · {met.entries} · {entryPercent(met.clicks, met.entries)}% · {met.groups}</small>
+                  </li>
+                )
+              })}
+            </ul>
+          )}
+        </article>
+        <article className="ov-card ov-slot">
+          <header>
+            <h2>Webhooks <span>{webhooks.length}</span></h2>
+            <Link to="/whats/webhooks" className="ov-add" aria-label="Adicionar Webhooks"><I.plusCircle size={22} /></Link>
+          </header>
+          <label className="ov-col-search"><span>Buscar</span><input value={qHook} onChange={e => setQHook(e.target.value)} /></label>
+          {hookRows.length === 0 ? <p>Nenhum registro encontrado</p> : (
+            <ul className="ov-rows">
+              {hookRows.map(w => (
+                <li key={w.id}>
+                  <strong>{w.name}</strong>
+                  <em>{w.event}</em>
+                  <Link to="/whats/webhooks" aria-label={`Abrir ${w.name}`}>›</Link>
+                </li>
+              ))}
+            </ul>
+          )}
+        </article>
       </section>
 
       {open ? (

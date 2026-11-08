@@ -5,6 +5,7 @@ import { M } from '../components/Icons'
 import { Modal } from '../components/Ui'
 import { byCreatedDesc, fmtDate, nowIso, paginate, uid } from '../utils'
 import type { Account, AccountStatus } from '../types'
+import { useModuleLists } from '../demo/useModule'
 
 const tabs = [
   { id: 'all', label: 'Todas' },
@@ -15,32 +16,33 @@ const tabs = [
 type Tab = typeof tabs[number]['id']
 
 export default function Accounts() {
-  const { data, setAccounts, audit } = useStore()
+  const { demo, accounts, setAccounts } = useModuleLists()
+  const { audit } = useStore()
   const [tab, setTab] = useState<Tab>('all')
   const [q, setQ] = useState('')
   const [page, setPage] = useState(1)
   const [open, setOpen] = useState(false)
   const [upgrade, setUpgrade] = useState(false)
   const [edit, setEdit] = useState<Account | null>(null)
-  const [form, setForm] = useState({ name: '', phone: '', status: 'connected' as AccountStatus })
+  const [form, setForm] = useState({ name: '', phone: '', status: 'connected' as AccountStatus, spy: false, channel: 'WhatsApp' })
 
   const list = useMemo(() => {
-    const f = byCreatedDesc(data.accounts).filter(a =>
+    const f = byCreatedDesc(accounts).filter(a =>
       (tab === 'all' || a.status === tab) && (!q.trim() || `${a.name} ${a.phone}`.toLowerCase().includes(q.toLowerCase())))
     return paginate(f, page, 12)
-  }, [data.accounts, tab, q, page])
+  }, [accounts, tab, q, page])
 
   const save = () => {
     if (!form.name.trim() || !form.phone.trim()) return
     if (edit) {
-      setAccounts(arr => arr.map(a => a.id === edit.id ? { ...a, ...form } : a))
-      audit('Conta atualizada', 'Contas', edit.id)
+      setAccounts(arr => arr.map(a => a.id === edit.id ? { ...a, ...form, updatedAt: nowIso() } : a))
+      if (!demo) audit('Conta atualizada', 'Contas', edit.id)
     } else {
       const id = uid('a')
-      setAccounts(arr => [{ id, name: form.name.trim(), phone: form.phone.trim(), status: form.status, createdAt: nowIso(), campaignIds: [] }, ...arr])
-      audit('Conta criada', 'Contas', id)
+      setAccounts(arr => [{ id, name: form.name.trim(), phone: form.phone.trim(), status: form.status, spy: form.spy, channel: form.channel, createdAt: nowIso(), updatedAt: nowIso(), campaignIds: [] }, ...arr])
+      if (!demo) audit('Conta criada', 'Contas', id)
     }
-    setOpen(false); setEdit(null); setForm({ name: '', phone: '', status: 'connected' })
+    setOpen(false); setEdit(null); setForm({ name: '', phone: '', status: 'connected', spy: false, channel: 'WhatsApp' })
   }
 
   const from = list.total === 0 ? 0 : (list.page - 1) * 12 + 1
@@ -54,7 +56,7 @@ export default function Accounts() {
         <div className="acc-actions">
           <Link className="acc-outline" to="/whats/accounts-campaigns"><M.hub size={16} /> Contas e Campanhas</Link>
           <button className="acc-outline" type="button" onClick={() => setUpgrade(true)}><M.bolt size={16} /> Fazer upgrade de plano</button>
-          <button className="acc-outline" type="button" onClick={() => { setEdit(null); setForm({ name: '', phone: '', status: 'connected' }); setOpen(true) }}>+ Conta</button>
+          <button className="acc-outline" type="button" onClick={() => { setEdit(null); setForm({ name: '', phone: '', status: 'connected', spy: false, channel: 'WhatsApp' }); setOpen(true) }}>+ Conta</button>
         </div>
       </div>
       <div className="acc-bar">
@@ -85,12 +87,12 @@ export default function Accounts() {
           {list.items.map(a => (
             <li key={a.id}>
               <div>
-                <strong>{a.name}</strong>
-                <span>{a.phone}</span>
+                <strong><i className={a.status === 'connected' ? 'ov-dot on' : 'ov-dot'} /> {a.name}</strong>
+                <span>{a.phone}{a.spy ? ' · espiã' : ''}</span>
               </div>
               <em>{statusLabel(a.status)}</em>
               <span>{fmtDate(a.createdAt)}</span>
-              <button type="button" onClick={() => { setEdit(a); setForm({ name: a.name, phone: a.phone, status: a.status }); setOpen(true) }}>Editar</button>
+              <button type="button" onClick={() => { setEdit(a); setForm({ name: a.name, phone: a.phone, status: a.status, spy: !!a.spy, channel: a.channel || 'WhatsApp' }); setOpen(true) }}>Editar</button>
             </li>
           ))}
         </ul>
@@ -109,6 +111,9 @@ export default function Accounts() {
           <label className="lbl">Nome<input value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))} /></label>
           <label className="lbl">Telefone<input value={form.phone} onChange={e => setForm(f => ({ ...f, phone: e.target.value }))} placeholder="+55 11 90000-0000" /></label>
           <label className="lbl">Status<select value={form.status} onChange={e => setForm(f => ({ ...f, status: e.target.value as AccountStatus }))}><option value="connected">Conectada</option><option value="disconnected">Desconectada</option><option value="no_session">Sem sessão</option></select></label>
+          <label className="detail-toggle"><input type="checkbox" checked={form.spy} onChange={e => setForm(f => ({ ...f, spy: e.target.checked }))} /> <span>Conta espião</span></label>
+          <label className="lbl">Tipo<select value={form.channel} onChange={e => setForm(f => ({ ...f, channel: e.target.value }))}><option>WhatsApp</option></select></label>
+          {demo ? <p className="acc-note">Salvar grava só na demonstração deste navegador.</p> : null}
         </div>
       </Modal>
     </div>

@@ -12,6 +12,9 @@ export interface Account {
   createdAt: string
   lastSeen?: string
   campaignIds: string[]
+  spy?: boolean
+  channel?: string
+  updatedAt?: string
 }
 
 export interface CampaignMetrics {
@@ -29,6 +32,9 @@ export interface Campaign {
   createdAt: string
   accountId?: string
   metricsByPeriod: Record<string, CampaignMetrics>
+  updatedAt?: string
+  kind?: string
+  invite?: string
 }
 
 export interface ActionItem {
@@ -121,6 +127,11 @@ export interface GroupItem {
   campaign: string
   category: string
   createdAt: string
+  limit?: number
+  fullManual?: boolean
+  clicks?: number
+  suspended?: boolean
+  campaignId?: string
 }
 
 export interface AppData {

@@ -1,13 +1,14 @@
 import React, { useMemo, useState } from 'react'
-import { useStore } from '../store'
 import { Badge, EmptyState, PageHead, Tabs } from '../components/Ui'
 import { byCreatedDesc } from '../utils'
+import { useModuleLists } from '../demo/useModule'
 
 const views = [{ id: 'account', label: 'Por conta' }, { id: 'campaign', label: 'Por campanha' }, { id: 'matrix', label: 'Matriz' }] as const
 type View = typeof views[number]['id']
 
 export default function AccountsCampaigns() {
-  const { data } = useStore()
+  const { accounts, campaigns } = useModuleLists()
+  const data = { accounts, campaigns }
   const [view, setView] = useState<View>('account')
   const [alert, setAlert] = useState<'all' | 'idle' | 'exposed'>('all')
   const [display, setDisplay] = useState<'table' | 'cards'>('table')
