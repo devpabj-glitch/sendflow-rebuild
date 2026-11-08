@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import App from './App'
 import { StoreProvider } from './store'
+import { DemoProvider } from './demo/DemoContext'
 import { I18nProvider } from './i18n'
 import './styles/global.css'
 
@@ -10,9 +11,11 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <I18nProvider>
       <StoreProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
+        <DemoProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </DemoProvider>
       </StoreProvider>
     </I18nProvider>
   </React.StrictMode>,

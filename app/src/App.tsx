@@ -6,6 +6,7 @@ import Overview from './pages/Overview'
 import Accounts from './pages/Accounts'
 import AccountsCampaigns from './pages/AccountsCampaigns'
 import Campaigns from './pages/Campaigns'
+import CampaignDetail from './pages/CampaignDetail'
 import GroupSearch from './pages/GroupSearch'
 import ActionsPage from './pages/ActionsPage'
 import Automations from './pages/Automations'
@@ -42,6 +43,7 @@ export default function App() {
         <Route index element={<Navigate to="overview" replace />} />
         <Route path="overview" element={<Overview />} />        <Route path="accounts-campaigns" element={<AccountsCampaigns />} />
         <Route path="accounts" element={<Accounts />} />
+        <Route path="campaigns/:id" element={<CampaignDetail />} />
         <Route path="campaigns" element={<Campaigns />} />
         <Route path="group-search" element={<GroupSearch />} />
         <Route path="actions" element={<ActionsPage />} />

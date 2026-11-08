@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom'
 import { useStore } from '../store'
 import { M } from '../components/Icons'
 import { Modal } from '../components/Ui'
-import { byCreatedDesc, fmtDate, nowIso, paginate, uid } from '../utils'
+import { fmtDate, nowIso, paginate, uid } from '../utils'
 import type { Campaign, CampaignStatus } from '../types'
+import { useModuleLists } from '../demo/useModule'
+import { entryPercent, periodPhrase, sortByUpdated } from '../demo/rules'
 
 const tabs = [{ id: 'all', label: 'Campanhas' }, { id: 'active', label: 'Ativas' }, { id: 'archived', label: 'Arquivadas' }] as const
 const periods = ['7', '14', '21', '28', '90'] as const
@@ -13,7 +15,10 @@ type Tab = typeof tabs[number]['id']
 const zeroM = () => ({ clicks: 0, entries: 0, exits: 0, participants: 0, groups: 0 })
 
 export default function Campaigns() {
-  const { data, setCampaigns, setAccounts, audit } = useStore()
+  const { demo, accounts, campaigns, setCampaigns, setAccounts } = useModuleLists()
+  const { audit } = useStore()
+  const [sortBy, setSortBy] = useState<'updated' | 'created'>('updated')
+  const [selected, setSelected] = useState<string[]>([])
   const [tab, setTab] = useState<Tab>('all')
   const [period, setPeriod] = useState<typeof periods[number]>('90')
   const [q, setQ] = useState('')
@@ -21,40 +26,46 @@ export default function Campaigns() {
   const [open, setOpen] = useState(false)
   const [pattern, setPattern] = useState(false)
   const [edit, setEdit] = useState<Campaign | null>(null)
-  const [form, setForm] = useState({ name: '', status: 'active' as CampaignStatus, accountId: '' })
+  const [form, setForm] = useState({ name: '', status: 'active' as CampaignStatus, accountId: '', kind: 'Campanha' })
 
   const list = useMemo(() => {
-    const f = byCreatedDesc(data.campaigns).filter(c => (tab === 'all' || c.status === tab) && (!q.trim() || c.name.toLowerCase().includes(q.toLowerCase())))
+    const base = (sortBy === 'updated' ? sortByUpdated(campaigns) : [...campaigns].sort((a, b) => b.createdAt.localeCompare(a.createdAt)))
+    const f = base.filter(c => (tab === 'all' || c.status === tab) && (!q.trim() || c.name.toLowerCase().includes(q.toLowerCase())))
     return paginate(f, page, 12)
-  }, [data.campaigns, tab, q, page])
+  }, [campaigns, tab, q, page, sortBy])
 
   const totals = useMemo(() => {
-    const source = byCreatedDesc(data.campaigns).filter(c => (tab === 'all' || c.status === tab) && (!q.trim() || c.name.toLowerCase().includes(q.toLowerCase())))
+    const source = campaigns.filter(c => (tab === 'all' || c.status === tab) && (!q.trim() || c.name.toLowerCase().includes(q.toLowerCase())))
     return source.reduce((acc, c) => {
       const m = c.metricsByPeriod[period] || zeroM()
       acc.clicks += m.clicks; acc.entries += m.entries; acc.exits += m.exits; acc.participants += m.participants; acc.groups += m.groups
       return acc
     }, { clicks: 0, entries: 0, exits: 0, participants: 0, groups: 0 })
-  }, [data.campaigns, tab, q, period])
+  }, [campaigns, tab, q, period])
 
   const save = () => {
     if (!form.name.trim()) return
     if (edit) {
-      setCampaigns(arr => arr.map(c => c.id === edit.id ? { ...c, name: form.name.trim(), status: form.status, accountId: form.accountId || undefined } : c))
-      audit('Campanha atualizada', 'Campanhas', edit.id)
+      setCampaigns(arr => arr.map(c => c.id === edit.id ? { ...c, name: form.name.trim(), status: form.status, accountId: form.accountId || undefined, kind: form.kind, updatedAt: nowIso() } : c))
+      if (!demo) audit('Campanha atualizada', 'Campanhas', edit.id)
     } else {
       const id = uid('c')
-      const camp: Campaign = { id, name: form.name.trim(), status: form.status, accountId: form.accountId || undefined, createdAt: nowIso(), metricsByPeriod: { '7': zeroM(), '14': zeroM(), '21': zeroM(), '28': zeroM(), '90': zeroM() } }
+      const camp: Campaign = { id, name: form.name.trim(), status: form.status, accountId: form.accountId || undefined, kind: form.kind, createdAt: nowIso(), updatedAt: nowIso(), metricsByPeriod: { '7': zeroM(), '14': zeroM(), '21': zeroM(), '28': zeroM(), '90': zeroM() } }
       setCampaigns(arr => [camp, ...arr])
       if (form.accountId) setAccounts(arr => arr.map(a => a.id === form.accountId ? { ...a, campaignIds: Array.from(new Set([...a.campaignIds, id])) } : a))
-      audit('Campanha criada', 'Campanhas', id)
+      if (!demo) audit('Campanha criada', 'Campanhas', id)
     }
-    setOpen(false); setEdit(null); setForm({ name: '', status: 'active', accountId: '' })
+    setOpen(false); setEdit(null); setForm({ name: '', status: 'active', accountId: '', kind: 'Campanha' })
   }
 
   const from = list.total === 0 ? 0 : (list.page - 1) * 12 + 1
   const to = Math.min(list.page * 12, list.total)
-  const percent = totals.clicks ? Math.round((totals.entries / totals.clicks) * 100) : 0
+  const percent = entryPercent(totals.clicks, totals.entries)
+  const archiveSelected = () => {
+    if (!selected.length) return
+    setCampaigns(arr => arr.map(c => selected.includes(c.id) ? { ...c, status: 'archived', updatedAt: nowIso() } : c))
+    setSelected([])
+  }
   const icon = (paths: string) => (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffde07" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{paths}</svg>
   )
@@ -77,11 +88,12 @@ export default function Campaigns() {
           <button className="acc-outline" type="button" onClick={() => setPattern(true)}>Padrão de criação</button>
           <Link className="acc-outline" to="/whats/accounts-campaigns"><M.hub size={16} /> Contas e Campanhas</Link>
           <Link className="acc-outline" to="/whats/group-search"><M.search size={16} /> Buscar grupos</Link>
-          <button className="acc-outline" type="button" onClick={() => { setEdit(null); setForm({ name: '', status: 'active', accountId: '' }); setOpen(true) }}>+ Campanha</button>
+          <button className="acc-outline" type="button" disabled={!selected.length} onClick={archiveSelected}>Arquivar</button>
+          <button className="acc-outline" type="button" onClick={() => { setEdit(null); setForm({ name: '', status: 'active', accountId: '', kind: 'Campanha' }); setOpen(true) }}>+ Campanha</button>
         </div>
       </div>
       <div className="cmp-note">
-        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.6)" strokeWidth="2" style={{ verticalAlign: '-3px', marginRight: 6 }} aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="M12 8h.01" /><path d="M12 12v5" /></svg>Cliques, entradas e saídas dos últimos 90 dias. Participantes e grupos mostram o total atual e os grupos distintos de WhatsApp entre campanhas.</span>
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.6)" strokeWidth="2" style={{ verticalAlign: '-3px', marginRight: 6 }} aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="M12 8h.01" /><path d="M12 12v5" /></svg>{periodPhrase(period)} Participantes e grupos mostram o total atual.</span>
       </div>
       <div className="cmp-periods-row">
         <div className="cmp-periods">
@@ -102,7 +114,7 @@ export default function Campaigns() {
           {tabs.map(t => <button key={t.id} type="button" className={tab === t.id ? 'is-on' : ''} onClick={() => { setTab(t.id); setPage(1) }}>{t.label}</button>)}
         </div>
         <label className="acc-sort">Ordenação
-          <select aria-label="Ordenação" defaultValue="created"><option value="created">Data de criação</option></select>
+          <select aria-label="Ordenação" value={sortBy} onChange={e => setSortBy(e.target.value as 'updated' | 'created')}><option value="updated">Data de atualização</option><option value="created">Data de criação</option></select>
         </label>
       </div>
       <label className="acc-search"><span>Buscar</span><M.search size={18} /><input value={q} onChange={e => { setQ(e.target.value); setPage(1) }} /></label>
@@ -116,16 +128,18 @@ export default function Campaigns() {
       </div>
       <div className="cmp-export"><Link className="acc-outline" to="/whats/actions">Ver exportações →</Link></div>
       {list.total === 0 ? <p className="acc-empty">Nenhum registro encontrado</p> : (
-        <ul className="acc-list">
+        <ul className="cmp-cards">
           {list.items.map(c => {
             const m = c.metricsByPeriod[period] || zeroM()
-            const acc = data.accounts.find(a => a.id === c.accountId)
+            const acc = accounts.find(a => a.id === c.accountId)
+            const pct = entryPercent(m.clicks, m.entries)
             return (
               <li key={c.id}>
-                <div><strong>{c.name}</strong><span>{acc?.name || 'Sem conta'} · {m.clicks} cliques</span></div>
-                <em>{c.status === 'active' ? 'Ativa' : 'Arquivada'}</em>
-                <span>{fmtDate(c.createdAt)}</span>
-                <button type="button" onClick={() => { setEdit(c); setForm({ name: c.name, status: c.status, accountId: c.accountId || '' }); setOpen(true) }}>Editar</button>
+                <label><input type="checkbox" checked={selected.includes(c.id)} onChange={() => setSelected(ids => ids.includes(c.id) ? ids.filter(x => x !== c.id) : [...ids, c.id])} /> <Link to={`/whats/campaigns/${c.id}`}><strong>{c.name}</strong></Link></label>
+                <small>{acc?.name || 'Sem conta'} · {c.kind || 'Campanha'} · {c.status === 'active' ? 'Ativa' : 'Arquivada'}</small>
+                <div><b>{m.clicks}</b><b>{m.entries}</b><b>{pct}%</b><b>{m.groups}</b></div>
+                <span>Clicks · Entraram · % · Grupos</span>
+                <em>{fmtDate(c.updatedAt || c.createdAt)}</em>
               </li>
             )
           })}
@@ -144,7 +158,10 @@ export default function Campaigns() {
         <div className="form-grid">
           <label className="lbl">Nome<input value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))} /></label>
           <label className="lbl">Status<select value={form.status} onChange={e => setForm(f => ({ ...f, status: e.target.value as CampaignStatus }))}><option value="active">Ativa</option><option value="archived">Arquivada</option></select></label>
-          <label className="lbl">Conta associada<select value={form.accountId} onChange={e => setForm(f => ({ ...f, accountId: e.target.value }))}><option value="">Nenhuma</option>{data.accounts.map(a => <option key={a.id} value={a.id}>{a.name}</option>)}</select></label>
+          <label className="lbl">Tipo<select value={form.kind} onChange={e => setForm(f => ({ ...f, kind: e.target.value }))}><option>Campanha</option><option>Lista</option><option>Campanha viral</option><option>Aleatório</option></select></label>
+          <p className="acc-note">“Campanha viral” aparece na lista do quadro 04:05. A regra dela não foi explicada.</p>
+          <label className="lbl">Conta associada<select value={form.accountId} onChange={e => setForm(f => ({ ...f, accountId: e.target.value }))}><option value="">Nenhuma</option>{accounts.map(a => <option key={a.id} value={a.id}>{a.name}</option>)}</select></label>
+          {demo ? <p className="acc-note">Salvar grava só na demonstração deste navegador.</p> : null}
         </div>
       </Modal>
     </div>
