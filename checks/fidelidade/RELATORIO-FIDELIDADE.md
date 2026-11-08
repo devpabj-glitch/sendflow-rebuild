@@ -31,7 +31,7 @@
 - Removidos: logo no topo do formulário, parágrafo de cookie inline, links perdidos ("login"), ícones stray
 
 ### 2. Visão geral
-- Card de perfil agora mostra o **usuário logado real** (BR / br@gmail.com) — antes tinha dados fictícios
+- Card de perfil agora mostra o **usuário logado real** (credencial local de teste, removida do repositório) — antes tinha dados fictícios
 - Divisor vertical de altura total antes do botão CONFIGURAÇÕES
 - Sidebar ativa: quadrado amarelo com ícone escuro
 - Banner de cookies compacto (mesma estrutura do login)
@@ -65,7 +65,7 @@
 
 ## Dados
 - Seed zerado: **nenhum dado inventado** — todas as listas vazias com estados vazios reais ("Nenhum registro encontrado", contadores 0/1, 0/∞, 0), igual à conta de referência
-- Perfil mostra o usuário autenticado real (`br@gmail.com`)
+- Perfil mostra o usuário autenticado real (credencial removida do repositório)
 
 ## Autenticação (mantida local)
-`br@gmail.com` / `730287` (SHA-256 em localStorage), rotas `/whats/*` protegidas, logout no menu do usuário.
+credencial local (removida do repositório; SHA-256 em localStorage), rotas `/whats/*` protegidas, logout no menu do usuário.

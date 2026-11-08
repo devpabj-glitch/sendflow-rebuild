@@ -9,3 +9,13 @@ target/
 Thumbs.db
 *.log
 .vite/
+
+capturas/
+capture/
+investigation.cany/
+checks/fidelidade/original/
+checks/fidelidade/comparativos/
+checks/live/*.png
+!checks/live/grupos-*.png
+checks/live/*.txt
+checks/live/*.json

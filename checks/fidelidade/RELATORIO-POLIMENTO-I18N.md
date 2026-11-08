@@ -40,5 +40,5 @@
 ## Verificação
 - `npm run build` ✓ (tsc + vite)
 - Teste funcional i18n ✓ (troca PT/EN/ES persistente)
-- Widget de ajuda ✓ · Busca global ✓ · Autenticação local intacta (`br@gmail.com` / `730287`)
+- Widget de ajuda ✓ · Busca global ✓ · Autenticação local intacta (credencial removida do repositório)
 - Nenhuma rota nova, nenhum módulo novo, nenhuma marca/texto copiado

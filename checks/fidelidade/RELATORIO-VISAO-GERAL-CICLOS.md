@@ -34,4 +34,4 @@
 3. **Componentes revisados:** header (título, busca ⌃+K, tema, idioma, notificações, usuário), sidebar (15 ícones, ativo com barra), cards Contas 0/1 · Campanhas 0/∞ · Webhooks 0 com ⊕ e "Nenhum registro encontrado", banner de cookies completo, FABs — todos comparados nos 3 tamanhos ✓
 
 ## Inalterado
-Rotas, autenticação local (`br@gmail.com`/`730287`), lógica de dados (conta vazia real), sem marca/textos copiados, build de produção verde.
+Rotas, autenticação local (credencial removida do repositório), lógica de dados (conta vazia real), sem marca/textos copiados, build de produção verde.
