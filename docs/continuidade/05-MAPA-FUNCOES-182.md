@@ -6,7 +6,7 @@ Gerado em 08/11/2026 ~00:55 Brasília por extração mecânica, **sem reescrever
 - **Classe / Requisito / Fonte / Aceitação PROPOSTA / Limite**: texto literal do PM (`fontes/prompt-mestre/PROMPT-MESTRE-GRUPOS.md`). `Lnnn` = linha no PM. Pelo próprio PM (§0.2.1), a Aceitação é **critério proposto derivado**, não aceite aprovado. Itens [PROP] dependem de decisão.
 - **Estado no backend LEGADO**: coluna de escopo/estado da matriz do repositório legado (Cursor Origin), cópia R88 em `fontes/legado/aderencia-prompt-mestre-v1-legado-R88.md` (a R89 alterou só `jobs.ts` e um teste). **Não vale para o sendflow-rebuild:** a portabilidade e a equivalência do legado não foram verificadas.
 - **Rota/tela atual (candidata)**: por módulo, a partir de `06-INVENTARIO-ROTAS-SENDFLOW.md` (`main` 81d75b9). T = interação só local (localStorage), P = placeholder, demo = só no PR #6 não mergeado. É correspondência por nome. **Não comprova implementação da função; não há backend no `main`.**
-- **Estado no sendflow-rebuild**: para todas as linhas = **NÃO VERIFICADO / sem backend**. Nenhuma função GRP tem contrato, teste dirigido ou auditoria no repositório novo.
+- **Estado no sendflow-rebuild**: para todas as linhas = **NÃO VERIFICADO / sem implementação de função GRP**. Backend BASE existe desde 08/11/2026 (Fatia 1: auth de servidor, org/tenant, banco PostgreSQL com migrações reversíveis, API /api/v1 com healthcheck e CORS restrito; commits e14c4b7+d3bd71a no main) — porém nenhuma função GRP tem endpoint, contrato de produto, teste dirigido ou auditoria; as telas seguem com dados locais (localStorage).
 - Legenda dos estados legados (cabeçalho da matriz): INF-ATUAL = existe na árvore legada segundo a matriz, sem aceite; PEND-ORDEM = aguarda ordem; BLOQ-EXT = depende de provedor/contrato externo; DEC-xx = decisão aberta (PM §9); LAC = lacuna de evidência; FIN = etapa visual final; RV = revisão; EXC = excluído; "escopo aprovado / recorte" = fatia legada com aceite limitado ao recorte (ver 01-ESTADO-E-MATRIZ, seção B).
 
 
@@ -438,3 +438,7 @@ Gerado em 08/11/2026 ~00:55 Brasília por extração mecânica, **sem reescrever
 - INF-ATUAL + BLOQ-EXT: 1
 
 Total: 182 IDs.
+
+## Registro de mudanças de estado
+
+- **08/11/2026** — Fatia 1 (Fundação) mergeada no main (e14c4b7, d3bd71a, bf3c051): backend base + auth de servidor + privacidade (e02196b remove capturas da referência do repo público). Nenhum ID GRP-* alterou de estado. Deploy/push bloqueados (credencial Railway / permissão) — produção segue no front estático 81d75b9.
