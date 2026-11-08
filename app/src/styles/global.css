@@ -871,7 +871,7 @@ body.sf-legal-body{background:#f3f4f6;color:#1f2937;font-family:Poppins,Roboto, 
 @media (max-width:639px){.sf-plans{grid-template-columns:1fr}.sf-feature-grid{grid-template-columns:1fr}}
 
 /* ===== Landing clone v6: hero alto, carrossel compacto, videos grandes ===== */
-.sf-login-pill{background:#fede05;color:#151515;font-weight:700;font-size:13px;padding:8px 22px;border-radius:99px;text-decoration:none}
+.sf-nav a.sf-login-pill{background:#fede05;color:#151515;font-weight:700;font-size:13px;padding:8px 22px;border-radius:99px;text-decoration:none}
 .sf-hero-grid{padding:88px 0}
 .sf-hero-mockup{max-height:640px}
 .sf-player{flex:0 0 clamp(170px,23vw,270px)}
