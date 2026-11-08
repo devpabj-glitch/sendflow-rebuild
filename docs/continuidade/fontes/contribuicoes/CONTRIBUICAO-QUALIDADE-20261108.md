@@ -1,0 +1,19 @@
+# Contribuição da Qualidade e Integrações (ae1bf203) — 08/11/2026 ~00:37 Brasília
+
+Fonte: transcript do agente Qualidade, posição 58 (resposta ao pedido do Supervisor, pos. 57). Texto integral, sem edição de conteúdo.
+
+---
+
+Contribuição QA para continuidade (sem desenvolvimento/deploy/publicação):
+
+RESPONSABILIDADE: auditoria independente documental de contratos→fonte→asserts→logs/inventário/integridade; distinguir falta de prova de bug, preservar histórico/falhas e limitar aceite à fatia. Não sou escritor do produto nem certifico execução/Git/produção por logs alheios. Coordenador grupos decide aceites e próximo escopo.
+
+FONTES CANÔNICAS RECENTES, legado Grupos: (1) /workspace/grupos-qualidade/AUDITORIA-INDEPENDENTE-DEC06-R86.md, SHA256 6ed4f3d12206d4e120639dbe5850c799c208de88312b9ef8246c7f9c4ba1355a: suficiência DOCUMENTAL limitada classificação OR e filtros Cheios/Não cheios na revisão RELATADA f096ddc0; 198/52 e gates0 relatados. Gatilho nos dois sinais NÃO implementado, não fecha AUT03/DEC06. T/T2 são argumentos do listador, não clock HTTP congelado. (2) /workspace/grupos-qualidade/AUDITORIA-INDEPENDENTE-AUT04-R88.md, SHA256 0dc56c9816400fc6c202421b88d1d31506394ffab2321f72f3de10e4c56503ba: insuficiente por Δ1 DTO/eventos/no-op, Δ2 error.fields, Δ3 preservação integral/recibos/controles; divergência literal S75 separada, nenhum bug comportamental demonstrado. (3) /workspace/grupos-qualidade/AUDITORIA-INDEPENDENTE-AUT04-R89.md, SHA256 da5a3ea26aa1074c9355399a7aa6336295d928cb3288b9c2b3cca7a0b846b3c5: fecha Δ1–Δ3+S75, suficiência DOCUMENTAL limitada ativar/desativar seleção local; revisão relatada c244ad180c43c4b2325f990e111754211ed8fdb0, pai8987395f; 201/53 gates0 relatados. S75 agora chama pauseAutomation só quando difere, dentro transação. Não é homologação global/UI/produção nem próxima fatia.
+
+AUTORIDADES: /workspace/grupos-execucao-backend/PACOTE-DEC06-FILTROS-CHEIOS.md; DECISAO-DEC06-GRUPO-CHEIO.md; /workspace/grupos-referencia-visual/PARECER-DEC06-FILTROS-CHEIOS.md. Para AUT04: /workspace/grupos-execucao-backend/SELECAO-INDEPENDENTE-POS-R86.md §5–6; /workspace/grupos-referencia-visual/PARECER-AUT04-BULK-STATUS-POS-R86.md. Pacotes completos: /workspace/grupos-evidencias-dec06-r86/, /workspace/grupos-evidencias-aut04-r88/ e /workspace/grupos-evidencias-aut04-r89/.
+
+FATOS x RELATOS: aferi documentalmente hashes/ZIP/cópias/textdiff/aserts/inventário; NÃO reexecutei testes/build/DB/Git/rede. Logs/foco/gates/commit/push são execução RELATADA do escritor. Falhas intermediárias R86 e R88 preservadas nos relatórios, não omitidas. Sem hash de árvore por gate nem rerun póscommit. R89 CMP compara duas exportações da revisão, não árvore de trabalho; dispatcher local não é TCP, fault throw não é crash, holder de lock genérico não é runner. Não elevar evidência a execução própria.
+
+NOVO sendflow-rebuild: NÃO transportar equivalência/aceites legados automaticamente. Grupos informou escritor único [agente de integração](https://cursor.com/agents/bc-ab0ec626-43a9-5ef3-a765-6d432c89cfb7); isso é referência de coordenação, não inspeção minha. Ainda não recebi commit/contratos/DB/artefatos para validar. Matriz preparada: /workspace/grupos-qualidade/MATRIZ-VALIDACAO-SENDFLOW-INTEGRACAO-V1.md, SHA256 a381c3c9bc22778c4ce484d18f86e3534d6e27ce35da8b67fc05191493607f54, 61 linhas/5309 B. Onze critérios condicionais auth/tenant/persistência/erros/estados UI/layout/home/login/responsividade/migração-rollback/e2e/regressão/deploy; TODOS não avaliados/aguardando. Sem mutação/seed/restart produção nem mensagem externa. PR demo não comprova integração.
+
+RESPONSIVO: nenhuma avaliação independente atual feita por esta frente, portanto sem percentual, aceite visual ou conclusão de prontidão. Fonte visual deve vir da Referência e ser ligada à revisão/viewport/ambiente real. Preparação documental entregue; aguardando artefatos da primeira fatia. Não publiquei nada.
