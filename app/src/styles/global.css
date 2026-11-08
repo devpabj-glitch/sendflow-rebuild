@@ -908,6 +908,44 @@ body.sf-legal-body{background:#f3f4f6;color:#1f2937;font-family:Poppins,Roboto, 
 .sf-hero-mockup{max-height:none;width:100%;max-width:640px}
 
 /* Planos: card branco em todas as viewports (evidencia do recorte original) */
+/* Celular: cabeçalho, abas e métricas sem scroll horizontal da página.
+   Desktop (>767, e o rail a partir de 1024) permanece como está. */
+@media (max-width: 767px) {
+  .g-top { padding: 0 8px; gap: 4px; }
+  .g-title {
+    min-width: 0;
+    flex: 1 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 15px;
+  }
+  .g-top-spacer { display: none; }
+  .g-lang, .g-icon, .g-user, .g-menu-btn, .g-search, .g-top-logo { flex: 0 0 auto; }
+  .acc-bar { flex-wrap: wrap; align-items: flex-end; gap: 4px 12px; min-width: 0; }
+  .acc-tabs { flex-wrap: wrap; gap: 4px 14px; min-width: 0; max-width: 100%; }
+  .acc-tabs button { white-space: nowrap; }
+  .acc-sort { margin-bottom: 4px; }
+  .acc-pager { flex-wrap: wrap; justify-content: flex-end; row-gap: 4px; }
+}
+@media (max-width: 549px) {
+  .ov-profile { flex-direction: column; align-items: stretch; gap: 12px; }
+  .ov-profile .ov-who { width: 100%; min-width: 0; }
+  .ov-profile .ov-name, .ov-profile .ov-meta { overflow: hidden; text-overflow: ellipsis; }
+  .ov-profile .ov-yellow { width: 100%; justify-content: center; }
+  .ov.acc { min-width: 0; max-width: 100%; }
+  .cmp-periods-row { justify-content: flex-start; min-width: 0; max-width: 100%; }
+  .cmp-periods { flex: 1 1 auto; flex-wrap: wrap; justify-content: flex-start; min-width: 0; max-width: 100%; }
+  .cmp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cmp-grid b, .cmp-grid small { overflow-wrap: anywhere; }
+}
+@media (max-width: 1023px) {
+  .g-content { padding-bottom: 88px; }
+  .cmp-export { padding-right: 68px; }
+}
+.g-shell .table-wrap,
+.g-shell .matrix { max-width: 100%; overflow-x: auto; }
+
 @media (max-width:639px){
   .sf-plan{background:#fff}
   .sf-plan-body{color:#111}
