@@ -8,13 +8,12 @@ Produto: Grupos. Referência visual: sessão logada em `sendflow.pro/whats`, só
 - Os "~7B" do painel não batem com a madrugada (2,6% de 7B); acumulado do banco desde 22/09 = 5,79B — o painel provavelmente exibia o acumulado do período.
 - Travas propostas, NÃO aplicadas: limite de voltas por loop, teto de tokens por sessão/fatia, compactação acima de ~150K de contexto, condição de parada explícita, uma trilha longa por vez, backoff no proxy, contador de tokens no proxy.
 
-## Clone pg779096.click — /casino (08/11/2026, main, sem commit)
+## Clone pg779096.click — EXTRAÍDO para repo próprio (09/11/2026)
 
-- Pacote `casino/` (React 18 + Vite 6 + TS strict, porta dev 5174) clona o lobby da referência: header (logo/Login/Registro), marketing (Promoção/Recompensas/Juros/Rebate/VIP), banner com autoplay, jackpot com tick, marquee, ganhadores, abas Popular/Slots/Recente/Favoritos com seções empilhadas + Carregar mais (15 em 15 de 137), rodapé completo (3 colunas, redes, canal, texto, 8 logos) e nav inferior (Começar/Agente/Promoção/Registro/Perfil). Dialog Login/Registro e páginas member center (VIP/Recompensas/Juros/Rebate) no estado deslogado.
-- Verificado por diff geométrico (21/22 PASS por breakpoint) + smoke 9/9 + zero overflow horizontal. `npm run dev`/`build`/`preview` funcionais; dist pronto para CDN.
-- Arquitetura para integração: `types/lobby.ts` + `services/` + `config.ts` (VITE_API_BASE/VITE_ASSET_BASE); endpoints originais mapeados em `lobby.service.ts`; dados mock em `mock/lobby.mock.ts`.
-- Pendências de dono: (1) API real de lobby/auth; (2) substituir assets hotlinkados por CDN próprio; (3) comportamento real das abas Recente/Favoritos (no original deslogado são painéis vazios); (4) rotas Agente/Perfil exigem sessão (hoje voltam à home, fiel ao deslogado).
-- Importante: app/ (Grupos) e api/ INTACTOS — nada do fluxo das fatias foi tocado.
+- A pasta `casino/` saiu deste repo e virou o **monorepo `C:\Users\ccpru\casino-platform`** (repo local git, commits `1474b46` → `05275b7`): `apps/front` (o clone), `apps/api` (Fastify 5 + PostgreSQL: auth argon2/JWT, carteira com ledger imutável, PIX mock com webhook assinado, jogos seamless mock, member center, agente), `apps/admin` (AntD), `packages/shared` (contrato), `tools` (capturas/verificação) e `deploy` (compose/nginx/deploy.sh com backup+health+rollback).
+- Estado e pendências de credencial (pagamento/jogos reais, GitHub, DOMINIO): `casino-platform/docs/HANDOFF.md`.
+- Verificação de fidelidade re-executada no novo repo: diff geométrico **21 PASS / 1 WARN / 0 FAIL** em 1440 e 390; smoke live completo OK; 9/9 testes (E2E, concorrência, idempotência, assinatura).
+- Importante: app/ (Grupos) e api/ deste repo INTACTOS — nada do fluxo das fatias foi tocado.
 
 ## Fatia 2 (Contas) — API em /api (A1, branch a1/contas)
 
