@@ -1,1 +1,1 @@
-web: node dist/db/migrate.js up && node dist/index.js
+web: NODE_ENV=production node dist/db/migrate.js up && node dist/index.js
