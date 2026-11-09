@@ -47,6 +47,24 @@ export interface Campaign {
   metricsByPeriod: Record<string, CampaignMetrics>
 }
 
+// FATIA-03 (D13 do dono, 08/11/2026): campanha vinda da API original SendFlow —
+// recurso /releases com tipos EXATOS 'WhatsRelease'|'WhatsList'|'WhatsViralCampaign'
+// ("Aleatório" não existe). `archived` é boolean; archive/unarchive são ações
+// idempotentes (D12). O `Campaign` local acima segue para as telas ainda não
+// migradas (Layout, AccountsCampaigns) e para o store.
+export type ReleaseType = 'WhatsRelease' | 'WhatsList' | 'WhatsViralCampaign'
+
+export interface ReleaseApi {
+  id: string
+  name: string
+  type: ReleaseType
+  projectId: string | null
+  archived: boolean
+  accountIds: string[]
+  createdAt: string
+  updatedAt: string
+}
+
 export interface ActionItem {
   id: string
   name: string

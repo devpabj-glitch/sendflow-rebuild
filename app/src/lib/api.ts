@@ -3,7 +3,7 @@
 // Sessão por cookie httpOnly do servidor: credentials 'include' sempre; o front nunca
 // lê, grava ou persiste token (ENG-09).
 
-import type { AccountApi } from '../types'
+import type { AccountApi, ReleaseApi, ReleaseType } from '../types'
 
 export type ApiErrorShape = { error: { code: string; message: string; details?: unknown } }
 
@@ -136,5 +136,44 @@ export const accounts = {
   },
   update(id: string, input: AccountUpdateInput): Promise<AccountApi> {
     return apiFetch<AccountApi>(`/api/v1/accounts/${encodeURIComponent(id)}`, { method: 'PATCH', body: JSON.stringify(input) })
+  },
+}
+
+// Endpoints de campanhas/releases (FATIA-03, D13 do dono 08/11/2026: seguir a
+// API original SendFlow — recurso /releases com tipos EXATOS 'WhatsRelease'|
+// 'WhatsList'|'WhatsViralCampaign'; "Aleatório" não existe). `archived` é
+// boolean na listagem; archive/unarchive são ações idempotentes por id (D12).
+// SEM delete (D5); SEM arquivar em massa (D10 — iterar por id quando houver
+// seleção múltipla real). Mutações POST/PATCH seguem com body JSON via apiFetch.
+
+export type ReleaseListQuery = { search?: string; archived?: boolean; page?: number; pageSize?: number }
+export type ReleaseListResult = { items: ReleaseApi[]; total: number; page: number; pageSize: number }
+export type ReleaseCreateInput = { name: string; type: ReleaseType; projectId?: string; accountIds?: string[] }
+export type ReleaseUpdateInput = { name?: string; type?: ReleaseType; projectId?: string | null; accountIds?: string[] }
+
+export const releases = {
+  list(query: ReleaseListQuery = {}): Promise<ReleaseListResult> {
+    const params = new URLSearchParams()
+    if (query.search != null && query.search.trim() !== '') params.set('search', query.search.trim())
+    if (query.archived != null) params.set('archived', String(query.archived))
+    if (query.page != null) params.set('page', String(query.page))
+    if (query.pageSize != null) params.set('pageSize', String(query.pageSize))
+    const qs = params.toString()
+    return apiFetch<ReleaseListResult>(`/api/v1/releases${qs ? `?${qs}` : ''}`)
+  },
+  create(input: ReleaseCreateInput): Promise<ReleaseApi> {
+    return apiFetch<ReleaseApi>('/api/v1/releases', { method: 'POST', body: JSON.stringify(input) })
+  },
+  get(id: string): Promise<ReleaseApi> {
+    return apiFetch<ReleaseApi>(`/api/v1/releases/${encodeURIComponent(id)}`)
+  },
+  update(id: string, input: ReleaseUpdateInput): Promise<ReleaseApi> {
+    return apiFetch<ReleaseApi>(`/api/v1/releases/${encodeURIComponent(id)}`, { method: 'PATCH', body: JSON.stringify(input) })
+  },
+  archive(id: string): Promise<ReleaseApi> {
+    return apiFetch<ReleaseApi>(`/api/v1/releases/${encodeURIComponent(id)}/archive`, { method: 'POST', body: '{}' })
+  },
+  unarchive(id: string): Promise<ReleaseApi> {
+    return apiFetch<ReleaseApi>(`/api/v1/releases/${encodeURIComponent(id)}/unarchive`, { method: 'POST', body: '{}' })
   },
 }
