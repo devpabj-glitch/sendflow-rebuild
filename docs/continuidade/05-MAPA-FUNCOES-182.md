@@ -26,7 +26,7 @@ Gerado em 08/11/2026 ~00:55 Brasília por extração mecânica, **sem reescrever
 
 ## CTA — Contas (PM L204)
 
-**Rota/tela atual candidata:** `/whats/accounts` — T. **Estado no sendflow-rebuild:** NÃO VERIFICADO / sem backend.
+**Rota/tela atual candidata:** `/whats/accounts` — T. **Estado no sendflow-rebuild:** PARCIAL (08/11/2026, fatia Contas: e6a3e55+cb6cb62, verificado A3): CTA-01 IMPLEMENTADO no backend+front (criar com nome obrigatorio/toggle espia/tipo; lista com busca/paginacao; editar); CTA-02 PARCIAL (lista existe; status sempre 'nao_conectada' honesto, nunca online falso — status real depende de provedor/BLOQ-EXT); CTA-03 IMPLEMENTADO (criar/editar conta nao gera sessao/credencial/ID externo, teste dirigido); CTA-04 PULADO (contagem de ociosas = DEC-14); CTA-05/06 PULADOS (BLOQ-EXT provedor); DELETE de conta propositalmente ausente (decisao D5: sem amarra no PM; proposta futura para o dono). E2E HTTP provado; navegacao visual em browser nao provada.
 
 | ID | Classe | Requisito (PM, literal) | Fonte (PM) | Aceitação PROPOSTA (PM) | Limite (PM) | Estado no backend LEGADO (matriz R88, coluna de escopo) |
 |---|---|---|---|---|---|---|
@@ -39,7 +39,7 @@ Gerado em 08/11/2026 ~00:55 Brasília por extração mecânica, **sem reescrever
 
 ## CMP — Campanhas (criação, tipos, lista global) (PM L214)
 
-**Rota/tela atual candidata:** `/whats/campaigns` — T; PR #6: `/whats/campaigns/:id` (demo). **Estado no sendflow-rebuild:** NÃO VERIFICADO / sem backend.
+**Rota/tela atual candidata:** `/whats/campaigns` — T; PR #6: `/whats/campaigns/:id` (demo). **Estado no sendflow-rebuild:** PARCIAL (08/11/2026, fatia Campanhas 1628e9d+6f9e75b, verificado A3 com smoke real): CMP-01 IMPLEMENTADO (criar com nome obrigatório + tipo; edição); CMP-02 IMPLEMENTADO COM DECISÃO D13 DO DONO (tipos exatos WhatsRelease/WhatsList/WhatsViralCampaign; 'Aleatório' não existe — ordem direta supersede o 4º valor do PM; semântica de WhatsViralCampaign segue DEC-03 aberta); CMP-03 PULADO (semânticas FALA, nenhum algoritmo roda); CMP-04/06 PULADOS (fórmulas DEC-14; cards mostram zeros literais); CMP-05 PARCIAL (abas via archived true/false, busca, arquivar/desarquivar idempotente por item D12; seleção múltipla não implementada D10); CMP-07 PULADO (detalhe/12 abas = fatia futura); CMP-08 PARCIAL (edição sim; vínculo a projeto = campo projectId persistido sem FK até a fatia PRJ). Sem DELETE (D5). E2E HTTP provado; navegação visual não provada.
 
 | ID | Classe | Requisito (PM, literal) | Fonte (PM) | Aceitação PROPOSTA (PM) | Limite (PM) | Estado no backend LEGADO (matriz R88, coluna de escopo) |
 |---|---|---|---|---|---|---|
@@ -442,3 +442,5 @@ Total: 182 IDs.
 ## Registro de mudanças de estado
 
 - **08/11/2026** — Fatia 1 (Fundação) mergeada no main (e14c4b7, d3bd71a, bf3c051): backend base + auth de servidor + privacidade (e02196b remove capturas da referência do repo público). Nenhum ID GRP-* alterou de estado. Deploy/push bloqueados (credencial Railway / permissão) — produção segue no front estático 81d75b9.
+- **08/11/2026** — Fatia 2 (Contas/CTA) mergeada no main (e6a3e55, cb6cb62, 743f06e): CTA-01/03 implementados, CTA-02 parcial honesto, CTA-04/05/06 pulados (DEC-14/BLOQ-EXT). Verificacao A3 APROVADA (smoke real). Nenhum outro modulo afetado.
+- **08/11/2026** — Fatia 3 (Campanhas/CMP) mergeada (1628e9d, 6f9e75b, 6ce220a): CMP-01/02 implementados (tipos oficiais por D13 do dono), CMP-05/08 parciais, CMP-03/04/06/07 pulados (FALA/DEC-14/futuro). Backend /api/v1/releases + release_accounts. Verificação A3 APROVADA.
