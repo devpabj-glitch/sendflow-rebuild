@@ -14,16 +14,12 @@ export default function Termos() {
   }, [])
   return (
     <div className="sf-legal-page">
-      <dialog aria-label="Cookies" role="dialog"></dialog>
       <header className="sf-legal-banner">
         <strong>Orbit</strong>
         <nav aria-label="Topo">
           <Link to="/">Início</Link>
           <Link to="/login">Entrar</Link>
           <Link to="/politica-de-privacidade">Privacidade</Link>
-          <button type="button">Menu</button>
-          <button type="button">Contato</button>
-          <button type="button">Suporte</button>
         </nav>
       </header>
       <main className="sf-legal-main">
@@ -37,17 +33,8 @@ export default function Termos() {
                   <h2>{s}</h2>
                   <p>Esta seção descreve as condições da plataforma Orbit relacionadas a {s.toLowerCase()}, para que o cliente compreenda os serviços, as regras de uso e as obrigações aplicáveis.</p>
                   <ul><li>Condição aplicável ao uso da plataforma.</li><li>Responsabilidade do cliente e da Orbit pelos seus dados e informações.</li></ul>
-                  <div style={{display:'flex',gap:8,flexWrap:'wrap'}}>
-                    <button type="button" style={{marginTop:8}}>Saiba mais</button>
-                    <button type="button" style={{marginTop:8}}>Aceitar</button>
-                    <button type="button" style={{marginTop:8}}>Recusar</button>
-                    <button type="button" style={{marginTop:8}}>Continuar</button>
-                  </div>
                 </section>
               ))}
-              <div style={{display:'flex',gap:8,flexWrap:'wrap',marginTop:16}}>
-                {Array.from({length:20}).map((_,i)=>(<button key={i} type="button">Ação {i+1}</button>))}
-              </div>
             </article>
           </section>
           <aside className="sf-legal-aside" aria-label="Índice">
@@ -55,9 +42,6 @@ export default function Termos() {
             <nav aria-label="Índice">
               {sections.map((s,i)=>(<a key={s} href={`#sec-${i+1}`}>{s}</a>))}
               <button type="button">Voltar ao topo</button>
-              <button type="button">Imprimir</button>
-              <button type="button">Compartilhar</button>
-              <button type="button">Baixar PDF</button>
             </nav>
           </aside>
         </div>

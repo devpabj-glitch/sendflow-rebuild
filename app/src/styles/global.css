@@ -307,13 +307,6 @@ label.lbl input, label.lbl select, label.lbl textarea { border: 1px solid var(--
 .sf-section h2{font-size:36px;line-height:1.15;margin:0 0 16px}
 .sf-section h3{font-size:34px;margin:24px 0 12px}
 .sf-section p{font-size:24px;line-height:1.6;margin:0 0 16px;max-width:900px}
-.sf-text-xs{font-size:12px}
-.sf-text-sm{font-size:13px}
-.sf-text-md{font-size:20px}
-.sf-bg-translucent{background:#ffffffe6}
-.sf-m-4{margin:4px}
-.sf-p-19{padding:19px}
-.sf-gap-46{gap:46px}
 .sf-two-col{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
 .sf-img{max-width:100%;height:auto;display:block}
 .sf-img-wide{width:100%;max-width:900px;margin:24px auto}

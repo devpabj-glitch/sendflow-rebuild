@@ -16,8 +16,6 @@ export default function Privacidade() {
           <Link to="/">Início</Link>
           <Link to="/login">Entrar</Link>
           <Link to="/termo-de-uso">Termos</Link>
-          <button type="button">Menu</button>
-          <button type="button">Contato</button>
         </nav>
       </header>
       <main className="sf-legal-main">
@@ -68,8 +66,6 @@ export default function Privacidade() {
               <p>Em caso de dúvidas sobre privacidade e dados, entre em contato com a equipe da Orbit pelo chat da plataforma.</p>
               <h2>11. Jurisdição e Conformidade Legal</h2>
               <p>Esta política é interpretada de acordo com a legislação aplicável. Você pode exercer seus direitos no âmbito da LGPD a qualquer momento.</p>
-              <button type="button">Aceitar</button>
-              <button type="button">Recusar</button>
             </article>
           </section>
         </div>
