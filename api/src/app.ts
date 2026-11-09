@@ -11,6 +11,7 @@ import { LoginRateLimiter } from "./auth/rateLimit.js";
 import { registerErrorHandler } from "./lib/errors.js";
 import { healthRoutes } from "./routes/health.js";
 import { authRoutes } from "./routes/auth.js";
+import { accountsRoutes } from "./routes/accounts.js";
 
 export interface AppContext {
   db: DbPool;
@@ -78,6 +79,14 @@ export async function buildApp(deps: BuildAppDeps): Promise<FastifyInstance> {
     // (proxy-addr compila número N para (addr, i) => i < N). Antes: true
     // (confiava em qualquer cadeia). Revalidar se a topologia de proxy mudar.
     trustProxy: (_address: string, hop: number) => hop < 1,
+    // O default do Fastify (removeAdditional + coerceTypes) engolia campo
+    // proibido e convertia "true" em boolean. O contrato da Fatia 2 exige 400.
+    ajv: {
+      customOptions: {
+        removeAdditional: false,
+        coerceTypes: false,
+      },
+    },
     // Log de request: método/url/hostname/endereço — SEM corpo, sem e-mail, sem
     // token, sem cookie (nosso endpoints não usam query strings com PII).
     logger:
@@ -101,6 +110,7 @@ export async function buildApp(deps: BuildAppDeps): Promise<FastifyInstance> {
 
   await app.register(healthRoutes(ctx));
   await app.register(authRoutes(ctx));
+  await app.register(accountsRoutes(ctx));
 
   return app;
 }

@@ -81,7 +81,9 @@ function validationFields(error: FastifyError): { fields: string[] } {
     .map((v) => {
       const instancePath = String(v.instancePath ?? "").replace(/^\//, "");
       const missing = v.params?.missingProperty !== undefined ? String(v.params.missingProperty) : "";
-      return instancePath || missing || "?";
+      const additional =
+        v.params?.additionalProperty !== undefined ? String(v.params.additionalProperty) : "";
+      return instancePath || missing || additional || "?";
     })
     .filter(Boolean);
   return { fields: fields.length > 0 ? fields : ["body"] };

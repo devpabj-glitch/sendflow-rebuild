@@ -1,8 +1,8 @@
-# grupos-api — Fatia 1 (Fundação)
+# grupos-api — Fatia 1 (Fundação) + Fatia 2 (Contas)
 
-API de autenticação de servidor, organização/tenant, PostgreSQL com migrações versionadas e API base do produto **Grupos**.
+API de autenticação de servidor, organização/tenant, PostgreSQL com migrações versionadas, API base e CRUD de contas do produto **Grupos**.
 
-**Contrato técnico:** `docs/contracts/FATIA-01-FUNDACAO-CONTRATO.md` (decisões do coordenador na seção §0) · **Parecer A4:** `docs/contracts/FATIA-01-FUNDACAO-PARECER.md`.
+**Contratos técnicos:** `docs/contracts/FATIA-01-FUNDACAO-CONTRATO.md` (decisões na §0) · `docs/contracts/FATIA-02-CONTAS-CONTRATO.md` (decisões D5/D6/D7 na §0.1) · **Pareceres A4:** `docs/contracts/FATIA-0{1,2}-*-PARECER.md`.
 
 ## Pré-requisitos
 
@@ -20,7 +20,7 @@ npm install          # cria package-lock.json
 ## Testes (offline — sem DATABASE_URL, sem Docker)
 
 ```bash
-npm test             # vitest run — health, auth, ratelimit, migrations, tenant
+npm test             # vitest run — health, auth, ratelimit, migrations, tenant, accounts
 npm run typecheck    # tsc --noEmit
 npm run build        # tsc + cópia dos .sql para dist/
 ```
@@ -37,7 +37,7 @@ DATABASE_URL=postgres://... npm run migrate:down    # reverte a última (passe "
 
 - Runner transacional com insert-first na tabela `migrations` (exclusão mútua entre instâncias).
 - **Nunca edite migração já aplicada** — o checksum (sha256, LF-normalizado) diverge e o runner **falha alto** nomeando o arquivo. Correção = nova migração `NNN_nome.{up,down}.sql`.
-- `down` da 001–003 dropa as tabelas da fundação — só em ambiente descartável/de teste.
+- `down` da 001–004 dropa as tabelas (fundação + contas) — só em ambiente descartável/de teste.
 - No boot do servidor (`npm start` / Railway) as migrações pendentes são aplicadas automaticamente (idempotente).
 
 ## Desenvolvimento
@@ -99,8 +99,8 @@ As migrações são idênticas às usadas nos testes (mesmos arquivos `src/db/mi
 
 ```bash
 export DATABASE_URL="postgres://..."   # local ou Railway (rede privada)
-npm run migrate:up                     # cria migrations/organizations/users/sessions
-npm run migrate:status                 # 3 aplicadas, 0 pendentes
+npm run migrate:up                     # cria migrations/organizations/users/sessions/accounts
+npm run migrate:status                 # 4 aplicadas, 0 pendentes
 npm run dev                            # ou npm run build && npm start
 curl -s localhost:8787/api/v1/health   # {"status":"ok",...,"db":"up"}
 ```
@@ -114,10 +114,55 @@ curl -s localhost:8787/api/v1/health   # {"status":"ok",...,"db":"up"}
 | `POST /api/v1/auth/login` | `{email, password}` → `200 {user, org}` + cookie. Com bloqueio → `429 AUTH_RATE_LIMITED` + `Retry-After`. |
 | `POST /api/v1/auth/logout` | Invalida a sessão e limpa o cookie → `204` (idempotente). |
 | `GET /api/v1/auth/me` | Exige sessão → `200 {user, org}` (org SEMPRE da sessão — ENG-02). |
+| `POST /api/v1/accounts` | (Fatia 2) Exige sessão → `201` + recurso flat da conta. |
+| `GET /api/v1/accounts?search=&page=&pageSize=` | (Fatia 2) Lista paginada da org da sessão → `200 {items, total, page, pageSize}`. |
+| `GET /api/v1/accounts/:id` | (Fatia 2) Exige sessão → `200` + recurso; alheio/inexistente → `404 TENANT_FORBIDDEN` genérico. |
+| `PATCH /api/v1/accounts/:id` | (Fatia 2) `{name?, type?, isSpy?}` (≥1 campo) → `200` + recurso atualizado. |
 
 Erros: envelope único `{error:{code,message,details?}}` — códigos e status no contrato §5.5.
 
+**Mutações exigem `Content-Type: application/json`** (Fatia 2, D6): POST/PATCH de accounts e register/login/logout rejeitam qualquer outro media type (ou header ausente) com `400 VALIDATION_ERROR` antes de ler o corpo — `application/json; charset=utf-8` é aceito. Fundamento: JSON força preflight CORS e origem não autorizada falha no preflight (sem token CSRF nesta fatia — avaliação no contrato da Fatia 2 §3.5).
+
 Cookie de sessão (D2): `grupos_session`; `HttpOnly; Secure; SameSite=None; Path=/`; sem `Domain`; token opaco — só sha256(token) é persistido.
+
+### Contas (Fatia 2) — exemplos curl sintéticos
+
+Recurso (flat, camelCase; sem qualquer telefone/ID externo/credencial — CTA-03):
+
+```json
+{
+  "id": "uuid",
+  "name": "Loja Principal",
+  "type": "WhatsApp",
+  "isSpy": false,
+  "connectionStatus": "nao_conectada",
+  "createdAt": "2026-11-08T12:00:00.000Z",
+  "updatedAt": "2026-11-08T12:00:00.000Z"
+}
+```
+
+```bash
+COOKIE="grupos_session=<token-opaco>"   # obtido no register/login
+
+# Criar (201; defaults: type=WhatsApp, isSpy=false, connectionStatus=nao_conectada)
+curl -s -X POST http://localhost:8787/api/v1/accounts \
+  -H "Content-Type: application/json" -H "Cookie: $COOKIE" \
+  -d '{"name":"Loja Principal","isSpy":false}'
+
+# Listar com busca (case-insensitive por substring no name) e paginação (page>=1; pageSize 1..100, default 20)
+curl -s "http://localhost:8787/api/v1/accounts?search=loja&page=1&pageSize=20" -H "Cookie: $COOKIE"
+# 200: {"items":[...],"total":1,"page":1,"pageSize":20}
+
+# Ler por id (da própria org; alheio/inexistente -> 404 TENANT_FORBIDDEN identico; UUID malformado -> 400)
+curl -s http://localhost:8787/api/v1/accounts/00000000-0000-4000-8000-000000000000 -H "Cookie: $COOKIE"
+
+# Editar (parcial: >=1 campo; updated_at sempre anda)
+curl -s -X PATCH http://localhost:8787/api/v1/accounts/00000000-0000-4000-8000-000000000000 \
+  -H "Content-Type: application/json" -H "Cookie: $COOKIE" \
+  -d '{"name":"Loja Matriz","type":"WhatsApp","isSpy":true}'
+```
+
+Regras rápidas: `name` 1..120 e `type` 1..60 pós-trim (defaults provisórios — DEC-12 aberta); `search` ≤120; `page`/`pageSize` fora da faixa → `400` (sem clamp); `org_id`, `connectionStatus`, `phone` e qualquer campo desconhecido no body → `400 VALIDATION_ERROR`; `org_id` vem SEMPRE da sessão. **Não há `DELETE` de conta** (decisão D5 — proposta futura, requer decisão do dono). Ordenação fixa `created_at DESC, id DESC`.
 
 ## Notas operacionais
 

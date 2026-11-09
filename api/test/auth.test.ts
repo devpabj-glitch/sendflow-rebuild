@@ -168,7 +168,13 @@ describe("POST /api/v1/auth/login + GET /api/v1/auth/me", () => {
     const token = sessionTokenOf(login);
     const cookie = cookieHeaderFor(token);
 
-    const logout = await h.app.inject({ method: "POST", url: "/api/v1/auth/logout", headers: { cookie } });
+    // D6: logout agora exige Content-Type application/json (guard uniforme).
+    const logout = await h.app.inject({
+      method: "POST",
+      url: "/api/v1/auth/logout",
+      headers: { cookie, "content-type": "application/json" },
+      payload: {},
+    });
     expect(logout.statusCode).toBe(204);
 
     const me = await meInject(h.app, cookie);
@@ -182,7 +188,12 @@ describe("POST /api/v1/auth/login + GET /api/v1/auth/me", () => {
     );
     expect(deleted.rows[0]).toMatchObject({ n: 0 });
 
-    const logoutAgain = await h.app.inject({ method: "POST", url: "/api/v1/auth/logout" });
+    const logoutAgain = await h.app.inject({
+      method: "POST",
+      url: "/api/v1/auth/logout",
+      headers: { "content-type": "application/json" },
+      payload: {},
+    });
     expect(logoutAgain.statusCode).toBe(204);
     await h.app.close();
   });

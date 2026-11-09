@@ -2,6 +2,14 @@
 
 Produto: Grupos. Referência visual: sessão logada em `sendflow.pro/whats`, só leitura.
 
+## Fatia 2 (Contas) — API em /api (A1, branch a1/contas)
+
+- Contrato: `docs/contracts/FATIA-02-CONTAS-CONTRATO.md` (§0.1 = decisões D5/D6/D7 do coordenador). Parecer A4: FAVORÁVEL COM RESSALVAS (R1–R3 resolvidas por D5/D6/D7). Merge: NÃO commitado — aguardando orquestrador.
+- Endpoints novos (todos exigem sessão): `POST /api/v1/accounts` (201 flat), `GET /api/v1/accounts?search=&page=&pageSize=` ({items,total,page,pageSize}), `GET/PATCH /api/v1/accounts/:id` (404 TENANT_FORBIDDEN genérico p/ alheio/inexistente; malformado → 400). **Sem DELETE** (D5 — proposta futura, requer decisão do dono).
+- Para o A2: recurso flat camelCase (`isSpy`, `connectionStatus` SEMPRE `nao_conectada` — DIR-04; sem `phone`); mutações exigem `Content-Type: application/json` (D6 vale também para register/login/logout — logout agora precisa de corpo `{}`); `org_id`/`connectionStatus`/`phone` no body → 400 (não são ignorados).
+- Nenhuma env nova; migração 004 (`migrate:status` = 4 aplicadas); gates: typecheck 0 / testes 48-48 / build ok / audit --omit=dev 0.
+- Pendências de dono (contrato §10): DELETE de conta (futuro), DEC-02, DEC-12 (limites provisórios), ratificação do sem-unique de (org_id, lower(name)).
+
 ## Fatia 1 (Fundação) — API em /api (A1, branch a1/foundation)
 
 - Contrato: `docs/contracts/FATIA-01-FUNDACAO-CONTRATO.md` (§0 = decisões D1–D4; §16 = correções pós-auditoria A3 aplicadas). Parecer A4: `docs/contracts/FATIA-01-FUNDACAO-PARECER.md` (FAVORÁVEL COM RESSALVAS; R1/R2 atendidas). Auditoria A3: aprovada para merge com correções — pacote de 9 itens aplicado (trustProxy 1 hop, timeouts do pool, health com corrida de timeout, 23505 no migrate, register por IP, agregado por IP no login, sweep do Map, scrypt async, .sql ASCII).

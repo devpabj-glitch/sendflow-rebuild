@@ -20,6 +20,7 @@ import {
   invalidCredentials,
   rateLimited,
 } from "../lib/errors.js";
+import { requireJsonContentType } from "../lib/contentType.js";
 
 // Mesma regra de e-mail do front legado (preservação de contrato — §5.1).
 const EMAIL_PATTERN = "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$";
@@ -93,7 +94,9 @@ export function authRoutes(ctx: AppContext): FastifyPluginAsync {
     // ------------------------------------------------------------------ register
     app.post(
       "/api/v1/auth/register",
-      { schema: registerSchema },
+      // D6: mutação exige Content-Type application/json (guard em preParsing,
+      // antes do parser de content-type do Fastify — nunca 415; achado #2).
+      { preParsing: requireJsonContentType, schema: registerSchema },
       async (request, reply) => {
         // Rate limit do register SOMENTE por IP (correção pós-auditoria A3):
         // chave `register|<ip>` na instância própria do limiter; conta TODA
@@ -156,7 +159,9 @@ export function authRoutes(ctx: AppContext): FastifyPluginAsync {
     // ------------------------------------------------------------------ login
     app.post(
       "/api/v1/auth/login",
-      { schema: loginSchema },
+      // D6: mutação exige Content-Type application/json (guard em preParsing,
+      // antes do parser de content-type do Fastify — nunca 415; achado #2).
+      { preParsing: requireJsonContentType, schema: loginSchema },
       async (request, reply) => {
         const body = request.body as LoginBody;
         const email = normalizeEmail(body.email);
@@ -210,7 +215,12 @@ export function authRoutes(ctx: AppContext): FastifyPluginAsync {
     );
 
     // ------------------------------------------------------------------ logout
-    app.post("/api/v1/auth/logout", async (request, reply) => {
+    app.post(
+      "/api/v1/auth/logout",
+      // D6: uniformização — logout também exige Content-Type application/json
+      // (guard em preParsing, antes do parser; achado #2).
+      { preParsing: requireJsonContentType },
+      async (request, reply) => {
       const token = request.cookies?.[SESSION_COOKIE_NAME];
       if (token) {
         await deleteSessionByToken(ctx.db, token);
