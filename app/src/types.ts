@@ -157,6 +157,27 @@ export interface GroupItem {
   createdAt: string
 }
 
+// FATIA-05: grupo vindo da API (contrato A1 §3.1 — recurso /api/v1/groups).
+// `cheio` é DERIVADO no servidor (DEC-06 legado: marcação manual OU teto
+// calculado por participantes) e somente leitura — nunca enviado em body.
+// `seq` é derivado por release e vem null na lista global sem releaseId
+// (contrato A1 §4). O `GroupItem` local acima segue para as telas ainda
+// não migradas (Layout) e para o store.
+export interface GroupApi {
+  id: string
+  releaseId: string
+  name: string
+  gid: string | null
+  clicks: number
+  participants: number
+  limitPessoas: number | null
+  cheioManual: boolean
+  cheio: boolean
+  seq: number | null
+  createdAt: string
+  updatedAt: string
+}
+
 export interface AppData {
   accounts: Account[]
   campaigns: Campaign[]

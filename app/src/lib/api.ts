@@ -3,7 +3,7 @@
 // Sessão por cookie httpOnly do servidor: credentials 'include' sempre; o front nunca
 // lê, grava ou persiste token (ENG-09).
 
-import type { AccountApi, ReleaseApi, ReleaseType } from '../types'
+import type { AccountApi, GroupApi, ReleaseApi, ReleaseType } from '../types'
 
 export type ApiErrorShape = { error: { code: string; message: string; details?: unknown } }
 
@@ -175,5 +175,53 @@ export const releases = {
   },
   unarchive(id: string): Promise<ReleaseApi> {
     return apiFetch<ReleaseApi>(`/api/v1/releases/${encodeURIComponent(id)}/unarchive`, { method: 'POST', body: '{}' })
+  },
+}
+
+// Endpoints de grupos (FATIA-05, contrato A1 §3.2) — registro LOCAL do grupo
+// da campanha; nenhum efeito externo é afirmado (DIR-04). Lista sem
+// `releaseId` = global por org (tela GroupSearch); `search` casa substring
+// CI em name OU gid no servidor; `cheio` filtra pelo campo derivado
+// (DEC-06 legado: manual OU teto — o front nunca recomputa nem envia).
+// markFull/markNotFull são ações idempotentes (D12) que mexem somente em
+// cheioManual/updatedAt (GRU-04). D15: sem operação em massa — seleção real
+// itera por id. D16: DELETE por id existe (204, hard delete local; massa
+// nunca) — o guard D6 do A1 §3.4 exige Content-Type application/json mesmo
+// sem corpo, por isso o header explícito no remove.
+
+export type GroupListQuery = { releaseId?: string; search?: string; cheio?: 'sim' | 'nao'; page?: number; pageSize?: number }
+export type GroupListResult = { items: GroupApi[]; total: number; page: number; pageSize: number }
+export type GroupCreateInput = { releaseId: string; name: string; gid?: string | null; limitPessoas?: number | null }
+export type GroupUpdateInput = { name?: string; gid?: string | null; limitPessoas?: number | null }
+
+export const groups = {
+  // `cheio` ausente = todos (o valor literal 'todos' nunca é enviado).
+  list(query: GroupListQuery = {}): Promise<GroupListResult> {
+    const params = new URLSearchParams()
+    if (query.releaseId != null && query.releaseId !== '') params.set('releaseId', query.releaseId)
+    if (query.search != null && query.search.trim() !== '') params.set('search', query.search.trim())
+    if (query.cheio != null) params.set('cheio', query.cheio)
+    if (query.page != null) params.set('page', String(query.page))
+    if (query.pageSize != null) params.set('pageSize', String(query.pageSize))
+    const qs = params.toString()
+    return apiFetch<GroupListResult>(`/api/v1/groups${qs ? `?${qs}` : ''}`)
+  },
+  create(input: GroupCreateInput): Promise<GroupApi> {
+    return apiFetch<GroupApi>('/api/v1/groups', { method: 'POST', body: JSON.stringify(input) })
+  },
+  get(id: string): Promise<GroupApi> {
+    return apiFetch<GroupApi>(`/api/v1/groups/${encodeURIComponent(id)}`)
+  },
+  update(id: string, input: GroupUpdateInput): Promise<GroupApi> {
+    return apiFetch<GroupApi>(`/api/v1/groups/${encodeURIComponent(id)}`, { method: 'PATCH', body: JSON.stringify(input) })
+  },
+  markFull(id: string): Promise<GroupApi> {
+    return apiFetch<GroupApi>(`/api/v1/groups/${encodeURIComponent(id)}/mark-full`, { method: 'POST', body: '{}' })
+  },
+  markNotFull(id: string): Promise<GroupApi> {
+    return apiFetch<GroupApi>(`/api/v1/groups/${encodeURIComponent(id)}/mark-not-full`, { method: 'POST', body: '{}' })
+  },
+  remove(id: string): Promise<void> {
+    return apiFetch<void>(`/api/v1/groups/${encodeURIComponent(id)}`, { method: 'DELETE', headers: { 'Content-Type': 'application/json' } })
   },
 }
