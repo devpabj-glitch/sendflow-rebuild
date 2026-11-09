@@ -363,7 +363,8 @@ describe("accounts: CRUD, validações e tenant (contrato T1–T3, T5–T7, T10)
     expect(sessionsAfter.rows[0]).toEqual(sessionsBefore.rows[0]);
 
     // (b) nenhuma tabela de conexão/credencial criada: conjunto exato esperado.
-    // (Fatia 3, ajuste aditivo declarado: releases + release_accounts da 005.)
+    // (Fatia 3, ajuste aditivo declarado: releases + release_accounts da 005.
+    // Fatia 5, ajuste aditivo declarado: groups da 006 — mesma linha do T10.)
     const tablesAfter = await h.pool.query(
       "SELECT table_name FROM information_schema.tables WHERE table_schema = current_schema()",
     );
@@ -371,6 +372,7 @@ describe("accounts: CRUD, validações e tenant (contrato T1–T3, T5–T7, T10)
       rows.rows.map((r) => String(r.table_name)).sort();
     expect(names(tablesAfter)).toEqual([
       "accounts",
+      "groups",
       "migrations",
       "organizations",
       "release_accounts",

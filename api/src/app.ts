@@ -13,6 +13,7 @@ import { healthRoutes } from "./routes/health.js";
 import { authRoutes } from "./routes/auth.js";
 import { accountsRoutes } from "./routes/accounts.js";
 import { releasesRoutes } from "./routes/releases.js";
+import { groupsRoutes } from "./routes/groups.js";
 
 export interface AppContext {
   db: DbPool;
@@ -113,6 +114,7 @@ export async function buildApp(deps: BuildAppDeps): Promise<FastifyInstance> {
   await app.register(authRoutes(ctx));
   await app.register(accountsRoutes(ctx));
   await app.register(releasesRoutes(ctx));
+  await app.register(groupsRoutes(ctx));
 
   return app;
 }
