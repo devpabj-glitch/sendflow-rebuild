@@ -1,5 +1,43 @@
 # Verify
 
+## Fatia 3 (Releases, D13) — PACOTE PÓS-AUDITORIA (achados baixos do code-review) — /api (A1, 08/11/2026, branch a1/campanhas)
+
+Gates RE-RODADOS dentro de `/api` APÓS o último diff do pacote (achados 1/3/4 em código + achado 2 documental — nada além):
+
+- `npm run typecheck` → **0 erros**.
+- `npm test` → **70/70** em 7 arquivos (eram 67; **+3 casos novos** em `releases.test.ts`, um por achado: uuid maiúsculo+minúsculo → 201 com 1 associação canônica minúscula + oráculo da junção; body null literal com Content-Type json → 400 `fields ["body"]`; `accountIds [123]` → 400 `fields ["accountIds"]` primeiro segmento sem índice).
+- `npm run build` → dist/ + **10 arquivos .sql**.
+- `npm audit --omit=dev` → **0 vulnerabilidades**.
+
+O que o pacote mudou (e como foi verificado):
+
+- **Achado 1 (`routes/releases.ts`):** `validateAccountIds` normaliza cada id para caixa baixa ANTES do `Set` de dedupe (`UUID_PATTERN.test(id) ? id.toLowerCase() : id`) — dedupe case-insensitive (uuid maiúsculo+minúsculo = 1 associação), query de existência e junção gravadas sempre com o id canônico minúsculo; não-UUID segue como estava e falha no teste de formato (400 genérico inalterado). Coberto por caso novo com oráculo (exatamente 1 linha na `release_accounts`, id minúsculo).
+- **Achado 3 (`routes/releases.ts`):** guards de corpo ausente do POST e do PATCH trocados de `=== undefined` para `== null` — cobre o null LITERAL (corpo `"null"` com Content-Type json parseia para `null`), que antes passava do guard e explodiria em 500 no cast. Coberto por caso novo (400 `fields ["body"]`, oráculo: nada criado).
+- **Achado 4 (`lib/errors.ts`):** `validationFields` extrai só o PRIMEIRO segmento do `instancePath` do ajv (`"/accountIds/0"` → `"accountIds"`, via `.split("/")[0]` após o strip da barra inicial) — `details.fields` aponta o campo, nunca índice/segmento aninhado; `"body"` permanece fallback. Coberto por caso novo (`[123]` → `["accountIds"]`); cenários existentes de missing/additional property inalterados (67 prévios passam).
+- **Achado 2 (registro documental):** contrato §9.10 acrescentado com (a) a corrida FK residual × future delete de contas — quando a fatia de delete existir, capturar **23503** no INSERT da `release_accounts` e devolver **400 `fields ["accountIds"]`** com ROLLBACK; e (b) as mudanças da F3 fora do inventário original, agora DECLARADAS: ajuste de 1 linha em `lib/errors.ts` (fallback `"?"`→`"body"` em `validationFields`) e ajuste aditivo em `accounts.test.ts` (conjunto de tabelas do T5: 5→7 com `releases`/`release_accounts`) — divergências de documentação apontadas pela verificação.
+
+Ressalva do pacote: a corrida FK (achado 2a) é hoje INALCANÇÁVEL na prática (não existe DELETE de contas — D5) e segue como registro para a fatia de delete; a normalização para minúsculo vale para `accountIds` de releases (UUIDs) — ids de conta continuam gerados minúsculos por `gen_random_uuid()`.
+
+## Fatia 3 (Releases, D13) — /api (A1, 08/11/2026, branch a1/campanhas)
+
+Gates rodados dentro de `/api` APÓS o último diff (contrato FATIA-03 emendado pela **Decisão D13 do dono** §0.2 — ordem direta, precedência máxima):
+
+- `npm run typecheck` → **0 erros**.
+- `npm test` → **67/67** em 7 arquivos: releases (**17 novos** — T1 CRUD feliz com os 3 tipos oficiais + accountIds/dedupe/replace/projectId/archive; T2 validações incl. **'aleatorio' → 400** (D13) e accountIds alheio/inexistente/não-UUID → 400 genérico; T3 filtro `archived=true|false|ausente` + busca CI + paginação + ordenação; T4 persistência app#1→app#2 + oráculo SQL em `releases` E `release_accounts`; T5 análogo CTA-03 (contagens sessions/accounts inalteradas, conjunto exato de tabelas, dedupe e replace da junção); T6 cruzado A↔B 404 byte a byte em GET/PATCH/archive/unarchive + accountIds alheio → 400; T7 401 sem sessão nos 6 endpoints; T10 idempotência das ações; T11 content-type guard + corpo ausente), accounts (17 — **+1 caso: conjunto de tabelas do T5 atualizado aditivamente** com `releases`/`release_accounts`), auth (10), health (3), migrations (9 — ciclo agora com 5 migrações; down 1 = `005_releases` reverte junção+tabela e mantém as demais), ratelimit (8), tenant (4). Regressão: os 50 testes da F2 passam (T9), com 2 ajustes aditivos declarados no contrato (lista de migrações 4→5; conjunto de tabelas do accounts T5).
+- `npm run build` → dist/ + **10 arquivos .sql** (005_releases incluída).
+- `npm audit --omit=dev` → **0 vulnerabilidades** (nenhuma dependência nova).
+
+Decisões técnicas registradas na implementação (D13):
+
+- **Agregação de `accountIds` na lista**: segunda query da MESMA transação `BEGIN ISOLATION LEVEL REPEATABLE READ` com `IN` sobre os ids da página (não N+1; `count(*) OVER()` e `array_agg` ficam fora pelo pg-mem — caminho declarado no contrato §3.2). Ordem de `accountIds` na resposta: lexicográfica (determinística entre POST/PATCH/GET).
+- **Junção transacional**: POST grava release+junção numa transação; PATCH aplica replace (delete+insert) do conjunto na mesma transação do UPDATE; validação (existência+mesma org) roda DENTRO da transação antes de gravar.
+- **Parser JSON escopado ao plugin de releases** (encapsulação do Fastify — nenhum efeito sobre auth/accounts): corpo ausente com `Content-Type: application/json` → `undefined` para as rotas novas (default do Fastify: 400 `FST_ERR_CTP_EMPTY_JSON_BODY`), atendendo D12 ("corpo ausente ou `{}`" nas ações idempotentes); JSON malformado continua 400 `VALIDATION_ERROR` pelo handler global. A ressalva da F2 ("logout de teste/front enviam `{}` porque o parser rejeita corpo vazio") permanece para as rotas antigas — não foram tocadas (REG-01). Borda coberta: POST/PATCH com corpo ausente → o ajv valida `undefined` contra `type:object` e falha com erro SEM `missingProperty`/`additionalProperty` — ajuste declarado em `lib/errors.ts` (fallback `"?"`→`"body"` em `validationFields`): o caso era INALCANÇÁVEL antes (parser default rejeitava corpo vazio antes da validação) e nenhum teste dependia de `"?"`; rotas antigas idem (mesmo parser default). Handlers de POST/PATCH carregam guarda defensiva `body === undefined → 400 fields ["body"]`.
+- **`projectId`**: trim + 1..120 (string) ou `null` explícito (limpa); armazenado como `text` SEM FK — validação de existência é pendência declarada da fatia PRJ (contrato §10).
+
+Cobertura × contrato emendado: D13 (endpoints `/api/v1/releases`; enum fechado dos 3 tipos oficiais — `aleatorio` rejeitado por teste explícito; `archived` boolean via ações D12; `accountIds` validados/deduplados/transacionais; `projectId` text) · TEN-01 (T6: 404 genérico byte a byte + accountIds alheio 400 sem vazar) · MIG-01 (T8: ciclo 5 migrações reversível) · PER-01 (T4: app re-instanciado + oráculo SQL) · REG-01 (T9: 67/67 + gates após último diff) · D6 (T11: text/plain/urlencoded/sem header → 400 fields `content-type`; charset aceito; ações com corpo ausente → 200).
+
+Ressalvas: pg-mem × literalidade de curingas no TERMO do ILIKE (herdada F2 §9.1 — evidência H no banco real do deploy); snapshots REPEATABLE READ no pg-mem são best-effort do adapter single-session (garantia forte é do PostgreSQL real — padrão F2). **Semântica de `WhatsViralCampaign` segue ABERTA (DEC-03)** — o tipo é armazenado e devolvido, nenhum algoritmo deriva dele.
+
 ## Fatia 2 (Contas) — PACOTE PÓS-AUDITORIA #1/#2/#3/#6 — /api (A1, 08/11/2026, branch a1/contas)
 
 Gates RE-RODADOS dentro de `/api` APÓS o último diff do pacote de correções do code-review (achados #1, #2, #3, #6 — nada além):

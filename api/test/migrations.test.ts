@@ -68,7 +68,7 @@ function racingPool(): DbPool {
 }
 
 describe("runner de migrações (up/down/status)", () => {
-  it("up aplica as 4 migrações na ordem; status lista 4 aplicadas e 0 pendentes", async () => {
+  it("up aplica as 5 migrações na ordem; status lista 5 aplicadas e 0 pendentes", async () => {
     const pool = freshPool();
     const files = loadMigrationFiles();
     expect(files.map((f) => f.name)).toEqual([
@@ -76,55 +76,69 @@ describe("runner de migrações (up/down/status)", () => {
       "002_users",
       "003_sessions",
       "004_accounts",
+      "005_releases",
     ]);
 
     const up = await migrateUp(pool, files);
-    expect(up.applied).toEqual(["001_organizations", "002_users", "003_sessions", "004_accounts"]);
+    expect(up.applied).toEqual([
+      "001_organizations",
+      "002_users",
+      "003_sessions",
+      "004_accounts",
+      "005_releases",
+    ]);
 
     const status = await migrateStatus(pool, files);
-    expect(status.applied).toHaveLength(4);
+    expect(status.applied).toHaveLength(5);
     expect(status.pending).toEqual([]);
     await pool.end();
   });
 
-  it("up em dia é no-op idempotente (0 aplicadas, 4 já registradas)", async () => {
+  it("up em dia é no-op idempotente (0 aplicadas, 5 já registradas)", async () => {
     const pool = freshPool();
     const files = loadMigrationFiles();
     await migrateUp(pool, files);
 
     const again = await migrateUp(pool, files);
     expect(again.applied).toEqual([]);
-    expect(again.alreadyApplied).toBe(4);
+    expect(again.alreadyApplied).toBe(5);
 
     const status = await migrateStatus(pool, files);
     expect(status.pending).toEqual([]);
     await pool.end();
   });
 
-  it("down 1 reverte a mais recente (004); status mostra 3 aplicadas", async () => {
+  it("down 1 reverte a mais recente (005_releases); status mostra 4 aplicadas", async () => {
     const pool = freshPool();
     const files = loadMigrationFiles();
     await migrateUp(pool, files);
 
     const down = await migrateDown(pool, files, 1);
-    expect(down.rolledBack).toEqual(["004_accounts"]);
+    expect(down.rolledBack).toEqual(["005_releases"]);
 
     const status = await migrateStatus(pool, files);
     expect(status.applied.map((a) => a.name)).toEqual([
       "001_organizations",
       "002_users",
       "003_sessions",
+      "004_accounts",
     ]);
+    // Down reversível (D13): junção e tabela de releases ausentes, demais intactas.
+    await expect(pool.query("SELECT count(*) FROM releases")).rejects.toThrow();
+    await expect(pool.query("SELECT count(*) FROM release_accounts")).rejects.toThrow();
+    const accounts = await pool.query("SELECT count(*)::int AS n FROM accounts");
+    expect(accounts.rows[0]).toMatchObject({ n: 0 });
     await pool.end();
   });
 
-  it("down all reverte tudo na ordem inversa (4 → 0); up de novo aplica 4", async () => {
+  it("down all reverte tudo na ordem inversa (5 → 0); up de novo aplica 5", async () => {
     const pool = freshPool();
     const files = loadMigrationFiles();
     await migrateUp(pool, files);
 
     const downAll = await migrateDown(pool, files, Number.POSITIVE_INFINITY);
     expect(downAll.rolledBack).toEqual([
+      "005_releases",
       "004_accounts",
       "003_sessions",
       "002_users",
@@ -136,7 +150,7 @@ describe("runner de migrações (up/down/status)", () => {
 
     // Re-aplicação: DDL re-entrante após rollback total.
     const up = await migrateUp(pool, files);
-    expect(up.applied).toHaveLength(4);
+    expect(up.applied).toHaveLength(5);
     await pool.end();
   });
 
@@ -185,19 +199,20 @@ describe("runner de migrações (up/down/status)", () => {
     const pool = racingPool();
     const files = loadMigrationFiles();
 
-    // Não lança: a 001 é tratada como "outra instância aplicou"; 002/003/004 aplicam.
+    // Não lança: a 001 é tratada como "outra instância aplicou"; 002..005 aplicam.
     const up = await migrateUp(pool, files);
     expect(up.raced).toEqual(["001_organizations"]);
-    expect(up.applied).toEqual(["002_users", "003_sessions", "004_accounts"]);
+    expect(up.applied).toEqual(["002_users", "003_sessions", "004_accounts", "005_releases"]);
     expect(up.alreadyApplied).toBe(0); // estado lido ANTES da corrida: nada aplicado
 
-    // Relato de status pós-corrida: as 4 registradas, 0 pendentes.
+    // Relato de status pós-corrida: as 5 registradas, 0 pendentes.
     const status = await migrateStatus(pool, files);
     expect(status.applied.map((a) => a.name)).toEqual([
       "001_organizations",
       "002_users",
       "003_sessions",
       "004_accounts",
+      "005_releases",
     ]);
     expect(status.pending).toEqual([]);
     await pool.end();

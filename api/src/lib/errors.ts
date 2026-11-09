@@ -79,11 +79,14 @@ function envelope(code: ErrorCode, message: string, details?: unknown): ErrorEnv
 function validationFields(error: FastifyError): { fields: string[] } {
   const fields = (error.validation ?? [])
     .map((v) => {
-      const instancePath = String(v.instancePath ?? "").replace(/^\//, "");
+      // Achado 4 (pós-auditoria F3): só o PRIMEIRO segmento do instancePath
+      // (ex.: "/accountIds/0" → "accountIds") — o campo rejeitado, sem
+      // índice/segmento aninhado. Vazio segue para missing/additional/fallback.
+      const instancePath = String(v.instancePath ?? "").replace(/^\//, "").split("/")[0];
       const missing = v.params?.missingProperty !== undefined ? String(v.params.missingProperty) : "";
       const additional =
         v.params?.additionalProperty !== undefined ? String(v.params.additionalProperty) : "";
-      return instancePath || missing || additional || "?";
+      return instancePath || missing || additional || "body";
     })
     .filter(Boolean);
   return { fields: fields.length > 0 ? fields : ["body"] };

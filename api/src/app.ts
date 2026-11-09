@@ -12,6 +12,7 @@ import { registerErrorHandler } from "./lib/errors.js";
 import { healthRoutes } from "./routes/health.js";
 import { authRoutes } from "./routes/auth.js";
 import { accountsRoutes } from "./routes/accounts.js";
+import { releasesRoutes } from "./routes/releases.js";
 
 export interface AppContext {
   db: DbPool;
@@ -111,6 +112,7 @@ export async function buildApp(deps: BuildAppDeps): Promise<FastifyInstance> {
   await app.register(healthRoutes(ctx));
   await app.register(authRoutes(ctx));
   await app.register(accountsRoutes(ctx));
+  await app.register(releasesRoutes(ctx));
 
   return app;
 }
