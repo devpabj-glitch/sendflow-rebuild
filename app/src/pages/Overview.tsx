@@ -1,19 +1,44 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { I, M } from '../components/Icons'
 import { useSession } from '../auth'
+import { accounts } from '../lib/api'
 
-const quotas = [
-  { title: 'Contas', value: '0/1', to: '/whats/accounts' },
-  { title: 'Campanhas', value: '0/∞', to: '/whats/campaigns' },
-  { title: 'Webhooks', value: '0', to: '/whats/webhooks' },
-]
+type AccountsCardState =
+  | { status: 'loading' }
+  | { status: 'error' }
+  | { status: 'ok'; total: number; names: string[] }
 
+// FATIA-02: apenas a coluna Contas lê da API; Campanhas e Webhooks seguem
+// locais (fatias futuras) — valores inalterados.
 export default function Overview() {
   const [open, setOpen] = useState(false)
   const { state } = useSession()
   const user = state.status === 'authenticated' ? state.session.user : null
   const displayName = user?.name || 'Usuário'
+  const [acc, setAcc] = useState<AccountsCardState>({ status: 'loading' })
+  const [accRetry, setAccRetry] = useState(0)
+
+  useEffect(() => {
+    let cancelled = false
+    setAcc({ status: 'loading' })
+    accounts.list({ page: 1, pageSize: 5 })
+      .then(r => { if (!cancelled) setAcc({ status: 'ok', total: r.total, names: r.items.map(a => a.name) }) })
+      .catch(() => { if (!cancelled) setAcc({ status: 'error' }) })
+    return () => { cancelled = true }
+  }, [accRetry])
+
+  const accountsCard = acc.status === 'ok'
+    ? { value: String(acc.total), content: acc.total === 0 ? 'Nenhum registro encontrado' : acc.names.join(' · ') }
+    : acc.status === 'loading'
+      ? { value: '—', content: 'Carregando…' }
+      : { value: '—', content: <><span>Não foi possível carregar as contas.</span> <button type="button" onClick={() => setAccRetry(n => n + 1)}>Tentar novamente</button></> }
+
+  const quotas = [
+    { title: 'Contas', value: accountsCard.value, to: '/whats/accounts', content: accountsCard.content },
+    { title: 'Campanhas', value: '0/∞', to: '/whats/campaigns', content: 'Nenhum registro encontrado' },
+    { title: 'Webhooks', value: '0', to: '/whats/webhooks', content: 'Nenhum registro encontrado' },
+  ]
   return (
     <div className="ov">
       <section className="ov-card ov-profile">
@@ -50,7 +75,7 @@ export default function Overview() {
               <h2>{card.title} <span>{card.value}</span></h2>
               <Link to={card.to} className="ov-add" aria-label={`Adicionar ${card.title}`}><I.plusCircle size={22} /></Link>
             </header>
-            <p>Nenhum registro encontrado</p>
+            <p>{card.content}</p>
           </article>
         ))}
       </section>
