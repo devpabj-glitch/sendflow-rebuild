@@ -1,5 +1,40 @@
 # Verify
 
+## Fatia 5 (Grupos) — PACOTE PÓS-AUDITORIA — /api (A1, 09/11/2026, branch a1/grupos)
+
+Gates RE-RODADOS dentro de `/api` APÓS o último diff do pacote (achados 1/2/4 — nenhum código de runtime alterado, só comentário SQL + docs):
+
+- `npm run typecheck` → **0 erros**.
+- `npm test` → **86/86** em 8 arquivos (groups 16, accounts 17, releases 17, auth 10, health 3, migrations 9, ratelimit 8, tenant 4 — mesmos casos da Fatia 5; o pacote não adiciona/troca testes: nada de comportamental mudou).
+- `npm run build` → dist/ + **12 arquivos .sql** (006_groups incluída).
+- `npm audit --omit=dev` → **0 vulnerabilidades**.
+
+O que o pacote mudou (e como foi verificado):
+
+- **Achado 1 (ASCII):** `006_groups.up.sql` — `pertença`→`pertence` (L15) e `§9.1`→`secao 9.1` (L23). Verificação por BYTES (`>127`) nos 12 arquivos .sql de 001–006: **0 ocorrências** após a troca — migrations 100% ASCII. Checksum: 006 ainda não aplicada a nenhum banco real (branch sem commit/deploy); o runner recalcula sha256 por carga — migrations.test (ciclo up/status/down/up) re-passou 9/9.
+- **Achado 2 (contrato §3.3, emenda):** linha única `body (POST/PATCH/ações) | additionalProperties:false` dividida em duas: POST/PATCH preservado (o código aplica o schema — `groups.ts` L52–L72) e NOVA linha de DECISÃO DE CONTRATO para as ações mark-full/mark-not-full: corpo NÃO é lido (sem schema), corpo ausente aceito com Content-Type json (parser escopado F3), propriedades enviadas ignoradas — prática real herdada da F3 §3.4 (archive/unarchive idem, lá já documentada); consistência com F3 escolhida em vez de prometer `additionalProperties:false`. `grep additionalProperties` no contrato: exatamente 2 menções (as duas linhas novas) — nenhuma promessa órfã restante.
+- **Achado 4 (nota registrada em DEV/WORKLOG):** `:id` NÃO normaliza caixa — `UUID_PATTERN` aceita maiúsculas e o id vai ao predicado como está (padrão F2–F5; PostgreSQL real compara tipo `uuid` case-insensitive, lookup equivalente); normalização para minúsculo em accounts/releases/groups registrada como passada futura condicionada ao dono (precedente: achado 1 da F3 normalizou `accountIds` antes do dedupe).
+
+## Fatia 5 (Grupos, D15–D18) — /api (A1, 08/11/2026, branch a1/grupos)
+
+Gates rodados dentro de `/api` APÓS o último diff (contrato FATIA-05 com **D15–D18 aplicadas na §0.1** antes de codar; parecer A4 **ADERENTE** — 5 ressALVAS atendidas):
+
+- `npm run typecheck` → **0 erros**.
+- `npm test` → **86/86** em 8 arquivos: groups (**16 novos** — T1 CRUD feliz com shape §3.1 exato (defaults null/null/0/0/false; trim de name e gid; seq no POST; sem efeitos colaterais em sessions/releases/accounts); T2 validações (name/gid 1..120, limitPessoas 1..100000, releaseId ausente/não-UUID/inexistente/**de outra org** → 400 genérico `["releaseId"]`; campos proibidos `org_id/id/clicks/participants/cheio/cheioManual/seq` e **releaseId no PATCH** (imutável) → 400; query `cheio`/`releaseId`/`page`/`pageSize`; `:id` malformado → 400 em GET/PATCH/mark-full/DELETE; body null literal → 400 `["body"]`); T3 filtros `cheio` × **DEC-06 legado** (sim={manual OU teto}; nao=restante; regra 2 — desmarcar manual não elimina teto; **cliques nunca ocupam vaga**; página além do fim); **T4 GRU-04 dirigido** (marcar/desmarcar manual NÃO altera clicks/participants/limitPessoas/name/gid/release_id/created_at — oráculo SQL campo a campo, contadores semeados por SQL p/ provar que não mudam); T5 busca CI em name **OU** gid (termo que só casa GID); T6 cruzado A↔B (404 **byte a byte** em GET/PATCH/mark-full/mark-not-full/**DELETE**; POST com releaseId alheio → 400; lista com releaseId alheio → **200 vazio honesto**; snapshot intacto); T7 401 sem sessão nos 7 endpoints; T11 idempotência D12; **T12 seq derivada** (1,2,3 por criação; 4º no fim sem renumerar; seq:null sem releaseId; ordinais independentes por release; **DELETE do 1º → reordena 1,2,3**); T13 content-type guard (text/plain/urlencoded/sem header → 400; charset ok; ações corpo ausente → 200; DELETE text/plain → 400); DELETE D16 (204, releitura 404, repetição 404 byte a byte); T8 persistência app#1→app#2 + oráculo SQL com conjunto EXATO de colunas (cheio/seq nunca gravados)), migrations (9 — ciclo agora com **6 migrações**; down 1 = `006_groups`), accounts (17 — conjunto de tabelas do T5 7→8 aditivo), releases (17 — idem 7→8, ajuste aditivo além do declarado no §6/T10), auth (10), health (3), ratelimit (8), tenant (4). Regressão: os 70 testes da F4 passam (T10; o "70" era baseline, não teto — ressALVA 5 do parecer).
+- `npm run build` → dist/ + **12 arquivos .sql** (006_groups incluída).
+- `npm audit --omit=dev` → **0 vulnerabilidades** (nenhuma dependência nova).
+
+Decisões técnicas registradas na implementação:
+
+- **`groups` sem aspas**: probe pg-mem 3.0 ANTES de aplicar (CREATE/SELECT/INSERT/UPDATE/DELETE/DROP em todas as posições usadas) — parser aceita `groups` sem qualificar (keyword não-reservada, idem PostgreSQL real); risco §9.1 do contrato NÃO materializado, renome não necessário.
+- **seq** (§4.2): POST/GET/PATCH/ações → `COUNT` de predecessores com predicados PLANOS (`created_at < c OR (created_at = c AND id < i)`) na MESMA transação — sem `OVER`/row-constructor (pg-mem); lista com `releaseId` único → 1 query ordinal por página (`SELECT id ... ORDER BY created_at ASC, id ASC` → Map id→ordinal); lista global → `seq:null`.
+- **cheio**: DERIVADO em toda resposta e como predicado do filtro (`cheio_manual OR (limit_pessoas IS NOT NULL AND participants >= limit_pessoas)`); zero coluna materializada. Testes T3 semeiam `participants` por SQL direto (fixture declarada — sem mutador na fatia, única forma honesta de montar os estados DEC-06).
+- **DELETE D16**: statement único com org no predicado; `rowCount===0` → 404 `TENANT_FORBIDDEN` genérico (repetição ≡ inexistente ≡ alheio, byte a byte); guard D6 em preParsing por uniformidade (§3.4).
+- **Busca**: `lower(name) ILIKE $ OR lower(gid) ILIKE $` com termo em caixa baixa e curingas escapados — determinístico nos dois motores; **gid com trim APENAS** (sem normalização de caixa — declarado).
+- **Validações do prompt × contrato**: divergências pontuais do prompt (limitPessoas ≥0, gid ≤64, ordem release-major ASC) resolvidas **a favor do contrato + parecer ADERENTE** (DEC-12 provisórios vigentes: 1..100000, 1..120, ordem fixa `created_at DESC, id DESC` herdada F2–F4) — nenhum deles é objeto de D15–D18.
+
+RessALVAS herdadas: pg-mem × `ESCAPE` do ILIKE (F2 §9.1 — evidência H no banco real); snapshots REPEATABLE READ best-effort no adapter single-session do pg-mem (garantia forte é do PostgreSQL real). **Orientação à A2** (parecer A4): "Redirect x/limite" é exibição pendente de DEC-05 (contadores serão 0 honestos); lista vazia com releaseId válido é resultado honesto; seq NÃO é identidade estável (DELETE decai ordinais — use `id`); sem Suspenso/link/tipo — não exibir o que o servidor não tem.
+
 ## Fatia 3 (Releases, D13) — PACOTE PÓS-AUDITORIA (achados baixos do code-review) — /api (A1, 08/11/2026, branch a1/campanhas)
 
 Gates RE-RODADOS dentro de `/api` APÓS o último diff do pacote (achados 1/3/4 em código + achado 2 documental — nada além):

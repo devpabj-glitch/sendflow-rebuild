@@ -685,7 +685,9 @@ describe("releases: CRUD, validações e tenant (contrato D13 T1–T3, T5–T7, 
     expect(sessionsAfter.rows[0]).toEqual(sessionsBefore.rows[0]);
     expect(accountsAfter.rows[0]).toEqual(accountsBefore.rows[0]);
 
-    // (b) conjunto exato de tabelas: nada de grupos/links/ações nasceu.
+    // (b) conjunto exato de tabelas: nada de links/ações/sessões nasceu.
+    // (Fatia 5, ajuste aditivo declarado: groups da 006 — o conjunto do T5
+    // acompanha o schema vigente, mesmo precedente F3 §9.10.ii.)
     const tablesAfter = await h.pool.query(
       "SELECT table_name FROM information_schema.tables WHERE table_schema = current_schema()",
     );
@@ -693,6 +695,7 @@ describe("releases: CRUD, validações e tenant (contrato D13 T1–T3, T5–T7, 
       rows.rows.map((r) => String(r.table_name)).sort();
     expect(names(tablesAfter)).toEqual([
       "accounts",
+      "groups",
       "migrations",
       "organizations",
       "release_accounts",
