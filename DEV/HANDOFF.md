@@ -2,6 +2,12 @@
 
 Produto: Grupos. Referência visual: sessão logada em `sendflow.pro/whats`, só leitura.
 
+## Investigação de tokens da madrugada (09/11/2026, somente leitura)
+
+- Relatório completo: `DEV/INVESTIGACAO-TOKENS-20261109.md`. Madrugada 08→09/11 (18:00→06:00) = 1.446 chamadas / **182,1M tokens**; 60,6% fora do prompt mestre (clone pg779096 40,4%, parity 10,6%, Omaze 9,6%); fatias F2–F6 38,7%. Contexto do clone cresceu 14K→464K sem compactação; buraco de quota 00:49→04:07 (chave 2 teto de 5h; chave 1 morta até 12/11).
+- Os "~7B" do painel não batem com a madrugada (2,6% de 7B); acumulado do banco desde 22/09 = 5,79B — o painel provavelmente exibia o acumulado do período.
+- Travas propostas, NÃO aplicadas: limite de voltas por loop, teto de tokens por sessão/fatia, compactação acima de ~150K de contexto, condição de parada explícita, uma trilha longa por vez, backoff no proxy, contador de tokens no proxy.
+
 ## Clone pg779096.click — /casino (08/11/2026, main, sem commit)
 
 - Pacote `casino/` (React 18 + Vite 6 + TS strict, porta dev 5174) clona o lobby da referência: header (logo/Login/Registro), marketing (Promoção/Recompensas/Juros/Rebate/VIP), banner com autoplay, jackpot com tick, marquee, ganhadores, abas Popular/Slots/Recente/Favoritos com seções empilhadas + Carregar mais (15 em 15 de 137), rodapé completo (3 colunas, redes, canal, texto, 8 logos) e nav inferior (Começar/Agente/Promoção/Registro/Perfil). Dialog Login/Registro e páginas member center (VIP/Recompensas/Juros/Rebate) no estado deslogado.
