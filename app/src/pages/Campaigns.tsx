@@ -1,59 +1,132 @@
-import React, { useMemo, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useStore } from '../store'
+import { ApiError, releases } from '../lib/api'
+import type { ReleaseListResult } from '../lib/api'
 import { M } from '../components/Icons'
 import { Modal } from '../components/Ui'
-import { byCreatedDesc, fmtDate, nowIso, paginate, uid } from '../utils'
-import type { Campaign, CampaignStatus } from '../types'
+import { fmtDate } from '../utils'
+import type { ReleaseApi, ReleaseType } from '../types'
 
 const tabs = [{ id: 'all', label: 'Campanhas' }, { id: 'active', label: 'Ativas' }, { id: 'archived', label: 'Arquivadas' }] as const
 const periods = ['7', '14', '21', '28', '90'] as const
 type Tab = typeof tabs[number]['id']
 
-const zeroM = () => ({ clicks: 0, entries: 0, exits: 0, participants: 0, groups: 0 })
+const PAGE_SIZE = 12
 
+// D13 (dono, 08/11/2026): tipos EXATOS da API original SendFlow — 'WhatsRelease'
+// |'WhatsList'|'WhatsViralCampaign'. Rótulos humanizados na tela; os VALORES
+// enviados são os três exatos. "Aleatório" não existe nesta API e não aparece.
+const typeOptions: { value: ReleaseType; label: string }[] = [
+  { value: 'WhatsRelease', label: 'Campanha' },
+  { value: 'WhatsList', label: 'Lista' },
+  { value: 'WhatsViralCampaign', label: 'Campanha viral' },
+]
+const typeLabel = (t: ReleaseType) => typeOptions.find(o => o.value === t)?.label ?? t
+
+// Abas → filtro `archived` do servidor: Campanhas = todas (filtro ausente),
+// Ativas = archived=false, Arquivadas = archived=true (D13: boolean).
+const archivedOf = (t: Tab): boolean | undefined => (t === 'active' ? false : t === 'archived' ? true : undefined)
+
+// Métricas: nenhum evento existe nesta fatia — zeros são o dado real (DEC-14
+// aberta; DIR-04: nenhum número inventado).
+const totals = { clicks: 0, entries: 0, exits: 0, participants: 0, groups: 0 }
+
+function errorText(err: unknown): string {
+  if (err instanceof ApiError) {
+    if (err.code === 'NETWORK_ERROR' || err.code === 'TIMEOUT') return 'Não foi possível conectar ao servidor. Verifique sua conexão e tente novamente.'
+    if (err.code === 'BAD_ERROR_BODY' || err.code === 'INTERNAL_ERROR') return 'Erro no servidor. Tente novamente em instantes.'
+    return err.message
+  }
+  return 'Erro inesperado.'
+}
+
+const emptyForm = { name: '', type: 'WhatsRelease' as ReleaseType }
+
+// FATIA-03: dados vêm da API /releases (D13); o store local de campanhas segue
+// para as telas ainda não migradas (Layout, AccountsCampaigns).
 export default function Campaigns() {
-  const { data, setCampaigns, setAccounts, audit } = useStore()
+  const { audit } = useStore() // histórico segue local (fatia futura); dados vêm da API
   const [tab, setTab] = useState<Tab>('all')
   const [period, setPeriod] = useState<typeof periods[number]>('90')
   const [q, setQ] = useState('')
+  const [search, setSearch] = useState('')
   const [page, setPage] = useState(1)
+  const [result, setResult] = useState<ReleaseListResult | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<unknown>(null)
+  const [nonce, setNonce] = useState(0)
   const [open, setOpen] = useState(false)
   const [pattern, setPattern] = useState(false)
-  const [edit, setEdit] = useState<Campaign | null>(null)
-  const [form, setForm] = useState({ name: '', status: 'active' as CampaignStatus, accountId: '' })
+  const [edit, setEdit] = useState<ReleaseApi | null>(null)
+  const [form, setForm] = useState(emptyForm)
+  const [saving, setSaving] = useState(false)
+  const [saveError, setSaveError] = useState('')
+  const [acting, setActing] = useState(false)
 
-  const list = useMemo(() => {
-    const f = byCreatedDesc(data.campaigns).filter(c => (tab === 'all' || c.status === tab) && (!q.trim() || c.name.toLowerCase().includes(q.toLowerCase())))
-    return paginate(f, page, 12)
-  }, [data.campaigns, tab, q, page])
+  // Busca com debounce leve (mantém o comportamento visual de filtrar ao digitar);
+  // Enter confirma na hora.
+  useEffect(() => {
+    const t = setTimeout(() => { setSearch(q); setPage(1) }, 400)
+    return () => clearTimeout(t)
+  }, [q])
 
-  const totals = useMemo(() => {
-    const source = byCreatedDesc(data.campaigns).filter(c => (tab === 'all' || c.status === tab) && (!q.trim() || c.name.toLowerCase().includes(q.toLowerCase())))
-    return source.reduce((acc, c) => {
-      const m = c.metricsByPeriod[period] || zeroM()
-      acc.clicks += m.clicks; acc.entries += m.entries; acc.exits += m.exits; acc.participants += m.participants; acc.groups += m.groups
-      return acc
-    }, { clicks: 0, entries: 0, exits: 0, participants: 0, groups: 0 })
-  }, [data.campaigns, tab, q, period])
+  useEffect(() => {
+    let cancelled = false
+    setLoading(true); setError(null)
+    releases.list({ search, page, pageSize: PAGE_SIZE, archived: archivedOf(tab) })
+      .then(r => { if (!cancelled) { setResult(r); setLoading(false) } })
+      .catch((err: unknown) => { if (!cancelled) { setError(err); setLoading(false) } })
+    return () => { cancelled = true }
+  }, [search, page, tab, nonce])
 
-  const save = () => {
-    if (!form.name.trim()) return
-    if (edit) {
-      setCampaigns(arr => arr.map(c => c.id === edit.id ? { ...c, name: form.name.trim(), status: form.status, accountId: form.accountId || undefined } : c))
-      audit('Campanha atualizada', 'Campanhas', edit.id)
-    } else {
-      const id = uid('c')
-      const camp: Campaign = { id, name: form.name.trim(), status: form.status, accountId: form.accountId || undefined, createdAt: nowIso(), metricsByPeriod: { '7': zeroM(), '14': zeroM(), '21': zeroM(), '28': zeroM(), '90': zeroM() } }
-      setCampaigns(arr => [camp, ...arr])
-      if (form.accountId) setAccounts(arr => arr.map(a => a.id === form.accountId ? { ...a, campaignIds: Array.from(new Set([...a.campaignIds, id])) } : a))
-      audit('Campanha criada', 'Campanhas', id)
+  const save = async () => {
+    if (!form.name.trim() || saving) return
+    setSaving(true); setSaveError('')
+    try {
+      if (edit) {
+        const updated = await releases.update(edit.id, { name: form.name.trim(), type: form.type })
+        audit('Campanha atualizada', 'Campanhas', updated.id)
+      } else {
+        const created = await releases.create({ name: form.name.trim(), type: form.type })
+        audit('Campanha criada', 'Campanhas', created.id)
+        setPage(1) // lista é created_at DESC: a nova campanha entra no topo da primeira página
+      }
+      setOpen(false); setEdit(null); setForm(emptyForm)
+      setNonce(n => n + 1) // relê do servidor — a API é a fonte da verdade
+    } catch (err) {
+      setSaveError(errorText(err))
+    } finally {
+      setSaving(false)
     }
-    setOpen(false); setEdit(null); setForm({ name: '', status: 'active', accountId: '' })
   }
 
-  const from = list.total === 0 ? 0 : (list.page - 1) * 12 + 1
-  const to = Math.min(list.page * 12, list.total)
+  // Arquivar/desarquivar por item — ação idempotente (D12), no modal de edição
+  // (única via do legado para trocar status; o grid do item tem colunas fixas e
+  // não comporta outro botão). A tela nunca teve seleção em massa (D10: sem
+  // endpoint em massa; se um dia existir, iterar por id).
+  const toggleArchive = async () => {
+    if (!edit || acting) return
+    setActing(true); setSaveError('')
+    const wasArchived = edit.archived
+    try {
+      const updated = wasArchived ? await releases.unarchive(edit.id) : await releases.archive(edit.id)
+      audit(wasArchived ? 'Campanha desarquivada' : 'Campanha arquivada', 'Campanhas', updated.id)
+      setOpen(false); setEdit(null); setForm(emptyForm)
+      setNonce(n => n + 1)
+    } catch (err) {
+      setSaveError(errorText(err))
+    } finally {
+      setActing(false)
+    }
+  }
+
+  const items = result?.items ?? []
+  const total = result?.total ?? 0
+  const pages = Math.max(1, Math.ceil(total / PAGE_SIZE))
+  const curPage = result?.page ?? page
+  const from = total === 0 ? 0 : (curPage - 1) * PAGE_SIZE + 1
+  const to = Math.min(curPage * PAGE_SIZE, total)
   const percent = totals.clicks ? Math.round((totals.entries / totals.clicks) * 100) : 0
   const icon = (paths: string) => (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffde07" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{paths}</svg>
@@ -77,7 +150,7 @@ export default function Campaigns() {
           <button className="acc-outline" type="button" onClick={() => setPattern(true)}>Padrão de criação</button>
           <Link className="acc-outline" to="/whats/accounts-campaigns"><M.hub size={16} /> Contas e Campanhas</Link>
           <Link className="acc-outline" to="/whats/group-search"><M.search size={16} /> Buscar grupos</Link>
-          <button className="acc-outline" type="button" onClick={() => { setEdit(null); setForm({ name: '', status: 'active', accountId: '' }); setOpen(true) }}>+ Campanha</button>
+          <button className="acc-outline" type="button" onClick={() => { setEdit(null); setForm(emptyForm); setSaveError(''); setOpen(true) }}>+ Campanha</button>
         </div>
       </div>
       <div className="cmp-note">
@@ -105,30 +178,31 @@ export default function Campaigns() {
           <select aria-label="Ordenação" defaultValue="created"><option value="created">Data de criação</option></select>
         </label>
       </div>
-      <label className="acc-search"><span>Buscar</span><M.search size={18} /><input value={q} onChange={e => { setQ(e.target.value); setPage(1) }} /></label>
+      <label className="acc-search"><span>Buscar</span><M.search size={18} /><input value={q} onChange={e => setQ(e.target.value)} onKeyDown={e => { if (e.key === 'Enter') { setSearch(q); setPage(1) } }} /></label>
       <div className="acc-pager">
         <span>Linhas por página</span>
-        <select aria-label="Linhas por página" defaultValue="12"><option>12</option></select>
-        <span>{from}-{to} de {list.total}</span>
-        <button type="button" disabled={list.page <= 1} onClick={() => setPage(1)}>«</button>
-        <button type="button" disabled={list.page <= 1} onClick={() => setPage(p => Math.max(1, p - 1))}>‹</button>
-        <button type="button" disabled={list.page >= list.pages} onClick={() => setPage(p => p + 1)}>›</button>
+        <select aria-label="Linhas por página" defaultValue={PAGE_SIZE}><option>{PAGE_SIZE}</option></select>
+        <span>{from}-{to} de {total}</span>
+        <button type="button" aria-label="Primeira página" disabled={curPage <= 1} onClick={() => setPage(1)}>«</button>
+        <button type="button" aria-label="Página anterior" disabled={curPage <= 1} onClick={() => setPage(p => Math.max(1, p - 1))}>‹</button>
+        <button type="button" aria-label="Próxima página" disabled={curPage >= pages} onClick={() => setPage(p => p + 1)}>›</button>
       </div>
       <div className="cmp-export"><Link className="acc-outline" to="/whats/actions">Ver exportações →</Link></div>
-      {list.total === 0 ? <p className="acc-empty">Nenhum registro encontrado</p> : (
+      {error != null ? (
+        <div>
+          <p className="acc-empty">{errorText(error)}</p>
+          <button className="acc-outline" type="button" onClick={() => setNonce(n => n + 1)}>Tentar novamente</button>
+        </div>
+      ) : loading && result == null ? <p className="acc-empty">Carregando…</p> : items.length === 0 ? <p className="acc-empty">Nenhum registro encontrado</p> : (
         <ul className="acc-list">
-          {list.items.map(c => {
-            const m = c.metricsByPeriod[period] || zeroM()
-            const acc = data.accounts.find(a => a.id === c.accountId)
-            return (
-              <li key={c.id}>
-                <div><strong>{c.name}</strong><span>{acc?.name || 'Sem conta'} · {m.clicks} cliques</span></div>
-                <em>{c.status === 'active' ? 'Ativa' : 'Arquivada'}</em>
-                <span>{fmtDate(c.createdAt)}</span>
-                <button type="button" onClick={() => { setEdit(c); setForm({ name: c.name, status: c.status, accountId: c.accountId || '' }); setOpen(true) }}>Editar</button>
-              </li>
-            )
-          })}
+          {items.map(c => (
+            <li key={c.id}>
+              <div><strong>{c.name}</strong><span>{typeLabel(c.type)} · {(c.accountIds ?? []).length === 0 ? 'Sem conta' : `${(c.accountIds ?? []).length} ${(c.accountIds ?? []).length === 1 ? 'conta' : 'contas'}`} · {totals.clicks} cliques</span></div>
+              <em>{c.archived ? 'Arquivada' : 'Ativa'}</em>
+              <span>{fmtDate(c.createdAt)}</span>
+              <button type="button" onClick={() => { setEdit(c); setForm({ name: c.name, type: c.type }); setSaveError(''); setOpen(true) }}>Editar</button>
+            </li>
+          ))}
         </ul>
       )}
       {pattern ? (
@@ -140,11 +214,11 @@ export default function Campaigns() {
           </div>
         </div>
       ) : null}
-      <Modal title={edit ? 'Editar campanha' : 'Nova campanha'} open={open} onClose={() => setOpen(false)} footer={<><button className="btn" onClick={() => setOpen(false)}>Cancelar</button><button className="btn primary" onClick={save}>Salvar</button></>}>
+      <Modal title={edit ? 'Editar campanha' : 'Nova campanha'} open={open} onClose={() => setOpen(false)} footer={<>{edit ? <button className="btn" type="button" onClick={toggleArchive} disabled={acting}>{edit.archived ? 'Desarquivar' : 'Arquivar'}</button> : null}<button className="btn" onClick={() => setOpen(false)}>Cancelar</button><button className="btn primary" onClick={save} disabled={saving}>Salvar</button></>}>
+        {saveError ? <p className="acc-note" role="alert">{saveError}</p> : null}
         <div className="form-grid">
           <label className="lbl">Nome<input value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))} /></label>
-          <label className="lbl">Status<select value={form.status} onChange={e => setForm(f => ({ ...f, status: e.target.value as CampaignStatus }))}><option value="active">Ativa</option><option value="archived">Arquivada</option></select></label>
-          <label className="lbl">Conta associada<select value={form.accountId} onChange={e => setForm(f => ({ ...f, accountId: e.target.value }))}><option value="">Nenhuma</option>{data.accounts.map(a => <option key={a.id} value={a.id}>{a.name}</option>)}</select></label>
+          <label className="lbl">Tipo<select value={form.type} onChange={e => setForm(f => ({ ...f, type: e.target.value as ReleaseType }))}>{typeOptions.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}</select></label>
         </div>
       </Modal>
     </div>

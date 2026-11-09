@@ -2,22 +2,24 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { I, M } from '../components/Icons'
 import { useSession } from '../auth'
-import { accounts } from '../lib/api'
+import { accounts, releases } from '../lib/api'
 
-type AccountsCardState =
+type ListCardState =
   | { status: 'loading' }
   | { status: 'error' }
   | { status: 'ok'; total: number; names: string[] }
 
-// FATIA-02: apenas a coluna Contas lê da API; Campanhas e Webhooks seguem
-// locais (fatias futuras) — valores inalterados.
+// FATIA-02/03: as colunas Contas e Campanhas leem da API (F3 = /releases, D13);
+// Webhooks segue local (fatia futura) — valor inalterado.
 export default function Overview() {
   const [open, setOpen] = useState(false)
   const { state } = useSession()
   const user = state.status === 'authenticated' ? state.session.user : null
   const displayName = user?.name || 'Usuário'
-  const [acc, setAcc] = useState<AccountsCardState>({ status: 'loading' })
+  const [acc, setAcc] = useState<ListCardState>({ status: 'loading' })
   const [accRetry, setAccRetry] = useState(0)
+  const [rel, setRel] = useState<ListCardState>({ status: 'loading' })
+  const [relRetry, setRelRetry] = useState(0)
 
   useEffect(() => {
     let cancelled = false
@@ -28,15 +30,24 @@ export default function Overview() {
     return () => { cancelled = true }
   }, [accRetry])
 
-  const accountsCard = acc.status === 'ok'
-    ? { value: String(acc.total), content: acc.total === 0 ? 'Nenhum registro encontrado' : acc.names.join(' · ') }
-    : acc.status === 'loading'
+  useEffect(() => {
+    let cancelled = false
+    setRel({ status: 'loading' })
+    releases.list({ page: 1, pageSize: 5 })
+      .then(r => { if (!cancelled) setRel({ status: 'ok', total: r.total, names: r.items.map(x => x.name) }) })
+      .catch(() => { if (!cancelled) setRel({ status: 'error' }) })
+    return () => { cancelled = true }
+  }, [relRetry])
+
+  const cardOf = (s: ListCardState, what: string, retry: () => void) => s.status === 'ok'
+    ? { value: String(s.total), content: s.total === 0 ? 'Nenhum registro encontrado' : s.names.join(' · ') }
+    : s.status === 'loading'
       ? { value: '—', content: 'Carregando…' }
-      : { value: '—', content: <><span>Não foi possível carregar as contas.</span> <button type="button" onClick={() => setAccRetry(n => n + 1)}>Tentar novamente</button></> }
+      : { value: '—', content: <><span>{`Não foi possível carregar ${what}.`}</span> <button type="button" onClick={retry}>Tentar novamente</button></> }
 
   const quotas = [
-    { title: 'Contas', value: accountsCard.value, to: '/whats/accounts', content: accountsCard.content },
-    { title: 'Campanhas', value: '0/∞', to: '/whats/campaigns', content: 'Nenhum registro encontrado' },
+    { title: 'Contas', to: '/whats/accounts', ...cardOf(acc, 'as contas', () => setAccRetry(n => n + 1)) },
+    { title: 'Campanhas', to: '/whats/campaigns', ...cardOf(rel, 'as campanhas', () => setRelRetry(n => n + 1)) },
     { title: 'Webhooks', value: '0', to: '/whats/webhooks', content: 'Nenhum registro encontrado' },
   ]
   return (
