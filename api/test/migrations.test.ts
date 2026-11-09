@@ -68,7 +68,7 @@ function racingPool(): DbPool {
 }
 
 describe("runner de migrações (up/down/status)", () => {
-  it("up aplica as 6 migrações na ordem; status lista 6 aplicadas e 0 pendentes", async () => {
+  it("up aplica as 7 migrações na ordem; status lista 7 aplicadas e 0 pendentes", async () => {
     const pool = freshPool();
     const files = loadMigrationFiles();
     expect(files.map((f) => f.name)).toEqual([
@@ -78,6 +78,7 @@ describe("runner de migrações (up/down/status)", () => {
       "004_accounts",
       "005_releases",
       "006_groups",
+      "007_projects",
     ]);
 
     const up = await migrateUp(pool, files);
@@ -88,35 +89,36 @@ describe("runner de migrações (up/down/status)", () => {
       "004_accounts",
       "005_releases",
       "006_groups",
+      "007_projects",
     ]);
 
     const status = await migrateStatus(pool, files);
-    expect(status.applied).toHaveLength(6);
+    expect(status.applied).toHaveLength(7);
     expect(status.pending).toEqual([]);
     await pool.end();
   });
 
-  it("up em dia é no-op idempotente (0 aplicadas, 6 já registradas)", async () => {
+  it("up em dia é no-op idempotente (0 aplicadas, 7 já registradas)", async () => {
     const pool = freshPool();
     const files = loadMigrationFiles();
     await migrateUp(pool, files);
 
     const again = await migrateUp(pool, files);
     expect(again.applied).toEqual([]);
-    expect(again.alreadyApplied).toBe(6);
+    expect(again.alreadyApplied).toBe(7);
 
     const status = await migrateStatus(pool, files);
     expect(status.pending).toEqual([]);
     await pool.end();
   });
 
-  it("down 1 reverte a mais recente (006_groups); status mostra 5 aplicadas", async () => {
+  it("down 1 reverte a mais recente (007_projects); status mostra 6 aplicadas; T9: project_id volta como text NULL e VAZIA", async () => {
     const pool = freshPool();
     const files = loadMigrationFiles();
     await migrateUp(pool, files);
 
     const down = await migrateDown(pool, files, 1);
-    expect(down.rolledBack).toEqual(["006_groups"]);
+    expect(down.rolledBack).toEqual(["007_projects"]);
 
     const status = await migrateStatus(pool, files);
     expect(status.applied.map((a) => a.name)).toEqual([
@@ -125,21 +127,61 @@ describe("runner de migrações (up/down/status)", () => {
       "003_sessions",
       "004_accounts",
       "005_releases",
+      "006_groups",
     ]);
-    // Down reversível (Fatia 5 T9): groups ausente, demais intactas.
-    await expect(pool.query("SELECT count(*) FROM groups")).rejects.toThrow();
+    // Down reversível no schema (Fatia 6 T9): projects ausente, demais intactas.
+    await expect(pool.query("SELECT count(*) FROM projects")).rejects.toThrow();
     const releases = await pool.query("SELECT count(*)::int AS n FROM releases");
     expect(releases.rows[0]).toMatchObject({ n: 0 });
+
+    // T9 (contrato PRJ §6): releases.project_id volta a existir como text
+    // NULL E VAZIA (perda declarada D20 — coluna recriada sem valores).
+    const col = await pool.query(
+      `SELECT data_type FROM information_schema.columns
+        WHERE table_schema = current_schema() AND table_name = 'releases' AND column_name = 'project_id'`,
+    );
+    expect(col.rows).toHaveLength(1);
+    expect(String(col.rows[0].data_type)).toBe("text");
+
+    // Conferência positiva: INSERT de release com valor text no estado down
+    // é ACEITO (a coluna text voltou)...
+    const org = await pool.query("INSERT INTO organizations (name) VALUES ('down-007') RETURNING id");
+    const orgId = String(org.rows[0].id);
+    const relDown = await pool.query(
+      "INSERT INTO releases (org_id, name, type, project_id) VALUES ($1, 'r-down', 'WhatsRelease', 'proj-text-ok') RETURNING project_id",
+      [orgId],
+    );
+    expect(String(relDown.rows[0].project_id)).toBe("proj-text-ok");
+
+    // ...e após o RE-UP o valor text é RECUSADO (coluna text saiu de novo).
+    const reUp = await migrateUp(pool, files);
+    expect(reUp.applied).toEqual(["007_projects"]);
+    const colUuid = await pool.query(
+      `SELECT data_type FROM information_schema.columns
+        WHERE table_schema = current_schema() AND table_name = 'releases' AND column_name = 'project_uuid'`,
+    );
+    expect(String(colUuid.rows[0].data_type)).toBe("uuid");
+    await expect(
+      pool.query(
+        "INSERT INTO releases (org_id, name, type, project_id) VALUES ($1, 'r-down-2', 'WhatsList', 'x')",
+        [orgId],
+      ),
+    ).rejects.toThrow();
+
+    // Demais 6 intactas: groups segue consultável.
+    const groups = await pool.query("SELECT count(*)::int AS n FROM groups");
+    expect(groups.rows[0]).toMatchObject({ n: 0 });
     await pool.end();
   });
 
-  it("down all reverte tudo na ordem inversa (6 → 0); up de novo aplica 6", async () => {
+  it("down all reverte tudo na ordem inversa (7 → 0); up de novo aplica 7", async () => {
     const pool = freshPool();
     const files = loadMigrationFiles();
     await migrateUp(pool, files);
 
     const downAll = await migrateDown(pool, files, Number.POSITIVE_INFINITY);
     expect(downAll.rolledBack).toEqual([
+      "007_projects",
       "006_groups",
       "005_releases",
       "004_accounts",
@@ -153,7 +195,7 @@ describe("runner de migrações (up/down/status)", () => {
 
     // Re-aplicação: DDL re-entrante após rollback total.
     const up = await migrateUp(pool, files);
-    expect(up.applied).toHaveLength(6);
+    expect(up.applied).toHaveLength(7);
     await pool.end();
   });
 
@@ -202,7 +244,7 @@ describe("runner de migrações (up/down/status)", () => {
     const pool = racingPool();
     const files = loadMigrationFiles();
 
-    // Não lança: a 001 é tratada como "outra instância aplicou"; 002..006 aplicam.
+    // Não lança: a 001 é tratada como "outra instância aplicou"; 002..007 aplicam.
     const up = await migrateUp(pool, files);
     expect(up.raced).toEqual(["001_organizations"]);
     expect(up.applied).toEqual([
@@ -211,10 +253,11 @@ describe("runner de migrações (up/down/status)", () => {
       "004_accounts",
       "005_releases",
       "006_groups",
+      "007_projects",
     ]);
     expect(up.alreadyApplied).toBe(0); // estado lido ANTES da corrida: nada aplicado
 
-    // Relato de status pós-corrida: as 6 registradas, 0 pendentes.
+    // Relato de status pós-corrida: as 7 registradas, 0 pendentes.
     const status = await migrateStatus(pool, files);
     expect(status.applied.map((a) => a.name)).toEqual([
       "001_organizations",
@@ -223,6 +266,7 @@ describe("runner de migrações (up/down/status)", () => {
       "004_accounts",
       "005_releases",
       "006_groups",
+      "007_projects",
     ]);
     expect(status.pending).toEqual([]);
     await pool.end();

@@ -10,6 +10,7 @@ export type ErrorCode =
   | "AUTH_EMAIL_TAKEN"
   | "TENANT_FORBIDDEN"
   | "NOT_FOUND"
+  | "PROJECT_NOT_EMPTY"
   | "INTERNAL_ERROR";
 
 export interface ErrorEnvelope {
@@ -68,6 +69,14 @@ export function emailTaken(): AppError {
 export function tenantForbidden(): AppError {
   // Corpo genérico e idêntico ao de recurso inexistente — não vaza existência (ENG-02).
   return new AppError("TENANT_FORBIDDEN", 404, "Recurso não encontrado.");
+}
+
+// Fatia 6 (PRJ, D19/D21): 409 de estado, NÃO de validação — o recurso está
+// íntegro e recusa a exclusão. Mensagem genérica FIXA, sem details, sem
+// contagem: corpo byte a byte igual para qualquer projeto não-vazio (não
+// vaza cardinalidade; o releaseCount real só aparece no GET da própria org).
+export function projectNotEmpty(): AppError {
+  return new AppError("PROJECT_NOT_EMPTY", 409, "O projeto contém campanhas vinculadas.");
 }
 
 function envelope(code: ErrorCode, message: string, details?: unknown): ErrorEnvelope {

@@ -112,14 +112,14 @@ describe("releases: CRUD, validações e tenant (contrato D13 T1–T3, T5–T7, 
 
       // Oráculo: linha gravada na org da SESSÃO, sem junção.
       const rows = await h.pool.query(
-        "SELECT org_id, name, type, project_id, archived FROM releases WHERE id = $1",
+        "SELECT org_id, name, type, project_uuid, archived FROM releases WHERE id = $1",
         [body.id],
       );
       expect(rows.rows[0]).toMatchObject({
         org_id: tenantA.org.id,
         name: `Release ${type}`,
         type,
-        project_id: null,
+        project_uuid: null,
         archived: false,
       });
     }
@@ -169,12 +169,23 @@ describe("releases: CRUD, validações e tenant (contrato D13 T1–T3, T5–T7, 
   });
 
   it("T1: PATCH name/type → 200 refletido (updated_at anda); projectId persiste e LIMPA com null", async () => {
+    // Ajuste declarado T10-ii: fixture text sintética ("proj-abc-123") virou
+    // uuid de projeto criado na fixture (a validação agora é UUID — Fatia 6).
+    const projectRes = await h.app.inject({
+      method: "POST",
+      url: "/api/v1/projects",
+      headers: { cookie: tenantA.cookieHeader },
+      payload: { name: "Projeto da Release" },
+    });
+    expect(projectRes.statusCode).toBe(201);
+    const projectId = (projectRes.json() as { id: string }).id;
+
     const created = (await (await postRelease(h, tenantA.cookieHeader, {
       name: "Antes",
       type: "WhatsRelease",
-      projectId: "proj-abc-123",
+      projectId,
     })).json()) as ReleaseResource;
-    expect(created.projectId).toBe("proj-abc-123"); // persiste (text, sem FK — D13)
+    expect(created.projectId).toBe(projectId); // persiste (uuid com FK — Fatia 6 PRJ)
 
     h.clock.advanceMs(5_000);
     const patch = await h.app.inject({
@@ -187,7 +198,7 @@ describe("releases: CRUD, validações e tenant (contrato D13 T1–T3, T5–T7, 
     const patched = patch.json() as ReleaseResource;
     expect(patched.name).toBe("Depois");
     expect(patched.type).toBe("WhatsViralCampaign");
-    expect(patched.projectId).toBe("proj-abc-123"); // não enviado → inalterado
+    expect(patched.projectId).toBe(projectId); // não enviado → inalterado
     expect(Date.parse(patched.updatedAt)).toBeGreaterThan(Date.parse(created.updatedAt));
     expect(patched.createdAt).toBe(created.createdAt); // criação não muda
 
@@ -201,8 +212,8 @@ describe("releases: CRUD, validações e tenant (contrato D13 T1–T3, T5–T7, 
     });
     expect(cleared.statusCode).toBe(200);
     expect((cleared.json() as ReleaseResource).projectId).toBeNull();
-    const raw = await h.pool.query("SELECT project_id FROM releases WHERE id = $1", [created.id]);
-    expect(raw.rows[0]).toMatchObject({ project_id: null });
+    const raw = await h.pool.query("SELECT project_uuid FROM releases WHERE id = $1", [created.id]);
+    expect(raw.rows[0]).toMatchObject({ project_uuid: null });
     await h.app.close();
   });
 
@@ -324,7 +335,7 @@ describe("releases: CRUD, validações e tenant (contrato D13 T1–T3, T5–T7, 
     await h.app.close();
   });
 
-  it("T2: name vazio/só espaços/121 → 400 fields ['name']; 120 passa; projectId 121 → 400; null aceito", async () => {
+  it("T2: name vazio/só espaços/121 → 400 fields ['name']; 120 passa; projectId não-UUID (legado text) → 400; null aceito", async () => {
     for (const name of ["", "   ", "a".repeat(121)]) {
       const res = await postRelease(h, tenantA.cookieHeader, { name, type: "WhatsRelease" });
       expect(res.statusCode, `name=${JSON.stringify(name.slice(0, 8))}…`).toBe(400);
@@ -338,7 +349,9 @@ describe("releases: CRUD, validações e tenant (contrato D13 T1–T3, T5–T7, 
     });
     expect(ok.statusCode).toBe(201);
 
-    for (const projectId of ["p".repeat(121), 42]) {
+    // Ajuste declarado T10-ii: a validação de projectId agora é UUID + existe
+    // + mesma org (Fatia 6 PRJ); o comprimento >120 cai no mesmo 400 genérico.
+    for (const projectId of ["p".repeat(121), "proj-abc-123", 42]) {
       const res = await postRelease(h, tenantA.cookieHeader, {
         name: "X",
         type: "WhatsRelease",
@@ -349,7 +362,7 @@ describe("releases: CRUD, validações e tenant (contrato D13 T1–T3, T5–T7, 
         ((res.json() as { error: { details?: { fields: string[] } } }).error.details?.fields),
       ).toEqual(["projectId"]);
     }
-    // projectId null no POST = nasce sem projeto (aceito, D13).
+    // projectId null no POST = nasce sem projeto (aceito, D13/Fatia 6).
     const nullOk = await postRelease(h, tenantA.cookieHeader, {
       name: "Sem Projeto",
       type: "WhatsList",
@@ -653,6 +666,16 @@ describe("releases: CRUD, validações e tenant (contrato D13 T1–T3, T5–T7, 
 
   // ------------------------------------------------------------------- T5
   it("T5 (análogo CTA-03): criar/editar/arquivar release NÃO gera grupo/link/ação/sessão/métrica", async () => {
+    // Ajuste declarado T10-ii: projectId da fixture agora é uuid real (Fatia 6).
+    const projectRes = await h.app.inject({
+      method: "POST",
+      url: "/api/v1/projects",
+      headers: { cookie: tenantA.cookieHeader },
+      payload: { name: "Projeto Isolado" },
+    });
+    expect(projectRes.statusCode).toBe(201);
+    const projectId = (projectRes.json() as { id: string }).id;
+
     const sessionsBefore = await h.pool.query("SELECT count(*)::int AS n FROM sessions");
     const accountsBefore = await h.pool.query("SELECT count(*)::int AS n FROM accounts");
     const tablesBefore = await h.pool.query(
@@ -668,7 +691,7 @@ describe("releases: CRUD, validações e tenant (contrato D13 T1–T3, T5–T7, 
       method: "PATCH",
       url: `/api/v1/releases/${release.id}`,
       headers: { cookie: tenantA.cookieHeader },
-      payload: { name: "Isolada 2", projectId: "proj-x" },
+      payload: { name: "Isolada 2", projectId },
     });
     expect(patched.statusCode).toBe(200);
     const archived = await h.app.inject({
@@ -686,8 +709,8 @@ describe("releases: CRUD, validações e tenant (contrato D13 T1–T3, T5–T7, 
     expect(accountsAfter.rows[0]).toEqual(accountsBefore.rows[0]);
 
     // (b) conjunto exato de tabelas: nada de links/ações/sessões nasceu.
-    // (Fatia 5, ajuste aditivo declarado: groups da 006 — o conjunto do T5
-    // acompanha o schema vigente, mesmo precedente F3 §9.10.ii.)
+    // (Fatia 5, ajuste aditivo declarado: groups da 006; Fatia 6 idem:
+    // projects da 007 — o conjunto do T5 acompanha o schema vigente.)
     const tablesAfter = await h.pool.query(
       "SELECT table_name FROM information_schema.tables WHERE table_schema = current_schema()",
     );
@@ -698,6 +721,7 @@ describe("releases: CRUD, validações e tenant (contrato D13 T1–T3, T5–T7, 
       "groups",
       "migrations",
       "organizations",
+      "projects",
       "release_accounts",
       "releases",
       "sessions",
@@ -705,13 +729,13 @@ describe("releases: CRUD, validações e tenant (contrato D13 T1–T3, T5–T7, 
     ]);
     expect(names(tablesAfter)).toEqual(names(tablesBefore));
 
-    // (c) leitura direta: colunas da linha = nome/tipo/project_id/archived + auditoria.
+    // (c) leitura direta: colunas da linha = nome/tipo/project_uuid/archived + auditoria.
     const raw = await h.pool.query(
-      "SELECT name, type, project_id, archived, created_at, updated_at FROM releases WHERE id = $1",
+      "SELECT name, type, project_uuid, archived, created_at, updated_at FROM releases WHERE id = $1",
       [release.id],
     );
-    expect(Object.keys(raw.rows[0]).sort()).toEqual(["archived", "created_at", "name", "project_id", "type", "updated_at"]);
-    expect(raw.rows[0]).toMatchObject({ name: "Isolada 2", type: "WhatsRelease", project_id: "proj-x", archived: true });
+    expect(Object.keys(raw.rows[0]).sort()).toEqual(["archived", "created_at", "name", "project_uuid", "type", "updated_at"]);
+    expect(raw.rows[0]).toMatchObject({ name: "Isolada 2", type: "WhatsRelease", project_uuid: projectId, archived: true });
 
     // (d) junção vazia (sem accountIds) + resposta sem campo de grupo/link/ação/métrica.
     const joins = await h.pool.query(
@@ -845,11 +869,21 @@ describe("releases: CRUD, validações e tenant (contrato D13 T1–T3, T5–T7, 
 
   // ------------------------------------------------------------ T10/T11
   it("T10 (D12): ações idempotentes — archive 2x → 200 mesmo valor; unarchive idem; nenhum outro campo muda", async () => {
+    // Ajuste declarado T10-ii: "proj-fixo" virou uuid de projeto da fixture.
+    const projectRes = await h.app.inject({
+      method: "POST",
+      url: "/api/v1/projects",
+      headers: { cookie: tenantA.cookieHeader },
+      payload: { name: "Projeto Fixo" },
+    });
+    expect(projectRes.statusCode).toBe(201);
+    const projectId = (projectRes.json() as { id: string }).id;
+
     const account = await createAccount(h, tenantA.cookieHeader, "Conta Estável");
     const release = (await (await postRelease(h, tenantA.cookieHeader, {
       name: "Estável",
       type: "WhatsViralCampaign",
-      projectId: "proj-fixo",
+      projectId,
       accountIds: [account],
     })).json()) as ReleaseResource;
 
@@ -1013,11 +1047,21 @@ describe("releases: persistência (T4 — app re-instanciado sobre o MESMO banco
     expect(accountRes.statusCode).toBe(201);
     const accountId = (accountRes.json() as { id: string }).id;
 
+    // Ajuste declarado T10-ii: "proj-persist" virou uuid de projeto da fixture.
+    const projectRes = await app1.inject({
+      method: "POST",
+      url: "/api/v1/projects",
+      headers: { cookie: tenant.cookieHeader },
+      payload: { name: "Projeto Persistente" },
+    });
+    expect(projectRes.statusCode).toBe(201);
+    const projectId = (projectRes.json() as { id: string }).id;
+
     const created = await app1.inject({
       method: "POST",
       url: "/api/v1/releases",
       headers: { cookie: tenant.cookieHeader },
-      payload: { name: "Persistente", type: "WhatsList", projectId: "proj-persist", accountIds: [accountId] },
+      payload: { name: "Persistente", type: "WhatsList", projectId, accountIds: [accountId] },
     });
     expect(created.statusCode).toBe(201);
     const release = created.json() as ReleaseResource;
@@ -1053,14 +1097,14 @@ describe("releases: persistência (T4 — app re-instanciado sobre o MESMO banco
 
     // Oráculo independente (query SQL direta, não a resposta da API).
     const rows = await pool.query(
-      "SELECT org_id, name, type, project_id, archived FROM releases WHERE id = $1",
+      "SELECT org_id, name, type, project_uuid, archived FROM releases WHERE id = $1",
       [release.id],
     );
     expect(rows.rows[0]).toMatchObject({
       org_id: tenant.org.id,
       name: "Persistente",
       type: "WhatsList",
-      project_id: "proj-persist",
+      project_uuid: projectId,
       archived: true,
     });
     const joins = await pool.query(
