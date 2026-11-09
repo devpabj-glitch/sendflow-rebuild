@@ -2,6 +2,14 @@
 
 Produto: Grupos. Referência visual: sessão logada em `sendflow.pro/whats`, só leitura.
 
+## Clone pg779096.click — /casino (08/11/2026, main, sem commit)
+
+- Pacote `casino/` (React 18 + Vite 6 + TS strict, porta dev 5174) clona o lobby da referência: header (logo/Login/Registro), marketing (Promoção/Recompensas/Juros/Rebate/VIP), banner com autoplay, jackpot com tick, marquee, ganhadores, abas Popular/Slots/Recente/Favoritos com seções empilhadas + Carregar mais (15 em 15 de 137), rodapé completo (3 colunas, redes, canal, texto, 8 logos) e nav inferior (Começar/Agente/Promoção/Registro/Perfil). Dialog Login/Registro e páginas member center (VIP/Recompensas/Juros/Rebate) no estado deslogado.
+- Verificado por diff geométrico (21/22 PASS por breakpoint) + smoke 9/9 + zero overflow horizontal. `npm run dev`/`build`/`preview` funcionais; dist pronto para CDN.
+- Arquitetura para integração: `types/lobby.ts` + `services/` + `config.ts` (VITE_API_BASE/VITE_ASSET_BASE); endpoints originais mapeados em `lobby.service.ts`; dados mock em `mock/lobby.mock.ts`.
+- Pendências de dono: (1) API real de lobby/auth; (2) substituir assets hotlinkados por CDN próprio; (3) comportamento real das abas Recente/Favoritos (no original deslogado são painéis vazios); (4) rotas Agente/Perfil exigem sessão (hoje voltam à home, fiel ao deslogado).
+- Importante: app/ (Grupos) e api/ INTACTOS — nada do fluxo das fatias foi tocado.
+
 ## Fatia 2 (Contas) — API em /api (A1, branch a1/contas)
 
 - Contrato: `docs/contracts/FATIA-02-CONTAS-CONTRATO.md` (§0.1 = decisões D5/D6/D7 do coordenador). Parecer A4: FAVORÁVEL COM RESSALVAS (R1–R3 resolvidas por D5/D6/D7). Merge: NÃO commitado — aguardando orquestrador.

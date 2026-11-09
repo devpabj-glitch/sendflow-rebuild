@@ -54,7 +54,7 @@ Gerado em 08/11/2026 ~00:55 Brasília por extração mecânica, **sem reescrever
 
 ## ASC — Contas associadas da campanha (PM L226)
 
-**Rota/tela atual candidata:** `/whats/accounts-campaigns` — T; PR #6 aba Contas associadas (demo). **Estado no sendflow-rebuild:** NÃO VERIFICADO / sem backend.
+**Rota/tela atual candidata:** `/whats/accounts-campaigns` — T; PR #6 aba Contas associadas (demo). **Estado no sendflow-rebuild:** PARCIAL (08/11/2026, fatia ASC 7e0a755+06f8bf7, verificado A3): ASC-01 IMPLEMENTADO (associação por lista com checkbox via PATCH accountIds replace; contador N/M por campanha e por conta sempre do servidor; concorrência último-PATCH-vence declarada sem lock); ASC-02 PULADO (DEC-04); ASC-03 PULADO com pré-requisito ACM registrado (validação servidor da recusa de operação por conta não associada fica para a fatia de ações); ASC-04 PULADO (DEC-14; só critério determinístico 'não-arquivada sem contas' exibido como provisório). Associação a release arquivada permitida (comportamento contratado). E2E HTTP provado; navegação visual não provada.
 
 | ID | Classe | Requisito (PM, literal) | Fonte (PM) | Aceitação PROPOSTA (PM) | Limite (PM) | Estado no backend LEGADO (matriz R88, coluna de escopo) |
 |---|---|---|---|---|---|---|
@@ -444,3 +444,4 @@ Total: 182 IDs.
 - **08/11/2026** — Fatia 1 (Fundação) mergeada no main (e14c4b7, d3bd71a, bf3c051): backend base + auth de servidor + privacidade (e02196b remove capturas da referência do repo público). Nenhum ID GRP-* alterou de estado. Deploy/push bloqueados (credencial Railway / permissão) — produção segue no front estático 81d75b9.
 - **08/11/2026** — Fatia 2 (Contas/CTA) mergeada no main (e6a3e55, cb6cb62, 743f06e): CTA-01/03 implementados, CTA-02 parcial honesto, CTA-04/05/06 pulados (DEC-14/BLOQ-EXT). Verificacao A3 APROVADA (smoke real). Nenhum outro modulo afetado.
 - **08/11/2026** — Fatia 3 (Campanhas/CMP) mergeada (1628e9d, 6f9e75b, 6ce220a): CMP-01/02 implementados (tipos oficiais por D13 do dono), CMP-05/08 parciais, CMP-03/04/06/07 pulados (FALA/DEC-14/futuro). Backend /api/v1/releases + release_accounts. Verificação A3 APROVADA.
+- **08/11/2026** — Fatia 4 (ASC) mergeada (7e0a755, 06f8bf7, d408657): ASC-01 implementado front-only sobre D13, ASC-02/03/04 pulados (DEC-04/ACM/DEC-14). Nenhum endpoint novo. Verificação A3 APROVADA.

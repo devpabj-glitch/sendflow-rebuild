@@ -1,5 +1,18 @@
 # Verify
 
+## Clone pg779096.click — /casino (Orquestrador, 08/11/2026)
+
+Gates e verificações EVIDENCIADAS (capturas e scripts em `AppData/Local/Temp/opencode/pg-clone`):
+
+- `npm run typecheck` (tsc --noEmit, strict) → **0 erros**.
+- `npm run build` → dist/ íntegro (~207 kB JS / ~22 kB CSS, gzip 64 kB / 5 kB).
+- **Diff geométrico** original × clone em 22 âncoras (posições x/y e tamanhos w/h computados por Playwright; tolerância pos ±10px, tam ±8px): desktop 1440px **21 PASS / 1 WARN / 0 FAIL**; mobile 390px **21 PASS / 1 WARN / 0 FAIL**. WARNs: `company` y +10.1px (desktop) e `footer-box` h +12px (mobile, logos de parceiros carregam no clone enquanto no original estavam colapsados por lazy-load). Âncoras com Δ=0 incluem header, logo, botões Login/Registro, marketing, banner, jackpot, marquee, título de ganhadores, abas, grid e cards (posições idênticas ao pixel).
+- **Smoke de interações 9/9**: banner dot 2 ativa; aba Recente ativa; Carregar mais 15→30; dialog Login abre com placeholder correto; troca para aba Registro; marketing VIP navega para /home/vip com 5 sub-abas; btmnav Registro abre dialog na aba Registro.
+- **Sem scroll horizontal**: `scrollWidth − clientWidth = 0px` em 1440px e 390px.
+- Fidelidade dos dados: mock gerado mecanicamente do JSON das APIs públicas da referência (4 banners com stay_time, 137 jogos Popular, 8 plataformas Slots, 6 redes sociais, 8 logos de parceiro, jackpot com 80 valores reais de tick).
+
+Ressalvas: (1) assets continuam hotlinkados ao domínio de referência — trocar por CDN próprio via `VITE_ASSET_BASE` antes de produção; (2) páginas member center reproduzem o estado DESLOGADO do original (Agente/Perfil redirecionam à home, como no site real); (3) sem backend real — login/registro são estados visuais, sem coleta de credenciais.
+
 ## Fatia 3 (Releases, D13) — PACOTE PÓS-AUDITORIA (achados baixos do code-review) — /api (A1, 08/11/2026, branch a1/campanhas)
 
 Gates RE-RODADOS dentro de `/api` APÓS o último diff do pacote (achados 1/3/4 em código + achado 2 documental — nada além):
