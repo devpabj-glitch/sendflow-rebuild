@@ -14,6 +14,22 @@ export interface Account {
   campaignIds: string[]
 }
 
+// FATIA-02: conta vinda da API (recurso flat do contrato A1 §3.1 — sem telefone,
+// sem ID externo). O `Account` local acima segue para as telas ainda não
+// migradas (Layout, Campaigns, AccountsCampaigns) e para o store.
+// Único valor honesto até existir integração de provedor (DIR-04).
+export type AccountConnectionStatus = 'nao_conectada'
+
+export interface AccountApi {
+  id: string
+  name: string
+  type: string
+  isSpy: boolean
+  connectionStatus: AccountConnectionStatus
+  createdAt: string
+  updatedAt: string
+}
+
 export interface CampaignMetrics {
   clicks: number
   entries: number

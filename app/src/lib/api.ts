@@ -3,6 +3,8 @@
 // Sessão por cookie httpOnly do servidor: credentials 'include' sempre; o front nunca
 // lê, grava ou persiste token (ENG-09).
 
+import type { AccountApi } from '../types'
+
 export type ApiErrorShape = { error: { code: string; message: string; details?: unknown } }
 
 export class ApiError extends Error {
@@ -99,9 +101,40 @@ export function authLogin(input: { email: string; password: string }): Promise<A
 }
 
 export async function authLogout(): Promise<void> {
-  await apiFetch<void>('/api/v1/auth/logout', { method: 'POST' })
+  await apiFetch<void>('/api/v1/auth/logout', { method: 'POST', body: '{}' })
 }
 
 export function authMe(): Promise<AuthSession> {
   return apiFetch<AuthSession>('/api/v1/auth/me')
+}
+
+// Endpoints de contas (FATIA-02, contrato A1 §3.2) — exigem sessão válida.
+// Recurso único é devolvido flat (sem envelope); a lista traz paginação do servidor.
+// D5/D6 (coordenador): SEM delete no front (endpoint existe no backend mas fica
+// fora do escopo desta fatia); mutações POST/PATCH vão com body JSON — apiFetch
+// já envia Content-Type application/json sempre que há corpo.
+
+export type AccountListQuery = { search?: string; page?: number; pageSize?: number }
+export type AccountListResult = { items: AccountApi[]; total: number; page: number; pageSize: number }
+export type AccountCreateInput = { name: string; type?: string; isSpy?: boolean }
+export type AccountUpdateInput = { name?: string; type?: string; isSpy?: boolean }
+
+export const accounts = {
+  list(query: AccountListQuery = {}): Promise<AccountListResult> {
+    const params = new URLSearchParams()
+    if (query.search != null && query.search.trim() !== '') params.set('search', query.search.trim())
+    if (query.page != null) params.set('page', String(query.page))
+    if (query.pageSize != null) params.set('pageSize', String(query.pageSize))
+    const qs = params.toString()
+    return apiFetch<AccountListResult>(`/api/v1/accounts${qs ? `?${qs}` : ''}`)
+  },
+  create(input: AccountCreateInput): Promise<AccountApi> {
+    return apiFetch<AccountApi>('/api/v1/accounts', { method: 'POST', body: JSON.stringify(input) })
+  },
+  get(id: string): Promise<AccountApi> {
+    return apiFetch<AccountApi>(`/api/v1/accounts/${encodeURIComponent(id)}`)
+  },
+  update(id: string, input: AccountUpdateInput): Promise<AccountApi> {
+    return apiFetch<AccountApi>(`/api/v1/accounts/${encodeURIComponent(id)}`, { method: 'PATCH', body: JSON.stringify(input) })
+  },
 }
