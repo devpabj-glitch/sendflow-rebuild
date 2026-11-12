@@ -14,11 +14,12 @@ export interface Account {
   campaignIds: string[]
 }
 
-// FATIA-02: conta vinda da API (recurso flat do contrato A1 §3.1 — sem telefone,
-// sem ID externo). O `Account` local acima segue para as telas ainda não
-// migradas (Layout, Campaigns, AccountsCampaigns) e para o store.
-// Único valor honesto até existir integração de provedor (DIR-04).
-export type AccountConnectionStatus = 'nao_conectada'
+// FATIA-02 → FATIA-07: conta vinda da API (recurso flat do contrato A1 §3.1).
+// O `Account` local acima segue para as telas ainda não migradas (Layout,
+// Campaigns, AccountsCampaigns) e para o store.
+// FATIA-07: os 5 estados REAIS do provedor (contrato A1 §3.2) — o status só muda
+// por evidência de resposta/webhook da Evolution, nunca por decisão do front (DIR-04).
+export type AccountConnectionStatus = 'nao_conectada' | 'aguardando_qr' | 'conectada' | 'desconectada' | 'banida'
 
 export interface AccountApi {
   id: string
@@ -26,6 +27,9 @@ export interface AccountApi {
   type: string
   isSpy: boolean
   connectionStatus: AccountConnectionStatus
+  // Último número conectado conhecido (contrato §0.1.2): informação histórica
+  // que persiste após desconexão/banimento — não indica "online agora".
+  phone: string | null
   createdAt: string
   updatedAt: string
 }

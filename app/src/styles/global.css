@@ -254,9 +254,22 @@ label.lbl input, label.lbl select, label.lbl textarea { border: 1px solid var(--
 .acc-list li { display: grid; grid-template-columns: 1.4fr .7fr .7fr auto; gap: 12px; align-items: center; border: 1px solid rgba(255,255,255,.12); border-radius: 8px; padding: 12px 14px; background: #1a1a1a; }
 .acc-list strong { display: block; }
 .acc-list span { color: rgba(255,255,255,.62); }
-.acc-list em { font-style: normal; color: #ffde07; }
+.acc-list em { font-style: normal; }
+/* FATIA-07 (contrato §12.2): cor por estado real — cinza/âmbar/verde/vermelho suave/vermelho */
+.acc-list em.s-nao_conectada { color: rgba(255,255,255,.55); }
+.acc-list em.s-aguardando_qr { color: #ffde07; }
+.acc-list em.s-conectada { color: #4ade80; }
+.acc-list em.s-desconectada { color: #f87171; }
+.acc-list em.s-banida { color: #ef4444; font-weight: 700; }
 .acc-list button { border: 1px solid rgba(255,255,255,.2); background: transparent; color: #fff; border-radius: 8px; height: 32px; padding: 0 10px; }
+.acc-row-actions { display: flex; gap: 8px; justify-content: flex-end; flex-wrap: wrap; }
 .acc-note { padding: 8px 16px 0; color: rgba(255,255,255,.75); line-height: 1.45; }
+.acc-note-ok { color: #4ade80; }
+.acc-note-warn { color: #f87171; }
+/* Modal de conexão por QR (FATIA-07): QR grande sobre fundo branco p/ leitura */
+.acc-qr { display: grid; place-items: center; }
+.acc-qr img { width: min(320px, 100%); height: auto; background: #fff; border-radius: 12px; padding: 12px; }
+.acc-qr-hint { color: rgba(255,255,255,.72); font-size: .92rem; line-height: 1.5; text-align: center; margin: 0; }
 .cmp-note { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 14px; color: rgba(255,255,255,.72); font-size: 13px; }
 .cmp-periods { display: flex; gap: 6px; flex: 0 0 auto; }
 .cmp-periods button { border: 1px solid transparent; background: transparent; color: rgba(255,255,255,.8); border-radius: 8px; height: 30px; padding: 0 10px; font: inherit; }

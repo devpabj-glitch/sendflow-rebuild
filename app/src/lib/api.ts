@@ -3,7 +3,7 @@
 // Sessão por cookie httpOnly do servidor: credentials 'include' sempre; o front nunca
 // lê, grava ou persiste token (ENG-09).
 
-import type { AccountApi, GroupApi, ReleaseApi, ReleaseType } from '../types'
+import type { AccountApi, AccountConnectionStatus, GroupApi, ReleaseApi, ReleaseType } from '../types'
 
 export type ApiErrorShape = { error: { code: string; message: string; details?: unknown } }
 
@@ -108,16 +108,21 @@ export function authMe(): Promise<AuthSession> {
   return apiFetch<AuthSession>('/api/v1/auth/me')
 }
 
-// Endpoints de contas (FATIA-02, contrato A1 §3.2) — exigem sessão válida.
-// Recurso único é devolvido flat (sem envelope); a lista traz paginação do servidor.
-// D5/D6 (coordenador): SEM delete no front (endpoint existe no backend mas fica
-// fora do escopo desta fatia); mutações POST/PATCH vão com body JSON — apiFetch
-// já envia Content-Type application/json sempre que há corpo.
+// Endpoints de contas (FATIA-02, contrato A1 §3.2; FATIA-07 §4.1/§12.1 para o
+// fluxo de conexão) — exigem sessão válida. Recurso único é devolvido flat
+// (sem envelope); a lista traz paginação do servidor. D5/D6 (coordenador):
+// SEM delete no front; mutações POST/PATCH vão com body JSON — apiFetch já
+// envia Content-Type application/json sempre que há corpo (o guard da API
+// exige o header mesmo em rotas sem body — mesmo padrão do authLogout).
 
 export type AccountListQuery = { search?: string; page?: number; pageSize?: number }
 export type AccountListResult = { items: AccountApi[]; total: number; page: number; pageSize: number }
 export type AccountCreateInput = { name: string; type?: string; isSpy?: boolean }
 export type AccountUpdateInput = { name?: string; type?: string; isSpy?: boolean }
+// Shapes literais do contrato FATIA-07 §12.1. `qrDataUrl` é data URL pronta para
+// <img> OU null (QR ainda não gerado no provedor — §0.1.7).
+export type AccountConnectResult = { account: AccountApi; qrDataUrl: string | null }
+export type AccountQrResult = { qrDataUrl: string | null; connectionStatus: AccountConnectionStatus }
 
 export const accounts = {
   list(query: AccountListQuery = {}): Promise<AccountListResult> {
@@ -136,6 +141,18 @@ export const accounts = {
   },
   update(id: string, input: AccountUpdateInput): Promise<AccountApi> {
     return apiFetch<AccountApi>(`/api/v1/accounts/${encodeURIComponent(id)}`, { method: 'PATCH', body: JSON.stringify(input) })
+  },
+  // FATIA-07: inicia/retoma a conexão por QR. 409 ACCOUNT_CONNECTED se já conectada.
+  connect(id: string): Promise<AccountConnectResult> {
+    return apiFetch<AccountConnectResult>(`/api/v1/accounts/${encodeURIComponent(id)}/connect`, { method: 'POST', body: '{}' })
+  },
+  // QR vigente + estado real; 409 ACCOUNT_CONNECTED se já conectada (§12.1).
+  qr(id: string): Promise<AccountQrResult> {
+    return apiFetch<AccountQrResult>(`/api/v1/accounts/${encodeURIComponent(id)}/qr`)
+  },
+  // Logout no provedor; devolve a conta com o estado real do servidor (§12.1).
+  disconnect(id: string): Promise<AccountApi> {
+    return apiFetch<AccountApi>(`/api/v1/accounts/${encodeURIComponent(id)}/disconnect`, { method: 'POST', body: '{}' })
   },
 }
 
