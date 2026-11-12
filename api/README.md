@@ -1,8 +1,8 @@
-# grupos-api — Fatia 1 (Fundação) + Fatia 2 (Contas) + Fatia 3 (Releases) + Fatia 5 (Grupos) + Fatia 6 (Projetos)
+# grupos-api — Fatia 1 (Fundação) + Fatia 2 (Contas) + Fatia 3 (Releases) + Fatia 5 (Grupos) + Fatia 6 (Projetos) + Fatia 7 (Contas QR)
 
-API de autenticação de servidor, organização/tenant, PostgreSQL com migrações versionadas, API base, CRUD de contas, CRUD de releases, CRUD de grupos e CRUD de projetos do produto **Grupos**.
+API de autenticação de servidor, organização/tenant, PostgreSQL com migrações versionadas, API base, CRUD de contas, CRUD de releases, CRUD de grupos, CRUD de projetos e conexão de contas WhatsApp por QR via **Evolution API 2.3.7** (com webhook de estado) do produto **Grupos**.
 
-**Contratos técnicos:** `docs/contracts/FATIA-01-FUNDACAO-CONTRATO.md` (decisões na §0) · `docs/contracts/FATIA-02-CONTAS-CONTRATO.md` (decisões D5/D6/D7 na §0.1) · `docs/contracts/FATIA-03-CAMPANHAS-CONTRATO.md` (**emendado pela Decisão D13 do dono na §0.2** — releases, tipos oficiais sendapi, `archived`, `accountIds`, `projectId`) · `docs/contracts/FATIA-05-GRUPOS-CONTRATO.md` (grupos; **D15–D18 aplicadas na §0.1**; amarra DEC-06 legado: cheio = manual OU teto) · `docs/contracts/FATIA-06-PROJETOS-CONTRATO.md` (projetos; **F6-R19/F6-R20/F6-R21 RATIFICADAS na §0.1** — rótulos locais renomeados de D19–D21 em 12/11 para evitar colisão com a decisão do dono D19/Evolution, sem mudança semântica; `projectId` de releases agora uuid validado mesma-org) · **Pareceres A4:** `docs/contracts/FATIA-0{1,2,3,5,6}-*-PARECER.md`.
+**Contratos técnicos:** `docs/contracts/FATIA-01-FUNDACAO-CONTRATO.md` (decisões na §0) · `docs/contracts/FATIA-02-CONTAS-CONTRATO.md` (decisões D5/D6/D7 na §0.1) · `docs/contracts/FATIA-03-CAMPANHAS-CONTRATO.md` (**emendado pela Decisão D13 do dono na §0.2** — releases, tipos oficiais sendapi, `archived`, `accountIds`, `projectId`) · `docs/contracts/FATIA-05-GRUPOS-CONTRATO.md` (grupos; **D15–D18 aplicadas na §0.1**; amarra DEC-06 legado: cheio = manual OU teto) · `docs/contracts/FATIA-06-PROJETOS-CONTRATO.md` (projetos; **F6-R19/F6-R20/F6-R21 RATIFICADAS na §0.1** — rótulos locais renomeados de D19–D21 em 12/11 para evitar colisão com a decisão do dono D19/Evolution, sem mudança semântica; `projectId` de releases agora uuid validado mesma-org) · `docs/contracts/FATIA-07-CONTAS-QR-CONTRATO.md` (contas QR; **emendado pelo parecer A4 (R1/R2/R3/R5) e pelos 6 fatos validados contra a Evolution 2.3.7 real em produção, 12/11**) · **Pareceres A4:** `docs/contracts/FATIA-0{1,2,3,5,6,7}-*-PARECER.md`.
 
 ## Pré-requisitos
 
@@ -20,7 +20,7 @@ npm install          # cria package-lock.json
 ## Testes (offline — sem DATABASE_URL, sem Docker)
 
 ```bash
-npm test             # vitest run — health, auth, ratelimit, migrations, tenant, accounts, releases, groups, projects
+npm test             # vitest run — health, auth, ratelimit, migrations, tenant, accounts, accountsConnection, evolutionWebhook, evolutionAdapter, releases, groups, projects
 npm run typecheck    # tsc --noEmit
 npm run build        # tsc + cópia dos .sql para dist/
 ```
@@ -37,7 +37,7 @@ DATABASE_URL=postgres://... npm run migrate:down    # reverte a última (passe "
 
 - Runner transacional com insert-first na tabela `migrations` (exclusão mútua entre instâncias).
 - **Nunca edite migração já aplicada** — o checksum (sha256, LF-normalizado) diverge e o runner **falha alto** nomeando o arquivo. Correção = nova migração `NNN_nome.{up,down}.sql`.
-- `down` da 001–007 dropa as tabelas (fundação + contas + releases/junção + grupos + projetos; o down da 007 **recria `releases.project_id text NULL` VAZIA** — perda declarada F6-R20) — só em ambiente descartável/de teste.
+- `down` da 001–008 dropa as tabelas (fundação + contas + releases/junção + grupos + projetos + vínculo Evolution/auditoria; o down da 007 **recria `releases.project_id text NULL` VAZIA** — perda declarada F6-R20; o down da 008 **normaliza os status para `nao_conectada` antes de estreitar o CHECK** e perde auditoria/phone/vínculo de instância — reversível no schema, não nos dados) — só em ambiente descartável/de teste.
 - No boot do servidor (`npm start` / Railway) as migrações pendentes são aplicadas automaticamente (idempotente).
 
 ## Desenvolvimento
@@ -90,6 +90,10 @@ Critério de saúde do Railway: HTTP 200. `revision` = env `REVISION` (fallback 
 | `AUTH_LOGIN_IP_RATE_MAX` / `AUTH_LOGIN_IP_RATE_WINDOW_MS` | Agregado por IP para **falhas** de login — anti-stuffing (correção pós-auditoria A3; defaults `30` / `300000`; bloqueio = `AUTH_RATE_BLOCK_MS`). |
 | `REVISION` | Revisão no healthcheck (default `dev`; fallback `RAILWAY_GIT_COMMIT_SHA`). |
 | `LOG_LEVEL` | Verbosidade (default `info`). Logs sem corpo/PII (e-mail nunca em claro). |
+| `EVOLUTION_BASE_URL` | (Fatia 7) Base da Evolution API 2.3.7 (default `http://evolution.railway.internal:8080`; em dev local aponte para a URL pública do serviço). |
+| `EVOLUTION_API_KEY` | (Fatia 7) Apikey **global** da Evolution (header `apikey`). **Vazia = provider desabilitado** → endpoints de conexão `503 EVOLUTION_NOT_CONFIGURED` (status intacto). |
+| `EVOLUTION_WEBHOOK_URL` | (Fatia 7) URL **pública completa** do webhook (`https://<api>/api/v1/webhooks/evolution`) — configurada por instância no próprio `create`. |
+| `EVOLUTION_WEBHOOK_SECRET` | (Fatia 7) Segredo do header `x-grupos-evo-secret` (≥32 chars; autentica o webhook e viaja no create da instância). |
 
 Nenhum valor real é comitado: `.env` fica fora do VCS (`.gitignore` cobre `.env`/`.env.*` e preserva `.env.example`).
 
@@ -99,8 +103,8 @@ As migrações são idênticas às usadas nos testes (mesmos arquivos `src/db/mi
 
 ```bash
 export DATABASE_URL="postgres://..."   # local ou Railway (rede privada)
-npm run migrate:up                     # cria migrations/organizations/users/sessions/accounts/releases(+release_accounts)/groups/projects
-npm run migrate:status                 # 7 aplicadas, 0 pendentes
+npm run migrate:up                     # cria migrations/organizations/users/sessions/accounts/releases(+release_accounts)/groups/projects/integration_events
+npm run migrate:status                 # 8 aplicadas, 0 pendentes
 npm run dev                            # ou npm run build && npm start
 curl -s localhost:8787/api/v1/health   # {"status":"ok",...,"db":"up"}
 ```
@@ -118,6 +122,10 @@ curl -s localhost:8787/api/v1/health   # {"status":"ok",...,"db":"up"}
 | `GET /api/v1/accounts?search=&page=&pageSize=` | (Fatia 2) Lista paginada da org da sessão → `200 {items, total, page, pageSize}`. |
 | `GET /api/v1/accounts/:id` | (Fatia 2) Exige sessão → `200` + recurso; alheio/inexistente → `404 TENANT_FORBIDDEN` genérico. |
 | `PATCH /api/v1/accounts/:id` | (Fatia 2) `{name?, type?, isSpy?}` (≥1 campo) → `200` + recurso atualizado. |
+| `POST /api/v1/accounts/:id/connect` | (Fatia 7) Cria a instância Evolution (se não existir; webhook por instância no próprio create) e devolve o QR → `200 {account, qrDataUrl}`. Já conectada → `409 ACCOUNT_CONNECTED`; colisão de nome → `409 EVOLUTION_INSTANCE_TAKEN`; provedor caído → `502 EVOLUTION_UNAVAILABLE` (status intacto); apikey vazia → `503 EVOLUTION_NOT_CONFIGURED`. |
+| `GET /api/v1/accounts/:id/qr` | (Fatia 7) QR **vigente** do provedor → `200 {qrDataUrl, connectionStatus}` (QR não persiste). Conectada → `409 ACCOUNT_CONNECTED`; sem instância → `409 EVOLUTION_NOT_CONNECTED` (sem chamar o provedor — R2). |
+| `POST /api/v1/accounts/:id/disconnect` | (Fatia 7) Logout na Evolution (instância NÃO é excluída) → `200 {account}` (`desconectada`; `phone` preserva). Não-conectada → `409 EVOLUTION_NOT_CONNECTED`. |
+| `POST /api/v1/webhooks/evolution` | (Fatia 7, **sem sessão**) Entrada de webhooks da Evolution; autentica `x-grupos-evo-secret` (tempo constante). Válido → `200 {}` (anti-storm); instância desconhecida → `204` (auditada); secret errado → `401 EVOLUTION_WEBHOOK_SECRET_INVÁLIDO`; body não-JSON/inválido → `400`. Payload auditado em `integration_events` **sempre redigido** (apikey removida; QR anulado). |
 | `POST /api/v1/releases` | (Fatia 3, D13; projectId validado na Fatia 6) `{name, type, projectId?, accountIds?}` → `201` + recurso flat. `type` ∈ `WhatsRelease`\|`WhatsList`\|`WhatsViralCampaign` (enum fechado, ordem direta do dono — a API original SendFlow). `projectId` = **uuid de projeto da MESMA org** (ou `null`). |
 | `GET /api/v1/releases?search=&archived=&page=&pageSize=` | (Fatia 3) Lista paginada da org da sessão → `200 {items, total, page, pageSize}`; cada item inclui `accountIds`. |
 | `GET /api/v1/releases/:id` | (Fatia 3) Exige sessão → `200` + recurso; alheio/inexistente → `404 TENANT_FORBIDDEN` genérico. |
@@ -143,9 +151,9 @@ Erros: envelope único `{error:{code,message,details?}}` — códigos e status n
 
 Cookie de sessão (D2): `grupos_session`; `HttpOnly; Secure; SameSite=None; Path=/`; sem `Domain`; token opaco — só sha256(token) é persistido.
 
-### Contas (Fatia 2) — exemplos curl sintéticos
+### Contas (Fatia 2 + Fatia 7) — exemplos curl sintéticos
 
-Recurso (flat, camelCase; sem qualquer telefone/ID externo/credencial — CTA-03):
+Recurso (flat, camelCase; sem qualquer ID externo/credencial — CTA-03; `phone` e `connectionStatus` são **leitura** — evidência do provedor, nunca aceitos em entrada):
 
 ```json
 {
@@ -154,6 +162,7 @@ Recurso (flat, camelCase; sem qualquer telefone/ID externo/credencial — CTA-03
   "type": "WhatsApp",
   "isSpy": false,
   "connectionStatus": "nao_conectada",
+  "phone": null,
   "createdAt": "2026-11-08T12:00:00.000Z",
   "updatedAt": "2026-11-08T12:00:00.000Z"
 }
@@ -180,7 +189,35 @@ curl -s -X PATCH http://localhost:8787/api/v1/accounts/00000000-0000-4000-8000-0
   -d '{"name":"Loja Matriz","type":"WhatsApp","isSpy":true}'
 ```
 
-Regras rápidas: `name` 1..120 e `type` 1..60 pós-trim (defaults provisórios — DEC-12 aberta); `search` ≤120; `page`/`pageSize` fora da faixa → `400` (sem clamp); `org_id`, `connectionStatus`, `phone` e qualquer campo desconhecido no body → `400 VALIDATION_ERROR`; `org_id` vem SEMPRE da sessão. **Não há `DELETE` de conta** (decisão D5 — proposta futura, requer decisão do dono). Ordenação fixa `created_at DESC, id DESC`.
+Regras rápidas: `name` 1..120 e `type` 1..60 pós-trim (defaults provisórios — DEC-12 aberta); `search` ≤120; `page`/`pageSize` fora da faixa → `400` (sem clamp); `org_id`, `connectionStatus`, `phone`, `evolutionInstanceName` e qualquer campo desconhecido no body → `400 VALIDATION_ERROR`; `org_id` vem SEMPRE da sessão. **Não há `DELETE` de conta** (decisão D5 — proposta futura, requer decisão do dono). Ordenação fixa `created_at DESC, id DESC`.
+
+### Contas — conexão por QR (Fatia 7) — exemplos curl sintéticos
+
+Fluxo: `POST /connect` cria (ou reutiliza) a instância Evolution `g-<8 hex do id>` com webhook configurado no próprio create e devolve o QR vigente; o front desenha `<img src={qrDataUrl}>`; quando o celular escaneia, a Evolution posta `CONNECTION_UPDATE` no webhook e o estado muda para `conectada` (com `phone`).
+
+```bash
+COOKIE="grupos_session=<token-opaco>"   # obtido no register/login
+
+# Conectar (cria instancia se nao existir; 200 com QR data URL pronta para <img>)
+curl -s -X POST http://localhost:8787/api/v1/accounts/00000000-0000-4000-8000-000000000000/connect \
+  -H "Content-Type: application/json" -H "Cookie: $COOKIE"
+# 200: {"account":{...,"connectionStatus":"aguardando_qr","phone":null},"qrDataUrl":"data:image/png;base64,..."}
+
+# QR vigente (polling do front; nao recria sessao; QR nunca persiste no banco)
+curl -s http://localhost:8787/api/v1/accounts/00000000-0000-4000-8000-000000000000/qr -H "Cookie: $COOKIE"
+# 200: {"qrDataUrl":"data:image/png;base64,...","connectionStatus":"aguardando_qr"}
+
+# Desconectar (logout na Evolution; a INSTANCIA nao e excluida; phone preserva)
+curl -s -X POST http://localhost:8787/api/v1/accounts/00000000-0000-4000-8000-000000000000/disconnect \
+  -H "Content-Type: application/json" -H "Cookie: $COOKIE"
+# 200: {"account":{...,"connectionStatus":"desconectada","phone":"5511999999999"}}
+```
+
+Webhook de entrada (servidor-a-servidor, **sem sessão**): a Evolution posta `CONNECTION_UPDATE`/`QRCODE_UPDATED` em `POST /api/v1/webhooks/evolution` com o header `x-grupos-evo-secret`; o tenant é resolvido pelo `instance` (UNIQUE global), o evento é auditado em `integration_events` **sempre redigido** (campo `apikey` removido em qualquer profundidade; `qrcode.{base64,code,pairingCode}` anulados) e o estado só muda por evidência (`open`→`conectada`+phone; `close`+401/403→`banida`; `close`→`desconectada`; QR→`aguardando_qr`).
+
+Estados de `connectionStatus`: `nao_conectada` · `aguardando_qr` · `conectada` · `desconectada` · `banida` — mutação **somente** por resposta do provedor/webhook (DIR-04); 409/502/503 nunca mudam o estado persistido.
+
+Regras rápidas (Fatia 7): `POST connect`/`disconnect` exigem `Content-Type: application/json` (guard D6, corpo vazio ok); connect em conta conectada → `409 ACCOUNT_CONNECTED`; GET /qr sem instância → `409 EVOLUTION_NOT_CONNECTED` (sem chamar o provedor — R2); colisão do nome de instância → `409 EVOLUTION_INSTANCE_TAKEN` (envelope, nunca 500 — R3); provedor caído/timeout → `502 EVOLUTION_UNAVAILABLE`; `EVOLUTION_API_KEY` vazia → `503 EVOLUTION_NOT_CONFIGURED`.
 
 ### Releases (Fatia 3, Decisão D13) — exemplos curl sintéticos
 

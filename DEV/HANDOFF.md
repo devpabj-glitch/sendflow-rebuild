@@ -2,6 +2,15 @@
 
 Produto: Grupos. Referência visual: sessão logada em `sendflow.pro/whats`, só leitura.
 
+## Fatia 7 (Contas QR + estado real) — API em /api (A1, branch a1/contas-qr)
+
+- Contrato: `docs/contracts/FATIA-07-CONTAS-QR-CONTRATO.md` (emendado pelo parecer A4 — R1/R2/R3/R5 — e pelos 6 fatos da Evolution 2.3.7 validados em produção 12/11). Commit local na branch; **sem push** (orquestrador cuida do merge/A3).
+- Endpoints novos: `POST /api/v1/accounts/:id/connect` (200 `{account, qrDataUrl}`), `GET /api/v1/accounts/:id/qr` (200 `{qrDataUrl, connectionStatus}`), `POST /api/v1/accounts/:id/disconnect` (200 `{account}`) — todos com sessão + CT json; e `POST /api/v1/webhooks/evolution` (**sem sessão**, header `x-grupos-evo-secret`).
+- Estados de `connectionStatus`: `nao_conectada`/`aguardando_qr`/`conectada`/`desconectada`/`banida` — mutação SÓ por evidência do provedor/webhook; 409/502/503 nunca mutam. `phone` é LEITURA (materializa na 1ª conexão real; preserva após desconexão). `evolutionInstanceName` nunca sai da API nem entra.
+- Para o A2 (tela Contas): fluxo = criar conta (estado honesto `nao_conectada`) → botão Conectar chama `POST /connect` → desenha `<img src={qrDataUrl}>` → poll `GET /qr` até `connectionStatus==='conectada'` (webhook muda o estado; `qrDataUrl` volta `null` quando não há QR) → botão Desconectar (`POST /disconnect`, phone permanece). Erros: 409 `ACCOUNT_CONNECTED`/`EVOLUTION_NOT_CONNECTED`/`EVOLUTION_INSTANCE_TAKEN`, 502 `EVOLUTION_UNAVAILABLE` (retry honesto), 503 `EVOLUTION_NOT_CONFIGURED` (apikey vazia).
+- Para o orquestrador (deploy): 4 envs novas em `api/.env.example` — `EVOLUTION_BASE_URL` (default rede interna Railway), `EVOLUTION_API_KEY` (a `AUTHENTICATION_API_KEY` do serviço evolution; vazia = provider off → 503), `EVOLUTION_WEBHOOK_URL` (URL PÚBLICA completa `https://<api>/api/v1/webhooks/evolution` — precisa estar acessível pela Evolution), `EVOLUTION_WEBHOOK_SECRET` (≥32 chars aleatórios). Migração `008_accounts_evolution` (migrate:status = 8). Smoke E2E contra a Evolution real fica para o deploy (QR só completa no celular do dono).
+- Gates (worktree, após último diff): typecheck 0 · **151/151** (12 arquivos; baseline 98) · build 16 .sql · audit 0. Detalhes em `DEV/VERIFY.md`.
+
 ## Sessão 12/11/2026 — Evolution API 2.3.7 (decisão do dono)
 
 - **Decisão D19 do dono (12/11/2026):** a integração WhatsApp (módulo INT) deixa de ser Embedded Signup v5 da Meta e passa a ser **conexão por QR code via Evolution API 2.3.7** (self-hosted, estável; **2.4.x é RC e exige licença — NÃO usar**). Evolution dedicada ao Grupos no projeto Railway "grupos", com Postgres, Redis e volume persistentes próprios; comunicação pela rede interna do Railway; chave da Evolution (`AUTHENTICATION_API_KEY`) só em variável de ambiente. Registrada em `docs/continuidade/05-MAPA-FUNCOES-182.md` (§INT + coluna "Estado no repo") e `docs/continuidade/07-STATUS-ATUAL.md` (totais, módulo 29, decisões vigentes, próximos passos).

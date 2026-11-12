@@ -68,7 +68,7 @@ function racingPool(): DbPool {
 }
 
 describe("runner de migrações (up/down/status)", () => {
-  it("up aplica as 7 migrações na ordem; status lista 7 aplicadas e 0 pendentes", async () => {
+  it("up aplica as 8 migrações na ordem; status lista 8 aplicadas e 0 pendentes", async () => {
     const pool = freshPool();
     const files = loadMigrationFiles();
     expect(files.map((f) => f.name)).toEqual([
@@ -79,6 +79,7 @@ describe("runner de migrações (up/down/status)", () => {
       "005_releases",
       "006_groups",
       "007_projects",
+      "008_accounts_evolution",
     ]);
 
     const up = await migrateUp(pool, files);
@@ -90,35 +91,117 @@ describe("runner de migrações (up/down/status)", () => {
       "005_releases",
       "006_groups",
       "007_projects",
+      "008_accounts_evolution",
     ]);
 
     const status = await migrateStatus(pool, files);
-    expect(status.applied).toHaveLength(7);
+    expect(status.applied).toHaveLength(8);
     expect(status.pending).toEqual([]);
     await pool.end();
   });
 
-  it("up em dia é no-op idempotente (0 aplicadas, 7 já registradas)", async () => {
+  it("up em dia é no-op idempotente (0 aplicadas, 8 já registradas)", async () => {
     const pool = freshPool();
     const files = loadMigrationFiles();
     await migrateUp(pool, files);
 
     const again = await migrateUp(pool, files);
     expect(again.applied).toEqual([]);
-    expect(again.alreadyApplied).toBe(7);
+    expect(again.alreadyApplied).toBe(8);
 
     const status = await migrateStatus(pool, files);
     expect(status.pending).toEqual([]);
     await pool.end();
   });
 
-  it("down 1 reverte a mais recente (007_projects); status mostra 6 aplicadas; T9: project_id volta como text NULL e VAZIA", async () => {
+  it("T11 (F7): down 1 reverte SÓ a 008 — colunas/tabela somem, status normaliza p/ nao_conectada, CHECK estreito volta, re-up OK com múltiplos NULLs e UNIQUE enforced", async () => {
     const pool = freshPool();
     const files = loadMigrationFiles();
     await migrateUp(pool, files);
 
+    // Fixture: 1 org; contas nos 5 estados do CHECK largo (F7-D3/D7), 2 com
+    // instance NULL (nunca conectadas) e 1 com instance real; 1 evento auditado.
+    const org = await pool.query("INSERT INTO organizations (name) VALUES ('t11') RETURNING id");
+    const orgId = String(org.rows[0].id);
+    const statuses = ["nao_conectada", "aguardando_qr", "conectada", "desconectada", "banida"];
+    let firstAccountId = "";
+    for (const status of statuses) {
+      const acc = await pool.query(
+        "INSERT INTO accounts (org_id, name, connection_status) VALUES ($1, $2, $3) RETURNING id",
+        [orgId, `acc-${status}`, status],
+      );
+      if (firstAccountId === "") firstAccountId = String(acc.rows[0].id);
+    }
+    await pool.query("UPDATE accounts SET evolution_instance_name = 'g-t11' WHERE id = $1", [
+      firstAccountId,
+    ]);
+    await pool.query(
+      "INSERT INTO integration_events (org_id, account_id, event_type, payload) VALUES ($1, $2, 'CONNECTION_UPDATE', $3)",
+      [orgId, firstAccountId, { event: "CONNECTION_UPDATE", state: "open" }],
+    );
+
+    // DOWN 1: reverte apenas a 008.
     const down = await migrateDown(pool, files, 1);
-    expect(down.rolledBack).toEqual(["007_projects"]);
+    expect(down.rolledBack).toEqual(["008_accounts_evolution"]);
+    const status1 = await migrateStatus(pool, files);
+    expect(status1.applied).toHaveLength(7);
+
+    // Tabela de auditoria e colunas novas sumiram.
+    await expect(pool.query("SELECT count(*) FROM integration_events")).rejects.toThrow();
+    for (const column of ["evolution_instance_name", "phone", "phone_jid"]) {
+      const col = await pool.query(
+        `SELECT data_type FROM information_schema.columns
+          WHERE table_schema = current_schema() AND table_name = 'accounts' AND column_name = '${column}'`,
+      );
+      expect(col.rows, column).toHaveLength(0);
+    }
+
+    // Normalização ANTES do CHECK estreito: os 5 estados viraram nao_conectada.
+    const afterDown = await pool.query(
+      "SELECT connection_status, count(*)::int AS n FROM accounts GROUP BY connection_status",
+    );
+    expect(afterDown.rows).toEqual([{ connection_status: "nao_conectada", n: 5 }]);
+
+    // CHECK estreito da 004 volta a valer (dual-name drop devolveu o estado).
+    await expect(
+      pool.query("UPDATE accounts SET connection_status = 'conectada' WHERE id = $1", [
+        firstAccountId,
+      ]),
+    ).rejects.toThrow();
+
+    // RE-UP da 008: os 5 valores voltam a ser aceitos; múltiplos NULLs OK
+    // (contas nunca conectadas); UNIQUE de evolution_instance_name enforced.
+    const reUp = await migrateUp(pool, files);
+    expect(reUp.applied).toEqual(["008_accounts_evolution"]);
+    for (const status of statuses) {
+      await pool.query("UPDATE accounts SET connection_status = $1 WHERE id = $2", [
+        status,
+        firstAccountId,
+      ]);
+    }
+    await expect(
+      pool.query("UPDATE accounts SET connection_status = 'estado-inválido' WHERE id = $1", [
+        firstAccountId,
+      ]),
+    ).rejects.toThrow();
+    await pool.query(
+      "INSERT INTO accounts (org_id, name) VALUES ($1, 'null-1'), ($1, 'null-2')",
+      [orgId],
+    ); // 2+ contas com instance NULL: PostgreSQL aceita múltiplos NULL
+    await pool.query("UPDATE accounts SET evolution_instance_name = 'g-t11-b' WHERE name = 'null-1'");
+    await expect(
+      pool.query("UPDATE accounts SET evolution_instance_name = 'g-t11-b' WHERE name = 'null-2'"),
+    ).rejects.toThrow(/unique|duplicat/i);
+    await pool.end();
+  });
+
+  it("down 2 reverte 008+007; T9 (PRJ): project_id volta text NULL e VAZIA; re-up aplica as 2", async () => {
+    const pool = freshPool();
+    const files = loadMigrationFiles();
+    await migrateUp(pool, files);
+
+    const down = await migrateDown(pool, files, 2);
+    expect(down.rolledBack).toEqual(["008_accounts_evolution", "007_projects"]);
 
     const status = await migrateStatus(pool, files);
     expect(status.applied.map((a) => a.name)).toEqual([
@@ -155,7 +238,7 @@ describe("runner de migrações (up/down/status)", () => {
 
     // ...e após o RE-UP o valor text é RECUSADO (coluna text saiu de novo).
     const reUp = await migrateUp(pool, files);
-    expect(reUp.applied).toEqual(["007_projects"]);
+    expect(reUp.applied).toEqual(["007_projects", "008_accounts_evolution"]);
     const colUuid = await pool.query(
       `SELECT data_type FROM information_schema.columns
         WHERE table_schema = current_schema() AND table_name = 'releases' AND column_name = 'project_uuid'`,
@@ -168,19 +251,20 @@ describe("runner de migrações (up/down/status)", () => {
       ),
     ).rejects.toThrow();
 
-    // Demais 6 intactas: groups segue consultável.
+    // Demais intactas: groups segue consultável.
     const groups = await pool.query("SELECT count(*)::int AS n FROM groups");
     expect(groups.rows[0]).toMatchObject({ n: 0 });
     await pool.end();
   });
 
-  it("down all reverte tudo na ordem inversa (7 → 0); up de novo aplica 7", async () => {
+  it("down all reverte tudo na ordem inversa (8 → 0); up de novo aplica 8", async () => {
     const pool = freshPool();
     const files = loadMigrationFiles();
     await migrateUp(pool, files);
 
     const downAll = await migrateDown(pool, files, Number.POSITIVE_INFINITY);
     expect(downAll.rolledBack).toEqual([
+      "008_accounts_evolution",
       "007_projects",
       "006_groups",
       "005_releases",
@@ -195,7 +279,7 @@ describe("runner de migrações (up/down/status)", () => {
 
     // Re-aplicação: DDL re-entrante após rollback total.
     const up = await migrateUp(pool, files);
-    expect(up.applied).toHaveLength(7);
+    expect(up.applied).toHaveLength(8);
     await pool.end();
   });
 
@@ -244,7 +328,7 @@ describe("runner de migrações (up/down/status)", () => {
     const pool = racingPool();
     const files = loadMigrationFiles();
 
-    // Não lança: a 001 é tratada como "outra instância aplicou"; 002..007 aplicam.
+    // Não lança: a 001 é tratada como "outra instância aplicou"; 002..008 aplicam.
     const up = await migrateUp(pool, files);
     expect(up.raced).toEqual(["001_organizations"]);
     expect(up.applied).toEqual([
@@ -254,10 +338,11 @@ describe("runner de migrações (up/down/status)", () => {
       "005_releases",
       "006_groups",
       "007_projects",
+      "008_accounts_evolution",
     ]);
     expect(up.alreadyApplied).toBe(0); // estado lido ANTES da corrida: nada aplicado
 
-    // Relato de status pós-corrida: as 7 registradas, 0 pendentes.
+    // Relato de status pós-corrida: as 8 registradas, 0 pendentes.
     const status = await migrateStatus(pool, files);
     expect(status.applied.map((a) => a.name)).toEqual([
       "001_organizations",
@@ -267,6 +352,7 @@ describe("runner de migrações (up/down/status)", () => {
       "005_releases",
       "006_groups",
       "007_projects",
+      "008_accounts_evolution",
     ]);
     expect(status.pending).toEqual([]);
     await pool.end();

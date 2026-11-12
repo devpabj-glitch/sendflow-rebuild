@@ -11,6 +11,12 @@ export type ErrorCode =
   | "TENANT_FORBIDDEN"
   | "NOT_FOUND"
   | "PROJECT_NOT_EMPTY"
+  | "ACCOUNT_CONNECTED"
+  | "EVOLUTION_NOT_CONNECTED"
+  | "EVOLUTION_INSTANCE_TAKEN"
+  | "EVOLUTION_UNAVAILABLE"
+  | "EVOLUTION_NOT_CONFIGURED"
+  | "EVOLUTION_WEBHOOK_SECRET_INVÁLIDO"
   | "INTERNAL_ERROR";
 
 export interface ErrorEnvelope {
@@ -77,6 +83,47 @@ export function tenantForbidden(): AppError {
 // vaza cardinalidade; o releaseCount real só aparece no GET da própria org).
 export function projectNotEmpty(): AppError {
   return new AppError("PROJECT_NOT_EMPTY", 409, "O projeto contém campanhas vinculadas.");
+}
+
+// Fatia 7 (Contas QR, F7-D3/D5): estados de conexao com o provedor Evolution.
+// Mensagens FIXAS e genéricas — sem detalhe de rede/URL/chave/instância
+// (T14); mutações de status só por evidência do provedor, os 409/502/503
+// abaixo NUNCA mudam o estado persistido (honestidade DIR-04).
+
+/** 409: connect ou GET /qr em conta já conectada (F7-D5). */
+export function accountConnected(): AppError {
+  return new AppError("ACCOUNT_CONNECTED", 409, "A conta já está conectada.");
+}
+
+/**
+ * 409: disconnect em conta não-conectada (§0.1.4) ou GET /qr em conta sem
+ * instância Evolution — nunca conectada (emenda R2 do parecer A4).
+ */
+export function evolutionNotConnected(): AppError {
+  return new AppError("EVOLUTION_NOT_CONNECTED", 409, "A conta não está conectada a uma instância do provedor.");
+}
+
+/**
+ * 409: violação da UNIQUE de evolution_instance_name (colisão do prefixo de
+ * 32 bits entre contas distintas — §2.1.2/R3): envelope padrão, nunca 500.
+ */
+export function evolutionInstanceTaken(): AppError {
+  return new AppError("EVOLUTION_INSTANCE_TAKEN", 409, "Nome de instância do provedor já utilizado por outra conta.");
+}
+
+/** 502: falha de chamada ao provedor (rede/timeout/5xx/401 da apikey) — status intacto. */
+export function evolutionUnavailable(): AppError {
+  return new AppError("EVOLUTION_UNAVAILABLE", 502, "Provedor de conexão indisponível.");
+}
+
+/** 503: EVOLUTION_API_KEY vazia (provider desabilitado — F7-D8) — status intacto. */
+export function evolutionNotConfigured(): AppError {
+  return new AppError("EVOLUTION_NOT_CONFIGURED", 503, "Provedor de conexão não configurado.");
+}
+
+/** 401: webhook sem/errado x-grupos-evo-secret (F7-D6; nome literal com acento). */
+export function evolutionWebhookSecretInvalid(): AppError {
+  return new AppError("EVOLUTION_WEBHOOK_SECRET_INVÁLIDO", 401, "Segredo do webhook inválido.");
 }
 
 function envelope(code: ErrorCode, message: string, details?: unknown): ErrorEnvelope {

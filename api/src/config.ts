@@ -18,6 +18,14 @@ export interface AppConfig {
   sessionTtlMs: number;
   revision: string;
   logLevel: string;
+  /** Fatia 7 (F7-D8): Evolution API 2.3.7 — base do adaptador (default: rede interna Railway). */
+  evolutionBaseUrl: string;
+  /** Apikey GLOBAL da Evolution. VAZIA = provider desabilitado (503 nas rotas de conexão). */
+  evolutionApiKey: string;
+  /** URL pública completa do endpoint /api/v1/webhooks/evolution (campo webhook do create). */
+  evolutionWebhookUrl: string;
+  /** Segredo do header x-grupos-evo-secret (autentica o webhook e vai no create da instância). */
+  evolutionWebhookSecret: string;
 }
 
 // D2: nome do cookie de sessão (constante de contrato; sem atributo Domain).
@@ -104,6 +112,14 @@ export function loadConfig(
   const revision = env.REVISION?.trim() || env.RAILWAY_GIT_COMMIT_SHA?.trim() || "dev";
   const logLevel = env.LOG_LEVEL?.trim() || "info";
 
+  // Fatia 7 (F7-D8): nomes apenas; valores NUNCA logados. Default do baseUrl
+  // = rede interna do Railway (mesmo ambiente da api); em dev local apontar
+  // para a URL pública do serviço evolution (a interna não resolve fora).
+  const evolutionBaseUrl = env.EVOLUTION_BASE_URL?.trim() || "http://evolution.railway.internal:8080";
+  const evolutionApiKey = env.EVOLUTION_API_KEY?.trim() ?? "";
+  const evolutionWebhookUrl = env.EVOLUTION_WEBHOOK_URL?.trim() ?? "";
+  const evolutionWebhookSecret = env.EVOLUTION_WEBHOOK_SECRET?.trim() ?? "";
+
   return {
     isProduction,
     port,
@@ -121,5 +137,9 @@ export function loadConfig(
     sessionTtlMs: sessionTtlHours * 3_600_000,
     revision,
     logLevel,
+    evolutionBaseUrl,
+    evolutionApiKey,
+    evolutionWebhookUrl,
+    evolutionWebhookSecret,
   };
 }
