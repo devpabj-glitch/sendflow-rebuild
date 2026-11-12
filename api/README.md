@@ -2,7 +2,7 @@
 
 API de autenticação de servidor, organização/tenant, PostgreSQL com migrações versionadas, API base, CRUD de contas, CRUD de releases, CRUD de grupos e CRUD de projetos do produto **Grupos**.
 
-**Contratos técnicos:** `docs/contracts/FATIA-01-FUNDACAO-CONTRATO.md` (decisões na §0) · `docs/contracts/FATIA-02-CONTAS-CONTRATO.md` (decisões D5/D6/D7 na §0.1) · `docs/contracts/FATIA-03-CAMPANHAS-CONTRATO.md` (**emendado pela Decisão D13 do dono na §0.2** — releases, tipos oficiais sendapi, `archived`, `accountIds`, `projectId`) · `docs/contracts/FATIA-05-GRUPOS-CONTRATO.md` (grupos; **D15–D18 aplicadas na §0.1**; amarra DEC-06 legado: cheio = manual OU teto) · `docs/contracts/FATIA-06-PROJETOS-CONTRATO.md` (projetos; **D19/D20/D21 RATIFICADAS na §0.1**; `projectId` de releases agora uuid validado mesma-org) · **Pareceres A4:** `docs/contracts/FATIA-0{1,2,3,5,6}-*-PARECER.md`.
+**Contratos técnicos:** `docs/contracts/FATIA-01-FUNDACAO-CONTRATO.md` (decisões na §0) · `docs/contracts/FATIA-02-CONTAS-CONTRATO.md` (decisões D5/D6/D7 na §0.1) · `docs/contracts/FATIA-03-CAMPANHAS-CONTRATO.md` (**emendado pela Decisão D13 do dono na §0.2** — releases, tipos oficiais sendapi, `archived`, `accountIds`, `projectId`) · `docs/contracts/FATIA-05-GRUPOS-CONTRATO.md` (grupos; **D15–D18 aplicadas na §0.1**; amarra DEC-06 legado: cheio = manual OU teto) · `docs/contracts/FATIA-06-PROJETOS-CONTRATO.md` (projetos; **F6-R19/F6-R20/F6-R21 RATIFICADAS na §0.1** — rótulos locais renomeados de D19–D21 em 12/11 para evitar colisão com a decisão do dono D19/Evolution, sem mudança semântica; `projectId` de releases agora uuid validado mesma-org) · **Pareceres A4:** `docs/contracts/FATIA-0{1,2,3,5,6}-*-PARECER.md`.
 
 ## Pré-requisitos
 
@@ -37,7 +37,7 @@ DATABASE_URL=postgres://... npm run migrate:down    # reverte a última (passe "
 
 - Runner transacional com insert-first na tabela `migrations` (exclusão mútua entre instâncias).
 - **Nunca edite migração já aplicada** — o checksum (sha256, LF-normalizado) diverge e o runner **falha alto** nomeando o arquivo. Correção = nova migração `NNN_nome.{up,down}.sql`.
-- `down` da 001–007 dropa as tabelas (fundação + contas + releases/junção + grupos + projetos; o down da 007 **recria `releases.project_id text NULL` VAZIA** — perda declarada D20) — só em ambiente descartável/de teste.
+- `down` da 001–007 dropa as tabelas (fundação + contas + releases/junção + grupos + projetos; o down da 007 **recria `releases.project_id text NULL` VAZIA** — perda declarada F6-R20) — só em ambiente descartável/de teste.
 - No boot do servidor (`npm start` / Railway) as migrações pendentes são aplicadas automaticamente (idempotente).
 
 ## Desenvolvimento
@@ -135,7 +135,7 @@ curl -s localhost:8787/api/v1/health   # {"status":"ok",...,"db":"up"}
 | `GET /api/v1/projects?search=&page=&pageSize=` | (Fatia 6) Lista paginada da org → `200 {items, total, page, pageSize}`; counts computados por página (2 queries agrupadas). |
 | `GET /api/v1/projects/:id` | (Fatia 6) → `200` + recurso com counts; alheio/inexistente → `404 TENANT_FORBIDDEN` genérico (mesmo não-vazio no DELETE → 404, nunca 409). |
 | `PATCH /api/v1/projects/:id` | (Fatia 6) `{name}` (≥1 campo) → `200` + recurso. |
-| `DELETE /api/v1/projects/:id` | (Fatia 6, **D19**) Exclusão SÓ de projeto VAZIO → `204`; com releases vinculadas → `409 PROJECT_NOT_EMPTY` corpo fixo (D21; delete de não-vazio pendente DEC-16); repetição → `404` genérico. |
+| `DELETE /api/v1/projects/:id` | (Fatia 6, **F6-R19**) Exclusão SÓ de projeto VAZIO → `204`; com releases vinculadas → `409 PROJECT_NOT_EMPTY` corpo fixo (F6-R21; delete de não-vazio pendente DEC-16); repetição → `404` genérico. |
 
 Erros: envelope único `{error:{code,message,details?}}` — códigos e status no contrato §5.5.
 
@@ -301,7 +301,7 @@ curl -s -X DELETE http://localhost:8787/api/v1/groups/00000000-0000-4000-8000-00
 
 Regras rápidas (Fatia 5): `name`/`gid` 1..120 pós-trim (gid com **trim apenas**, sem normalização de caixa — busca é CI via `lower()`); `limitPessoas` inteiro 1..100000 ou `null` (DEC-12 provisória); `search` ≤120; `cheio`/`seq`/`org_id`/`id` e qualquer campo desconhecido no body → `400`; **sem operações em massa** (D15 — itere por id); **sem export CSV** (D17 — adiado até DEC-05); sem coluna "Suspenso"/link/tipo (provedor NT — DIR-04); cliques nunca ocupam vaga (o teto compara `participants`).
 
-### Projetos (Fatia 6, D19–D21) — exemplos curl sintéticos
+### Projetos (Fatia 6, F6-R19–F6-R21) — exemplos curl sintéticos
 
 Recurso (flat, camelCase; counts SEMPRE computados na leitura — nunca aceitos em body; `webhookCount` é 0 literal — módulo de webhooks inexistente):
 
@@ -340,7 +340,7 @@ curl -s -X PATCH http://localhost:8787/api/v1/projects/00000000-0000-4000-8000-0
   -H "Content-Type: application/json" -H "Cookie: $COOKIE" \
   -d '{"name":"Cliente Omega Dois"}'
 
-# Excluir (D19: SO projeto VAZIO - 204 sem corpo; repeticao -> 404 identico;
+# Excluir (F6-R19: SO projeto VAZIO - 204 sem corpo; repeticao -> 404 identico;
 # com releases vinculadas -> 409 PROJECT_NOT_EMPTY corpo FIXO sem contagem,
 # linha intacta; nao-vazio pendente DEC-16; massa FORA - D10; o guard D6
 # aplica: DELETE exige Content-Type application/json)
@@ -348,7 +348,7 @@ curl -s -X DELETE http://localhost:8787/api/v1/projects/00000000-0000-4000-8000-
   -H "Content-Type: application/json" -H "Cookie: $COOKIE"
 ```
 
-Regras rápidas (Fatia 6): `name` 1..120 pós-trim (defaults provisórios DEC-12); `search` ≤120; `releaseCount` = releases com `projectId` do projeto; `accountCount` = **DISTINCT** de contas via `release_accounts` das releases do projeto (derivação indireta — ENT-13/FLX-10; a mesma conta em 2 releases conta 1x); `webhookCount` = 0 declarado (módulo WHE inexistente — DIR-04); counts/org_id/id/datas em body → `400`; DELETE alheio (vazio ou NÃO-VAZIO) → `404` nunca `409`; corrida FK (release vinculada entre o COUNT e o DELETE) → banco recusa (RESTRICT) → `409`; reversão da migração 007 recria `releases.project_id text` **vazia** (perda declarada D20) — **reverter o código de releases exige reverter a migração** (acoplamento declarado no contrato §8).
+Regras rápidas (Fatia 6): `name` 1..120 pós-trim (defaults provisórios DEC-12); `search` ≤120; `releaseCount` = releases com `projectId` do projeto; `accountCount` = **DISTINCT** de contas via `release_accounts` das releases do projeto (derivação indireta — ENT-13/FLX-10; a mesma conta em 2 releases conta 1x); `webhookCount` = 0 declarado (módulo WHE inexistente — DIR-04); counts/org_id/id/datas em body → `400`; DELETE alheio (vazio ou NÃO-VAZIO) → `404` nunca `409`; corrida FK (release vinculada entre o COUNT e o DELETE) → banco recusa (RESTRICT) → `409`; reversão da migração 007 recria `releases.project_id text` **vazia** (perda declarada F6-R20) — **reverter o código de releases exige reverter a migração** (acoplamento declarado no contrato §8).
 
 ## Notas operacionais
 
