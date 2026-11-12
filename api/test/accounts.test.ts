@@ -364,7 +364,8 @@ describe("accounts: CRUD, validações e tenant (contrato T1–T3, T5–T7, T10)
 
     // (b) nenhuma tabela de conexão/credencial criada: conjunto exato esperado.
     // (Fatia 3, ajuste aditivo declarado: releases + release_accounts da 005.
-    // Fatia 5, ajuste aditivo declarado: groups da 006 — mesma linha do T10.)
+    // Fatia 5, ajuste aditivo declarado: groups da 006 — mesma linha do T10.
+    // Fatia 6, ajuste aditivo declarado: projects da 007 — idem T10-iii.)
     const tablesAfter = await h.pool.query(
       "SELECT table_name FROM information_schema.tables WHERE table_schema = current_schema()",
     );
@@ -375,6 +376,7 @@ describe("accounts: CRUD, validações e tenant (contrato T1–T3, T5–T7, T10)
       "groups",
       "migrations",
       "organizations",
+      "projects",
       "release_accounts",
       "releases",
       "sessions",

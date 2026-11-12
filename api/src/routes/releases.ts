@@ -9,7 +9,9 @@
 // accountIds: tabela de juncao release_accounts; validacao = TODOS existem E
 // pertencem a MESMA org (mensagem generica, nao revela quais); duplicatas
 // deduplicadas (semantica de conjunto); gravadas NA MESMA transacao.
-// projectId: text sem FK (D13) - fatia PRJ adicionara validacao.
+// projectId: uuid NULL com FK real (Fatia 6 PRJ, D20 - pendencia da D13
+// paga): POST/PATCH validam existe E pertence a MESMA org (mensagem generica,
+// padrao accountIds); null limpa; resposta devolve uuid|null (contrato §0.2/§3.3).
 // Mutações exigem Content-Type application/json (D6 - lib/contentType.ts).
 // SEM DELETE (D5), SEM arquivar em massa (D10), SEM unique no nome (D11),
 // SEM algoritmo de distribuicao (DEC-03 semantica aberta).
@@ -18,11 +20,11 @@ import type { AppContext } from "../app.js";
 import type { DbClient } from "../lib/db.js";
 import { makeRequireAuth } from "../middleware/requireAuth.js";
 import { requireJsonContentType } from "../lib/contentType.js";
+import { isProjectFkViolation } from "../lib/fk.js";
 import { tenantForbidden, validationError } from "../lib/errors.js";
 
 // Defaults técnicos provisórios (DEC-12 aberta — contrato §3.3).
 const NAME_MAX = 120;
-const PROJECT_ID_MAX = 120;
 const SEARCH_MAX = 120;
 const PAGE_SIZE_MIN = 1;
 const PAGE_SIZE_MAX = 100;
@@ -33,7 +35,7 @@ const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{
 // D13: enum fechado com os 3 tipos EXATOS da API original (sendapi).
 const RELEASE_TYPES = new Set(["WhatsRelease", "WhatsList", "WhatsViralCampaign"]);
 
-const RELEASE_COLUMNS = "id, name, type, project_id, archived, created_at, updated_at";
+const RELEASE_COLUMNS = "id, name, type, project_uuid, archived, created_at, updated_at";
 
 // Schemas só garantem forma/tipos; regras de trim/comprimento pós-trim e o
 // enum de type são aplicados no handler (400 VALIDATION_ERROR com
@@ -71,7 +73,7 @@ type ReleaseRow = {
   id: string;
   name: string;
   type: string;
-  project_id: string | null;
+  project_uuid: string | null;
   archived: boolean;
   created_at: Date | string;
   updated_at: Date | string;
@@ -99,7 +101,7 @@ function toResource(row: ReleaseRow, accountIds: string[]): ReleaseResource {
     id: String(row.id),
     name: String(row.name),
     type: String(row.type),
-    projectId: row.project_id === null ? null : String(row.project_id),
+    projectId: row.project_uuid === null ? null : String(row.project_uuid),
     archived: row.archived === true,
     accountIds: [...accountIds].sort(),
     createdAt: toIso(row.created_at),
@@ -124,12 +126,28 @@ function assertReleaseType(value: string): string {
 }
 
 /**
- * projectId opcional: undefined = não mexe; null = limpa (grava NULL);
- * string = trim + 1..120. Qualquer outra forma cai no schema (400).
+ * projectId (Fatia 6 PRJ §0.2 — pendência da D13 paga): o CHAMADOR decide o
+ * que "ausente" significa (POST: ausente = null; PATCH: ausente = não mexe);
+ * null explícito LIMPA (grava NULL); string = UUID (case-insensitive →
+ * canônico minúsculo, padrão pós-auditoria F3 achado 1) que deve EXISTIR em
+ * projects E pertencer à MESMA org da sessão → senão 400 fields ["projectId"]
+ * GENÉRICO (existência vs. org alheia indistinguíveis — padrão accountIds).
+ * Roda DENTRO da transação do chamador (mesmo snapshot do INSERT/UPDATE).
  */
-function parseProjectId(raw: string | null): string | null {
+async function validateProjectId(
+  client: DbClient,
+  orgId: string,
+  raw: string | null,
+): Promise<string | null> {
   if (raw === null) return null;
-  return assertTrimmedLength(raw, "projectId", PROJECT_ID_MAX);
+  if (!UUID_PATTERN.test(raw)) throw validationError({ fields: ["projectId"] });
+  const canonical = raw.toLowerCase();
+  const res = await client.query("SELECT id FROM projects WHERE id = $1 AND org_id = $2", [
+    canonical,
+    orgId,
+  ]);
+  if (res.rows.length === 0) throw validationError({ fields: ["projectId"] }); // mensagem genérica
+  return canonical;
 }
 
 /**
@@ -271,22 +289,26 @@ export function releasesRoutes(ctx: AppContext): FastifyPluginAsync {
 
         const name = assertTrimmedLength(body.name, "name", NAME_MAX);
         const type = assertReleaseType(body.type);
-        const projectId = body.projectId === undefined ? null : parseProjectId(body.projectId);
         const now = ctx.clock.now();
 
-        // Recurso + junção NA MESMA transação (D13): ou a release nasce com
-        // TODAS as associações válidas, ou nada é gravado.
+        // Recurso + vínculo + junção NA MESMA transação (D13/§0.2): ou a
+        // release nasce com projeto/associações válidos da própria org, ou
+        // nada é gravado.
         const client = await ctx.db.connect();
         try {
           await client.query("BEGIN");
           let row: ReleaseRow;
           let accountIds: string[] = [];
+          let projectId: string | null = null; // ausente no POST = nasce sem projeto
           try {
+            if (body.projectId !== undefined) {
+              projectId = await validateProjectId(client, orgId, body.projectId);
+            }
             if (body.accountIds !== undefined) {
               accountIds = await validateAccountIds(client, orgId, body.accountIds);
             }
             const res = await client.query(
-              `INSERT INTO releases (org_id, name, type, project_id, created_at, updated_at)
+              `INSERT INTO releases (org_id, name, type, project_uuid, created_at, updated_at)
                VALUES ($1, $2, $3, $4, $5, $5)
                RETURNING ${RELEASE_COLUMNS}`,
               [orgId, name, type, projectId, now],
@@ -301,6 +323,10 @@ export function releasesRoutes(ctx: AppContext): FastifyPluginAsync {
             await client.query("COMMIT");
           } catch (err) {
             await client.query("ROLLBACK").catch(() => undefined);
+            // Corrida §9.3/T13: DELETE concorrente do projeto entre a
+            // validação e o INSERT → FK RESTRICT (23503 no banco real;
+            // mensagem FK no pg-mem) → 400 genérico, nunca 500.
+            if (isProjectFkViolation(err)) throw validationError({ fields: ["projectId"] });
             throw err;
           }
           return reply.code(201).send(toResource(row, accountIds));
@@ -457,11 +483,15 @@ export function releasesRoutes(ctx: AppContext): FastifyPluginAsync {
         };
 
         // Validações idênticas ao POST (§3.3); só campos fornecidos.
+        // projectId: validado DENTRO da transação (abaixo) — o push acontece
+        // lá para manter a ordem posicional dos parâmetros do UPDATE.
         if (body.name !== undefined) push("name", assertTrimmedLength(body.name, "name", NAME_MAX));
         if (body.type !== undefined) push("type", assertReleaseType(body.type));
-        if (body.projectId !== undefined) push("project_id", parseProjectId(body.projectId));
+        const wantsProjectId = body.projectId !== undefined;
         const hasAccountIds = body.accountIds !== undefined;
-        if (sets.length === 0 && !hasAccountIds) throw validationError({ fields: ["body"] }); // ≥1 campo
+        if (sets.length === 0 && !wantsProjectId && !hasAccountIds) {
+          throw validationError({ fields: ["body"] }); // ≥1 campo
+        }
         push("updated_at", ctx.clock.now());
 
         // accountIds tem semântica REPLACE (D13): substitui o conjunto por
@@ -474,6 +504,11 @@ export function releasesRoutes(ctx: AppContext): FastifyPluginAsync {
           try {
             if (hasAccountIds) {
               accountIds = await validateAccountIds(client, orgId, body.accountIds!);
+            }
+            // §0.2: null limpa (NULL); uuid validado existe+mesma-org → senão
+            // 400 genérico; ausente = não mexe (decidido acima).
+            if (wantsProjectId) {
+              push("project_uuid", await validateProjectId(client, orgId, body.projectId!));
             }
             const res = await client.query(
               `UPDATE releases SET ${sets.join(", ")}
@@ -500,6 +535,9 @@ export function releasesRoutes(ctx: AppContext): FastifyPluginAsync {
             await client.query("COMMIT");
           } catch (err) {
             await client.query("ROLLBACK").catch(() => undefined);
+            // Corrida §9.3/T13: DELETE concorrente do projeto entre a
+            // validação e o UPDATE → FK RESTRICT → 400 genérico, nunca 500.
+            if (isProjectFkViolation(err)) throw validationError({ fields: ["projectId"] });
             throw err;
           }
         } finally {
