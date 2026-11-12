@@ -710,7 +710,9 @@ describe("releases: CRUD, validações e tenant (contrato D13 T1–T3, T5–T7, 
 
     // (b) conjunto exato de tabelas: nada de links/ações/sessões nasceu.
     // (Fatia 5, ajuste aditivo declarado: groups da 006; Fatia 6 idem:
-    // projects da 007 — o conjunto do T5 acompanha o schema vigente.)
+    // projects da 007 — o conjunto do T5 acompanha o schema vigente.
+    // Fatia 7 idem: integration_events da 008 — nasce vazia, o CRUD de
+    // releases não a toca.)
     const tablesAfter = await h.pool.query(
       "SELECT table_name FROM information_schema.tables WHERE table_schema = current_schema()",
     );
@@ -719,6 +721,7 @@ describe("releases: CRUD, validações e tenant (contrato D13 T1–T3, T5–T7, 
     expect(names(tablesAfter)).toEqual([
       "accounts",
       "groups",
+      "integration_events",
       "migrations",
       "organizations",
       "projects",

@@ -253,6 +253,7 @@ describe("projects: CRUD, counts, exclusão D19 e tenant (contrato PRJ T1–T8, 
     expect(names(tablesAfter)).toEqual([
       "accounts",
       "groups",
+      "integration_events",
       "migrations",
       "organizations",
       "projects",

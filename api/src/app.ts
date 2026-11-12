@@ -8,6 +8,8 @@ import type { Clock } from "./lib/time.js";
 import { SystemClock } from "./lib/time.js";
 import type { AppConfig } from "./config.js";
 import { LoginRateLimiter } from "./auth/rateLimit.js";
+import type { EvolutionProvider } from "./providers/evolution/types.js";
+import { createEvolutionProvider } from "./providers/evolution/instance.js";
 import { registerErrorHandler } from "./lib/errors.js";
 import { healthRoutes } from "./routes/health.js";
 import { authRoutes } from "./routes/auth.js";
@@ -15,6 +17,7 @@ import { accountsRoutes } from "./routes/accounts.js";
 import { releasesRoutes } from "./routes/releases.js";
 import { groupsRoutes } from "./routes/groups.js";
 import { projectsRoutes } from "./routes/projects.js";
+import { evolutionWebhookRoutes } from "./routes/webhooks/evolution.js";
 
 export interface AppContext {
   db: DbPool;
@@ -28,6 +31,13 @@ export interface AppContext {
   loginIpLimiter: LoginRateLimiter;
   /** Corrida de timeout do SELECT 1 no healthcheck (default 3000 ms; testes encurtam). */
   dbHealthTimeoutMs: number;
+  /**
+   * Fatia 7 (F7-D8): adaptador Evolution injetado — `null` quando
+   * desabilitado (EVOLUTION_API_KEY vazia): endpoints de conexão devolvem
+   * 503 EVOLUTION_NOT_CONFIGURED sem tocar o provedor. Rotas NUNCA fazem
+   * fetch direto.
+   */
+  evolution: EvolutionProvider | null;
 }
 
 export interface BuildAppDeps {
@@ -40,16 +50,37 @@ export interface BuildAppDeps {
   dbHealthTimeoutMs?: number;
   /** false silencia o logger (testes); default: logger com nível do LOG_LEVEL. */
   logger?: boolean | FastifyLoggerOptions;
+  /**
+   * Fatia 7: provider Evolution injetável (testes injetam o falso, sem rede).
+   * Ausente = construído da config (null quando EVOLUTION_API_KEY vazia).
+   */
+  evolution?: EvolutionProvider | null;
 }
 
 export async function buildApp(deps: BuildAppDeps): Promise<FastifyInstance> {
   const clock = deps.clock ?? new SystemClock();
   const limiter = (opts: { max: number; windowMs: number; blockMs: number }): LoginRateLimiter =>
     new LoginRateLimiter(opts, clock);
+  // F7-D8: provider da config ou injetado (testes); EVOLUTION_API_KEY vazia
+  // => null => endpoints de conexão 503 EVOLUTION_NOT_CONFIGURED.
+  const evolution =
+    deps.evolution !== undefined
+      ? deps.evolution
+      : deps.config.evolutionApiKey !== ""
+        ? createEvolutionProvider({
+            baseUrl: deps.config.evolutionBaseUrl,
+            apiKey: deps.config.evolutionApiKey,
+            webhook: {
+              url: deps.config.evolutionWebhookUrl,
+              secret: deps.config.evolutionWebhookSecret,
+            },
+          })
+        : null;
   const ctx: AppContext = {
     db: deps.db,
     config: deps.config,
     clock,
+    evolution,
     rateLimiter:
       deps.rateLimiter ??
       limiter({
@@ -117,6 +148,7 @@ export async function buildApp(deps: BuildAppDeps): Promise<FastifyInstance> {
   await app.register(releasesRoutes(ctx));
   await app.register(groupsRoutes(ctx));
   await app.register(projectsRoutes(ctx));
+  await app.register(evolutionWebhookRoutes(ctx));
 
   return app;
 }

@@ -31,6 +31,8 @@ interface AccountResource {
   type: string;
   isSpy: boolean;
   connectionStatus: string;
+  /** Fatia 7: leitura (evidência do provedor) — null até a 1ª conexão. */
+  phone: string | null;
   createdAt: string;
   updatedAt: string;
 }
@@ -79,6 +81,7 @@ describe("accounts: CRUD, validações e tenant (contrato T1–T3, T5–T7, T10)
       "id",
       "isSpy",
       "name",
+      "phone",
       "type",
       "updatedAt",
     ]);
@@ -86,6 +89,7 @@ describe("accounts: CRUD, validações e tenant (contrato T1–T3, T5–T7, T10)
     expect(body.type).toBe("WhatsApp"); // default §3.3
     expect(body.isSpy).toBe(false); // default §3.3
     expect(body.connectionStatus).toBe("nao_conectada"); // único estado honesto
+    expect(body.phone).toBe(null); // Fatia 7: sem phone até a 1ª conexão real
     expect(body.id).toMatch(UUID_RE);
     expect(body.createdAt).toMatch(ISO_RE);
     expect(body.updatedAt).toMatch(ISO_RE);
@@ -277,11 +281,12 @@ describe("accounts: CRUD, validações e tenant (contrato T1–T3, T5–T7, T10)
     await h.app.close();
   });
 
-  it("T2: campos proibidos no body (org_id/connectionStatus/phone/id) → 400 com details", async () => {
+  it("T2: campos proibidos no body (org_id/connectionStatus/phone/evolutionInstanceName/id) → 400 com details", async () => {
     for (const extra of [
       { org_id: randomUUID() },
       { connectionStatus: "conectada" },
       { phone: "5511999999999" },
+      { evolutionInstanceName: "g-hack" },
       { id: randomUUID() },
     ]) {
       const res = await postAccount(h, tenantA.cookieHeader, { name: "X", ...extra });
@@ -362,10 +367,11 @@ describe("accounts: CRUD, validações e tenant (contrato T1–T3, T5–T7, T10)
     const sessionsAfter = await h.pool.query("SELECT count(*)::int AS n FROM sessions");
     expect(sessionsAfter.rows[0]).toEqual(sessionsBefore.rows[0]);
 
-    // (b) nenhuma tabela de conexão/credencial criada: conjunto exato esperado.
-    // (Fatia 3, ajuste aditivo declarado: releases + release_accounts da 005.
-    // Fatia 5, ajuste aditivo declarado: groups da 006 — mesma linha do T10.
-    // Fatia 6, ajuste aditivo declarado: projects da 007 — idem T10-iii.)
+    // (b) nenhuma tabela de conexão/credencial criada PELO POST/PATCH: conjunto
+    // exato esperado (integration_events existe desde a migração 008 da Fatia 7
+    // — ajuste aditivo declarado no contrato F7 §7/T13; nasce VAZIA e o
+    // CRUD de contas não a toca).
+    // (Fatia 3: releases + release_accounts. Fatia 5: groups. Fatia 6: projects.)
     const tablesAfter = await h.pool.query(
       "SELECT table_name FROM information_schema.tables WHERE table_schema = current_schema()",
     );
@@ -374,6 +380,7 @@ describe("accounts: CRUD, validações e tenant (contrato T1–T3, T5–T7, T10)
     expect(names(tablesAfter)).toEqual([
       "accounts",
       "groups",
+      "integration_events",
       "migrations",
       "organizations",
       "projects",
@@ -391,9 +398,11 @@ describe("accounts: CRUD, validações e tenant (contrato T1–T3, T5–T7, T10)
     );
     expect(raw.rows[0]).toMatchObject({ connection_status: "nao_conectada", is_spy: true });
 
-    // (d) resposta sem campo de sessão/conexão/credencial/ID externo.
+    // (d) resposta sem campo de sessão/conexão/credencial/ID externo
+    // (Fatia 7: `phone:null` AGORA é campo legítimo do recurso — leitura da
+    // evidência do provedor; continua PROIBIDO em entrada, ver (e) e T2).
     const serialized = JSON.stringify(account) + JSON.stringify(patched.json());
-    expect(serialized).not.toMatch(/session|token|credential|external|phone|number|waId|providerId/i);
+    expect(serialized).not.toMatch(/session|token|credential|external|number|waId|providerId|evolution/i);
 
     // (e) tentativa de setar connectionStatus em entrada → 400 (POST e PATCH).
     const postWithStatus = await postAccount(h, tenantA.cookieHeader, {
